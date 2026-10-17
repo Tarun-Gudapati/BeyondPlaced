@@ -1,3 +1,5 @@
+import "server-only";
+
 export type Block =
   | { type: "p"; text: string }
   | { type: "h"; text: string }
@@ -626,60 +628,29 @@ export function getLesson(slug: string) {
   };
 }
 
-export type PlanId = "free" | "pro" | "placement";
-
-export const plans: {
-  id: PlanId;
-  name: string;
-  price: number;
-  mrp?: number;
-  tagline: string;
-  features: string[];
-  highlight?: boolean;
-}[] = [
-  {
-    id: "free",
-    name: "Starter",
-    price: 0,
-    tagline: "Try before you pay",
-    features: ["Module 1: LLM Foundations", "3 lessons + quizzes", "Community Discord"],
-  },
-  {
-    id: "pro",
-    name: "Pro",
-    price: 2999,
-    mrp: 9999,
-    tagline: "Everything to become job-ready",
-    features: [
-      "All 6 modules, 18 lessons",
-      "6 portfolio projects with starter code",
-      "Lifetime access + all future updates",
-      "Verified completion certificate",
-      "Community Discord + weekly live doubt sessions",
-    ],
-    highlight: true,
-  },
-  {
-    id: "placement",
-    name: "Placement Pro",
-    price: 7999,
-    mrp: 19999,
-    tagline: "For final-years who want offers",
-    features: [
-      "Everything in Pro",
-      "1:1 project code review by an AI engineer",
-      "2 mock AI interviews with feedback",
-      "Resume + LinkedIn rewrite",
-      "Referral network to hiring startups",
-    ],
-  },
-];
-
-export const coupons: Record<string, { off: number; label: string }> = {
-  CAMPUS20: { off: 0.2, label: "Campus ambassador — 20% off" },
-  EARLY40: { off: 0.4, label: "Early bird — 40% off" },
+export type OutlineLesson = {
+  slug: string;
+  title: string;
+  minutes: number;
+  free: boolean;
+  done: boolean;
+  locked: boolean;
 };
 
-export function formatINR(n: number) {
-  return "₹" + Math.round(n).toLocaleString("en-IN");
+export type OutlineModule = { id: string; title: string; project: string; lessons: OutlineLesson[] };
+
+export function buildOutline(completed: Set<string>, paid: boolean): OutlineModule[] {
+  return modules.map((m) => ({
+    id: m.id,
+    title: m.title,
+    project: m.project,
+    lessons: m.lessons.map((l) => ({
+      slug: l.slug,
+      title: l.title,
+      minutes: l.minutes,
+      free: !!l.free,
+      done: completed.has(l.slug),
+      locked: !paid && !l.free,
+    })),
+  }));
 }

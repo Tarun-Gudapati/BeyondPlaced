@@ -1,80 +1,92 @@
 "use client";
 
 import Link from "next/link";
-import { Award, BookOpen, CheckCircle2, Flame, Lock, PartyPopper, PlayCircle, RotateCcw, Trophy } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Award, BookOpen, CheckCircle2, Flame, Lock, PartyPopper, PlayCircle, Trophy } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { allLessons, COURSE_NAME, modules, totalMinutes } from "@/lib/course";
-import { actions, streak, useAppState } from "@/lib/store";
+import type { OutlineModule } from "@/lib/course";
+import type { PlanId } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
-function Certificate({ name }: { name: string }) {
+const COURSE_NAME = "AI Engineering Bootcamp";
+
+function Certificate({ name, date, id, lessons, modules }: { name: string; date: string; id: string; lessons: number; modules: number }) {
   return (
     <div className="relative overflow-hidden rounded-xl border-2 border-primary/50 bg-gradient-to-br from-card to-primary/10 p-8 text-center">
       <Award className="mx-auto size-10 text-primary" />
       <div className="mt-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">Certificate of completion</div>
-      <div className="mt-4 text-3xl font-bold">{name || "ShipAI Graduate"}</div>
+      <div className="mt-4 text-3xl font-bold">{name}</div>
       <p className="mt-3 text-sm text-muted-foreground">
-        has completed all {allLessons.length} lessons and {modules.length} projects of the
+        has completed all {lessons} lessons and {modules} projects of the
       </p>
-      <div className="mt-1 font-semibold">{COURSE_NAME}</div>
+      <div className="mt-1 font-semibold">ShipAI {COURSE_NAME}</div>
       <div className="mt-6 flex justify-between text-xs text-muted-foreground">
-        <span>{new Date().toLocaleDateString("en-IN", { dateStyle: "long" })}</span>
-        <span className="font-mono">ID: SHIP-{(name || "grad").length.toString(16).toUpperCase()}{allLessons.length}26</span>
+        <span>{new Date(date).toLocaleDateString("en-IN", { dateStyle: "long" })}</span>
+        <span className="font-mono">ID: {id}</span>
       </div>
     </div>
   );
 }
 
-export function Dashboard({ welcome }: { welcome: boolean }) {
-  const { state, hydrated, isPaid, canAccess } = useAppState();
+export function DashboardSkeleton() {
+  return (
+    <main className="mx-auto w-full max-w-6xl flex-1 space-y-4 px-4 py-10">
+      <div className="h-10 w-64 animate-pulse rounded bg-muted" />
+      <div className="grid gap-4 md:grid-cols-4">
+        {[0, 1, 2, 3].map((i) => (
+          <div key={i} className="h-28 animate-pulse rounded-xl bg-muted" />
+        ))}
+      </div>
+      <div className="h-64 animate-pulse rounded-xl bg-muted" />
+    </main>
+  );
+}
 
-  if (!hydrated) {
-    return (
-      <main className="mx-auto w-full max-w-6xl flex-1 space-y-4 px-4 py-10">
-        <div className="h-10 w-64 animate-pulse rounded bg-muted" />
-        <div className="grid gap-4 md:grid-cols-3">
-          {[0, 1, 2].map((i) => (
-            <div key={i} className="h-28 animate-pulse rounded-xl bg-muted" />
-          ))}
-        </div>
-      </main>
-    );
-  }
-
-  const done = state.completed.length;
-  const pct = Math.round((done / allLessons.length) * 100);
-  const nextLesson = allLessons.find((l) => !state.completed.includes(l.slug)) ?? null;
-  const nextLocked = nextLesson ? !canAccess(nextLesson.slug) : false;
-  const minutesDone = allLessons.filter((l) => state.completed.includes(l.slug)).reduce((s, l) => s + l.minutes, 0);
-  const days = streak(state.activeDays);
-  const finished = done === allLessons.length;
-  const firstName = state.name.split(" ")[0];
+export function Dashboard({
+  user,
+  welcome,
+  outline,
+  stats,
+  next,
+  certificateDate,
+  certificateId,
+}: {
+  user: { name: string; plan: PlanId };
+  welcome: boolean;
+  outline: OutlineModule[];
+  stats: { done: number; total: number; minutesDone: number; minutesTotal: number; streak: number };
+  next: { slug: string; locked: boolean } | null;
+  certificateDate: string | null;
+  certificateId: string;
+}) {
+  const isPaid = user.plan !== "free";
+  const pct = Math.round((stats.done / stats.total) * 100);
+  const firstName = user.name.split(" ")[0];
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 space-y-8 px-4 py-10">
-      {welcome && isPaid && (
+      {welcome && (
         <div className="flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm">
           <PartyPopper className="size-5 shrink-0 text-emerald-400" />
-          <span>Payment successful. All {modules.length} modules are unlocked — let&apos;s build.</span>
+          <span>Payment successful. All {outline.length} modules are unlocked — let&apos;s build.</span>
         </div>
       )}
 
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">{firstName ? `Welcome back, ${firstName}` : "Your learning"}</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Welcome back, {firstName}</h1>
           <p className="mt-1 text-muted-foreground">{COURSE_NAME}</p>
         </div>
-        {nextLesson && (
+        {next && (
           <Link
-            href={nextLocked ? "/checkout?plan=pro" : `/learn/${nextLesson.slug}`}
+            href={next.locked ? "/checkout?plan=pro" : `/learn/${next.slug}`}
             className={cn(buttonVariants({ size: "lg" }), "h-11 px-5")}
           >
-            {nextLocked ? <Lock /> : <PlayCircle />}
-            {nextLocked ? "Unlock Module 2" : done === 0 ? "Start first lesson" : "Continue learning"}
+            {next.locked ? <Lock /> : <PlayCircle />}
+            {next.locked ? "Unlock Module 2" : stats.done === 0 ? "Start first lesson" : "Continue learning"}
           </Link>
         )}
       </div>
@@ -95,8 +107,8 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
               Lessons done <CheckCircle2 className="size-4" />
             </div>
             <div className="text-3xl font-bold">
-              {done}
-              <span className="text-lg text-muted-foreground">/{allLessons.length}</span>
+              {stats.done}
+              <span className="text-lg text-muted-foreground">/{stats.total}</span>
             </div>
           </CardContent>
         </Card>
@@ -105,7 +117,7 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
             <div className="flex items-center justify-between text-sm text-muted-foreground">
               Day streak <Flame className="size-4 text-primary" />
             </div>
-            <div className="text-3xl font-bold">{days}</div>
+            <div className="text-3xl font-bold">{stats.streak}</div>
           </CardContent>
         </Card>
         <Card>
@@ -114,8 +126,8 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
               Time invested <BookOpen className="size-4" />
             </div>
             <div className="text-3xl font-bold">
-              {minutesDone}
-              <span className="text-lg text-muted-foreground">/{totalMinutes} min</span>
+              {stats.minutesDone}
+              <span className="text-lg text-muted-foreground">/{stats.minutesTotal} min</span>
             </div>
           </CardContent>
         </Card>
@@ -140,10 +152,10 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
       <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
         <div className="space-y-3">
           <h2 className="text-xl font-semibold">Modules</h2>
-          {modules.map((m, i) => {
-            const mDone = m.lessons.filter((l) => state.completed.includes(l.slug)).length;
-            const locked = !canAccess(m.lessons[0].slug);
-            const firstOpen = m.lessons.find((l) => !state.completed.includes(l.slug)) ?? m.lessons[0];
+          {outline.map((m, i) => {
+            const mDone = m.lessons.filter((l) => l.done).length;
+            const locked = m.lessons[0].locked;
+            const firstOpen = m.lessons.find((l) => !l.done) ?? m.lessons[0];
             return (
               <Card key={m.id} className={cn(locked && "opacity-70")}>
                 <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -178,7 +190,7 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
           <h2 className="text-xl font-semibold">Certificate</h2>
           <Card>
             <CardContent className="space-y-4">
-              {finished && isPaid ? (
+              {certificateDate && isPaid ? (
                 <>
                   <p className="text-sm text-muted-foreground">You did it. Share this on LinkedIn and tag us.</p>
                   <Dialog>
@@ -187,36 +199,26 @@ export function Dashboard({ welcome }: { welcome: boolean }) {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-xl">
                       <DialogTitle className="sr-only">Your certificate</DialogTitle>
-                      <Certificate name={state.name} />
+                      <Certificate
+                        name={user.name}
+                        date={certificateDate}
+                        id={certificateId}
+                        lessons={stats.total}
+                        modules={outline.length}
+                      />
                     </DialogContent>
                   </Dialog>
                 </>
               ) : (
-                <>
-                  <div className="grid place-items-center rounded-lg border border-dashed py-8 text-center">
-                    <Award className="size-8 text-muted-foreground" />
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {isPaid
-                        ? `${allLessons.length - done} lessons to go`
-                        : "Available on Pro and Placement Pro"}
-                    </p>
-                  </div>
-                </>
+                <div className="grid place-items-center rounded-lg border border-dashed py-8 text-center">
+                  <Award className="size-8 text-muted-foreground" />
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {isPaid ? `${stats.total - stats.done} lessons to go` : "Available on Pro and Placement Pro"}
+                  </p>
+                </div>
               )}
             </CardContent>
           </Card>
-          {(done > 0 || isPaid) && (
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-muted-foreground"
-              onClick={() => {
-                if (confirm("Reset all progress and plan on this device?")) actions.reset();
-              }}
-            >
-              <RotateCcw /> Reset demo data
-            </Button>
-          )}
         </div>
       </div>
     </main>

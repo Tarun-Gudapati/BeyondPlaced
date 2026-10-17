@@ -1,73 +1,142 @@
 "use client";
 
 import Link from "next/link";
+import Script from "next/script";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { toast } from "sonner";
-import { ArrowLeft, Check, CreditCard, Loader2, ShieldCheck, Smartphone, Tag } from "lucide-react";
-import { Logo } from "@/components/site-header";
+import { ArrowLeft, Check, FlaskConical, Loader2, ShieldCheck, Tag } from "lucide-react";
+import { Logo } from "@/components/logo";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { coupons, formatINR, plans, type PlanId } from "@/lib/course";
-import { actions, useAppState } from "@/lib/store";
+import { completeTestPayment, createOrder, getQuote, verifyRazorpayPayment } from "@/app/actions/checkout";
+import type { Quote } from "@/lib/coupons";
+import { GST_RATE, PLAN_RANK, formatINR, getPlan, plans, type PlanId } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
-const GST = 0.18;
+type PaidPlan = "pro" | "placement";
 
-export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
+type RazorpayResponse = { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string };
+
+declare global {
+  interface Window {
+    Razorpay?: new (options: Record<string, unknown>) => { open: () => void; on: (event: string, cb: () => void) => void };
+  }
+}
+
+export function CheckoutForm({
+  initialPlan,
+  initialQuote,
+  currentPlan,
+  user,
+  mode,
+}: {
+  initialPlan: PaidPlan;
+  initialQuote: Quote;
+  currentPlan: PlanId;
+  user: { name: string; email: string };
+  mode: "razorpay" | "test";
+}) {
   const router = useRouter();
-  const { state } = useAppState();
-  const [planId, setPlanId] = useState<PlanId>(initialPlan);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [method, setMethod] = useState("upi");
+  const [planId, setPlanId] = useState<PaidPlan>(initialPlan);
+  const [q, setQ] = useState<Quote>(initialQuote);
   const [code, setCode] = useState("");
-  const [applied, setApplied] = useState<string | null>(null);
+  const [phone, setPhone] = useState("");
+  const [phoneError, setPhoneError] = useState("");
   const [paying, setPaying] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [quoting, startQuote] = useTransition();
+  const [testOrder, setTestOrder] = useState<{ id: string; amountPaise: number } | null>(null);
 
-  const plan = plans.find((p) => p.id === planId)!;
-  const discount = applied ? plan.price * coupons[applied].off : 0;
-  const subtotal = plan.price - discount;
-  const base = subtotal / (1 + GST);
-  const tax = subtotal - base;
+  const plan = getPlan(planId);
+  const owned = PLAN_RANK[currentPlan] >= PLAN_RANK[planId];
+  const base = q.total / (1 + GST_RATE);
 
-  function applyCoupon() {
-    const c = code.trim().toUpperCase();
-    if (coupons[c]) {
-      setApplied(c);
-      toast.success(coupons[c].label);
-    } else {
-      setApplied(null);
-      toast.error("That code isn't valid. Try CAMPUS20.");
-    }
+  function requote(nextPlan: PaidPlan, coupon: string, announce: boolean) {
+    startQuote(async () => {
+      const res = await getQuote(nextPlan, coupon);
+      setQ(res);
+      if (!announce) return;
+      if (res.couponLabel) toast.success(res.couponLabel);
+      else if (res.couponInvalid) toast.error("That code isn't valid.");
+    });
+  }
+
+  function finish() {
+    toast.success(`Welcome to ${plan.name}!`, { description: "All modules are now unlocked." });
+    router.push("/dashboard?welcome=1");
+    router.refresh();
   }
 
   async function pay(e: React.FormEvent) {
     e.preventDefault();
-    const errs: Record<string, string> = {};
-    const finalName = name || state.name;
-    const finalEmail = email || state.email;
-    if (!finalName.trim()) errs.name = "Enter your full name for the certificate";
-    if (!/^\S+@\S+\.\S+$/.test(finalEmail)) errs.email = "Enter a valid email";
-    if (!/^[6-9]\d{9}$/.test(phone.replace(/\D/g, "").slice(-10))) errs.phone = "Enter a 10-digit Indian mobile number";
-    setErrors(errs);
-    if (Object.keys(errs).length) return;
-
+    if (!/^[6-9]\d{9}$/.test(phone.replace(/\D/g, "").slice(-10))) {
+      setPhoneError("Enter a 10-digit Indian mobile number");
+      return;
+    }
+    setPhoneError("");
     setPaying(true);
-    await new Promise((r) => setTimeout(r, 1400));
-    actions.purchase(planId, finalName.trim(), finalEmail.trim());
-    toast.success(`Welcome to ${plan.name}!`, { description: "All modules are now unlocked." });
-    router.push("/dashboard?welcome=1");
+
+    const order = await createOrder(planId, q.coupon ?? "", phone);
+    if (!order.ok) {
+      setPaying(false);
+      toast.error(order.error);
+      return;
+    }
+
+    if (order.mode === "test") {
+      setTestOrder({ id: order.orderId, amountPaise: order.amountPaise });
+      return;
+    }
+
+    if (!window.Razorpay) {
+      setPaying(false);
+      toast.error("Payment window failed to load. Check your connection and try again.");
+      return;
+    }
+    const rzp = new window.Razorpay({
+      key: order.keyId,
+      amount: order.amountPaise,
+      currency: "INR",
+      name: "ShipAI",
+      description: `${order.planName} — AI Engineering Bootcamp`,
+      order_id: order.providerOrderId,
+      prefill: { name: order.user.name, email: order.user.email, contact: phone },
+      theme: { color: "#f59e0b" },
+      handler: async (res: RazorpayResponse) => {
+        const verified = await verifyRazorpayPayment({ orderId: order.orderId, ...res });
+        if (verified.ok) finish();
+        else {
+          setPaying(false);
+          toast.error(verified.error);
+        }
+      },
+      modal: { ondismiss: () => setPaying(false) },
+    });
+    rzp.on("payment.failed", () => {
+      setPaying(false);
+      toast.error("Payment failed. No money was charged — please try again.");
+    });
+    rzp.open();
+  }
+
+  async function resolveTest(outcome: "success" | "failure") {
+    if (!testOrder) return;
+    const res = await completeTestPayment(testOrder.id, outcome);
+    setTestOrder(null);
+    if (res.ok) finish();
+    else {
+      setPaying(false);
+      toast.error(res.error);
+    }
   }
 
   return (
     <div className="min-h-screen">
+      {mode === "razorpay" && <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />}
       <header className="border-b">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
           <Logo />
@@ -76,6 +145,16 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
           </span>
         </div>
       </header>
+
+      {mode === "test" && (
+        <div className="border-b border-amber-500/30 bg-amber-500/10">
+          <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2 text-sm text-amber-200">
+            <FlaskConical className="size-4 shrink-0" />
+            Test mode: payments are simulated and no money is charged. Add Razorpay keys to go live.
+          </div>
+        </div>
+      )}
+
       <main className="mx-auto grid max-w-5xl gap-8 px-4 py-10 lg:grid-cols-[1fr_380px]">
         <form onSubmit={pay} className="space-y-6" noValidate>
           <Link href="/#pricing" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground">
@@ -85,12 +164,15 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
 
           <div className="grid gap-3 sm:grid-cols-2">
             {plans
-              .filter((p) => p.id !== "free")
+              .filter((p): p is typeof p & { id: PaidPlan } => p.id !== "free")
               .map((p) => (
                 <button
                   type="button"
                   key={p.id}
-                  onClick={() => setPlanId(p.id)}
+                  onClick={() => {
+                    setPlanId(p.id);
+                    requote(p.id, q.coupon ?? "", false);
+                  }}
                   className={cn(
                     "rounded-xl border p-4 text-left transition-colors",
                     planId === p.id ? "border-primary bg-primary/10" : "hover:bg-muted/50",
@@ -106,68 +188,64 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
               ))}
           </div>
 
-          <Card>
-            <CardContent className="space-y-4">
-              <h2 className="font-semibold">Your details</h2>
-              <div className="space-y-2">
-                <Label htmlFor="name">Full name (as on certificate)</Label>
-                <Input id="name" value={name} placeholder={state.name || "Priya Sharma"} onChange={(e) => setName(e.target.value)} aria-invalid={!!errors.name} />
-                {errors.name && <p className="text-sm text-red-400">{errors.name}</p>}
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" value={email} placeholder={state.email || "you@college.edu"} onChange={(e) => setEmail(e.target.value)} aria-invalid={!!errors.email} />
-                  {errors.email && <p className="text-sm text-red-400">{errors.email}</p>}
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Mobile</Label>
-                  <Input id="phone" inputMode="tel" value={phone} placeholder="98765 43210" onChange={(e) => setPhone(e.target.value)} aria-invalid={!!errors.phone} />
-                  {errors.phone && <p className="text-sm text-red-400">{errors.phone}</p>}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardContent className="space-y-4">
-              <h2 className="font-semibold">Payment method</h2>
-              <RadioGroup value={method} onValueChange={(v) => setMethod(String(v))} className="grid gap-3 sm:grid-cols-2">
-                {[
-                  { id: "upi", label: "UPI", sub: "GPay, PhonePe, Paytm", icon: Smartphone },
-                  { id: "card", label: "Card / EMI", sub: "No-cost EMI from ₹500/mo", icon: CreditCard },
-                ].map((m) => (
-                  <label
-                    key={m.id}
-                    className={cn(
-                      "flex cursor-pointer items-center gap-3 rounded-lg border p-3",
-                      method === m.id && "border-primary/60 bg-primary/5",
-                    )}
-                  >
-                    <RadioGroupItem value={m.id} />
-                    <m.icon className="size-5 text-muted-foreground" />
-                    <div>
-                      <div className="text-sm font-medium">{m.label}</div>
-                      <div className="text-xs text-muted-foreground">{m.sub}</div>
+          {owned ? (
+            <Card>
+              <CardContent className="space-y-3">
+                <h2 className="font-semibold">You already own {getPlan(currentPlan).name}</h2>
+                <p className="text-sm text-muted-foreground">All the content in this plan is unlocked on your account.</p>
+                <Link href="/dashboard" className={buttonVariants()}>
+                  Go to my learning
+                </Link>
+              </CardContent>
+            </Card>
+          ) : (
+            <>
+              <Card>
+                <CardContent className="space-y-4">
+                  <h2 className="font-semibold">Your details</h2>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="space-y-2">
+                      <Label>Name on certificate</Label>
+                      <Input value={user.name} disabled />
                     </div>
-                  </label>
-                ))}
-              </RadioGroup>
-            </CardContent>
-          </Card>
+                    <div className="space-y-2">
+                      <Label>Email</Label>
+                      <Input value={user.email} disabled />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Mobile (for payment receipt)</Label>
+                    <Input
+                      id="phone"
+                      inputMode="tel"
+                      autoComplete="tel"
+                      value={phone}
+                      placeholder="98765 43210"
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                        setPhoneError("");
+                      }}
+                      aria-invalid={!!phoneError}
+                    />
+                    {phoneError && <p className="text-sm text-red-400">{phoneError}</p>}
+                  </div>
+                </CardContent>
+              </Card>
 
-          <Button type="submit" size="lg" className="h-12 w-full text-base" disabled={paying}>
-            {paying ? (
-              <>
-                <Loader2 className="animate-spin" /> Processing payment…
-              </>
-            ) : (
-              <>Pay {formatINR(subtotal)}</>
-            )}
-          </Button>
-          <p className="text-center text-xs text-muted-foreground">
-            Demo mode — no real charge. Connect Razorpay keys to accept live payments.
-          </p>
+              <Button type="submit" size="lg" className="h-12 w-full text-base" disabled={paying || quoting}>
+                {paying ? (
+                  <>
+                    <Loader2 className="animate-spin" /> Processing…
+                  </>
+                ) : (
+                  <>Pay {formatINR(q.total)}</>
+                )}
+              </Button>
+              <p className="text-center text-xs text-muted-foreground">
+                UPI, cards, netbanking and EMI via Razorpay. 7-day no-questions refund.
+              </p>
+            </>
+          )}
         </form>
 
         <aside className="lg:sticky lg:top-10 lg:self-start">
@@ -180,12 +258,12 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
               </div>
               <div className="flex justify-between text-sm">
                 <span>Launch price</span>
-                <span>{formatINR(plan.price)}</span>
+                <span>{formatINR(q.price)}</span>
               </div>
-              {applied && (
+              {q.coupon && (
                 <div className="flex justify-between text-sm text-emerald-400">
-                  <span>Coupon {applied}</span>
-                  <span>−{formatINR(discount)}</span>
+                  <span>Coupon {q.coupon}</span>
+                  <span>−{formatINR(q.discount)}</span>
                 </div>
               )}
               <div className="flex gap-2">
@@ -193,7 +271,7 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
                   <Tag className="absolute top-1/2 left-2.5 size-4 -translate-y-1/2 text-muted-foreground" />
                   <Input value={code} onChange={(e) => setCode(e.target.value)} placeholder="Coupon code" className="pl-8 uppercase" />
                 </div>
-                <Button type="button" variant="outline" onClick={applyCoupon} disabled={!code.trim()}>
+                <Button type="button" variant="outline" onClick={() => requote(planId, code, true)} disabled={!code.trim() || quoting}>
                   Apply
                 </Button>
               </div>
@@ -205,12 +283,12 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
                 </div>
                 <div className="flex justify-between">
                   <span>GST (18%, included)</span>
-                  <span>{formatINR(tax)}</span>
+                  <span>{formatINR(q.total - base)}</span>
                 </div>
               </div>
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span>{formatINR(subtotal)}</span>
+                <span>{formatINR(q.total)}</span>
               </div>
               <Separator />
               <ul className="space-y-2 text-sm">
@@ -220,16 +298,41 @@ export function CheckoutForm({ initialPlan }: { initialPlan: PlanId }) {
                   </li>
                 ))}
               </ul>
-              <div className="rounded-lg bg-muted/60 p-3 text-xs text-muted-foreground">
-                7-day no-questions refund. Email hello@shipai.in.
-              </div>
             </CardContent>
           </Card>
-          <Link href="/learn/how-llms-work" className={cn(buttonVariants({ variant: "link" }), "mt-2 w-full")}>
-            Not sure yet? Try Module 1 free
-          </Link>
         </aside>
       </main>
+
+      <Dialog
+        open={!!testOrder}
+        onOpenChange={(open) => {
+          if (!open) {
+            setTestOrder(null);
+            setPaying(false);
+          }
+        }}
+      >
+        <DialogContent className="sm:max-w-sm">
+          <DialogTitle className="flex items-center gap-2">
+            <FlaskConical className="size-4 text-amber-400" /> Test payment
+          </DialogTitle>
+          <DialogDescription>
+            Razorpay isn&apos;t connected yet, so this simulates the payment popup. Choose an outcome to test.
+          </DialogDescription>
+          <div className="rounded-lg bg-muted/60 p-4 text-center">
+            <div className="text-sm text-muted-foreground">ShipAI {plan.name}</div>
+            <div className="text-3xl font-bold">{formatINR((testOrder?.amountPaise ?? 0) / 100)}</div>
+          </div>
+          <div className="grid gap-2">
+            <Button size="lg" className="h-10" onClick={() => resolveTest("success")}>
+              Simulate successful payment
+            </Button>
+            <Button size="lg" variant="outline" className="h-10" onClick={() => resolveTest("failure")}>
+              Simulate failed payment
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -19,7 +19,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { allLessons, formatINR, modules, plans, totalMinutes } from "@/lib/course";
+import { allLessons, modules, totalMinutes } from "@/lib/course";
+import { formatINR, plans } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 const projects = [
