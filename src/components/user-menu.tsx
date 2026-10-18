@@ -7,15 +7,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { logout } from "@/app/actions/auth";
+import { navLinks } from "@/lib/nav";
 import type { PlanId } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
-
-const links = [
-  { href: "/#curriculum", label: "Curriculum" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
-];
 
 export function UserMenu({ user }: { user: { name: string; plan: PlanId } | null }) {
   const [open, setOpen] = useState(false);
@@ -50,13 +44,13 @@ export function UserMenu({ user }: { user: { name: string; plan: PlanId } | null
         </>
       )}
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "md:hidden")} aria-label="Open menu">
+        <SheetTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "lg:hidden")} aria-label="Open menu">
           <Menu />
         </SheetTrigger>
         <SheetContent side="right" className="p-6">
           <SheetTitle className="sr-only">Menu</SheetTitle>
           <nav className="mt-8 flex flex-col gap-4 text-lg">
-            {links.map((l) => (
+            {navLinks.map((l) => (
               <Link key={l.href} href={l.href} onClick={close}>
                 {l.label}
               </Link>

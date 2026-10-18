@@ -10,6 +10,7 @@ import {
   Circle,
   Clock,
   Hammer,
+  LifeBuoy,
   Lightbulb,
   ListTree,
   Loader2,
@@ -24,6 +25,7 @@ import { Progress } from "@/components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { submitQuiz } from "@/app/actions/progress";
+import { brand } from "@/lib/brand";
 import type { Block, OutlineModule } from "@/lib/course";
 import { formatINR, getPlan } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
@@ -177,7 +179,7 @@ function QuizCard({ slug, quiz, done, loggedIn }: { slug: string; quiz: LessonCo
             )}
           >
             {feedback.kind === "correct" ? <CheckCircle2 className="size-4 shrink-0" /> : <XCircle className="size-4 shrink-0" />}
-            <span>{feedback.kind === "correct" ? feedback.text : "Not quite. Re-read the section above and try again."}</span>
+            <span>{feedback.kind === "correct" ? feedback.text : "Not quite, and that's fine. Wrong answers are how learning works. Re-read the section above and try again."}</span>
           </div>
         )}
         {loggedIn ? (
@@ -336,6 +338,17 @@ export function LessonView({
                   </div>
                 </div>
                 <QuizCard key={lesson.slug} slug={lesson.slug} quiz={content.quiz} done={done} loggedIn={loggedIn} />
+                <div className="flex gap-3 rounded-lg border border-dashed p-4 text-sm">
+                  <LifeBuoy className="mt-0.5 size-5 shrink-0 text-brand-mint" />
+                  <p className="text-muted-foreground">
+                    <span className="font-medium text-foreground">Stuck? That&apos;s normal.</span> Ask in the community
+                    Discord or email{" "}
+                    <a href={`mailto:${brand.email}`} className="text-primary hover:underline">
+                      {brand.email}
+                    </a>
+                    . No question is too basic.
+                  </p>
+                </div>
               </>
             ) : (
               <Paywall loggedIn={loggedIn} />

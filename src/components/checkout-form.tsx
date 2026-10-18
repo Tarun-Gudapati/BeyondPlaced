@@ -101,11 +101,11 @@ export function CheckoutForm({
       key: order.keyId,
       amount: order.amountPaise,
       currency: "INR",
-      name: "ShipAI",
+      name: "AI-cademy",
       description: `${order.planName} — AI Engineering Bootcamp`,
       order_id: order.providerOrderId,
       prefill: { name: order.user.name, email: order.user.email, contact: phone },
-      theme: { color: "#f59e0b" },
+      theme: { color: "#a08bff" },
       handler: async (res: RazorpayResponse) => {
         const verified = await verifyRazorpayPayment({ orderId: order.orderId, ...res });
         if (verified.ok) finish();
@@ -253,7 +253,7 @@ export function CheckoutForm({
             <CardContent className="space-y-4">
               <h2 className="font-semibold">Order summary</h2>
               <div className="flex justify-between text-sm">
-                <span>ShipAI {plan.name}</span>
+                <span>AI-cademy {plan.name}</span>
                 <span className="text-muted-foreground line-through">{formatINR(plan.mrp ?? plan.price)}</span>
               </div>
               <div className="flex justify-between text-sm">
@@ -320,7 +320,7 @@ export function CheckoutForm({
             Razorpay isn&apos;t connected yet, so this simulates the payment popup. Choose an outcome to test.
           </DialogDescription>
           <div className="rounded-lg bg-muted/60 p-4 text-center">
-            <div className="text-sm text-muted-foreground">ShipAI {plan.name}</div>
+            <div className="text-sm text-muted-foreground">AI-cademy {plan.name}</div>
             <div className="text-3xl font-bold">{formatINR((testOrder?.amountPaise ?? 0) / 100)}</div>
           </div>
           <div className="grid gap-2">

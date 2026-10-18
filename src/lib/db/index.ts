@@ -4,7 +4,7 @@ import * as schema from "./schema";
 
 type DB = NodePgDatabase<typeof schema>;
 
-const globalForDb = globalThis as unknown as { shipaiDb?: Promise<DB> };
+const globalForDb = globalThis as unknown as { aicademyDb?: Promise<DB> };
 
 export const usingEmbeddedDb = !process.env.DATABASE_URL;
 
@@ -24,7 +24,7 @@ async function connect(): Promise<DB> {
   // Serverless hosts only allow writes under /tmp, which is wiped on cold starts.
   const { PGlite } = await import("@electric-sql/pglite");
   const { drizzle } = await import("drizzle-orm/pglite");
-  const dataDir = process.env.VERCEL ? "/tmp/shipai-db" : `${process.cwd()}/.data/pglite`;
+  const dataDir = process.env.VERCEL ? "/tmp/aicademy-db" : `${process.cwd()}/.data/pglite`;
   const { mkdirSync } = await import("node:fs");
   mkdirSync(dataDir, { recursive: true });
   const client = new PGlite(dataDir);
@@ -33,13 +33,13 @@ async function connect(): Promise<DB> {
 }
 
 export function getDb(): Promise<DB> {
-  if (!globalForDb.shipaiDb) {
-    globalForDb.shipaiDb = connect().catch((err) => {
-      globalForDb.shipaiDb = undefined;
+  if (!globalForDb.aicademyDb) {
+    globalForDb.aicademyDb = connect().catch((err) => {
+      globalForDb.aicademyDb = undefined;
       throw err;
     });
   }
-  return globalForDb.shipaiDb;
+  return globalForDb.aicademyDb;
 }
 
 export { schema };

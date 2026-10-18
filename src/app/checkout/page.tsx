@@ -5,7 +5,7 @@ import { requireUser } from "@/lib/auth";
 import { quote } from "@/lib/coupons";
 import { razorpayEnabled } from "@/lib/razorpay";
 
-export const metadata: Metadata = { title: "Checkout — ShipAI" };
+export const metadata: Metadata = { title: "Checkout" };
 
 async function Checkout({ searchParams }: { searchParams: PageProps<"/checkout">["searchParams"] }) {
   const { plan } = await searchParams;

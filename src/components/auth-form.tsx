@@ -22,7 +22,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next: strin
           <h1 className="text-2xl font-bold tracking-tight">{isSignup ? "Create your free account" : "Welcome back"}</h1>
           <p className="text-sm text-muted-foreground">
             {isSignup
-              ? "Save your progress, keep your streak and unlock your certificate."
+              ? "Free forever for Module 1. Save your progress, keep your streak and unlock your certificate."
               : "Log in to continue where you left off."}
           </p>
         </div>
@@ -60,7 +60,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next: strin
           </Button>
         </form>
         <p className="text-center text-sm text-muted-foreground">
-          {isSignup ? "Already have an account? " : "New to ShipAI? "}
+          {isSignup ? "Already have an account? " : "New to AI-cademy? "}
           <Link href={`${other}${nextQuery}`} className="text-primary hover:underline">
             {isSignup ? "Log in" : "Create a free account"}
           </Link>

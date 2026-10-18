@@ -3,13 +3,7 @@ import { Suspense } from "react";
 import { Logo } from "@/components/logo";
 import { UserMenu } from "@/components/user-menu";
 import { getCurrentUser } from "@/lib/auth";
-
-const navLinks = [
-  { href: "/#curriculum", label: "Curriculum" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#pricing", label: "Pricing" },
-  { href: "/#faq", label: "FAQ" },
-];
+import { navLinks } from "@/lib/nav";
 
 async function CurrentUserMenu() {
   const user = await getCurrentUser();
@@ -21,7 +15,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Logo />
-        <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-muted-foreground lg:flex">
           {navLinks.map((l) => (
             <Link key={l.href} href={l.href} className="hover:text-foreground">
               {l.label}

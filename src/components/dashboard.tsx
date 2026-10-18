@@ -7,22 +7,36 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { BrandMark, Wordmark } from "@/components/logo";
+import { brand } from "@/lib/brand";
 import type { OutlineModule } from "@/lib/course";
 import type { PlanId } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
-const COURSE_NAME = "AI Engineering Bootcamp";
+function encouragement(done: number, total: number, streak: number) {
+  if (done === 0) return "Your first lesson takes about 12 minutes. Let's go.";
+  if (done === total) return "You finished the whole course. Time to show the world what you built.";
+  if (streak >= 3) return `${streak} days in a row. You're building a real habit.`;
+  if (done / total >= 0.5) return "You're past halfway. The best projects are just ahead.";
+  return `${done} down, ${total - done} to go. Small steps add up.`;
+}
 
 function Certificate({ name, date, id, lessons, modules }: { name: string; date: string; id: string; lessons: number; modules: number }) {
   return (
     <div className="relative overflow-hidden rounded-xl border-2 border-primary/50 bg-gradient-to-br from-card to-primary/10 p-8 text-center">
-      <Award className="mx-auto size-10 text-primary" />
-      <div className="mt-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">Certificate of completion</div>
-      <div className="mt-4 text-3xl font-bold">{name}</div>
+      <div className="flex items-center justify-center gap-2">
+        <BrandMark />
+        <Wordmark />
+      </div>
+      <div className="mt-4 font-mono text-xs tracking-widest text-muted-foreground uppercase">Certificate of completion</div>
+      <div className="mt-4 font-heading text-3xl font-bold">{name}</div>
       <p className="mt-3 text-sm text-muted-foreground">
         has completed all {lessons} lessons and {modules} projects of the
       </p>
-      <div className="mt-1 font-semibold">ShipAI {COURSE_NAME}</div>
+      <div className="mt-1 font-semibold">
+        {brand.name} {brand.courseName}
+      </div>
+      <p className="mt-2 text-xs text-muted-foreground italic">{brand.slogan}</p>
       <div className="mt-6 flex justify-between text-xs text-muted-foreground">
         <span>{new Date(date).toLocaleDateString("en-IN", { dateStyle: "long" })}</span>
         <span className="font-mono">ID: {id}</span>
@@ -78,7 +92,7 @@ export function Dashboard({
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Welcome back, {firstName}</h1>
-          <p className="mt-1 text-muted-foreground">{COURSE_NAME}</p>
+          <p className="mt-1 text-muted-foreground">{encouragement(stats.done, stats.total, stats.streak)}</p>
         </div>
         {next && (
           <Link

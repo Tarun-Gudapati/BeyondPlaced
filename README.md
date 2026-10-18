@@ -1,10 +1,11 @@
-# ShipAI — AI Engineering Bootcamp
+# AI-cademy — Learn AI by building it.
 
-A sellable course platform (LMS) that teaches Indian students and freshers to become AI engineers by building 6 portfolio projects: LLM basics, embeddings, RAG, agents, fine-tuning and deployment.
+The friendly AI school for students. A course platform (LMS) that teaches Indian students and freshers to become AI engineers by building 6 portfolio projects: LLM basics, embeddings, RAG, agents, fine-tuning and deployment.
 
 ## Features
 
-- **Sales page** (`/`): curriculum, projects, rupee pricing and FAQ.
+- **Home page** (`/`): who it's for, how lessons work, a 12-week roadmap, projects, rupee pricing and FAQ.
+- **Brand kit** (`/brand`): logo, slogan, colours, typography and voice. Brand strings live in `src/lib/brand.ts`.
 - **Accounts** (`/signup`, `/login`): email + password (bcrypt hashing) with signed, http-only session cookies.
 - **Lesson player** (`/learn/[slug]`): 18 lessons. Module 1 is free. Paid lessons and all quiz answers stay on the server and are only sent to users who are entitled to them.
 - **Progress tracking**: passing a lesson's quiz saves it to the database. The dashboard shows progress, day streak, time spent and a certificate once everything is done.

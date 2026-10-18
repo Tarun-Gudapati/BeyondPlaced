@@ -5,7 +5,7 @@ import { Dashboard, DashboardSkeleton } from "@/components/dashboard";
 import { getCompletedLessons, requireUser } from "@/lib/auth";
 import { allLessons, buildOutline } from "@/lib/course";
 
-export const metadata: Metadata = { title: "My learning — ShipAI" };
+export const metadata: Metadata = { title: "My learning" };
 
 function streak(dates: Date[]) {
   const days = new Set(dates.map((d) => d.toISOString().slice(0, 10)));
