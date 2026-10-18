@@ -60,7 +60,7 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next: strin
           </Button>
         </form>
         <p className="text-center text-sm text-muted-foreground">
-          {isSignup ? "Already have an account? " : "New to AI-cademy? "}
+          {isSignup ? "Already have an account? " : "New to BeyondPlaced? "}
           <Link href={`${other}${nextQuery}`} className="text-primary hover:underline">
             {isSignup ? "Log in" : "Create a free account"}
           </Link>

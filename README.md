@@ -1,4 +1,4 @@
-# AI-cademy — Learn AI by building it.
+# BeyondPlaced — Learn AI by building it.
 
 The friendly AI school for students. A course platform (LMS) that teaches Indian students and freshers to become AI engineers by building 6 portfolio projects: LLM basics, embeddings, RAG, agents, fine-tuning and deployment.
 

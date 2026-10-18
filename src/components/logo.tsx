@@ -22,16 +22,15 @@ export function BrandMark({ className }: { className?: string }) {
 export function Wordmark({ className }: { className?: string }) {
   return (
     <span className={cn("font-heading text-lg font-bold tracking-tight", className)}>
-      <span className="bg-gradient-to-r from-brand-violet to-brand-mint bg-clip-text text-transparent">AI</span>
-      <span className="text-muted-foreground">-</span>
-      cademy
+      Beyond
+      <span className="bg-gradient-to-r from-brand-violet to-brand-mint bg-clip-text text-transparent">Placed</span>
     </span>
   );
 }
 
 export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" aria-label="AI-cademy home" className={cn("flex items-center gap-2", className)}>
+    <Link href="/" aria-label="BeyondPlaced home" className={cn("flex items-center gap-2", className)}>
       <BrandMark />
       <Wordmark />
     </Link>

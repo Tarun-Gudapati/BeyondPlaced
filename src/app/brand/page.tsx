@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Brand kit" };
 
-const dos = ["Write AI-cademy with a capital A, I and a hyphen", "Leave space around the logo of at least half the mark's width", "Use the mark on Night Class or white backgrounds"];
-const donts = ["AIcademy, Ai-Cademy or AI Cademy", "Stretching, rotating or recolouring the mark", "Placing the logo on busy photos"];
+const dos = ["Write BeyondPlaced as one word with a capital B and P", "Leave space around the logo of at least half the mark's width", "Use the mark on Night Class or white backgrounds"];
+const donts = ["Beyond Placed, Beyondplaced or beyond-placed", "Stretching, rotating or recolouring the mark", "Placing the logo on busy photos"];
 
 export default function BrandPage() {
   return (
@@ -25,7 +25,7 @@ export default function BrandPage() {
           </h1>
           <p className="mt-4 text-2xl font-heading text-brand-gradient">{brand.slogan}</p>
           <p className="mt-2 text-muted-foreground">{brand.tagline}</p>
-          <a href="/icon.svg" download="ai-cademy-mark.svg" className={cn(buttonVariants({ variant: "outline" }), "mt-6")}>
+          <a href="/icon.svg" download="beyondplaced-mark.svg" className={cn(buttonVariants({ variant: "outline" }), "mt-6")}>
             <Download /> Download mark (SVG)
           </a>
         </section>
@@ -33,9 +33,11 @@ export default function BrandPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold">The story</h2>
           <p className="max-w-3xl text-muted-foreground">
-            The name joins <span className="text-foreground">AI</span> and <span className="text-foreground">academy</span>. The
-            mark is a graduation cap whose tassel ends in a spark: learning that turns into something you build. The
-            slogan says the whole method in five words. We don&apos;t teach AI from slides; you learn it by building it.
+            Every student in India hears one question: &ldquo;Did you get placed?&rdquo; We think getting placed is the floor, not
+            the ceiling. <span className="text-foreground">BeyondPlaced</span> is for students who want skills that keep growing
+            after the offer letter. The mark is a graduation cap whose tassel ends in a spark: learning that turns into
+            something you build. The slogan says the whole method in five words. We don&apos;t teach AI from slides; you
+            learn it by building it.
           </p>
         </section>
 
@@ -52,7 +54,7 @@ export default function BrandPage() {
               <div className="flex items-center gap-2 text-brand-night">
                 <BrandMark />
                 <span className="font-heading text-lg font-bold tracking-tight">
-                  <span className="text-[#6b4fe0]">AI</span>-cademy
+                  Beyond<span className="text-[#6b4fe0]">Placed</span>
                 </span>
               </div>
             </div>

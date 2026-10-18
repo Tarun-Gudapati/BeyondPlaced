@@ -3,13 +3,13 @@ import { cookies } from "next/headers";
 import { connection } from "next/server";
 import { SignJWT, jwtVerify } from "jose";
 
-const COOKIE = "aicademy_session";
+const COOKIE = "beyondplaced_session";
 const MAX_AGE = 60 * 60 * 24 * 30;
 
 export const usingFallbackSecret = !process.env.AUTH_SECRET;
 
 const secret = new TextEncoder().encode(
-  process.env.AUTH_SECRET ?? "aicademy-dev-only-secret-set-AUTH_SECRET-in-production",
+  process.env.AUTH_SECRET ?? "beyondplaced-dev-only-secret-set-AUTH_SECRET-in-production",
 );
 
 export async function createSession(userId: string) {

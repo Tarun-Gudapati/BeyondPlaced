@@ -1,10 +1,10 @@
 export const brand = {
-  name: "AI-cademy",
+  name: "BeyondPlaced",
   slogan: "Learn AI by building it.",
   tagline: "The friendly AI school for students",
   description:
     "Short, beginner-friendly lessons for Indian college students. Learn LLMs, RAG, agents and fine-tuning by building 6 real projects you can show recruiters. Start free.",
-  email: "hello@ai-cademy.in",
+  email: "hello@beyondplaced.com",
   courseName: "AI Engineering Bootcamp",
   colors: [
     { name: "Spark Violet", hex: "#A08BFF", use: "Primary actions, links, focus" },
