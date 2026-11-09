@@ -141,14 +141,14 @@ export function CheckoutForm({
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
           <Logo />
           <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <ShieldCheck className="size-4 text-emerald-400" /> Secure checkout
+            <ShieldCheck className="size-4 text-emerald-700" /> Secure checkout
           </span>
         </div>
       </header>
 
       {mode === "test" && (
         <div className="border-b border-amber-500/30 bg-amber-500/10">
-          <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2 text-sm text-amber-200">
+          <div className="mx-auto flex max-w-5xl items-center gap-2 px-4 py-2 text-sm text-amber-800">
             <FlaskConical className="size-4 shrink-0" />
             Test mode: payments are simulated and no money is charged. Add Razorpay keys to go live.
           </div>
@@ -227,7 +227,7 @@ export function CheckoutForm({
                       }}
                       aria-invalid={!!phoneError}
                     />
-                    {phoneError && <p className="text-sm text-red-400">{phoneError}</p>}
+                    {phoneError && <p className="text-sm text-red-700">{phoneError}</p>}
                   </div>
                 </CardContent>
               </Card>
@@ -261,7 +261,7 @@ export function CheckoutForm({
                 <span>{formatINR(q.price)}</span>
               </div>
               {q.coupon && (
-                <div className="flex justify-between text-sm text-emerald-400">
+                <div className="flex justify-between text-sm text-emerald-700">
                   <span>Coupon {q.coupon}</span>
                   <span>−{formatINR(q.discount)}</span>
                 </div>
@@ -314,7 +314,7 @@ export function CheckoutForm({
       >
         <DialogContent className="sm:max-w-sm">
           <DialogTitle className="flex items-center gap-2">
-            <FlaskConical className="size-4 text-amber-400" /> Test payment
+            <FlaskConical className="size-4 text-amber-600" /> Test payment
           </DialogTitle>
           <DialogDescription>
             Razorpay isn&apos;t connected yet, so this simulates the payment popup. Choose an outcome to test.

@@ -70,7 +70,7 @@ function Outline({ outline, current, onNavigate }: { outline: OutlineModule[]; c
                   )}
                 >
                   {l.done ? (
-                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-400" />
+                    <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-700" />
                   ) : l.locked ? (
                     <Lock className="mt-0.5 size-4 shrink-0" />
                   ) : (
@@ -151,7 +151,7 @@ function QuizCard({ slug, quiz, done, loggedIn }: { slug: string; quiz: LessonCo
       <CardContent className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="font-semibold">Check your understanding</h3>
-          {done && <Badge className="bg-emerald-500/15 text-emerald-400">Completed</Badge>}
+          {done && <Badge className="bg-emerald-500/15 text-emerald-700">Completed</Badge>}
         </div>
         <p>{quiz.question}</p>
         <RadioGroup
@@ -179,7 +179,7 @@ function QuizCard({ slug, quiz, done, loggedIn }: { slug: string; quiz: LessonCo
           <div
             className={cn(
               "flex gap-2 rounded-lg p-3 text-sm",
-              feedback.kind === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-destructive/10 text-red-300",
+              feedback.kind === "correct" ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700",
             )}
           >
             {feedback.kind === "correct" ? <CheckCircle2 className="size-4 shrink-0" /> : <XCircle className="size-4 shrink-0" />}
@@ -321,7 +321,7 @@ export function LessonView({
                 <span className="flex items-center gap-1">
                   <Clock className="size-3.5" /> {lesson.minutes} min
                 </span>
-                {lesson.free && <Badge className="bg-emerald-500/15 text-emerald-400">Free</Badge>}
+                {lesson.free && <Badge className="bg-emerald-500/15 text-emerald-700">Free</Badge>}
               </div>
               <h1 className="text-3xl font-bold tracking-tight text-balance md:text-4xl">{lesson.title}</h1>
               <p className="text-lg text-muted-foreground">{lesson.summary}</p>

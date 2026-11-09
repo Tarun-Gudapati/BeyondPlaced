@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useActionState } from "react";
-import { Loader2 } from "lucide-react";
+import { AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -50,7 +50,8 @@ export function AuthForm({ mode, next }: { mode: "login" | "signup"; next: strin
             />
           </div>
           {state?.error && (
-            <p role="alert" className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-red-300">
+            <p role="alert" className="flex items-center gap-2 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm font-medium text-red-700">
+              <AlertCircle className="size-4 shrink-0" />
               {state.error}
             </p>
           )}

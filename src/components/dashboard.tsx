@@ -84,7 +84,7 @@ export function Dashboard({
     <main className="mx-auto w-full max-w-6xl flex-1 space-y-8 px-4 py-10">
       {welcome && (
         <div className="flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm">
-          <PartyPopper className="size-5 shrink-0 text-emerald-400" />
+          <PartyPopper className="size-5 shrink-0 text-emerald-700" />
           <span>Payment successful. All {outline.length} modules are unlocked — let&apos;s build.</span>
         </div>
       )}
@@ -174,7 +174,7 @@ export function Dashboard({
               <Card key={m.id} className={cn(locked && "opacity-70")}>
                 <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center">
                   <div className="grid size-11 shrink-0 place-items-center rounded-lg bg-muted font-mono text-sm">
-                    {mDone === m.lessons.length ? <CheckCircle2 className="size-5 text-emerald-400" /> : `0${i + 1}`}
+                    {mDone === m.lessons.length ? <CheckCircle2 className="size-5 text-emerald-700" /> : `0${i + 1}`}
                   </div>
                   <div className="min-w-0 flex-1 space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">

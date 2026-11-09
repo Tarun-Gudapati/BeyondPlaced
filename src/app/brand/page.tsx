@@ -128,11 +128,11 @@ export default function BrandPage() {
           </Card>
           <Card>
             <CardContent className="space-y-3">
-              <h3 className="font-semibold text-red-300">Don&apos;t</h3>
+              <h3 className="font-semibold text-red-700">Don&apos;t</h3>
               <ul className="space-y-2 text-sm">
                 {donts.map((d) => (
                   <li key={d} className="flex gap-2">
-                    <X className="mt-0.5 size-4 shrink-0 text-red-300" /> {d}
+                    <X className="mt-0.5 size-4 shrink-0 text-red-700" /> {d}
                   </li>
                 ))}
               </ul>
