@@ -93,11 +93,12 @@ const testimonials = [
 
 const faqs = [
   { q: "I'm a complete beginner in AI. Can I still do this?", a: "Yes. That's who we built it for. If you can write basic Python (loops, functions, pip install), you're ready. We teach you to build products with AI models, not to do research maths." },
+  { q: "Is this enough AI engineering content to get hired?", a: "Yes for junior AI / LLM app roles. You cover the stack job posts ask for — LLMs, embeddings, RAG, agents, open models, fine-tuning and production deploy — and leave with 6 GitHub projects, not just notes." },
   { q: "Can I do this alongside college and exams?", a: "Yes. Lessons are 10–25 minutes, so one lesson fits in a free period. Most students do 3–4 lessons a week. It's self-paced, so you can pause during exams and your progress stays saved." },
   { q: "I only know C, C++ or Java. Is that okay?", a: "Yes. Spend a weekend on Python basics first. If you can write loops and functions in any language, the switch takes a few hours." },
   { q: "What laptop do I need? Do I need a GPU?", a: "No GPU needed. Any laptop with 8 GB RAM works. We use cloud APIs for the heavy parts, and Module 5 shows free options for running models locally." },
   { q: "How much do API costs add up to?", a: "Under ₹300 for the whole course if you use small models. Module 5 also shows you how to run everything free on your laptop with Ollama." },
-  { q: "Is this recorded or live?", a: "Self-paced lessons with code you run yourself, plus a weekly live doubt session for Pro students. Learn at 2 AM if that's your thing." },
+  { q: "Is this recorded or live?", a: "Self-paced written lessons with code you run yourself, plus a weekly live doubt session for Pro students. Short faceless lesson videos are rolling out next — the curriculum and quizzes are already live." },
   { q: "Will I get a certificate?", a: "Yes. Finish all lessons and quizzes on Pro or Placement Pro to unlock a verifiable certificate you can add to LinkedIn." },
   { q: "What if I don't like it?", a: "Module 1 is completely free. If you upgrade and it isn't for you, email us within 7 days for a full refund. No questions asked." },
 ];
@@ -163,14 +164,15 @@ export default function Home() {
           <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr]">
             <div className="text-center lg:text-left">
               <Badge variant="outline" className="mb-6 gap-1.5 border-brand-mint/40 py-1 text-brand-mint">
-                <Sparkles className="size-3.5" /> New batch open · Module 1 is free
+                <Sparkles className="size-3.5" /> Built for campus · Module 1 free to sell
               </Badge>
               <h1 className="text-5xl font-extrabold tracking-tight text-balance md:text-7xl">
                 Learn AI <span className="text-brand-gradient">by building it.</span>
               </h1>
               <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground text-pretty lg:mx-0">
-                {brand.name} is the friendly AI school for college students. Short lessons, plain English and zero maths
-                panic. Build 6 real AI projects and walk into placements with a portfolio.
+                {brand.name} is a ready-to-sell AI engineering course for Indian college students. Short lessons, plain
+                English, zero maths panic — and the full stack they need for placements: LLMs, RAG, agents, fine-tuning
+                and deploy.
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
                 <Link href="/learn/how-llms-work" className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl px-6 text-base")}>
@@ -213,6 +215,62 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground">{l}</div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section id="sell" className="scroll-mt-20 border-b border-border/60 bg-card/40">
+          <div className="mx-auto max-w-6xl px-4 py-20">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+                A product you can actually sell on campus
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                Not a YouTube playlist. A full LMS with accounts, progress, quizzes, paywall and Razorpay checkout —
+                packaged around the AI engineering skills Indian recruiters ask for.
+              </p>
+            </div>
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  title: "Hook with free Module 1",
+                  desc: "Students start in 30 seconds, no card. They feel the win, then upgrade to the full path.",
+                },
+                {
+                  title: "Every AI eng topic that matters",
+                  desc: "LLMs → embeddings → RAG → agents → open models & LoRA → FastAPI deploy, cost and interviews.",
+                },
+                {
+                  title: "Price that fits a student wallet",
+                  desc: "Pro at ₹2,999 with campus coupons. UPI-ready checkout. 7-day refund so the sale feels safe.",
+                },
+              ].map((item) => (
+                <Card key={item.title}>
+                  <CardContent className="space-y-2">
+                    <h3 className="font-semibold">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <ul className="mt-8 flex flex-wrap gap-2 text-sm">
+              {[
+                "LLM APIs",
+                "Prompting",
+                "Embeddings",
+                "Vector search",
+                "RAG + citations",
+                "Agents & tools",
+                "Ollama / open models",
+                "LoRA fine-tuning",
+                "FastAPI streaming",
+                "Cost & latency",
+                "AI interview prep",
+              ].map((topic) => (
+                <li key={topic} className="rounded-full border border-border/80 bg-background/60 px-3 py-1">
+                  {topic}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 

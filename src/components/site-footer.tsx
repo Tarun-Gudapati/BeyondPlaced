@@ -12,6 +12,7 @@ export function SiteFooter() {
           <p>{brand.tagline}. Made in India for builders everywhere.</p>
         </div>
         <div className="flex flex-wrap gap-6">
+          <Link href="/#sell" className="hover:text-foreground">Sell on campus</Link>
           <Link href="/#roadmap" className="hover:text-foreground">Roadmap</Link>
           <Link href="/#pricing" className="hover:text-foreground">Pricing</Link>
           <Link href="/dashboard" className="hover:text-foreground">Dashboard</Link>

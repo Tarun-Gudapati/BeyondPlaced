@@ -1,9 +1,9 @@
 export const brand = {
   name: "BeyondPlaced",
   slogan: "Learn AI by building it.",
-  tagline: "The friendly AI school for students",
+  tagline: "The AI engineering course built to sell to college students",
   description:
-    "Short, beginner-friendly lessons for Indian college students. Learn LLMs, RAG, agents and fine-tuning by building 6 real projects you can show recruiters. Start free.",
+    "A complete, campus-ready AI engineering product for Indian college students. Sell Module 1 free, then upgrade to the full path: LLMs, embeddings, RAG, agents, fine-tuning and production deploy — with 6 portfolio projects recruiters can open.",
   email: "hello@beyondplaced.com",
   courseName: "AI Engineering Bootcamp",
   colors: [
