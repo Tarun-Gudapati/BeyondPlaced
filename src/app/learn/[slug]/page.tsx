@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { allLessons, buildOutline, getLesson } from "@/lib/course";
+import { buildOutline, getLesson } from "@/lib/course";
 import { getCompletedLessons, getCurrentUser } from "@/lib/auth";
 import { LessonView, LessonSkeleton } from "@/components/lesson-view";
 
-export function generateStaticParams() {
-  return allLessons.map((l) => ({ slug: l.slug }));
-}
+/** Auth + progress must be read per request — do not statically cache lesson pages. */
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: PageProps<"/learn/[slug]">): Promise<Metadata> {
   const { slug } = await params;

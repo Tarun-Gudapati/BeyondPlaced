@@ -5,6 +5,7 @@ import { requireUser } from "@/lib/auth";
 import { quote } from "@/lib/coupons";
 import { razorpayEnabled } from "@/lib/razorpay";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Checkout" };
 
 async function Checkout({ searchParams }: { searchParams: PageProps<"/checkout">["searchParams"] }) {

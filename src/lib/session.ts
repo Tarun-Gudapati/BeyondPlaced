@@ -8,17 +8,20 @@ const MAX_AGE = 60 * 60 * 24 * 30;
 
 export const usingFallbackSecret = !process.env.AUTH_SECRET;
 
-const secret = new TextEncoder().encode(
-  process.env.AUTH_SECRET ?? "beyondplaced-dev-only-secret-set-AUTH_SECRET-in-production",
-);
+function secretKey() {
+  return new TextEncoder().encode(
+    process.env.AUTH_SECRET ?? "beyondplaced-dev-only-secret-set-AUTH_SECRET-in-production",
+  );
+}
 
 export async function createSession(userId: string) {
   const token = await new SignJWT({ uid: userId })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
     .setExpirationTime(`${MAX_AGE}s`)
-    .sign(secret);
-  (await cookies()).set(COOKIE, token, {
+    .sign(secretKey());
+  const jar = await cookies();
+  jar.set(COOKIE, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
@@ -32,11 +35,11 @@ export async function destroySession() {
 }
 
 export async function getSessionUserId(): Promise<string | null> {
+  await connection();
   const token = (await cookies()).get(COOKIE)?.value;
   if (!token) return null;
-  await connection();
   try {
-    const { payload } = await jwtVerify(token, secret, { algorithms: ["HS256"] });
+    const { payload } = await jwtVerify(token, secretKey(), { algorithms: ["HS256"] });
     return typeof payload.uid === "string" ? payload.uid : null;
   } catch {
     return null;
