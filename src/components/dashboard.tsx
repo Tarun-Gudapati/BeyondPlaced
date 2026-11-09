@@ -23,7 +23,7 @@ function encouragement(done: number, total: number, streak: number) {
 
 function Certificate({ name, date, id, lessons, modules }: { name: string; date: string; id: string; lessons: number; modules: number }) {
   return (
-    <div className="relative overflow-hidden rounded-xl border-2 border-primary/50 bg-gradient-to-br from-card to-primary/10 p-8 text-center">
+    <div className="relative overflow-hidden rounded-xl border-2 border-primary/50 bg-gradient-to-br from-card to-primary/10 p-5 text-center sm:p-8">
       <div className="flex items-center justify-center gap-2">
         <BrandMark />
         <Wordmark />
@@ -49,7 +49,7 @@ export function DashboardSkeleton() {
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 space-y-4 px-4 py-10">
       <div className="h-10 w-64 animate-pulse rounded bg-muted" />
-      <div className="grid gap-4 md:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {[0, 1, 2, 3].map((i) => (
           <div key={i} className="h-28 animate-pulse rounded-xl bg-muted" />
         ))}
@@ -81,7 +81,7 @@ export function Dashboard({
   const firstName = user.name.split(" ")[0];
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 space-y-8 px-4 py-10">
+    <main className="mx-auto w-full max-w-6xl flex-1 space-y-6 px-4 py-6 md:space-y-8 md:py-10">
       {welcome && (
         <div className="flex items-center gap-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm">
           <PartyPopper className="size-5 shrink-0 text-emerald-700" />
@@ -91,13 +91,13 @@ export function Dashboard({
 
       <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Welcome back, {firstName}</h1>
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Welcome back, {firstName}</h1>
           <p className="mt-1 text-muted-foreground">{encouragement(stats.done, stats.total, stats.streak)}</p>
         </div>
         {next && (
           <Link
             href={next.locked ? "/checkout?plan=pro" : `/learn/${next.slug}`}
-            className={cn(buttonVariants({ size: "lg" }), "h-11 px-5")}
+            className={cn(buttonVariants({ size: "lg" }), "h-11 w-full px-5 md:w-auto")}
           >
             {next.locked ? <Lock /> : <PlayCircle />}
             {next.locked ? "Unlock Module 2" : stats.done === 0 ? "Start first lesson" : "Continue learning"}
@@ -105,7 +105,7 @@ export function Dashboard({
         )}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 [&_[data-slot=card-content]]:px-4 sm:[&_[data-slot=card-content]]:px-6 [&_.text-3xl]:text-2xl sm:[&_.text-3xl]:text-3xl">
         <Card>
           <CardContent className="space-y-3">
             <div className="flex items-center justify-between text-sm text-muted-foreground">
@@ -156,15 +156,15 @@ export function Dashboard({
                 Upgrade to unlock RAG, agents, fine-tuning, production deployment and your certificate.
               </p>
             </div>
-            <Link href="/checkout?plan=pro" className={buttonVariants({ size: "lg" })}>
+            <Link href="/checkout?plan=pro" className={cn(buttonVariants({ size: "lg" }), "w-full md:w-auto")}>
               Upgrade for ₹2,999
             </Link>
           </CardContent>
         </Card>
       )}
 
-      <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
-        <div className="space-y-3">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+        <div className="min-w-0 space-y-3">
           <h2 className="text-xl font-semibold">Modules</h2>
           {outline.map((m, i) => {
             const mDone = m.lessons.filter((l) => l.done).length;
@@ -172,25 +172,25 @@ export function Dashboard({
             const firstOpen = m.lessons.find((l) => !l.done) ?? m.lessons[0];
             return (
               <Card key={m.id} className={cn(locked && "opacity-70")}>
-                <CardContent className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                  <div className="grid size-11 shrink-0 place-items-center rounded-lg bg-muted font-mono text-sm">
+                <CardContent className="flex items-center gap-3 px-4 sm:gap-4 sm:px-6">
+                  <div className="grid size-10 shrink-0 place-items-center rounded-lg bg-muted font-mono text-sm sm:size-11">
                     {mDone === m.lessons.length ? <CheckCircle2 className="size-5 text-emerald-700" /> : `0${i + 1}`}
                   </div>
                   <div className="min-w-0 flex-1 space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">
-                      <h3 className="font-semibold">{m.title}</h3>
+                      <h3 className="leading-snug font-semibold">{m.title}</h3>
                       {locked && (
                         <Badge variant="outline" className="gap-1">
                           <Lock className="size-3" /> Pro
                         </Badge>
                       )}
                     </div>
-                    <p className="truncate text-sm text-muted-foreground">Project: {m.project}</p>
+                    <p className="line-clamp-2 text-sm text-muted-foreground sm:line-clamp-1">Project: {m.project}</p>
                     <Progress value={(mDone / m.lessons.length) * 100} className="max-w-xs" />
                   </div>
                   <Link
                     href={locked ? "/checkout?plan=pro" : `/learn/${firstOpen.slug}`}
-                    className={buttonVariants({ variant: locked ? "outline" : "secondary" })}
+                    className={cn(buttonVariants({ variant: locked ? "outline" : "secondary" }), "shrink-0")}
                   >
                     {locked ? "Unlock" : mDone === m.lessons.length ? "Review" : mDone ? "Resume" : "Start"}
                   </Link>
@@ -200,7 +200,7 @@ export function Dashboard({
           })}
         </div>
 
-        <div className="space-y-4">
+        <div className="min-w-0 space-y-4">
           <h2 className="text-xl font-semibold">Certificate</h2>
           <Card>
             <CardContent className="space-y-4">

@@ -78,8 +78,8 @@ function Frame({
       <div className="border-b border-border bg-brand-mist/80 px-4 py-2 font-mono text-[11px] tracking-wide text-brand-teal uppercase">
         {title}
       </div>
-      <div className="p-3 sm:p-4">
-        <svg viewBox={viewBox} className="h-auto w-full" role="img" aria-label={title}>
+      <div className="overflow-x-auto overscroll-x-contain p-3 sm:p-4">
+        <svg viewBox={viewBox} className="h-auto w-full min-w-[560px] sm:min-w-0" role="img" aria-label={title}>
           <defs>
             <marker id={arrowId} markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
               <path d="M0,0 L6,3 L0,6 Z" fill="#5B6B66" />
@@ -88,6 +88,7 @@ function Frame({
           <MarkerCtx.Provider value={arrowId}>{children}</MarkerCtx.Provider>
         </svg>
       </div>
+      <p className="border-t border-border px-4 py-1.5 text-center text-[11px] text-muted-foreground sm:hidden">Swipe to see the full diagram →</p>
     </figure>
   );
 }

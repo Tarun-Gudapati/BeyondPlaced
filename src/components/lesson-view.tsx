@@ -103,9 +103,9 @@ function RenderBlock({ block }: { block: Block }) {
       );
     case "code":
       return (
-        <div className="overflow-hidden rounded-lg border bg-black/40">
-          <div className="border-b px-4 py-1.5 font-mono text-xs text-muted-foreground">{block.lang}</div>
-          <pre className="overflow-x-auto p-4 text-[13px] leading-6">
+        <div className="-mx-4 overflow-hidden border-y border-brand-ink bg-brand-ink text-slate-100 sm:mx-0 sm:rounded-lg sm:border">
+          <div className="border-b border-white/10 px-4 py-1.5 font-mono text-xs text-slate-400">{block.lang}</div>
+          <pre className="overflow-x-auto p-4 text-[12.5px] leading-6 sm:text-[13px]">
             <code className="font-mono">{block.code}</code>
           </pre>
         </div>
@@ -278,17 +278,17 @@ export function LessonView({
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-        <div className="flex h-14 items-center gap-3 px-4">
+        <div className="flex h-14 items-center gap-2 px-3 sm:gap-3 sm:px-4">
           <Sheet open={outlineOpen} onOpenChange={setOutlineOpen}>
-            <SheetTrigger className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "lg:hidden")} aria-label="Course outline">
-              <ListTree />
+            <SheetTrigger className={cn(buttonVariants({ variant: "outline", size: "sm" }), "lg:hidden")} aria-label="Course outline">
+              <ListTree /> Lessons
             </SheetTrigger>
-            <SheetContent side="left" className="overflow-y-auto p-4">
+            <SheetContent side="left" className="w-[85vw] max-w-sm overflow-y-auto p-4">
               <SheetTitle className="mb-4">Course outline</SheetTitle>
               <Outline outline={outline} current={lesson.slug} onNavigate={() => setOutlineOpen(false)} />
             </SheetContent>
           </Sheet>
-          <Logo />
+          <Logo className="[&>span:last-child]:hidden sm:[&>span:last-child]:inline" />
           <div className="ml-auto flex items-center gap-3">
             {loggedIn && (
               <div className="hidden w-40 items-center gap-2 sm:flex">
@@ -296,7 +296,7 @@ export function LessonView({
                 <span className="text-xs text-muted-foreground tabular-nums">{progressPct}%</span>
               </div>
             )}
-            <Link href={loggedIn ? "/dashboard" : "/login"} className={buttonVariants({ variant: "outline" })}>
+            <Link href={loggedIn ? "/dashboard" : "/login"} className={buttonVariants({ variant: "outline", size: "sm" })}>
               {loggedIn ? "Dashboard" : "Log in"}
             </Link>
           </div>
@@ -309,7 +309,7 @@ export function LessonView({
         </aside>
 
         <main className="min-w-0 flex-1">
-          <article className="mx-auto max-w-3xl space-y-6 px-4 py-10 md:px-8">
+          <article className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:py-10 md:px-8">
             <div className="space-y-3">
               <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                 <span>{lesson.moduleTitle}</span>
@@ -323,8 +323,8 @@ export function LessonView({
                 </span>
                 {lesson.free && <Badge className="bg-emerald-500/15 text-emerald-700">Free</Badge>}
               </div>
-              <h1 className="text-3xl font-bold tracking-tight text-balance md:text-4xl">{lesson.title}</h1>
-              <p className="text-lg text-muted-foreground">{lesson.summary}</p>
+              <h1 className="text-2xl font-bold tracking-tight text-balance sm:text-3xl md:text-4xl">{lesson.title}</h1>
+              <p className="text-base text-muted-foreground sm:text-lg">{lesson.summary}</p>
             </div>
 
             {content ? (
@@ -358,23 +358,23 @@ export function LessonView({
               <Paywall loggedIn={loggedIn} />
             )}
 
-            <div className="flex items-center justify-between gap-3 border-t pt-6">
+            <div className="flex flex-col-reverse gap-2 border-t pt-6 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
               {prev ? (
-                <Link href={`/learn/${prev.slug}`} className={cn(buttonVariants({ variant: "ghost" }), "max-w-[45%]")}>
+                <Link href={`/learn/${prev.slug}`} className={cn(buttonVariants({ variant: "ghost" }), "h-11 w-full sm:h-9 sm:w-auto sm:max-w-[45%]")}>
                   <ArrowLeft /> <span className="truncate">{prev.title}</span>
                 </Link>
               ) : (
-                <span />
+                <span className="hidden sm:block" />
               )}
               {next ? (
                 <Link
                   href={`/learn/${next.slug}`}
-                  className={cn(buttonVariants({ variant: done ? "default" : "outline" }), "max-w-[55%]")}
+                  className={cn(buttonVariants({ variant: done ? "default" : "outline" }), "h-11 w-full sm:h-9 sm:w-auto sm:max-w-[55%]")}
                 >
                   <span className="truncate">Next: {next.title}</span> <ArrowRight />
                 </Link>
               ) : (
-                <Link href="/dashboard" className={buttonVariants()}>
+                <Link href="/dashboard" className={cn(buttonVariants(), "h-11 w-full sm:h-9 sm:w-auto")}>
                   Finish course <ArrowRight />
                 </Link>
               )}

@@ -133,3 +133,25 @@
     radial-gradient(ellipse 70% 50% at 90% 10%, rgb(234 88 12 / 12%), transparent 50%),
     linear-gradient(180deg, #f0fdfa 0%, #ffffff 55%, #ffffff 100%);
 }
+
+/* Below sm, card grids become a horizontal swipe row. Unlayered so it beats the grid utilities. */
+@media (width < 40rem) {
+  .rail {
+    display: flex;
+    gap: 0.75rem;
+    margin-inline: -1rem;
+    padding: 0.25rem 1rem 0.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1rem;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .rail::-webkit-scrollbar {
+    display: none;
+  }
+  .rail > * {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+}

@@ -156,12 +156,12 @@ export default function Home() {
         <section className="relative overflow-hidden border-b border-border">
           <div className="bg-hero-wash absolute inset-0" />
           <div className="bg-grid absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]" />
-          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-10 md:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div className="text-center lg:text-left">
               <p className="mb-4 font-heading text-sm font-semibold tracking-wide text-brand-teal uppercase">
                 BeyondPlaced · AI engineering for campus
               </p>
-              <h1 className="text-5xl font-extrabold tracking-tight text-balance text-brand-ink md:text-6xl lg:text-7xl">
+              <h1 className="text-[2.6rem] leading-[1.05] font-extrabold tracking-tight text-balance text-brand-ink sm:text-5xl md:text-6xl lg:text-7xl">
                 Learn AI <span className="text-brand-teal">by building it.</span>
               </h1>
               <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground text-pretty lg:mx-0">
@@ -216,7 +216,7 @@ export default function Home() {
         </section>
 
         <section id="sell" className="scroll-mt-20 border-b border-border bg-brand-mist/60">
-          <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">
                 A product you can actually sell on campus
@@ -226,7 +226,7 @@ export default function Home() {
                 packaged around the AI engineering skills Indian recruiters ask for.
               </p>
             </div>
-            <div className="mt-10 grid gap-4 md:grid-cols-3">
+            <div className="rail mt-6 grid gap-4 md:mt-10 md:grid-cols-3">
               {[
                 {
                   title: "Hook with free Module 1",
@@ -275,14 +275,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="for-you" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-20">
+        <section id="for-you" className="mx-auto max-w-6xl scroll-mt-20 px-4 py-12 md:py-20">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Is {brand.name} for you?</h2>
             <p className="mt-3 text-muted-foreground">
               If you can write a for-loop and you are curious about AI, yes. Here is who usually joins.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="rail mt-6 grid gap-4 md:mt-10 md:grid-cols-3">
             {personas.map((p) => (
               <Card key={p.title} className="transition-transform hover:-translate-y-0.5">
                 <CardContent className="space-y-3">
@@ -308,12 +308,12 @@ export default function Home() {
         </section>
 
         <section id="how-it-works" className="scroll-mt-20 border-y border-border bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">How learning works here</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               The same simple loop for every lesson. Small steps, quick wins, and you always know what to do next.
             </p>
-            <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ol className="rail mt-6 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-4">
               {steps.map((s, i) => (
                 <li key={s.title} className="relative rounded-xl border border-border bg-white p-5">
                   <span className="font-heading text-5xl font-extrabold text-brand-mist">{i + 1}</span>
@@ -326,7 +326,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="roadmap" className="scroll-mt-20 bg-brand-mist/50 px-4 py-20">
+        <section id="roadmap" className="scroll-mt-20 bg-brand-mist/50 px-4 py-12 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students are learning</h2>
@@ -341,7 +341,7 @@ export default function Home() {
                 caption="Six modules from first API call to a hireable portfolio."
               />
             </div>
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rail mt-6 grid gap-5 sm:grid-cols-2 md:mt-10 lg:grid-cols-3">
               {modules.map((m, i) => {
                 const meta = moduleMeta[i];
                 const minutes = m.lessons.reduce((s, l) => s + l.minutes, 0);
@@ -395,13 +395,13 @@ export default function Home() {
         </section>
 
         <section id="projects" className="scroll-mt-20 border-y border-border bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Graduate with a portfolio, not just a certificate</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Each project comes with starter code, an evaluation checklist and a README template. Your GitHub tells the
               story for you.
             </p>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rail mt-6 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-4">
               {projects.map((p) => (
                 <div key={p.title} className="rounded-xl border border-border bg-white p-5">
                   <span className="grid size-10 place-items-center rounded-xl bg-brand-mist text-brand-teal">
@@ -415,9 +415,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 py-20">
+        <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
           <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students like you, shipping</h2>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <div className="rail mt-6 grid gap-4 md:mt-10 md:grid-cols-3">
             {testimonials.map((t) => (
               <div key={t.name} className="rounded-xl border border-border bg-white p-5">
                 <div className="flex gap-0.5">
@@ -441,7 +441,7 @@ export default function Home() {
         </section>
 
         <section id="pricing" className="scroll-mt-20 border-y border-border bg-brand-mist/50">
-          <div className="mx-auto max-w-6xl px-4 py-20">
+          <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Student-friendly pricing</h2>
               <p className="mt-3 text-muted-foreground">
@@ -501,7 +501,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-4 py-20">
+        <section id="faq" className="mx-auto max-w-3xl scroll-mt-20 px-4 py-12 md:py-20">
           <h2 className="text-center text-3xl font-bold tracking-tight md:text-4xl">Questions students ask us</h2>
           <Accordion className="mt-10">
             {faqs.map((f) => (
@@ -520,10 +520,10 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="mx-auto max-w-6xl px-4 pb-24">
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-teal via-teal-700 to-brand-ink p-10 text-center text-white md:p-16">
+        <section className="mx-auto max-w-6xl px-4 pb-16 md:pb-24">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-teal via-teal-700 to-brand-ink px-6 py-10 text-center text-white md:p-16">
             <div className="bg-grid absolute inset-0 opacity-20" />
-            <h2 className="relative text-4xl font-extrabold tracking-tight md:text-5xl">{brand.slogan}</h2>
+            <h2 className="relative text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">{brand.slogan}</h2>
             <p className="relative mx-auto mt-4 max-w-xl text-white/80">
               Your first AI app is 45 minutes away. Module 1 is free and needs no card. Make your first LLM API call
               today.
