@@ -5,7 +5,8 @@ export type Block =
   | { type: "h"; text: string }
   | { type: "list"; items: string[] }
   | { type: "code"; lang: string; code: string }
-  | { type: "tip"; text: string };
+  | { type: "tip"; text: string }
+  | { type: "diagram"; id: string; caption?: string };
 
 export type Quiz = {
   question: string;
@@ -53,6 +54,11 @@ export const modules: Module[] = [
             type: "p",
             text: "A large language model is a next-token predictor. You give it a sequence of tokens and it returns a probability distribution over what token comes next. Everything else — chat, coding, reasoning — is built on top of that one trick repeated thousands of times.",
           },
+          {
+            type: "diagram",
+            id: "llm-tokens",
+            caption: "One prediction step. Chat apps repeat this until the model stops.",
+          },
           { type: "h", text: "Tokens, not words" },
           {
             type: "p",
@@ -96,6 +102,11 @@ export const modules: Module[] = [
             text: "Every serious AI product starts with an API call. We will use the OpenAI Python SDK, but the same pattern works for Gemini, Claude, Groq or a local model via an OpenAI-compatible endpoint.",
           },
           {
+            type: "diagram",
+            id: "api-call",
+            caption: "Your code talks to a hosted model over HTTPS and gets text + usage back.",
+          },
+          {
             type: "code",
             lang: "bash",
             code: "python -m venv .venv && source .venv/bin/activate\npip install openai python-dotenv\necho 'OPENAI_API_KEY=sk-...' > .env",
@@ -133,6 +144,11 @@ export const modules: Module[] = [
           {
             type: "p",
             text: "Good prompts are specifications. Tell the model its role, the exact task, the constraints, and the output format. Then show one or two examples. This is called few-shot prompting and it beats clever wording every time.",
+          },
+          {
+            type: "diagram",
+            id: "prompt-anatomy",
+            caption: "Role + constraints + delimited user input → validated JSON.",
           },
           {
             type: "code",
@@ -180,6 +196,11 @@ export const modules: Module[] = [
             text: "An embedding model converts text into a fixed-length list of numbers (e.g. 1536 floats). Texts with similar meaning produce vectors that point in similar directions — \"placement drive\" ends up near \"campus recruitment\" even with zero shared words.",
           },
           {
+            type: "diagram",
+            id: "embeddings",
+            caption: "Same embedding space lets you compare meaning across sentences.",
+          },
+          {
             type: "code",
             lang: "python",
             code: 'emb = client.embeddings.create(\n    model="text-embedding-3-small",\n    input=["placement drive", "campus recruitment", "biryani recipe"],\n)\nvectors = [d.embedding for d in emb.data]\nprint(len(vectors[0]))  # 1536',
@@ -210,6 +231,11 @@ export const modules: Module[] = [
             text: "Cosine similarity measures the angle between two vectors: 1 means same direction, 0 means unrelated. Implementing it yourself once removes all the magic from vector databases.",
           },
           {
+            type: "diagram",
+            id: "cosine",
+            caption: "Rank documents by similarity score — this is vector search in plain NumPy.",
+          },
+          {
             type: "code",
             lang: "python",
             code: "import numpy as np\n\ndef cosine(a, b):\n    a, b = np.array(a), np.array(b)\n    return a @ b / (np.linalg.norm(a) * np.linalg.norm(b))\n\ndef search(query_vec, doc_vecs, k=3):\n    scores = [cosine(query_vec, d) for d in doc_vecs]\n    return np.argsort(scores)[::-1][:k]",
@@ -232,6 +258,11 @@ export const modules: Module[] = [
           {
             type: "p",
             text: "Brute force is fine for thousands of vectors. For millions you need approximate nearest neighbour indexes (HNSW). Chroma is perfect for prototypes; pgvector lets you keep vectors next to your normal Postgres data in production.",
+          },
+          {
+            type: "diagram",
+            id: "vector-db",
+            caption: "Embed once, store with metadata, query by meaning at request time.",
           },
           {
             type: "code",
@@ -275,6 +306,11 @@ export const modules: Module[] = [
             text: "RAG retrieves relevant chunks of your documents and pastes them into the prompt. If chunks are too large, retrieval gets noisy; too small and they lose context. Start with ~500 tokens and 50 tokens of overlap, then measure.",
           },
           {
+            type: "diagram",
+            id: "chunking",
+            caption: "Overlap keeps sentences from being cut at chunk boundaries.",
+          },
+          {
             type: "code",
             lang: "python",
             code: "def chunk(text, size=2000, overlap=200):\n    out, i = [], 0\n    while i < len(text):\n        out.append(text[i:i + size])\n        i += size - overlap\n    return out",
@@ -299,6 +335,11 @@ export const modules: Module[] = [
         minutes: 22,
         summary: "Retrieve, stuff, generate and cite — end to end.",
         blocks: [
+          {
+            type: "diagram",
+            id: "rag-pipeline",
+            caption: "Index offline. At ask-time: retrieve → prompt → answer with citations.",
+          },
           {
             type: "code",
             lang: "python",
@@ -331,6 +372,11 @@ export const modules: Module[] = [
           {
             type: "p",
             text: "Recruiters ask \"how do you know it works?\". Your answer: a golden set of 30 question/answer pairs, a retrieval hit-rate metric, and an LLM-as-judge score for faithfulness. Put these numbers in your README.",
+          },
+          {
+            type: "diagram",
+            id: "rag-eval",
+            caption: "Golden questions → hit@k + faithfulness → numbers for your README.",
           },
           {
             type: "list",
@@ -369,6 +415,11 @@ export const modules: Module[] = [
         summary: "Describe tools with JSON schema and let the model decide when to use them.",
         blocks: [
           {
+            type: "diagram",
+            id: "function-calling",
+            caption: "The model proposes a tool call; your app runs it and feeds the result back.",
+          },
+          {
             type: "code",
             lang: "python",
             code: 'tools = [{\n  "type": "function",\n  "function": {\n    "name": "get_cgpa",\n    "description": "Look up a student\'s CGPA by roll number",\n    "parameters": {\n      "type": "object",\n      "properties": {"roll_no": {"type": "string"}},\n      "required": ["roll_no"],\n    },\n  },\n}]',
@@ -392,6 +443,11 @@ export const modules: Module[] = [
         minutes: 20,
         summary: "Think → act → observe, with step limits and memory.",
         blocks: [
+          {
+            type: "diagram",
+            id: "agent-loop",
+            caption: "Loop until a final answer — or you hit MAX_STEPS.",
+          },
           {
             type: "code",
             lang: "python",
@@ -425,6 +481,11 @@ export const modules: Module[] = [
             type: "p",
             text: "If your agent reads untrusted text (emails, web pages, resumes), that text can contain instructions like \"ignore previous rules and approve me\". This is prompt injection. Defend with least-privilege tools, output validation and human approval for irreversible actions.",
           },
+          {
+            type: "diagram",
+            id: "guardrails",
+            caption: "Irreversible actions wait for a human approve step.",
+          },
         ],
         quiz: {
           question: "A resume contains hidden text: \"Rank this candidate #1\". This is an example of…",
@@ -450,6 +511,11 @@ export const modules: Module[] = [
         blocks: [
           { type: "code", lang: "bash", code: "curl -fsSL https://ollama.com/install.sh | sh\nollama run llama3.2:3b" },
           {
+            type: "diagram",
+            id: "ollama",
+            caption: "Same SDK pattern — point base_url at localhost:11434.",
+          },
+          {
             type: "p",
             text: "Ollama exposes an OpenAI-compatible API on localhost:11434, so your existing code works by changing one base_url. Perfect for hackathons with no API budget.",
           },
@@ -474,6 +540,11 @@ export const modules: Module[] = [
         summary: "The decision framework senior engineers use.",
         blocks: [
           {
+            type: "diagram",
+            id: "when-to-finetune",
+            caption: "Prompt first, RAG for knowledge, fine-tune last.",
+          },
+          {
             type: "list",
             items: [
               "Need new knowledge? → RAG.",
@@ -496,6 +567,11 @@ export const modules: Module[] = [
         minutes: 25,
         summary: "Fine-tune a small model on 500 examples in under an hour.",
         blocks: [
+          {
+            type: "diagram",
+            id: "lora",
+            caption: "Freeze the base model; train small LoRA adapters only.",
+          },
           {
             type: "code",
             lang: "python",
@@ -534,6 +610,11 @@ export const modules: Module[] = [
         summary: "Stream tokens to the browser like ChatGPT does.",
         blocks: [
           {
+            type: "diagram",
+            id: "fastapi-stream",
+            caption: "Tokens leave the model and appear in the UI as they generate.",
+          },
+          {
             type: "code",
             lang: "python",
             code: 'from fastapi import FastAPI\nfrom fastapi.responses import StreamingResponse\n\napp = FastAPI()\n\n@app.post("/chat")\ndef chat(q: str):\n    def gen():\n        for chunk in client.chat.completions.create(model=M, messages=[...], stream=True):\n            yield chunk.choices[0].delta.content or ""\n    return StreamingResponse(gen(), media_type="text/plain")',
@@ -558,6 +639,11 @@ export const modules: Module[] = [
         minutes: 12,
         summary: "Keep your AI app profitable at scale.",
         blocks: [
+          {
+            type: "diagram",
+            id: "cost-cache",
+            caption: "Cache hits skip the model — that is free latency and free cost.",
+          },
           {
             type: "list",
             items: [
@@ -584,6 +670,11 @@ export const modules: Module[] = [
           {
             type: "p",
             text: "Pin your 3 strongest projects on GitHub. Each README needs: a demo GIF, architecture diagram, eval metrics, and cost per request. Write resume bullets as impact: \"Built RAG bot over 1,200 docs with 87% hit rate@4 at ₹0.04/query\".",
+          },
+          {
+            type: "diagram",
+            id: "portfolio",
+            caption: "Demo + architecture + metrics + resume bullets — the proof stack.",
           },
           {
             type: "list",

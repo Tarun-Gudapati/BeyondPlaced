@@ -29,6 +29,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { allLessons, modules, totalMinutes } from "@/lib/course";
 import { brand } from "@/lib/brand";
 import { formatINR, plans } from "@/lib/pricing";
+import { CourseDiagram } from "@/components/course-diagram";
 import { cn } from "@/lib/utils";
 
 const personas = [
@@ -271,6 +272,12 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <div className="mt-10">
+              <CourseDiagram
+                id="campus-funnel"
+                caption="How a campus sale actually flows — free Module 1 into paid Pro."
+              />
+            </div>
           </div>
         </section>
 
@@ -332,6 +339,12 @@ export default function Home() {
               Built backwards from 400+ AI engineer job posts at Indian startups and product companies. Each module
               ends with a project for your GitHub.
             </p>
+          </div>
+          <div className="mt-10">
+            <CourseDiagram
+              id="learning-path"
+              caption="Six modules from first API call to a hireable portfolio."
+            />
           </div>
           <ol className="relative mt-12 space-y-6 border-l-2 border-dashed border-border pl-8 md:pl-10">
             {modules.map((m, i) => {

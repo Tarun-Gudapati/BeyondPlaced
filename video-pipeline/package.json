@@ -1,0 +1,11 @@
+{
+  "name": "beyondplaced-video-pipeline",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "voices": "node src/list-voices.js",
+    "tts": "node src/run.js --tts",
+    "render": "node src/run.js --tts --render",
+    "one": "node src/run.js --tts --slug"
+  }
+}

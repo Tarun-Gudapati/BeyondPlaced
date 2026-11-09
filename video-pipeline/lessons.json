@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "how-llms-work",
+    "title": "How LLMs actually work (without the maths panic)",
+    "module": "LLM Foundations",
+    "hook": "An LLM is not magic. It is a next-token predictor — and that one idea unlocks everything.",
+    "narration": "Welcome to BeyondPlaced. This is lesson one: how large language models actually work — without the maths panic.\n\nA large language model predicts the next token. You give it text. It returns probabilities for what comes next. Chat, coding, reasoning — all of that is the same trick, repeated thousands of times.\n\nModels do not read words. They read tokens: chunks of a few characters. You pay per token. Every model has a context window that holds your prompt and its answer together.\n\nTemperature controls randomness. Zero is focused. Around zero point seven is more creative. And the model has no memory between calls — your app resends the conversation every time.\n\nHallucinations happen because the model optimises for plausible text, not true text.\n\nInterview gold: an LLM is stateless. Memory is an application-level concern. Say that, and you already sound like an engineer.\n\nNext: your first LLM API call in Python. Module one is free on BeyondPlaced."
+  },
+  {
+    "slug": "first-api-call",
+    "title": "Your first LLM API call in Python",
+    "module": "LLM Foundations",
+    "hook": "Your first AI app is one API call away. No GPU. No PhD.",
+    "narration": "Lesson two: your first LLM API call in Python.\n\nInstall the OpenAI SDK — it works with OpenAI and many compatible providers. Set your API key as an environment variable. Never hard-code secrets.\n\nCreate a client. Call chat completions with a model like GPT-4o-mini, and a messages array with a user prompt. Print the reply. That is a working AI feature.\n\nWatch the usage object: prompt tokens plus completion tokens. That is your cost. Small models keep a whole course under a few hundred rupees.\n\nYour task: build a CLI study buddy that explains any concept at three difficulty levels — simple, normal, and interview-ready.\n\nShip that, and you have project number one on your GitHub. Continue free on BeyondPlaced."
+  },
+  {
+    "slug": "prompt-engineering",
+    "title": "Prompt engineering that survives production",
+    "module": "LLM Foundations",
+    "hook": "Cute prompts die in production. Structured prompts ship.",
+    "narration": "Lesson three: prompt engineering that survives production.\n\nA production prompt has a clear role, constraints, input data, and an output format — preferably JSON the app can parse.\n\nSeparate system instructions from user content. Put untrusted user text in a delimited block so the model is less likely to follow injected instructions.\n\nAsk for structured output. Validate it in code. Retry on parse failure. That pattern beats clever wording every time.\n\nWhen you demo, show the prompt template and one failing input you handled. Recruiters notice engineering, not vibes.\n\nModule one project: finish the study buddy with difficulty levels and safe prompt structure. Then we move to embeddings."
+  },
+  {
+    "slug": "embeddings-intuition",
+    "title": "Embeddings: meaning as numbers",
+    "module": "Embeddings & Vector Search",
+    "hook": "Embeddings turn meaning into numbers — so you can search by idea, not keywords.",
+    "narration": "Module two starts here: embeddings — meaning as numbers.\n\nAn embedding model maps text to a fixed-length vector. Similar meanings point in similar directions. Placement drive lands near campus recruitment even with zero shared words.\n\nYou embed queries and documents into the same space, then search by similarity. That is the foundation of semantic search and RAG.\n\nCall the embeddings API, store the vectors, and remember: embedding quality beats fancy databases for most student projects.\n\nNext we compute cosine similarity from scratch with NumPy — so you understand what the database is doing."
+  },
+  {
+    "slug": "cosine-similarity",
+    "title": "Cosine similarity from scratch with NumPy",
+    "module": "Embeddings & Vector Search",
+    "hook": "If you can compute cosine similarity, you understand vector search.",
+    "narration": "Lesson: cosine similarity from scratch with NumPy.\n\nCosine similarity is the cos of the angle between two vectors. One means same direction. Zero means unrelated. Negative means opposite.\n\nImplement it yourself once: dot product over magnitudes. Then compare a query embedding against a list of document embeddings and rank the top matches.\n\nThat ranking loop is what vector databases accelerate. When you can explain it on a whiteboard, interviews get easier.\n\nNext: Chroma and pgvector — where those vectors live in a real app."
+  },
+  {
+    "slug": "vector-databases",
+    "title": "Vector databases: Chroma and pgvector",
+    "module": "Embeddings & Vector Search",
+    "hook": "Vectors need a home. Chroma for demos. Postgres with pgvector when you ship.",
+    "narration": "Vector databases: Chroma and pgvector.\n\nChroma is perfect for local demos — embed, store, query in a few lines. pgvector keeps vectors next to your real app data in Postgres, which is what many startups already run.\n\nStore the raw text, metadata like source and page, and the embedding. On query: embed the question, run similarity search, return the top chunks.\n\nModule project: semantic search over past question papers. That alone is a resume bullet most classmates will not have.\n\nThen we build RAG — retrieval plus generation with citations."
+  },
+  {
+    "slug": "chunking",
+    "title": "Chunking documents the right way",
+    "module": "RAG: Retrieval-Augmented Generation",
+    "hook": "Bad chunks make smart models look dumb. Fix chunking first.",
+    "narration": "RAG module: chunking documents the right way.\n\nYou cannot stuff a whole PDF into every prompt. You split documents into chunks — big enough for meaning, small enough to retrieve precisely.\n\nPrefer splitting on headings and paragraphs. Use overlap so sentences are not cut in half. Keep metadata: filename, page, section.\n\nIf retrieval is wrong, generation will be wrong. Debug chunks before you blame the model.\n\nNext: the full RAG pipeline with citations — the skill job posts ask for most."
+  },
+  {
+    "slug": "rag-pipeline",
+    "title": "The full RAG pipeline with citations",
+    "module": "RAG: Retrieval-Augmented Generation",
+    "hook": "If your chatbot cannot show sources, it is a toy. RAG adds citations.",
+    "narration": "The full RAG pipeline with citations.\n\nRetrieve the top chunks for the question. Build a prompt that includes only those chunks. Ask the model to answer and cite chunk ids. Return the answer plus sources to the UI.\n\nThis is how you reduce hallucinations on private documents — college notes, policies, product docs.\n\nYour project: chat with your PDF, with clickable citations. That is portfolio gold for AI engineer roles.\n\nNext: evaluating RAG so you can prove it works with numbers."
+  },
+  {
+    "slug": "evaluating-rag",
+    "title": "Evaluating RAG so you can prove it works",
+    "module": "RAG: Retrieval-Augmented Generation",
+    "hook": "Recruiters love metrics. Measure hit rate, not vibes.",
+    "narration": "Evaluating RAG so you can prove it works.\n\nBuild a small set of questions with known answers. Measure retrieval hit rate — did the right chunk appear in the top k? Measure answer faithfulness — did the model stick to retrieved text?\n\nLog cost per query and latency. Put those numbers in your README.\n\nAnanya-style resume line: built RAG over twelve hundred docs, eighty-seven percent hit rate at k equals four, four paise per query.\n\nThat is how you turn a project into interview calls."
+  },
+  {
+    "slug": "function-calling",
+    "title": "Function calling: giving LLMs hands",
+    "module": "Agents & Tool Calling",
+    "hook": "Function calling gives LLMs hands — APIs, databases, real actions.",
+    "narration": "Agents module: function calling — giving LLMs hands.\n\nYou declare tools with names, descriptions, and JSON schemas. The model returns a tool call instead of plain text. Your code runs the function and sends the result back.\n\nThat loop turns a chatbot into a system that can search, filter, and act.\n\nKeep tools narrow and typed. Wide tools are hard to test and easy to abuse.\n\nNext: building a full agent loop from scratch."
+  },
+  {
+    "slug": "agent-loop",
+    "title": "Building an agent loop from scratch",
+    "module": "Agents & Tool Calling",
+    "hook": "An agent is a loop: think, call tools, observe, repeat — with a stop condition.",
+    "narration": "Building an agent loop from scratch.\n\nWhile the model requests tools, execute them, append results, and call again. Cap the steps. Stop on final answer or on error.\n\nLog every tool call. That log is your debugger and your demo.\n\nProject direction: a resume-screening agent that reads PDFs, scores candidates, and prepares a shortlist — with a human approval step before email.\n\nNext: guardrails, safety, and human-in-the-loop."
+  },
+  {
+    "slug": "guardrails",
+    "title": "Guardrails, safety and human-in-the-loop",
+    "module": "Agents & Tool Calling",
+    "hook": "Agents without guardrails are demos. Production needs human-in-the-loop.",
+    "narration": "Guardrails, safety, and human-in-the-loop.\n\nNever let an agent send email, charge money, or delete data without confirmation. Validate tool arguments in code. Allow-list domains and actions.\n\nPrompt injection is real — treat retrieved documents and resumes as untrusted text.\n\nIn your resume-screener, the shortlist email waits for a human click. That one design choice shows you think like a professional engineer."
+  },
+  {
+    "slug": "local-models",
+    "title": "Running Llama & Qwen locally with Ollama",
+    "module": "Open Models & Fine-tuning",
+    "hook": "Run Llama and Qwen on your laptop with Ollama — zero API bill for practice.",
+    "narration": "Open models: running Llama and Qwen locally with Ollama.\n\nInstall Ollama, pull a small model, and chat from the terminal or an API on localhost. Great for learning, privacy, and cutting API costs.\n\nLocal models are weaker than the best hosted ones — but perfect for iteration and demos without a key.\n\nKnow when to use local versus hosted. That trade-off question shows up in interviews."
+  },
+  {
+    "slug": "when-to-finetune",
+    "title": "Prompting vs RAG vs fine-tuning",
+    "module": "Open Models & Fine-tuning",
+    "hook": "Prompt first. RAG second. Fine-tune last — and only with a reason.",
+    "narration": "Prompting versus RAG versus fine-tuning.\n\nPrompting fixes instructions and format. RAG adds fresh private knowledge. Fine-tuning changes style or specialised behaviour when you have enough examples.\n\nMost campus projects should stop at RAG. Fine-tune when you need consistent tone — like Hinglish support — and you can measure improvement.\n\nNext: LoRA fine-tuning on a free Colab GPU."
+  },
+  {
+    "slug": "lora-finetuning",
+    "title": "LoRA fine-tuning on a free Colab GPU",
+    "module": "Open Models & Fine-tuning",
+    "hook": "LoRA lets you fine-tune without training every parameter — doable on free Colab.",
+    "narration": "LoRA fine-tuning on a free Colab GPU.\n\nLoRA adds small trainable adapters on top of a frozen base model. You prepare instruction examples, train briefly, and export adapters.\n\nProject: a Hinglish customer-support style model. Keep a before-and-after comparison in your README — that is the proof.\n\nThen we ship: FastAPI, streaming, cost, and interviews."
+  },
+  {
+    "slug": "fastapi-streaming",
+    "title": "FastAPI backend with streaming responses",
+    "module": "Ship to Production & Get Hired",
+    "hook": "Ship a streaming FastAPI backend — tokens appear as they generate.",
+    "narration": "FastAPI backend with streaming responses.\n\nWrap your model or provider calls in an API. Stream tokens to the client so the UI feels alive. Add basic auth and rate limits even in a student project.\n\nA public URL with streaming beats a notebook screenshot in every interview.\n\nNext: cost, latency, and caching — how to keep a demo from burning money."
+  },
+  {
+    "slug": "cost-latency",
+    "title": "Cost, latency and caching",
+    "module": "Ship to Production & Get Hired",
+    "hook": "Anyone can call an API. Engineers measure cost and latency.",
+    "narration": "Cost, latency, and caching.\n\nCache embeddings and frequent answers. Use smaller models for classification. Batch where you can. Log tokens per request.\n\nPut cost per query in your portfolio README. That single number separates builders from tutorial followers.\n\nFinal lesson: portfolio, resume, and AI interview prep."
+  },
+  {
+    "slug": "portfolio-interviews",
+    "title": "Portfolio, resume and AI interview prep",
+    "module": "Ship to Production & Get Hired",
+    "hook": "Your GitHub should tell a story with metrics — not a graveyard of unfinished clones.",
+    "narration": "Portfolio, resume, and AI interview prep.\n\nLead with three metric-driven bullets: what you built, at what scale, with what result. Link live demos. Be ready to explain RAG, agents, and trade-offs on a whiteboard.\n\nBeyondPlaced takes you from first API call to a portfolio recruiters can open.\n\nModule one is free. Build your first project today — then keep going through all six."
+  }
+]

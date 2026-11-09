@@ -27,6 +27,7 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { submitQuiz } from "@/app/actions/progress";
 import { brand } from "@/lib/brand";
 import type { Block, OutlineModule } from "@/lib/course";
+import { CourseDiagram, isDiagramId } from "@/components/course-diagram";
 import { formatINR, getPlan } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
@@ -116,6 +117,9 @@ function RenderBlock({ block }: { block: Block }) {
           <p>{block.text}</p>
         </div>
       );
+    case "diagram":
+      if (!isDiagramId(block.id)) return null;
+      return <CourseDiagram id={block.id} caption={block.caption} />;
   }
 }
 

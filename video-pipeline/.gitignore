@@ -1,0 +1,6 @@
+.env
+out/
+*.mp3
+*.mp4
+*.srt
+!lessons/
