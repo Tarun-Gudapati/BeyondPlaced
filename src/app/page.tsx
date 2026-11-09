@@ -9,12 +9,10 @@ import {
   Clock,
   Code2,
   FileSearch,
-  Flame,
   GraduationCap,
   Laptop,
   PlayCircle,
   Rocket,
-  Sparkles,
   Sprout,
   Star,
   Trophy,
@@ -74,9 +72,9 @@ const moduleMeta = [
 ];
 
 const levelStyle: Record<string, string> = {
-  Beginner: "bg-brand-mint/15 text-brand-mint",
-  Intermediate: "bg-brand-violet/15 text-brand-violet",
-  Advanced: "bg-brand-marigold/15 text-brand-marigold",
+  Beginner: "bg-brand-mist text-brand-teal",
+  Intermediate: "bg-teal-50 text-brand-teal",
+  Advanced: "bg-orange-50 text-brand-coral",
 };
 
 const projects = [
@@ -107,30 +105,32 @@ const faqs = [
 function HeroPreview() {
   return (
     <div className="relative mx-auto w-full max-w-md lg:mx-0">
-      <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-br from-brand-violet/25 via-brand-mint/10 to-transparent blur-2xl" />
-      <Card className="shadow-2xl shadow-black/40">
-        <CardContent className="space-y-4">
+      <div className="absolute -inset-4 -z-10 rounded-2xl bg-gradient-to-br from-brand-teal-bright/25 via-brand-mist to-brand-coral/10 blur-xl" />
+      <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm ring-1 ring-brand-teal/10">
+        <div className="border-b border-border bg-brand-mist px-4 py-3">
           <div className="flex items-center justify-between text-xs text-muted-foreground">
-            <span className="font-mono">MODULE 1 · LESSON 2</span>
+            <span className="font-mono font-medium text-brand-teal">MODULE 1 · LESSON 2</span>
             <span className="flex items-center gap-1">
               <Clock className="size-3.5" /> 15 min
             </span>
           </div>
-          <div className="font-heading text-lg font-semibold">Your first LLM API call in Python</div>
-          <div className="overflow-hidden rounded-lg border bg-black/40">
-            <div className="border-b px-3 py-1 font-mono text-[11px] text-muted-foreground">python</div>
-            <pre className="overflow-x-auto p-3 font-mono text-[12px] leading-5">
+          <div className="mt-1 font-heading text-lg font-semibold text-brand-ink">Your first LLM API call in Python</div>
+        </div>
+        <div className="space-y-4 p-4">
+          <div className="overflow-hidden rounded-lg border border-border bg-[#0b1220]">
+            <div className="border-b border-white/10 px-3 py-1 font-mono text-[11px] text-white/50">python</div>
+            <pre className="overflow-x-auto p-3 font-mono text-[12px] leading-5 text-white/90">
               <code>
-                <span className="text-brand-violet">resp</span> = client.chat.completions.create({"\n"}
-                {"  "}model=<span className="text-brand-mint">&quot;gpt-4o-mini&quot;</span>,{"\n"}
-                {"  "}messages=[{"{"}<span className="text-brand-mint">&quot;role&quot;</span>: <span className="text-brand-mint">&quot;user&quot;</span>,{"\n"}
-                {"    "}<span className="text-brand-mint">&quot;content&quot;</span>: <span className="text-brand-mint">&quot;Explain binary search&quot;</span>{"}"}],{"\n"}
+                <span className="text-brand-teal-bright">resp</span> = client.chat.completions.create({"\n"}
+                {"  "}model=<span className="text-orange-300">&quot;gpt-4o-mini&quot;</span>,{"\n"}
+                {"  "}messages=[{"{"}<span className="text-brand-teal-bright">&quot;role&quot;</span>: <span className="text-brand-teal-bright">&quot;user&quot;</span>,{"\n"}
+                {"    "}<span className="text-brand-teal-bright">&quot;content&quot;</span>: <span className="text-orange-300">&quot;Explain binary search&quot;</span>{"}"}],{"\n"}
                 ){"\n"}
-                <span className="text-muted-foreground"># tokens used: 182</span>
+                <span className="text-white/40"># tokens used: 182</span>
               </code>
             </pre>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-brand-mint/10 p-3 text-sm text-brand-mint">
+          <div className="flex items-center gap-2 rounded-lg bg-brand-mist p-3 text-sm text-brand-teal">
             <CheckCircle2 className="size-4 shrink-0" /> Correct! Lesson complete.
           </div>
           <div className="space-y-1.5">
@@ -138,17 +138,11 @@ function HeroPreview() {
               <span>Your progress</span>
               <span>2 of {allLessons.length} lessons</span>
             </div>
-            <div className="h-2 overflow-hidden rounded-full bg-muted">
-              <div className="h-full w-[11%] rounded-full bg-gradient-to-r from-brand-violet to-brand-mint" />
+            <div className="h-2 overflow-hidden rounded-md bg-muted">
+              <div className="h-full w-[11%] rounded-md bg-gradient-to-r from-brand-teal to-brand-teal-bright" />
             </div>
           </div>
-        </CardContent>
-      </Card>
-      <div className="absolute -top-4 -right-3 flex items-center gap-1.5 rounded-full border bg-card px-3 py-1.5 text-xs font-medium shadow-lg sm:-right-6">
-        <Flame className="size-3.5 text-brand-marigold" /> 5-day streak
-      </div>
-      <div className="absolute -bottom-4 -left-3 flex items-center gap-1.5 rounded-full border bg-card px-3 py-1.5 text-xs font-medium shadow-lg sm:-left-6">
-        <Sparkles className="size-3.5 text-brand-violet" /> No maths panic
+        </div>
       </div>
     </div>
   );
@@ -159,43 +153,45 @@ export default function Home() {
     <>
       <SiteHeader />
       <main className="flex-1">
-        <section className="relative overflow-hidden border-b border-border/60">
-          <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
-          <div className="absolute -top-40 left-1/3 h-96 w-[48rem] -translate-x-1/2 rounded-full bg-brand-violet/20 blur-3xl" />
-          <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr]">
+        <section className="relative overflow-hidden border-b border-border">
+          <div className="bg-hero-wash absolute inset-0" />
+          <div className="bg-grid absolute inset-0 opacity-70 [mask-image:radial-gradient(ellipse_at_top,black,transparent_75%)]" />
+          <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 md:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
             <div className="text-center lg:text-left">
-              <Badge variant="outline" className="mb-6 gap-1.5 border-brand-mint/40 py-1 text-brand-mint">
-                <Sparkles className="size-3.5" /> Built for campus · Module 1 free to sell
-              </Badge>
-              <h1 className="text-5xl font-extrabold tracking-tight text-balance md:text-7xl">
-                Learn AI <span className="text-brand-gradient">by building it.</span>
+              <p className="mb-4 font-heading text-sm font-semibold tracking-wide text-brand-teal uppercase">
+                BeyondPlaced · AI engineering for campus
+              </p>
+              <h1 className="text-5xl font-extrabold tracking-tight text-balance text-brand-ink md:text-6xl lg:text-7xl">
+                Learn AI <span className="text-brand-teal">by building it.</span>
               </h1>
-              <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground text-pretty lg:mx-0">
-                {brand.name} is a ready-to-sell AI engineering course for Indian college students. Short lessons, plain
-                English, zero maths panic — and the full stack they need for placements: LLMs, RAG, agents, fine-tuning
-                and deploy.
+              <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground text-pretty lg:mx-0">
+                Short lessons. Plain English. Six portfolio projects. The skills Indian recruiters ask for — LLMs, RAG,
+                agents, fine-tuning and deploy.
               </p>
               <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-                <Link href="/learn/how-llms-work" className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-xl px-6 text-base")}>
+                <Link
+                  href="/learn/how-llms-work"
+                  className={cn(buttonVariants({ size: "lg" }), "h-12 rounded-lg bg-brand-teal px-6 text-base text-white hover:bg-brand-teal/90")}
+                >
                   <PlayCircle /> Start Module 1 free
                 </Link>
                 <Link
                   href="#roadmap"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-xl px-6 text-base")}
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }), "h-12 rounded-lg border-brand-teal/30 px-6 text-base text-brand-teal hover:bg-brand-mist")}
                 >
-                  See the roadmap <ArrowRight />
+                  Browse the course <ArrowRight />
                 </Link>
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">No card needed. Sign up takes 30 seconds.</p>
+              <p className="mt-3 text-sm text-muted-foreground">No card needed · Sign up in 30 seconds</p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground lg:justify-start">
                 <span className="flex items-center gap-1.5">
-                  <Star className="size-4 fill-brand-marigold text-brand-marigold" /> 4.9/5 from 1,200+ learners
+                  <Star className="size-4 fill-brand-coral text-brand-coral" /> 4.9/5 from 1,200+ learners
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Clock className="size-4" /> 10–25 min lessons
+                  <Clock className="size-4 text-brand-teal" /> 10–25 min lessons
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <GraduationCap className="size-4" /> No ML background needed
+                  <GraduationCap className="size-4 text-brand-teal" /> No ML background needed
                 </span>
               </div>
             </div>
@@ -219,10 +215,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="sell" className="scroll-mt-20 border-b border-border/60 bg-card/40">
+        <section id="sell" className="scroll-mt-20 border-b border-border bg-brand-mist/60">
           <div className="mx-auto max-w-6xl px-4 py-20">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">
                 A product you can actually sell on campus
               </h2>
               <p className="mt-3 text-muted-foreground">
@@ -245,12 +241,10 @@ export default function Home() {
                   desc: "Pro at ₹2,999 with campus coupons. UPI-ready checkout. 7-day refund so the sale feels safe.",
                 },
               ].map((item) => (
-                <Card key={item.title}>
-                  <CardContent className="space-y-2">
-                    <h3 className="font-semibold">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                  </CardContent>
-                </Card>
+                <div key={item.title} className="rounded-xl border border-border bg-white p-5">
+                  <h3 className="font-semibold text-brand-ink">{item.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                </div>
               ))}
             </div>
             <ul className="mt-8 flex flex-wrap gap-2 text-sm">
@@ -267,7 +261,7 @@ export default function Home() {
                 "Cost & latency",
                 "AI interview prep",
               ].map((topic) => (
-                <li key={topic} className="rounded-full border border-border/80 bg-background/60 px-3 py-1">
+                <li key={topic} className="rounded-md border border-border bg-white px-3 py-1 text-brand-ink">
                   {topic}
                 </li>
               ))}
@@ -292,7 +286,7 @@ export default function Home() {
             {personas.map((p) => (
               <Card key={p.title} className="transition-transform hover:-translate-y-0.5">
                 <CardContent className="space-y-3">
-                  <span className="grid size-10 place-items-center rounded-xl bg-brand-violet/15 text-brand-violet">
+                  <span className="grid size-10 place-items-center rounded-xl bg-brand-mist text-brand-teal">
                     <p.icon className="size-5" />
                   </span>
                   <h3 className="text-lg font-semibold">{p.title}</h3>
@@ -306,25 +300,25 @@ export default function Home() {
             <ul className="grid gap-3 text-sm text-muted-foreground sm:grid-cols-2 lg:grid-cols-4">
               {needs.map((n) => (
                 <li key={n.text} className="flex items-center gap-2">
-                  <n.icon className="size-4 shrink-0 text-brand-mint" /> {n.text}
+                  <n.icon className="size-4 shrink-0 text-brand-teal" /> {n.text}
                 </li>
               ))}
             </ul>
           </div>
         </section>
 
-        <section id="how-it-works" className="scroll-mt-20 border-y border-border/60 bg-card/40">
+        <section id="how-it-works" className="scroll-mt-20 border-y border-border bg-white">
           <div className="mx-auto max-w-6xl px-4 py-20">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">How learning works here</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">How learning works here</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               The same simple loop for every lesson. Small steps, quick wins, and you always know what to do next.
             </p>
             <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {steps.map((s, i) => (
-                <li key={s.title} className="relative rounded-xl bg-card p-5 ring-1 ring-foreground/10">
-                  <span className="font-heading text-5xl font-extrabold text-foreground/10">{i + 1}</span>
-                  <s.icon className="absolute top-5 right-5 size-5 text-brand-violet" />
-                  <h3 className="mt-2 font-semibold">{s.title}</h3>
+                <li key={s.title} className="relative rounded-xl border border-border bg-white p-5">
+                  <span className="font-heading text-5xl font-extrabold text-brand-mist">{i + 1}</span>
+                  <s.icon className="absolute top-5 right-5 size-5 text-brand-teal" />
+                  <h3 className="mt-2 font-semibold text-brand-ink">{s.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
                 </li>
               ))}
@@ -332,140 +326,146 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="roadmap" className="mx-auto max-w-4xl scroll-mt-20 px-4 py-20">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Your 12-week roadmap</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
-              Built backwards from 400+ AI engineer job posts at Indian startups and product companies. Each module
-              ends with a project for your GitHub.
-            </p>
-          </div>
-          <div className="mt-10">
-            <CourseDiagram
-              id="learning-path"
-              caption="Six modules from first API call to a hireable portfolio."
-            />
-          </div>
-          <ol className="relative mt-12 space-y-6 border-l-2 border-dashed border-border pl-8 md:pl-10">
-            {modules.map((m, i) => {
-              const meta = moduleMeta[i];
-              const minutes = m.lessons.reduce((s, l) => s + l.minutes, 0);
-              return (
-                <li key={m.id} className="relative">
-                  <span
-                    className={cn(
-                      "absolute top-5 -left-[3.05rem] grid size-9 place-items-center rounded-full border-2 border-background font-heading text-sm font-bold md:-left-[3.55rem]",
-                      i === 0 ? "bg-brand-mint text-brand-night" : "bg-secondary text-foreground",
-                    )}
+        <section id="roadmap" className="scroll-mt-20 bg-brand-mist/50 px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students are learning</h2>
+              <p className="mt-3 text-muted-foreground">
+                Built backwards from 400+ AI engineer job posts. Browse the 6 modules like a course catalog — each ends
+                with a GitHub project.
+              </p>
+            </div>
+            <div className="mt-8">
+              <CourseDiagram
+                id="learning-path"
+                caption="Six modules from first API call to a hireable portfolio."
+              />
+            </div>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {modules.map((m, i) => {
+                const meta = moduleMeta[i];
+                const minutes = m.lessons.reduce((s, l) => s + l.minutes, 0);
+                const first = m.lessons[0];
+                return (
+                  <Link
+                    key={m.id}
+                    href={`/learn/${first?.slug ?? "how-llms-work"}`}
+                    className="group flex flex-col overflow-hidden rounded-xl border border-border bg-white transition hover:border-brand-teal/40 hover:shadow-md"
                   >
-                    {i + 1}
-                  </span>
-                  <Card className="transition-colors hover:ring-primary/40">
-                    <CardContent className="space-y-3">
+                    <div
+                      className={cn(
+                        "relative flex h-28 items-end p-4",
+                        i % 3 === 0 && "bg-gradient-to-br from-brand-teal to-brand-teal-bright",
+                        i % 3 === 1 && "bg-gradient-to-br from-teal-800 to-brand-teal",
+                        i % 3 === 2 && "bg-gradient-to-br from-brand-ink to-brand-teal",
+                      )}
+                    >
+                      <span className="font-heading text-4xl font-extrabold text-white/25">0{i + 1}</span>
+                      {i === 0 && (
+                        <span className="absolute top-3 right-3 rounded-md bg-white px-2 py-0.5 text-xs font-semibold text-brand-teal">
+                          Free
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex flex-1 flex-col gap-2 p-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs">
                         <span className="font-mono text-muted-foreground uppercase">{meta?.weeks}</span>
                         {meta && <Badge className={levelStyle[meta.level]}>{meta.level}</Badge>}
                         <span className="flex items-center gap-1 text-muted-foreground">
                           <Clock className="size-3" /> {minutes} min
                         </span>
-                        {i === 0 && <Badge className="bg-brand-mint text-brand-night">Free</Badge>}
                       </div>
-                      <h3 className="text-xl font-semibold">{m.title}</h3>
-                      <p className="text-sm text-muted-foreground">{m.outcome}</p>
-                      <ul className="flex flex-wrap gap-2 pt-1">
-                        {m.lessons.map((l) => (
-                          <li key={l.slug} className="rounded-full bg-muted px-3 py-1 text-xs">
-                            {l.title}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="flex items-start gap-2 rounded-lg bg-brand-violet/10 px-3 py-2 text-sm">
-                        <Trophy className="mt-0.5 size-4 shrink-0 text-brand-violet" />
-                        <span>
+                      <h3 className="font-heading text-lg font-semibold text-brand-ink group-hover:text-brand-teal">
+                        {m.title}
+                      </h3>
+                      <p className="line-clamp-2 text-sm text-muted-foreground">{m.outcome}</p>
+                      <div className="mt-auto flex items-start gap-2 rounded-lg bg-brand-mist px-3 py-2 text-sm">
+                        <Trophy className="mt-0.5 size-4 shrink-0 text-brand-teal" />
+                        <span className="text-brand-ink">
                           <span className="text-muted-foreground">You build: </span>
                           {m.project}
                         </span>
                       </div>
-                    </CardContent>
-                  </Card>
-                </li>
-              );
-            })}
-          </ol>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </section>
 
-        <section id="projects" className="scroll-mt-20 border-y border-border/60 bg-card/40">
+        <section id="projects" className="scroll-mt-20 border-y border-border bg-white">
           <div className="mx-auto max-w-6xl px-4 py-20">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Graduate with a portfolio, not just a certificate</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Graduate with a portfolio, not just a certificate</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
               Each project comes with starter code, an evaluation checklist and a README template. Your GitHub tells the
               story for you.
             </p>
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {projects.map((p) => (
-                <Card key={p.title}>
-                  <CardContent className="space-y-3">
-                    <span className="grid size-10 place-items-center rounded-xl bg-brand-mint/15 text-brand-mint">
-                      <p.icon className="size-5" />
-                    </span>
-                    <h3 className="font-semibold">{p.title}</h3>
-                    <p className="text-sm text-muted-foreground">{p.desc}</p>
-                  </CardContent>
-                </Card>
+                <div key={p.title} className="rounded-xl border border-border bg-white p-5">
+                  <span className="grid size-10 place-items-center rounded-xl bg-brand-mist text-brand-teal">
+                    <p.icon className="size-5" />
+                  </span>
+                  <h3 className="mt-3 font-semibold text-brand-ink">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-6xl px-4 py-20">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Students like you, shipping</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students like you, shipping</h2>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {testimonials.map((t) => (
-              <Card key={t.name}>
-                <CardContent className="space-y-4">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="size-4 fill-brand-marigold text-brand-marigold" />
-                    ))}
+              <div key={t.name} className="rounded-xl border border-border bg-white p-5">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-brand-coral text-brand-coral" />
+                  ))}
+                </div>
+                <p className="mt-4 text-pretty text-brand-ink">&ldquo;{t.quote}&rdquo;</p>
+                <div className="mt-4 flex items-center gap-3 text-sm">
+                  <span className="grid size-9 place-items-center rounded-lg bg-brand-teal font-semibold text-white">
+                    {t.name[0]}
+                  </span>
+                  <div>
+                    <div className="font-medium text-brand-ink">{t.name}</div>
+                    <div className="text-muted-foreground">{t.role}</div>
                   </div>
-                  <p className="text-pretty">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="grid size-9 place-items-center rounded-full bg-gradient-to-br from-brand-violet to-brand-mint font-semibold text-brand-night">
-                      {t.name[0]}
-                    </span>
-                    <div>
-                      <div className="font-medium">{t.name}</div>
-                      <div className="text-muted-foreground">{t.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </section>
 
-        <section id="pricing" className="scroll-mt-20 border-y border-border/60 bg-card/40">
+        <section id="pricing" className="scroll-mt-20 border-y border-border bg-brand-mist/50">
           <div className="mx-auto max-w-6xl px-4 py-20">
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl">Student-friendly pricing</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Student-friendly pricing</h2>
               <p className="mt-3 text-muted-foreground">
                 Pay once, keep it forever. Less than one month of coaching fees. UPI, cards and EMI accepted.
               </p>
             </div>
             <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
               {plans.map((p) => (
-                <Card key={p.id} className={cn("relative", p.highlight && "ring-2 ring-primary lg:-mt-4")}>
+                <Card key={p.id} className={cn("relative border-border bg-white", p.highlight && "ring-2 ring-brand-teal lg:-mt-4")}>
                   {p.highlight && (
-                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">Most students pick this</Badge>
+                    <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-teal text-white">
+                      Most students pick this
+                    </Badge>
                   )}
                   <CardContent className="space-y-5 pt-2">
                     <div>
-                      <h3 className="text-lg font-semibold">{p.name}</h3>
+                      <h3 className="text-lg font-semibold text-brand-ink">{p.name}</h3>
                       <p className="text-sm text-muted-foreground">{p.tagline}</p>
                     </div>
                     <div>
                       <div className="flex items-baseline gap-2">
-                        <span className="font-heading text-4xl font-bold">{p.price === 0 ? "Free" : formatINR(p.price)}</span>
+                        <span className="font-heading text-4xl font-bold text-brand-ink">
+                          {p.price === 0 ? "Free" : formatINR(p.price)}
+                        </span>
                         {p.mrp && <span className="text-muted-foreground line-through">{formatINR(p.mrp)}</span>}
                       </div>
                       <p className="mt-1 text-xs text-muted-foreground">
@@ -474,14 +474,18 @@ export default function Home() {
                     </div>
                     <Link
                       href={p.id === "free" ? "/learn/how-llms-work" : `/checkout?plan=${p.id}`}
-                      className={cn(buttonVariants({ variant: p.highlight ? "default" : "outline", size: "lg" }), "h-10 w-full")}
+                      className={cn(
+                        buttonVariants({ variant: p.highlight ? "default" : "outline", size: "lg" }),
+                        "h-10 w-full rounded-lg",
+                        p.highlight && "bg-brand-teal text-white hover:bg-brand-teal/90",
+                      )}
                     >
                       {p.id === "free" ? "Start learning" : `Get ${p.name}`}
                     </Link>
                     <ul className="space-y-2.5 text-sm">
                       {p.features.map((f) => (
                         <li key={f} className="flex gap-2">
-                          <Check className="mt-0.5 size-4 shrink-0 text-brand-mint" /> {f}
+                          <Check className="mt-0.5 size-4 shrink-0 text-brand-teal" /> {f}
                         </li>
                       ))}
                     </ul>
@@ -517,14 +521,20 @@ export default function Home() {
         </section>
 
         <section className="mx-auto max-w-6xl px-4 pb-24">
-          <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-brand-violet/25 via-brand-mint/10 to-transparent p-10 text-center md:p-16">
-            <div className="bg-grid absolute inset-0 -z-10 opacity-60" />
-            <h2 className="text-4xl font-extrabold tracking-tight md:text-5xl">{brand.slogan}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-teal via-teal-700 to-brand-ink p-10 text-center text-white md:p-16">
+            <div className="bg-grid absolute inset-0 opacity-20" />
+            <h2 className="relative text-4xl font-extrabold tracking-tight md:text-5xl">{brand.slogan}</h2>
+            <p className="relative mx-auto mt-4 max-w-xl text-white/80">
               Your first AI app is 45 minutes away. Module 1 is free and needs no card. Make your first LLM API call
               today.
             </p>
-            <Link href="/learn/how-llms-work" className={cn(buttonVariants({ size: "lg" }), "mt-8 h-12 rounded-xl px-6 text-base")}>
+            <Link
+              href="/learn/how-llms-work"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "relative mt-8 h-12 rounded-lg bg-white px-6 text-base text-brand-teal hover:bg-brand-mist",
+              )}
+            >
               Start free <ArrowRight />
             </Link>
           </div>

@@ -54,11 +54,11 @@ export default function BrandPage() {
               <div className="flex items-center gap-2 text-brand-night">
                 <BrandMark />
                 <span className="font-heading text-lg font-bold tracking-tight">
-                  Beyond<span className="text-[#6b4fe0]">Placed</span>
+                  Beyond<span className="text-[#0F766E]">Placed</span>
                 </span>
               </div>
             </div>
-            <div className="grid h-40 place-items-center rounded-xl bg-[#F5F3FF]">
+            <div className="grid h-40 place-items-center rounded-xl bg-[#F0FDFA]">
               <BrandMark className="size-16 shadow-none" />
             </div>
           </div>

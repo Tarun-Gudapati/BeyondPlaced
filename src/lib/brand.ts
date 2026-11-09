@@ -7,11 +7,11 @@ export const brand = {
   email: "hello@beyondplaced.com",
   courseName: "AI Engineering Bootcamp",
   colors: [
-    { name: "Spark Violet", hex: "#A08BFF", use: "Primary actions, links, focus" },
-    { name: "Chalk Mint", hex: "#5FE3C0", use: "Success, progress, free content" },
-    { name: "Marigold", hex: "#FFC145", use: "Highlights, streaks, the spark" },
-    { name: "Night Class", hex: "#0F1020", use: "Background" },
-    { name: "Notebook", hex: "#F5F3FF", use: "Text on dark" },
+    { name: "Deep Teal", hex: "#0F766E", use: "Primary actions, links, focus" },
+    { name: "Bright Teal", hex: "#14B8A6", use: "Success, progress, free content" },
+    { name: "Coral", hex: "#EA580C", use: "Highlights, streaks, accents" },
+    { name: "Ink", hex: "#0B1220", use: "Text and wordmark" },
+    { name: "Mist", hex: "#F0FDFA", use: "Soft section washes" },
   ],
   voice: [
     { title: "Friendly, not childish", text: "Talk like a senior who wants you to win. Simple words, no jargon without an explanation." },
