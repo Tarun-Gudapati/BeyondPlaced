@@ -9,6 +9,8 @@ const globalForDb = globalThis as unknown as { beyondplacedDb?: Promise<DB> };
 export const usingEmbeddedDb = !process.env.DATABASE_URL;
 
 async function connect(): Promise<DB> {
+  const { ensureMasterUser } = await import("./seed-master");
+
   if (process.env.DATABASE_URL) {
     const { Pool } = await import("pg");
     const { drizzle } = await import("drizzle-orm/node-postgres");
@@ -18,7 +20,9 @@ async function connect(): Promise<DB> {
       ssl: /localhost|127\.0\.0\.1/.test(process.env.DATABASE_URL) ? undefined : { rejectUnauthorized: false },
     });
     await pool.query(schema.SCHEMA_SQL);
-    return drizzle(pool, { schema });
+    const db = drizzle(pool, { schema });
+    await ensureMasterUser(db);
+    return db;
   }
 
   // Serverless hosts only allow writes under /tmp, which is wiped on cold starts.
@@ -29,7 +33,9 @@ async function connect(): Promise<DB> {
   mkdirSync(dataDir, { recursive: true });
   const client = new PGlite(dataDir);
   await client.exec(schema.SCHEMA_SQL);
-  return drizzle(client, { schema }) as unknown as DB;
+  const db = drizzle(client, { schema }) as unknown as DB;
+  await ensureMasterUser(db);
+  return db;
 }
 
 export function getDb(): Promise<DB> {
