@@ -1,0 +1,17 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 280' role='img' aria-label='FUNCTION / TOOL CALLING'>
+  <rect width='720' height='280' fill='#0B0D18'/>
+  <text x='24' y='28' fill='#9AA3C7' font-family='system-ui,sans-serif' font-size='12'>FUNCTION / TOOL CALLING</text>
+  <rect x='40' y='100' width='130' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='105' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>User</text>
+  <text x='105' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>goal</text>
+  <rect x='220' y='90' width='150' height='90' rx='12' fill='#171A2B' stroke='#FFC145'/>
+  <text x='295' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>LLM</text>
+  <text x='295' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>tool JSON</text>
+  <rect x='420' y='100' width='130' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='485' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Your code</text>
+  <text x='485' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>run tool</text>
+  <rect x='590' y='100' width='110' height='70' rx='12' fill='#171A2B' stroke='#5FE3C0'/>
+  <text x='645' y='140' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Result</text>
+  
+  <text x='360' y='230' text-anchor='middle' fill='#9AA3C7' font-size='12' font-family='system-ui,sans-serif'>Tool result goes back into the next model call</text>
+</svg>

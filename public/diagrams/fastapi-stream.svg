@@ -1,0 +1,16 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 260' role='img' aria-label='STREAMING FASTAPI RESPONSE'>
+  <rect width='720' height='260' fill='#0B0D18'/>
+  <text x='24' y='28' fill='#9AA3C7' font-family='system-ui,sans-serif' font-size='12'>STREAMING FASTAPI RESPONSE</text>
+  <rect x='40' y='100' width='140' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='110' y='140' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Client</text>
+  
+  <rect x='200' y='100' width='140' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='270' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>FastAPI</text>
+  <text x='270' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>SSE / stream</text>
+  <rect x='360' y='100' width='140' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='430' y='140' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>LLM</text>
+  
+  <rect x='520' y='100' width='140' height='70' rx='12' fill='#171A2B' stroke='#5FE3C0'/>
+  <text x='590' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Tokens</text>
+  <text x='590' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>as generated</text>
+</svg>

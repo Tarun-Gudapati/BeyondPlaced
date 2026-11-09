@@ -1,0 +1,14 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 280' role='img' aria-label='PROMPT VS RAG VS FINE-TUNE'>
+  <rect width='720' height='280' fill='#0B0D18'/>
+  <text x='24' y='28' fill='#9AA3C7' font-family='system-ui,sans-serif' font-size='12'>PROMPT VS RAG VS FINE-TUNE</text>
+  <rect x='40' y='100' width='160' height='70' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='120' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Prompting</text>
+  <text x='120' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>format & rules</text>
+  <rect x='250' y='100' width='160' height='70' rx='12' fill='#171A2B' stroke='#FFC145'/>
+  <text x='330' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>RAG</text>
+  <text x='330' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>private knowledge</text>
+  <rect x='460' y='100' width='200' height='70' rx='12' fill='#171A2B' stroke='#5FE3C0'/>
+  <text x='560' y='131' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Fine-tune</text>
+  <text x='560' y='149' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>style / specialty</text>
+  <text x='360' y='220' text-anchor='middle' fill='#9AA3C7' font-size='12' font-family='system-ui,sans-serif'>Try left → right. Most student projects stop at RAG.</text>
+</svg>

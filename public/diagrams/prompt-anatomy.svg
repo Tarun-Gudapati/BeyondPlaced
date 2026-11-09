@@ -1,0 +1,19 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 300' role='img' aria-label='PRODUCTION PROMPT ANATOMY'>
+  <rect width='720' height='300' fill='#0B0D18'/>
+  <text x='24' y='28' fill='#9AA3C7' font-family='system-ui,sans-serif' font-size='12'>PRODUCTION PROMPT ANATOMY</text>
+  <rect x='40' y='40' width='200' height='60' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='140' y='66' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>1. Role</text>
+  <text x='140' y='84' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>system instructions</text>
+  <rect x='40' y='120' width='200' height='60' rx='12' fill='#171A2B' stroke='#FFC145'/>
+  <text x='140' y='146' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>2. Constraints</text>
+  <text x='140' y='164' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>format, safety</text>
+  <rect x='40' y='200' width='200' height='60' rx='12' fill='#171A2B' stroke='#5FE3C0'/>
+  <text x='140' y='226' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>3. User input</text>
+  <text x='140' y='244' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>delimited block</text>
+  <rect x='320' y='100' width='160' height='100' rx='12' fill='#171A2B' stroke='#A08BFF'/>
+  <text x='400' y='146' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>Model</text>
+  <text x='400' y='164' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>structured out</text>
+  <rect x='540' y='110' width='140' height='80' rx='12' fill='#171A2B' stroke='#5FE3C0'/>
+  <text x='610' y='146' text-anchor='middle' fill='#F5F3FF' font-size='13' font-family='system-ui,sans-serif' font-weight='600'>JSON</text>
+  <text x='610' y='164' text-anchor='middle' fill='#9AA3C7' font-size='11' font-family='system-ui,sans-serif'>validate in code</text>
+</svg>
