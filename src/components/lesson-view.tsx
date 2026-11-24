@@ -220,7 +220,6 @@ function Paywall({ loggedIn }: { loggedIn: boolean }) {
         </div>
         <div className="flex items-baseline justify-center gap-2">
           <span className="text-3xl font-bold">{formatINR(pro.price)}</span>
-          <span className="text-muted-foreground line-through">{formatINR(pro.mrp!)}</span>
         </div>
         <div className="flex flex-col justify-center gap-2 sm:flex-row">
           <Link

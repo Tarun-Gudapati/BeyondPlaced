@@ -23,6 +23,6 @@ All BeyondPlaced flowcharts as static SVGs (and matching interactive versions in
 | `cost-cache.svg` | cost-latency |
 | `portfolio.svg` | portfolio-interviews |
 | `learning-path.svg` | home roadmap |
-| `campus-funnel.svg` | home sell section |
+| `campus-funnel.svg` | unused (seller funnel, not shown to students) |
 
 URLs: `/diagrams/<name>.svg` on the deployed site.

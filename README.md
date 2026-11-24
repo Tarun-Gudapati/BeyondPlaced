@@ -26,7 +26,8 @@ Open http://localhost:4317. With no `DATABASE_URL`, data is stored in an embedde
 
 | Variable | Needed for |
 | --- | --- |
-| `AUTH_SECRET` | Signing sessions. **Required in production**, otherwise a public dev secret is used. |
+| `AUTH_SECRET` | Signing sessions. **Required in production**: login fails without it. |
+| `MASTER_PASSWORD` | Optional. Creates a Placement Pro master account (`MASTER_EMAIL`, default `master@beyondplaced.com`). Without it, no master account exists. |
 | `DATABASE_URL` | Permanent storage. Without it, Vercel uses a temporary database that resets on cold starts. |
 | `RAZORPAY_KEY_ID`, `RAZORPAY_KEY_SECRET` | Real payments. Without them, checkout runs in test mode. |
 | `RAZORPAY_WEBHOOK_SECRET` | Confirming payments even if the student closes the tab. |

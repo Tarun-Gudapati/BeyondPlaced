@@ -6,7 +6,6 @@ export const plans: {
   id: PlanId;
   name: string;
   price: number;
-  mrp?: number;
   tagline: string;
   features: string[];
   highlight?: boolean;
@@ -22,13 +21,12 @@ export const plans: {
     id: "pro",
     name: "Pro",
     price: 2999,
-    mrp: 9999,
     tagline: "Everything to become job-ready",
     features: [
       "All 6 modules, 18 lessons",
-      "6 portfolio projects with starter code",
+      "6 portfolio projects with step-by-step tasks",
       "Lifetime access + all future updates",
-      "Verified completion certificate",
+      "Completion certificate",
       "Community Discord + weekly live doubt sessions",
     ],
     highlight: true,
@@ -37,7 +35,6 @@ export const plans: {
     id: "placement",
     name: "Placement Pro",
     price: 7999,
-    mrp: 19999,
     tagline: "For final-years who want offers",
     features: [
       "Everything in Pro",

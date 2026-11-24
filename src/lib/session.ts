@@ -9,9 +9,11 @@ const MAX_AGE = 60 * 60 * 24 * 30;
 export const usingFallbackSecret = !process.env.AUTH_SECRET;
 
 function secretKey() {
-  return new TextEncoder().encode(
-    process.env.AUTH_SECRET ?? "beyondplaced-dev-only-secret-set-AUTH_SECRET-in-production",
-  );
+  const secret = process.env.AUTH_SECRET;
+  if (!secret && process.env.NODE_ENV === "production") {
+    throw new Error("AUTH_SECRET is not set. Sessions can't be signed safely in production.");
+  }
+  return new TextEncoder().encode(secret ?? "beyondplaced-dev-only-secret-set-AUTH_SECRET-in-production");
 }
 
 export async function createSession(userId: string) {

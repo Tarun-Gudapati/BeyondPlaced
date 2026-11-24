@@ -254,10 +254,6 @@ export function CheckoutForm({
               <h2 className="font-semibold">Order summary</h2>
               <div className="flex justify-between text-sm">
                 <span>BeyondPlaced {plan.name}</span>
-                <span className="text-muted-foreground line-through">{formatINR(plan.mrp ?? plan.price)}</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span>Launch price</span>
                 <span>{formatINR(q.price)}</span>
               </div>
               {q.coupon && (

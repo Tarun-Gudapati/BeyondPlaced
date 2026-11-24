@@ -14,7 +14,6 @@ import {
   PlayCircle,
   Rocket,
   Sprout,
-  Star,
   Trophy,
   Wallet,
 } from "lucide-react";
@@ -84,16 +83,10 @@ const projects = [
   { icon: Code2, title: "Deployed AI SaaS", desc: "Streaming backend, caching and usage limits. Live on a public URL you can share." },
 ];
 
-const testimonials = [
-  { name: "Ananya R.", role: "Final year, VIT", quote: "My RAG project with eval numbers got me 3 interview calls in two weeks. Nobody else in my batch had metrics." },
-  { name: "Rohit K.", role: "SDE-1 → AI Engineer", quote: "Every YouTube course stops at the demo. This one made me deploy, measure cost and handle prompt injection." },
-  { name: "Sneha P.", role: "3rd year, Tier-3 college", quote: "₹2,999 was less than one month of my coaching fees, and I actually finished it." },
-];
-
 const faqs = [
   { q: "I'm a complete beginner in AI. Can I still do this?", a: "Yes. That's who we built it for. If you can write basic Python (loops, functions, pip install), you're ready. We teach you to build products with AI models, not to do research maths." },
   { q: "Is this enough AI engineering content to get hired?", a: "Yes for junior AI / LLM app roles. You cover the stack job posts ask for — LLMs, embeddings, RAG, agents, open models, fine-tuning and production deploy — and leave with 6 GitHub projects, not just notes." },
-  { q: "Can I do this alongside college and exams?", a: "Yes. Lessons are 10–25 minutes, so one lesson fits in a free period. Most students do 3–4 lessons a week. It's self-paced, so you can pause during exams and your progress stays saved." },
+  { q: "Can I do this alongside college and exams?", a: "Yes. Lessons are 10–25 minutes, so one lesson fits in a free period, and 3–4 lessons a week fits most timetables. It's self-paced, so you can pause during exams and your progress stays saved." },
   { q: "I only know C, C++ or Java. Is that okay?", a: "Yes. Spend a weekend on Python basics first. If you can write loops and functions in any language, the switch takes a few hours." },
   { q: "What laptop do I need? Do I need a GPU?", a: "No GPU needed. Any laptop with 8 GB RAM works. We use cloud APIs for the heavy parts, and Module 5 shows free options for running models locally." },
   { q: "How much do API costs add up to?", a: "Under ₹300 for the whole course if you use small models. Module 5 also shows you how to run everything free on your laptop with Ollama." },
@@ -185,7 +178,7 @@ export default function Home() {
               <p className="mt-3 text-sm text-muted-foreground">No card needed · Sign up in 30 seconds</p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground lg:justify-start">
                 <span className="flex items-center gap-1.5">
-                  <Star className="size-4 fill-brand-coral text-brand-coral" /> 4.9/5 from 1,200+ learners
+                  <Trophy className="size-4 text-brand-teal" /> 6 portfolio projects
                 </span>
                 <span className="flex items-center gap-1.5">
                   <Clock className="size-4 text-brand-teal" /> 10–25 min lessons
@@ -204,7 +197,7 @@ export default function Home() {
             {[
               ["6", "portfolio projects"],
               [String(allLessons.length), "bite-sized lessons"],
-              [`${Math.round(totalMinutes / 60)} hrs`, "total. Finish in 12 weeks"],
+              [`${Math.round(totalMinutes / 60)} hrs`, "of lessons, plus hands-on project work"],
               ["7-day", "no-questions refund"],
             ].map(([n, l]) => (
               <div key={l}>
@@ -215,30 +208,30 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="sell" className="scroll-mt-20 border-b border-border bg-brand-mist/60">
+        <section id="why" className="scroll-mt-20 border-b border-border bg-brand-mist/60">
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <div className="max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">
-                A product you can actually sell on campus
+                More than a YouTube playlist
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Not a YouTube playlist. A full LMS with accounts, progress, quizzes, paywall and Razorpay checkout —
-                packaged around the AI engineering skills Indian recruiters ask for.
+                Most tutorials stop at the demo. Here you measure, secure and deploy what you build — the parts
+                interviewers actually ask about.
               </p>
             </div>
             <div className="rail mt-6 grid gap-4 md:mt-10 md:grid-cols-3">
               {[
                 {
-                  title: "Hook with free Module 1",
-                  desc: "Students start in 30 seconds, no card. They feel the win, then upgrade to the full path.",
+                  title: "Try it free first",
+                  desc: "Module 1 is free with no card. Make your first LLM API call before you spend a rupee.",
                 },
                 {
-                  title: "Every AI eng topic that matters",
+                  title: "The full AI engineering path",
                   desc: "LLMs → embeddings → RAG → agents → open models & LoRA → FastAPI deploy, cost and interviews.",
                 },
                 {
-                  title: "Price that fits a student wallet",
-                  desc: "Pro at ₹2,999 with campus coupons. UPI-ready checkout. 7-day refund so the sale feels safe.",
+                  title: "Priced for students",
+                  desc: "Pro is ₹2,999, paid once over UPI or card. Not for you? Full refund within 7 days.",
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-xl border border-border bg-white p-5">
@@ -266,12 +259,6 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div className="mt-10">
-              <CourseDiagram
-                id="campus-funnel"
-                caption="How a campus sale actually flows — free Module 1 into paid Pro."
-              />
-            </div>
           </div>
         </section>
 
@@ -329,10 +316,9 @@ export default function Home() {
         <section id="roadmap" className="scroll-mt-20 bg-brand-mist/50 px-4 py-12 md:py-20">
           <div className="mx-auto max-w-6xl">
             <div className="max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students are learning</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">The 12-week roadmap</h2>
               <p className="mt-3 text-muted-foreground">
-                Built backwards from 400+ AI engineer job posts. Browse the 6 modules like a course catalog — each ends
-                with a GitHub project.
+                Six modules in the order AI engineering job posts list the skills. Each one ends with a GitHub project.
               </p>
             </div>
             <div className="mt-8">
@@ -398,8 +384,8 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
             <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Graduate with a portfolio, not just a certificate</h2>
             <p className="mt-3 max-w-2xl text-muted-foreground">
-              Each project comes with starter code, an evaluation checklist and a README template. Your GitHub tells the
-              story for you.
+              Each project comes with a clear task, the numbers to measure and what to put in your README. Your GitHub
+              tells the story for you.
             </p>
             <div className="rail mt-6 grid gap-4 sm:grid-cols-2 md:mt-10 lg:grid-cols-4">
               {projects.map((p) => (
@@ -412,31 +398,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
-          <h2 className="text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">Students like you, shipping</h2>
-          <div className="rail mt-6 grid gap-4 md:mt-10 md:grid-cols-3">
-            {testimonials.map((t) => (
-              <div key={t.name} className="rounded-xl border border-border bg-white p-5">
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="size-4 fill-brand-coral text-brand-coral" />
-                  ))}
-                </div>
-                <p className="mt-4 text-pretty text-brand-ink">&ldquo;{t.quote}&rdquo;</p>
-                <div className="mt-4 flex items-center gap-3 text-sm">
-                  <span className="grid size-9 place-items-center rounded-lg bg-brand-teal font-semibold text-white">
-                    {t.name[0]}
-                  </span>
-                  <div>
-                    <div className="font-medium text-brand-ink">{t.name}</div>
-                    <div className="text-muted-foreground">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 
@@ -466,7 +427,6 @@ export default function Home() {
                         <span className="font-heading text-4xl font-bold text-brand-ink">
                           {p.price === 0 ? "Free" : formatINR(p.price)}
                         </span>
-                        {p.mrp && <span className="text-muted-foreground line-through">{formatINR(p.mrp)}</span>}
                       </div>
                       <p className="mt-1 text-xs text-muted-foreground">
                         {p.price === 0 ? "Forever. No card needed." : `About ${formatINR(p.price / 12)} a week over 12 weeks`}
