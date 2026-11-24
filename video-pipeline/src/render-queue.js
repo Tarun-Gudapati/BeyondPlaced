@@ -46,7 +46,8 @@ function publish(dir) {
   const vtt = join(out, `${slug}.vtt`);
 
   console.log(`\n=== ${slug} (${free ? "free" : "paid"}) ===`);
-  run("npx", ["-y", "hyperframes@0.9.87", "render", "--workers", "2", "--output", raw], dir);
+  // npx goes through the shell on Windows, so keep its arguments free of spaces.
+  run("npx", ["-y", "hyperframes@0.9.87", "render", "--workers", "2", "--output", "renders/raw.mp4"], dir);
   run(ffmpeg, ["-y", "-loglevel", "error", "-i", raw, "-c:v", "copy", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", norm]);
   run(ffmpeg, ["-y", "-loglevel", "error", "-i", norm, "-c", "copy", "-movflags", "+faststart", mp4]);
   run(ffmpeg, ["-y", "-loglevel", "error", "-ss", String(posterAt), "-i", mp4, "-frames:v", "1", "-q:v", "3", jpg]);
