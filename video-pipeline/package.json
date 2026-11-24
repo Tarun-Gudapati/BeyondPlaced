@@ -7,6 +7,7 @@
     "tts": "node src/run.js --tts",
     "render": "node src/run.js --tts --render",
     "one": "node src/run.js --tts --slug",
-    "scene-tts": "node src/scene-tts.js"
+    "scene-tts": "node src/scene-tts.js",
+    "render-queue": "node src/render-queue.js"
   }
 }
