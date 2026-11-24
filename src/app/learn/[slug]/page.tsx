@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { allLessons, buildOutline, getLesson } from "@/lib/course";
 import { getCompletedLessons, getCurrentUser } from "@/lib/auth";
+import { resolveMedia } from "@/lib/storage";
 import { LessonView, LessonSkeleton } from "@/components/lesson-view";
 
 export function generateStaticParams() {
@@ -25,6 +26,7 @@ async function Lesson({ params }: { params: PageProps<"/learn/[slug]">["params"]
   const paid = !!user && user.plan !== "free";
   const completed = new Set(user ? (await getCompletedLessons(user.id)).map((c) => c.slug) : []);
   const locked = !paid && !lesson.free;
+  const blocks = locked ? [] : await resolveMedia(lesson.blocks);
 
   return (
     <LessonView
@@ -43,7 +45,7 @@ async function Lesson({ params }: { params: PageProps<"/learn/[slug]">["params"]
         locked
           ? null
           : {
-              blocks: lesson.blocks,
+              blocks,
               task: lesson.task,
               quiz: { question: lesson.quiz.question, options: lesson.quiz.options },
             }
