@@ -11,7 +11,7 @@ import { navLinks } from "@/lib/nav";
 import type { PlanId } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
-export function UserMenu({ user }: { user: { name: string; plan: PlanId } | null }) {
+export function UserMenu({ user }: { user: { name: string; plan: PlanId; isAdmin?: boolean } | null }) {
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
@@ -24,6 +24,11 @@ export function UserMenu({ user }: { user: { name: string; plan: PlanId } | null
       )}
       {user ? (
         <>
+          {user.isAdmin && (
+            <Link href="/admin" className={cn(buttonVariants({ variant: "ghost" }), "hidden sm:inline-flex")}>
+              Admin
+            </Link>
+          )}
           <form action={logout} className="hidden sm:block">
             <button type="submit" className={buttonVariants({ variant: "ghost" })}>
               Log out
@@ -60,6 +65,11 @@ export function UserMenu({ user }: { user: { name: string; plan: PlanId } | null
                 <Link href="/dashboard" onClick={close}>
                   My learning
                 </Link>
+                {user.isAdmin && (
+                  <Link href="/admin" onClick={close}>
+                    Admin
+                  </Link>
+                )}
                 <form action={logout}>
                   <button type="submit" className="flex items-center gap-2 text-muted-foreground">
                     <LogOut className="size-4" /> Log out

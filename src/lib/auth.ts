@@ -1,6 +1,6 @@
 import "server-only";
 import { cache } from "react";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { eq } from "drizzle-orm";
 import { getDb, schema } from "@/lib/db";
 import { getSessionUserId } from "@/lib/session";
@@ -11,7 +11,19 @@ export type CurrentUser = {
   name: string;
   email: string;
   plan: PlanId;
+  isAdmin: boolean;
 };
+
+const adminEmails = new Set(
+  (process.env.ADMIN_EMAILS ?? "")
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .filter(Boolean),
+);
+
+export function isAdminEmail(email: string) {
+  return adminEmails.has(email.trim().toLowerCase());
+}
 
 export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
   const userId = await getSessionUserId();
@@ -22,12 +34,21 @@ export const getCurrentUser = cache(async (): Promise<CurrentUser | null> => {
     .from(schema.users)
     .where(eq(schema.users.id, userId))
     .limit(1);
-  return user ? { ...user, plan: user.plan as PlanId } : null;
+  if (!user) return null;
+  const isAdmin = isAdminEmail(user.email);
+  // Admins see every lesson, so they count as the top plan everywhere access is checked.
+  return { ...user, plan: isAdmin ? "placement" : (user.plan as PlanId), isAdmin };
 });
 
 export async function requireUser(next: string): Promise<CurrentUser> {
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(next)}`);
+  return user;
+}
+
+export async function requireAdmin(): Promise<CurrentUser> {
+  const user = await requireUser("/admin");
+  if (!user.isAdmin) notFound();
   return user;
 }
 

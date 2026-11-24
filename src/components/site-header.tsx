@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 async function CurrentUserMenu() {
   const user = await getCurrentUser();
-  return <UserMenu user={user ? { name: user.name, plan: user.plan } : null} />;
+  return <UserMenu user={user ? { name: user.name, plan: user.plan, isAdmin: user.isAdmin } : null} />;
 }
 
 export function SiteHeader() {
