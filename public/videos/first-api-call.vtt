@@ -1,0 +1,145 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.891
+Ananya wants her own DSA tutor, not someone
+
+2
+00:00:02.914 --> 00:00:06.095
+else's chatbot. All it takes is one short
+
+3
+00:00:06.165 --> 00:00:07.291
+Python script.
+
+4
+00:00:07.641 --> 00:00:10.439
+Because every serious AI product starts the same
+
+5
+00:00:10.485 --> 00:00:12.982
+way: with an API call.
+
+6
+00:00:13.332 --> 00:00:16.455
+First, a virtual environment, so this project's packages
+
+7
+00:00:16.525 --> 00:00:18.301
+never break her other work.
+
+8
+00:00:18.651 --> 00:00:21.205
+Then two installs, and a small file called
+
+9
+00:00:21.263 --> 00:00:24.549
+dot env, which holds her API key.
+
+10
+00:00:24.899 --> 00:00:28.254
+The call itself is an ordinary HTTPS request.
+
+11
+00:00:28.672 --> 00:00:30.414
+Her code sends a model name and a
+
+12
+00:00:30.460 --> 00:00:31.958
+list of messages.
+
+13
+00:00:32.308 --> 00:00:34.874
+A system message sets the rules: you are
+
+14
+00:00:34.909 --> 00:00:38.078
+a patient DSA tutor. A user message carries
+
+15
+00:00:38.125 --> 00:00:39.181
+her question.
+
+16
+00:00:39.531 --> 00:00:41.389
+The key rides along in a header, and
+
+17
+00:00:41.435 --> 00:00:43.246
+the provider runs the model on its own
+
+18
+00:00:43.304 --> 00:00:44.407
+servers.
+
+19
+00:00:44.757 --> 00:00:47.520
+Back comes the answer, plus two fields beginners
+
+20
+00:00:47.567 --> 00:00:50.887
+skip: the finish reason, and the usage.
+
+21
+00:00:51.237 --> 00:00:54.105
+Stop means the model finished. Length means it
+
+22
+00:00:54.139 --> 00:00:56.636
+was cut off. Usage counts the tokens she
+
+23
+00:00:56.694 --> 00:00:57.739
+is billed for.
+
+24
+00:00:58.089 --> 00:01:00.132
+For a follow-up, her code sends the whole
+
+25
+00:01:00.167 --> 00:01:02.791
+list again, because the model remembers nothing between
+
+26
+00:01:02.861 --> 00:01:03.801
+calls.
+
+27
+00:01:04.151 --> 00:01:06.496
+One rule matters most. The key is a
+
+28
+00:01:06.554 --> 00:01:09.526
+password. It lives in dot env, and dot
+
+29
+00:01:09.619 --> 00:01:12.139
+env goes in git ignore.
+
+30
+00:01:12.489 --> 00:01:14.718
+If it ever leaks, deleting the commit is
+
+31
+00:01:14.776 --> 00:01:17.446
+not enough. Revoke the key and create a
+
+32
+00:01:17.516 --> 00:01:18.619
+new one.
+
+33
+00:01:18.969 --> 00:01:21.767
+So that is an API call: messages out,
+
+34
+00:01:21.883 --> 00:01:24.112
+text and a token count back, and the
+
+35
+00:01:24.159 --> 00:01:26.074
+key never touches your code.
+
+36
+00:01:26.424 --> 00:01:29.861
+Next lesson: prompt engineering that survives production.

@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.624
+Ananya pastes a job description into her script
+
+2
+00:00:02.659 --> 00:00:05.155
+and asks: tell me about this job.
+
+3
+00:00:05.505 --> 00:00:08.466
+Back comes a friendly paragraph. But a program
+
+4
+00:00:08.524 --> 00:00:10.660
+is reading this reply, so prose is a
+
+5
+00:00:10.706 --> 00:00:11.635
+bug.
+
+6
+00:00:11.985 --> 00:00:14.249
+The fix is not cleverer wording. A good
+
+7
+00:00:14.307 --> 00:00:16.257
+prompt is a specification.
+
+8
+00:00:16.607 --> 00:00:18.813
+Start with a role and one clear task:
+
+9
+00:00:19.045 --> 00:00:22.226
+you extract job details from a job description.
+
+10
+00:00:22.576 --> 00:00:25.258
+Add constraints: what to do when information is
+
+11
+00:00:25.328 --> 00:00:28.358
+missing. If the CTC is not stated, use
+
+12
+00:00:28.416 --> 00:00:30.192
+null. Never guess.
+
+13
+00:00:30.542 --> 00:00:33.340
+Then spell out the exact output: JSON, with
+
+14
+00:00:33.386 --> 00:00:35.372
+a role, a list of skills, and the
+
+15
+00:00:35.418 --> 00:00:36.811
+CTC.
+
+16
+00:00:37.161 --> 00:00:39.437
+Rules live in the system prompt. The job
+
+17
+00:00:39.495 --> 00:00:41.921
+description goes in the user message, wrapped in
+
+18
+00:00:42.002 --> 00:00:43.663
+tags, as data.
+
+19
+00:00:44.013 --> 00:00:46.811
+So if that text says, ignore your instructions,
+
+20
+00:00:46.974 --> 00:00:49.121
+it is less likely to work.
+
+21
+00:00:49.471 --> 00:00:51.468
+Next, show one or two examples of a
+
+22
+00:00:51.526 --> 00:00:55.230
+perfect answer. That is few-shot prompting: the model
+
+23
+00:00:55.299 --> 00:00:56.530
+copies the pattern.
+
+24
+00:00:56.880 --> 00:00:59.341
+Turn on JSON mode, and the reply parses
+
+25
+00:00:59.399 --> 00:01:02.023
+as JSON. But valid JSON can still be
+
+26
+00:01:02.058 --> 00:01:04.601
+wrong: here, the CTC came back as a
+
+27
+00:01:04.659 --> 00:01:05.379
+word.
+
+28
+00:01:05.729 --> 00:01:08.550
+So check every reply against a schema. If
+
+29
+00:01:08.608 --> 00:01:10.686
+it fails, send the error back and ask
+
+30
+00:01:10.756 --> 00:01:12.138
+once more.
+
+31
+00:01:12.488 --> 00:01:15.437
+And treat prompts like code: keep versions, and
+
+32
+00:01:15.530 --> 00:01:17.945
+rerun a few real test cases after every
+
+33
+00:01:17.991 --> 00:01:19.222
+change.
+
+34
+00:01:19.572 --> 00:01:22.126
+Write the prompt like a spec. Then validate
+
+35
+00:01:22.149 --> 00:01:25.005
+what comes back, before your code trusts it.

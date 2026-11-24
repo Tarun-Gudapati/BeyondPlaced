@@ -480,6 +480,13 @@ export const m1: Module = {
       summary: "Set up a virtual env, store keys safely, make the call, read the full response and handle failures.",
       blocks: [
         {
+          type: "video",
+          src: "/videos/first-api-call.mp4",
+          poster: "/videos/first-api-call.jpg",
+          captions: "/videos/first-api-call.vtt",
+          title: "Your first LLM API call, in 90 seconds",
+        },
+        {
           type: "p",
           text: "Every serious AI product starts with an API call. We will use the OpenAI Python SDK, but the same pattern works for Gemini, Claude, Groq or a local model via an OpenAI-compatible endpoint.",
         },
@@ -627,6 +634,13 @@ export const m1: Module = {
       free: true,
       summary: "Prompts as specifications: roles, delimiters, few-shot examples, validated JSON output and prompt tests.",
       blocks: [
+        {
+          type: "video",
+          src: "/videos/prompt-engineering.mp4",
+          poster: "/videos/prompt-engineering.jpg",
+          captions: "/videos/prompt-engineering.vtt",
+          title: "Prompt engineering, in 89 seconds",
+        },
         {
           type: "p",
           text: "Good prompts are specifications. Tell the model its role, the exact task, the constraints, and the output format. Then show one or two examples. This is called few-shot prompting and it beats clever wording every time.",
