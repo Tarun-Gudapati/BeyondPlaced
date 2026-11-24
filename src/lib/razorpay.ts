@@ -7,6 +7,11 @@ const keySecret = process.env.RAZORPAY_KEY_SECRET;
 export const razorpayEnabled = !!(keyId && keySecret);
 export const razorpayKeyId = keyId ?? null;
 
+/** Simulated payments unlock paid plans for free, so production only allows them when explicitly opted in. */
+export const testPaymentsAllowed =
+  !razorpayEnabled && (process.env.NODE_ENV !== "production" || process.env.ALLOW_TEST_PAYMENTS === "true");
+export const checkoutAvailable = razorpayEnabled || testPaymentsAllowed;
+
 function safeEqual(a: string, b: string) {
   const ab = Buffer.from(a);
   const bb = Buffer.from(b);

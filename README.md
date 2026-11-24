@@ -10,7 +10,7 @@ The friendly AI school for students. A course platform (LMS) that teaches Indian
 - **Lesson player** (`/learn/[slug]`): 18 lessons. Module 1 is free. Paid lessons and all quiz answers stay on the server and are only sent to users who are entitled to them.
 - **Progress tracking**: passing a lesson's quiz saves it to the database. The dashboard shows progress, day streak, time spent and a certificate once everything is done.
 - **Payments** (`/checkout`): Razorpay Checkout with server-side order creation, signature verification and a webhook backup. Coupons (`CAMPUS20`, `EARLY40`) are validated on the server.
-- **Test mode**: with no Razorpay keys, checkout shows a clearly-labelled simulated payment window (success/failure) so the full flow can be tested without an account.
+- **Test mode**: with no Razorpay keys, checkout shows a clearly-labelled simulated payment window (success/failure) so the full flow can be tested without an account. In production this is off unless `ALLOW_TEST_PAYMENTS=true`; without keys, checkout shows "Payments are coming soon".
 
 ## Run locally
 

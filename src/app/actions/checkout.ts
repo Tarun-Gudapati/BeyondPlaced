@@ -7,7 +7,14 @@ import { quote, type Quote } from "@/lib/coupons";
 import { getDb, schema } from "@/lib/db";
 import { markOrderPaid } from "@/lib/orders";
 import { PLAN_RANK } from "@/lib/pricing";
-import { createRazorpayOrder, razorpayEnabled, razorpayKeyId, verifyPaymentSignature } from "@/lib/razorpay";
+import {
+  checkoutAvailable,
+  createRazorpayOrder,
+  razorpayEnabled,
+  razorpayKeyId,
+  testPaymentsAllowed,
+  verifyPaymentSignature,
+} from "@/lib/razorpay";
 
 type PaidPlan = "pro" | "placement";
 
@@ -33,6 +40,7 @@ export type CreatedOrder =
     };
 
 export async function createOrder(planInput: string, coupon: string, phone: string): Promise<CreatedOrder> {
+  if (!checkoutAvailable) return { ok: false, error: "Payments are coming soon." };
   const user = await getCurrentUser();
   if (!user) return { ok: false, error: "Please log in again." };
   const plan = parsePlan(planInput);
@@ -108,7 +116,7 @@ export async function verifyRazorpayPayment(input: {
 }
 
 export async function completeTestPayment(orderId: string, outcome: "success" | "failure"): Promise<{ ok: boolean; error?: string }> {
-  if (razorpayEnabled) return { ok: false, error: "Test payments are disabled when Razorpay is configured." };
+  if (!testPaymentsAllowed) return { ok: false, error: "Test payments are disabled." };
   const user = await getCurrentUser();
   if (!user) return { ok: false, error: "Please log in again." };
   const db = await getDb();
