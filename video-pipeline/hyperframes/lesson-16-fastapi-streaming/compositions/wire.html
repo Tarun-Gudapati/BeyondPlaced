@@ -1,0 +1,121 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #w-wire { position: absolute; left: 120px; top: 130px; width: 880px; height: 760px; background: #0B1220; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); color: #FFFFFF; }
+    #w-head { position: absolute; left: 44px; right: 44px; top: 0; height: 100px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #1E293B; }
+    #w-head-t { font-size: 40px; font-weight: 700; }
+    #w-head-h { font-size: 30px; font-weight: 700; color: #99F6E4; }
+    #w-rows { position: absolute; left: 44px; top: 122px; width: 792px; font-family: "JetBrains Mono", monospace; font-size: 34px; font-weight: 700; }
+    .w-row { position: relative; height: 72px; line-height: 72px; white-space: pre; }
+    .w-blank { display: block; position: absolute; left: 0; top: 16px; width: 530px; height: 40px; border: 3px dashed #64748B; border-radius: 8px; }
+    #w-blank-l { position: absolute; left: 556px; top: 0; font-family: Inter, sans-serif; font-size: 28px; font-weight: 700; color: #99F6E4; white-space: nowrap; }
+    .w-nl { color: #EA580C; display: inline-block; }
+    .w-note { position: absolute; left: 44px; font-size: 34px; font-weight: 700; white-space: nowrap; }
+    #w-n1 { top: 596px; color: #99F6E4; }
+    #w-n2 { top: 660px; color: #EA580C; }
+    #w-b-label { position: absolute; left: 1070px; top: 130px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #w-b-code { position: absolute; left: 1070px; top: 184px; font-family: "JetBrains Mono", monospace; font-size: 44px; font-weight: 700; white-space: nowrap; }
+    .w-rl { position: absolute; left: 1070px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; color: #475569; }
+    #w-r1-l { top: 316px; }
+    #w-r2-l { top: 406px; }
+    .w-ev { position: absolute; top: 302px; height: 60px; line-height: 54px; padding: 0 14px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 6px; }
+    #w-half { position: absolute; left: 1230px; top: 392px; height: 60px; line-height: 54px; padding: 0 14px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; background: #FFEDD5; border: 3px dashed #EA580C; border-radius: 6px; z-index: 2; }
+    #w-half-l { position: absolute; left: 1350px; top: 404px; font-size: 30px; font-weight: 700; color: #C2410C; }
+    #w-buf-l { position: absolute; left: 1070px; top: 546px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #w-buf { position: absolute; left: 1230px; top: 518px; width: 570px; height: 92px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 14px; }
+    #w-rest { position: absolute; left: 1334px; top: 534px; height: 60px; line-height: 54px; padding: 0 14px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 6px; z-index: 2; }
+    #w-split { position: absolute; left: 1500px; top: 544px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; z-index: 2; white-space: nowrap; }
+    #w-page { position: absolute; left: 1070px; top: 680px; width: 730px; height: 210px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); overflow: hidden; }
+    #w-page-head { height: 60px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 10px; padding: 0 22px; font-size: 28px; font-weight: 700; color: #475569; }
+    .w-hd { width: 14px; height: 14px; border-radius: 50%; background: #CBD5E1; }
+    #w-page-t { padding: 30px 32px; font-size: 56px; font-weight: 900; letter-spacing: -0.02em; }
+    .w-pw { display: inline-block; }
+  </style>
+  <div id="root" data-composition-id="wire" data-width="1920" data-height="1080">
+    <div id="w-wire">
+      <div id="w-head"><span id="w-head-t">Server-Sent Events</span><span id="w-head-h">plain HTTP</span></div>
+      <div id="w-rows">
+        <div id="w-l1" class="w-row"><span class="w-data">data:</span> <span class="w-json">{"token": "Check"}</span></div>
+        <div id="w-b1" class="w-row"><span class="w-blank"></span><span id="w-blank-l">end of event</span></div>
+        <div id="w-l2" class="w-row"><span class="w-data">data:</span> <span class="w-json">{"token": " the"}</span></div>
+        <div id="w-b2" class="w-row"><span class="w-blank"></span></div>
+        <div id="w-l3" class="w-row"><span class="w-data">data:</span> <span class="w-json">{"token": "<span class="w-nl">\n</span>"}</span></div>
+        <div id="w-b3" class="w-row"><span class="w-blank"></span></div>
+      </div>
+      <div id="w-n1" class="w-note">Each token travels as JSON</div>
+      <div id="w-n2" class="w-note">A raw newline would end the event early</div>
+    </div>
+
+    <div id="w-b-label">In the browser</div>
+    <div id="w-b-code">fetch → reader.read()</div>
+    <div id="w-r1-l" class="w-rl">read 1</div>
+    <div class="w-ev" style="left: 1230px">event</div>
+    <div class="w-ev" style="left: 1370px">event</div>
+    <div class="w-ev" style="left: 1510px">event</div>
+    <div id="w-r2-l" class="w-rl">read 2</div>
+    <div id="w-half">eve</div>
+    <div id="w-half-l">half an event</div>
+    <div id="w-buf-l">buffer</div>
+    <div id="w-buf"></div>
+    <div id="w-rest">nt</div>
+    <div id="w-split">split("\n\n")</div>
+    <div id="w-page">
+      <div id="w-page-head"><span class="w-hd"></span><span class="w-hd"></span><span class="w-hd"></span>the page</div>
+      <div id="w-page-t"><span class="w-pw">Check</span> <span class="w-pw">the</span> <span class="w-pw">middle</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const W = {"l07":[0,0.209,0.337,0.685,0.859,1.451,2.183,2.334,2.647,3.042,3.204,3.866,4.075,4.145,4.47,5.41,5.793],"l08":[7.223,7.583,7.838,8.221,8.372,9.034,9.336,9.417,9.8,9.975,10.427,10.543,11.275,11.472,11.565,11.821,12.273,12.587,12.703],"l09":[14.075,14.307,14.412,15.004,15.352,15.666,15.793,16.757,17.036,17.279,17.442,17.674,17.918,18.498,18.731,18.974,19.125],"l10":[20.369,20.59,20.81,20.88,21.484,21.843,21.948,22.052,22.354,22.854,23.051,23.283,23.539,23.898,24.003,24.119]};
+    const at = (l, i) => W[l][i];
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#w-wire", { x: 400 });
+    gsap.set("#w-head-t, #w-head-h, #w-l1, #w-b1, #w-blank-l, #w-l2, #w-b2, #w-l3, #w-b3, #w-n1, #w-n2", { opacity: 0 });
+    gsap.set("#w-b-label, #w-b-code, .w-rl, .w-ev, #w-half, #w-half-l, #w-buf-l, #w-buf, #w-rest, #w-split, #w-page, .w-pw", { opacity: 0 });
+
+    // l07: what travels on the wire
+    tl.fromTo("#w-wire", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
+    blurIn("#w-head-t", at("l07", 4), 0.2);
+    blurIn("#w-l1", at("l07", 7), 0.2);
+    tl.fromTo(".w-data", { color: "#FFFFFF" }, { color: "#5EEAD4", duration: 0.25, ease: "power2.out" }, at("l07", 10));
+    blurIn("#w-b1", at("l07", 13), 0.2);
+    blurIn("#w-blank-l", at("l07", 14), 0.2);
+    blurIn("#w-l2", at("l07", 14) + 0.45, 0.2);
+    blurIn("#w-b2", at("l07", 14) + 0.7, 0.2);
+    blurIn("#w-head-h", at("l07", 15), 0.2);
+
+    // l08: JSON, because of newlines
+    tl.fromTo(".w-json", { color: "#FFFFFF" }, { color: "#99F6E4", duration: 0.25, ease: "power2.out" }, at("l08", 4));
+    blurIn("#w-n1", at("l08", 4), 0.2);
+    blurIn("#w-l3", at("l08", 11), 0.2);
+    blurIn("#w-b3", at("l08", 11) + 0.35, 0.2);
+    blurIn("#w-n2", at("l08", 14), 0.2);
+    tl.fromTo(".w-nl", { scale: 1 }, { scale: 1.3, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.out" }, at("l08", 15));
+
+    // l09: reads do not match events
+    tl.to("#w-wire", { x: 0, duration: 0.6, ease: "power2.inOut" }, at("l09", 0) - 0.35);
+    blurIn("#w-b-label", at("l09", 2), 0.2);
+    blurIn("#w-b-code", at("l09", 3), 0.2);
+    blurIn("#w-r1-l", at("l09", 7), 0.2);
+    gsap.utils.toArray(".w-ev").forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.2, ease: "expo.out" }, at("l09", 11) + i * 0.08));
+    blurIn("#w-r2-l", at("l09", 13), 0.2);
+    tl.fromTo("#w-half", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.2, ease: "expo.out" }, at("l09", 14));
+    blurIn("#w-half-l", at("l09", 14) + 0.1, 0.2);
+
+    // l10: buffer, split, append
+    blurOut("#w-half-l", at("l10", 1), 0.15);
+    blurIn("#w-buf", at("l10", 1), 0.2);
+    blurIn("#w-buf-l", at("l10", 3), 0.2);
+    tl.to("#w-half", { x: 16, y: 142, duration: 0.5, ease: "power2.inOut" }, at("l10", 3));
+    tl.fromTo("#w-rest", { opacity: 0, x: 140 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, at("l10", 4));
+    blurIn("#w-split", at("l10", 7), 0.2);
+    blurIn("#w-page", at("l10", 9), 0.2);
+    gsap.utils.toArray(".w-pw").forEach((el, i) => blurIn(el, [at("l10", 10), at("l10", 12) - 0.1, at("l10", 12) + 0.3][i], 0.15));
+
+    blurOut("#w-wire, #w-b-label, #w-b-code, .w-rl, .w-ev, #w-half, #w-buf-l, #w-buf, #w-rest, #w-split, #w-page", 24.75, 0.22);
+
+    window.__timelines["wire"] = tl;
+  </script>
+</template>

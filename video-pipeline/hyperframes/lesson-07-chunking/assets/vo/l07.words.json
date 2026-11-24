@@ -1,0 +1,102 @@
+[
+  {
+    "word": "Now",
+    "start": 0,
+    "end": 0.232
+  },
+  {
+    "word": "the",
+    "start": 0.29,
+    "end": 0.372
+  },
+  {
+    "word": "sentence",
+    "start": 0.43,
+    "end": 0.824
+  },
+  {
+    "word": "survives",
+    "start": 0.848,
+    "end": 1.289
+  },
+  {
+    "word": "whole",
+    "start": 1.324,
+    "end": 1.625
+  },
+  {
+    "word": "in",
+    "start": 1.672,
+    "end": 1.765
+  },
+  {
+    "word": "at",
+    "start": 1.8,
+    "end": 1.869
+  },
+  {
+    "word": "least",
+    "start": 1.904,
+    "end": 2.09
+  },
+  {
+    "word": "one",
+    "start": 2.148,
+    "end": 2.322
+  },
+  {
+    "word": "chunk.",
+    "start": 2.368,
+    "end": 2.844
+  },
+  {
+    "word": "Better",
+    "start": 3.332,
+    "end": 3.611
+  },
+  {
+    "word": "still,",
+    "start": 3.657,
+    "end": 4.098
+  },
+  {
+    "word": "split",
+    "start": 4.214,
+    "end": 4.516
+  },
+  {
+    "word": "on",
+    "start": 4.574,
+    "end": 4.644
+  },
+  {
+    "word": "paragraphs",
+    "start": 4.714,
+    "end": 5.294
+  },
+  {
+    "word": "and",
+    "start": 5.341,
+    "end": 5.422
+  },
+  {
+    "word": "sentences,",
+    "start": 5.492,
+    "end": 6.235
+  },
+  {
+    "word": "not",
+    "start": 6.432,
+    "end": 6.594
+  },
+  {
+    "word": "character",
+    "start": 6.653,
+    "end": 7.036
+  },
+  {
+    "word": "counts.",
+    "start": 7.082,
+    "end": 8.034
+  }
+]

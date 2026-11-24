@@ -1,0 +1,91 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #k-when { position: absolute; left: 140px; top: 150px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #k-lapwrap { position: absolute; left: 0; top: 0; width: 1000px; height: 800px; }
+    #k-lap { position: absolute; left: 140px; top: 220px; width: 780px; height: 520px; border: 14px solid #0B1220; border-radius: 28px; background: #FFFFFF; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    #k-base { position: absolute; left: 80px; top: 740px; width: 900px; height: 30px; background: #0B1220; border-radius: 6px 6px 22px 22px; }
+    .k-head { height: 72px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 14px; padding: 0 28px; font-weight: 700; font-size: 30px; }
+    .k-avatar { width: 44px; height: 44px; border-radius: 12px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    .k-msgs { padding: 22px 28px; display: flex; flex-direction: column; gap: 16px; }
+    .k-user { align-self: flex-end; background: #0F766E; color: #FFFFFF; border-radius: 26px 26px 8px 26px; padding: 16px 24px; font-size: 32px; line-height: 1.25; font-weight: 700; }
+    .k-bot { align-self: flex-start; background: #F1F5F9; border-radius: 26px 26px 26px 8px; padding: 16px 24px; font-size: 32px; line-height: 1.25; }
+    .k-w, .k-fw { display: inline-block; }
+    #k-err { align-self: flex-start; background: #FFF7ED; border: 3px solid #EA580C; color: #C2410C; border-radius: 16px; padding: 12px 20px; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; }
+    #k-card { position: absolute; left: 1290px; top: 280px; width: 470px; height: 400px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #k-card-t { position: absolute; left: 36px; top: 26px; font-size: 34px; font-weight: 700; color: #475569; }
+    #k-card-s { position: absolute; left: 0; right: 0; top: 318px; text-align: center; font-size: 28px; font-weight: 700; color: #64748B; }
+    #k-llm { position: absolute; left: 1415px; top: 380px; width: 220px; height: 170px; border-radius: 26px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 64px; font-weight: 900; letter-spacing: -0.02em; }
+    #k-wire { position: absolute; left: 944px; top: 476px; width: 318px; height: 8px; background: #0F766E; border-radius: 4px; }
+    #k-wire::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #k-meter { position: absolute; left: 950px; top: 330px; width: 300px; }
+    #k-meter-l { font-size: 30px; font-weight: 700; color: #475569; }
+    #k-track { margin-top: 10px; width: 300px; height: 32px; border-radius: 8px; background: #E2E8F0; border: 3px solid #CBD5E1; overflow: hidden; }
+    #k-fill { width: 100%; height: 100%; background: #0F766E; transform-origin: left center; }
+    #k-zero { position: absolute; left: 950px; top: 418px; width: 300px; text-align: right; font-size: 30px; font-weight: 900; color: #EA580C; }
+    #k-pay { position: absolute; left: 950px; top: 536px; width: 300px; font-size: 30px; font-weight: 700; color: #475569; }
+    #k-x { position: absolute; left: 1068px; top: 440px; width: 80px; height: 80px; display: grid; place-items: center; font-size: 96px; font-weight: 900; color: #EA580C; line-height: 1; }
+    #k-fix { position: absolute; left: 1010px; top: 700px; }
+    #k-fix-l { font-size: 34px; font-weight: 700; color: #0F766E; }
+    #k-fix-h { font-size: 84px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; margin-top: 6px; }
+  </style>
+  <div id="root" data-composition-id="credits" data-width="1920" data-height="1080">
+    <div id="k-when">2:07 AM · hackathon</div>
+    <div id="k-lapwrap">
+      <div id="k-lap">
+        <div class="k-head"><span class="k-avatar">K</span>Kabir's chatbot</div>
+        <div class="k-msgs">
+          <div id="k-q" class="k-user">Name my hackathon app</div>
+          <div id="k-a" class="k-bot"><span class="k-w">How</span> <span class="k-w">about</span> <span class="k-w">PlaceMate?</span></div>
+          <div id="k-err">429 · quota exceeded</div>
+        </div>
+      </div>
+      <div id="k-base"></div>
+    </div>
+    <div id="k-meter"><div id="k-meter-l">Free API credits</div><div id="k-track"><div id="k-fill"></div></div></div>
+    <div id="k-zero">0 left</div>
+    <div id="k-wire"></div>
+    <div id="k-x">×</div>
+    <div id="k-pay">pay per token</div>
+    <div id="k-card"><div id="k-card-t">Hosted API</div><div id="k-card-s">someone else's computer</div></div>
+    <div id="k-llm">LLM</div>
+    <div id="k-fix">
+      <div id="k-fix-l">The fix</div>
+      <div id="k-fix-h"><span class="k-fw">Move</span> <span class="k-fw">the</span> <span class="k-fw">model</span><br /><span class="k-fw">onto</span> <span class="k-fw">the</span> <span class="k-fw">laptop</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L2 = 7.548;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#k-q, #k-a, #k-err, #k-zero, #k-x, #k-fix-l", { opacity: 0 });
+    gsap.set(".k-fw", { opacity: 0 });
+    tl.fromTo("#k-lapwrap", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+
+    // l01: the chatbot works, then the free credits run out
+    blurIn("#k-q", 2.368, 0.2);
+    tl.fromTo("#k-wire", { scaleY: 1 }, { scaleY: 1.8, duration: 0.12, yoyo: true, repeat: 1 }, 2.62);
+    tl.set("#k-a", { opacity: 1 }, 2.85);
+    [2.9, 3.3, 3.75].forEach((t, i) => blurIn(`#k-a .k-w:nth-child(${i + 1})`, t, 0.12));
+    tl.fromTo("#k-fill", { scaleX: 0.6 }, { scaleX: 0, duration: 6.25, ease: "power2.in" }, 0.08);
+    tl.to("#k-track", { borderColor: "#EA580C", duration: 0.2 }, 6.33);
+    blurIn("#k-zero", 6.33, 0.2);
+    tl.fromTo("#k-x", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 6.5);
+    blurIn("#k-err", 6.75, 0.2);
+
+    // l02: not more credits, a model on his own laptop
+    blurOut("#k-meter, #k-zero, #k-pay, #k-x, #k-wire", L2 + 0.84, 0.2);
+    blurIn("#k-fix-l", L2 + 1.51, 0.2);
+    [1.67, 1.85, 2.01, 2.76, 2.9, 3.29].forEach((t, i) => tl.fromTo(gsap.utils.toArray(".k-fw")[i], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.15, ease: "power4.out" }, L2 + t));
+    blurOut("#k-card", L2 + 1.7, 0.25);
+    tl.to("#k-err", { opacity: 0, duration: 0.2 }, L2 + 1.75);
+    tl.fromTo("#k-llm", { x: 0, y: 0 }, { x: -995, y: 154, duration: 0.75, ease: "power2.inOut" }, L2 + 2.05);
+    tl.to("#k-lap", { borderColor: "#0F766E", duration: 0.3, ease: "power2.out" }, L2 + 2.8);
+
+    blurOut("#k-lapwrap, #k-llm, #k-when, #k-fix", 11.8, 0.25);
+
+    window.__timelines["credits"] = tl;
+  </script>
+</template>

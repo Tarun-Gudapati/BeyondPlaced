@@ -1,0 +1,1198 @@
+{
+  "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+  "modelId": "eleven_multilingual_v2",
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "ask",
+      "text": "Riya asks her college placement bot: how many active backlogs are allowed? The answer is one sentence, on page four of a forty-page policy.",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 9.567,
+      "words": [
+        {
+          "word": "Riya",
+          "start": 0,
+          "end": 0.348
+        },
+        {
+          "word": "asks",
+          "start": 0.418,
+          "end": 0.766
+        },
+        {
+          "word": "her",
+          "start": 0.813,
+          "end": 0.894
+        },
+        {
+          "word": "college",
+          "start": 0.952,
+          "end": 1.277
+        },
+        {
+          "word": "placement",
+          "start": 1.312,
+          "end": 1.741
+        },
+        {
+          "word": "bot:",
+          "start": 1.788,
+          "end": 2.218
+        },
+        {
+          "word": "how",
+          "start": 2.635,
+          "end": 2.786
+        },
+        {
+          "word": "many",
+          "start": 2.833,
+          "end": 3.019
+        },
+        {
+          "word": "active",
+          "start": 3.088,
+          "end": 3.471
+        },
+        {
+          "word": "backlogs",
+          "start": 3.506,
+          "end": 3.994
+        },
+        {
+          "word": "are",
+          "start": 4.029,
+          "end": 4.133
+        },
+        {
+          "word": "allowed?",
+          "start": 4.168,
+          "end": 4.725
+        },
+        {
+          "word": "The",
+          "start": 5.143,
+          "end": 5.271
+        },
+        {
+          "word": "answer",
+          "start": 5.341,
+          "end": 5.666
+        },
+        {
+          "word": "is",
+          "start": 5.724,
+          "end": 5.805
+        },
+        {
+          "word": "one",
+          "start": 5.875,
+          "end": 6.072
+        },
+        {
+          "word": "sentence,",
+          "start": 6.118,
+          "end": 6.699
+        },
+        {
+          "word": "on",
+          "start": 6.815,
+          "end": 6.954
+        },
+        {
+          "word": "page",
+          "start": 7.024,
+          "end": 7.314
+        },
+        {
+          "word": "four",
+          "start": 7.361,
+          "end": 7.616
+        },
+        {
+          "word": "of",
+          "start": 7.686,
+          "end": 7.755
+        },
+        {
+          "word": "a",
+          "start": 7.814,
+          "end": 7.837
+        },
+        {
+          "word": "forty-page",
+          "start": 7.906,
+          "end": 8.522
+        },
+        {
+          "word": "policy.",
+          "start": 8.557,
+          "end": 9.567
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "ask",
+      "text": "But the model never reads the whole PDF. It only sees the few chunks you retrieve. So how you cut the document decides everything.",
+      "src": "assets/vo/l02.mp3",
+      "start": 9.917,
+      "duration": 7.988,
+      "words": [
+        {
+          "word": "But",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "the",
+          "start": 0.221,
+          "end": 0.29
+        },
+        {
+          "word": "model",
+          "start": 0.348,
+          "end": 0.592
+        },
+        {
+          "word": "never",
+          "start": 0.65,
+          "end": 0.859
+        },
+        {
+          "word": "reads",
+          "start": 0.929,
+          "end": 1.219
+        },
+        {
+          "word": "the",
+          "start": 1.265,
+          "end": 1.335
+        },
+        {
+          "word": "whole",
+          "start": 1.382,
+          "end": 1.567
+        },
+        {
+          "word": "PDF.",
+          "start": 1.602,
+          "end": 2.31
+        },
+        {
+          "word": "It",
+          "start": 2.543,
+          "end": 2.682
+        },
+        {
+          "word": "only",
+          "start": 2.728,
+          "end": 2.902
+        },
+        {
+          "word": "sees",
+          "start": 2.961,
+          "end": 3.251
+        },
+        {
+          "word": "the",
+          "start": 3.309,
+          "end": 3.379
+        },
+        {
+          "word": "few",
+          "start": 3.448,
+          "end": 3.622
+        },
+        {
+          "word": "chunks",
+          "start": 3.692,
+          "end": 4.005
+        },
+        {
+          "word": "you",
+          "start": 4.052,
+          "end": 4.133
+        },
+        {
+          "word": "retrieve.",
+          "start": 4.214,
+          "end": 4.865
+        },
+        {
+          "word": "So",
+          "start": 5.352,
+          "end": 5.48
+        },
+        {
+          "word": "how",
+          "start": 5.538,
+          "end": 5.642
+        },
+        {
+          "word": "you",
+          "start": 5.7,
+          "end": 5.782
+        },
+        {
+          "word": "cut",
+          "start": 5.851,
+          "end": 6.014
+        },
+        {
+          "word": "the",
+          "start": 6.06,
+          "end": 6.13
+        },
+        {
+          "word": "document",
+          "start": 6.177,
+          "end": 6.618
+        },
+        {
+          "word": "decides",
+          "start": 6.687,
+          "end": 7.14
+        },
+        {
+          "word": "everything.",
+          "start": 7.198,
+          "end": 7.988
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "size",
+      "text": "Cut the chunks too large, and each one mixes many topics. Retrieval gets noisy, and you pay to send filler.",
+      "src": "assets/vo/l03.mp3",
+      "start": 18.255,
+      "duration": 7.245,
+      "words": [
+        {
+          "word": "Cut",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "the",
+          "start": 0.29,
+          "end": 0.36
+        },
+        {
+          "word": "chunks",
+          "start": 0.406,
+          "end": 0.72
+        },
+        {
+          "word": "too",
+          "start": 0.766,
+          "end": 0.929
+        },
+        {
+          "word": "large,",
+          "start": 1.01,
+          "end": 1.509
+        },
+        {
+          "word": "and",
+          "start": 1.672,
+          "end": 1.811
+        },
+        {
+          "word": "each",
+          "start": 1.869,
+          "end": 2.032
+        },
+        {
+          "word": "one",
+          "start": 2.09,
+          "end": 2.229
+        },
+        {
+          "word": "mixes",
+          "start": 2.264,
+          "end": 2.577
+        },
+        {
+          "word": "many",
+          "start": 2.647,
+          "end": 2.844
+        },
+        {
+          "word": "topics.",
+          "start": 2.902,
+          "end": 3.506
+        },
+        {
+          "word": "Retrieval",
+          "start": 3.994,
+          "end": 4.47
+        },
+        {
+          "word": "gets",
+          "start": 4.528,
+          "end": 4.725
+        },
+        {
+          "word": "noisy,",
+          "start": 4.795,
+          "end": 5.294
+        },
+        {
+          "word": "and",
+          "start": 5.341,
+          "end": 5.492
+        },
+        {
+          "word": "you",
+          "start": 5.538,
+          "end": 5.608
+        },
+        {
+          "word": "pay",
+          "start": 5.666,
+          "end": 5.84
+        },
+        {
+          "word": "to",
+          "start": 5.898,
+          "end": 5.956
+        },
+        {
+          "word": "send",
+          "start": 6.014,
+          "end": 6.211
+        },
+        {
+          "word": "filler.",
+          "start": 6.281,
+          "end": 7.245
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "size",
+      "text": "Cut them too small, and they lose context. It must be cleared before the drive. What is it?",
+      "src": "assets/vo/l04.mp3",
+      "start": 25.85,
+      "duration": 5.991,
+      "words": [
+        {
+          "word": "Cut",
+          "start": 0,
+          "end": 0.221
+        },
+        {
+          "word": "them",
+          "start": 0.267,
+          "end": 0.406
+        },
+        {
+          "word": "too",
+          "start": 0.464,
+          "end": 0.65
+        },
+        {
+          "word": "small,",
+          "start": 0.72,
+          "end": 1.115
+        },
+        {
+          "word": "and",
+          "start": 1.138,
+          "end": 1.231
+        },
+        {
+          "word": "they",
+          "start": 1.265,
+          "end": 1.37
+        },
+        {
+          "word": "lose",
+          "start": 1.44,
+          "end": 1.649
+        },
+        {
+          "word": "context.",
+          "start": 1.695,
+          "end": 2.38
+        },
+        {
+          "word": "It",
+          "start": 2.577,
+          "end": 2.705
+        },
+        {
+          "word": "must",
+          "start": 2.74,
+          "end": 2.891
+        },
+        {
+          "word": "be",
+          "start": 2.937,
+          "end": 3.019
+        },
+        {
+          "word": "cleared",
+          "start": 3.065,
+          "end": 3.355
+        },
+        {
+          "word": "before",
+          "start": 3.402,
+          "end": 3.704
+        },
+        {
+          "word": "the",
+          "start": 3.75,
+          "end": 3.82
+        },
+        {
+          "word": "drive.",
+          "start": 3.866,
+          "end": 4.423
+        },
+        {
+          "word": "What",
+          "start": 4.656,
+          "end": 4.841
+        },
+        {
+          "word": "is",
+          "start": 4.888,
+          "end": 4.969
+        },
+        {
+          "word": "it?",
+          "start": 5.027,
+          "end": 5.991
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "cut",
+      "text": "So start at around five hundred tokens per chunk. But a fixed cut can slice Riya's sentence in half, and neither chunk holds the answer.",
+      "src": "assets/vo/l05.mp3",
+      "start": 32.191,
+      "duration": 8.127,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "start",
+          "start": 0.244,
+          "end": 0.534
+        },
+        {
+          "word": "at",
+          "start": 0.58,
+          "end": 0.639
+        },
+        {
+          "word": "around",
+          "start": 0.673,
+          "end": 0.929
+        },
+        {
+          "word": "five",
+          "start": 1.01,
+          "end": 1.242
+        },
+        {
+          "word": "hundred",
+          "start": 1.265,
+          "end": 1.521
+        },
+        {
+          "word": "tokens",
+          "start": 1.567,
+          "end": 1.927
+        },
+        {
+          "word": "per",
+          "start": 1.974,
+          "end": 2.101
+        },
+        {
+          "word": "chunk.",
+          "start": 2.159,
+          "end": 2.647
+        },
+        {
+          "word": "But",
+          "start": 2.961,
+          "end": 3.111
+        },
+        {
+          "word": "a",
+          "start": 3.146,
+          "end": 3.17
+        },
+        {
+          "word": "fixed",
+          "start": 3.239,
+          "end": 3.506
+        },
+        {
+          "word": "cut",
+          "start": 3.564,
+          "end": 3.785
+        },
+        {
+          "word": "can",
+          "start": 3.843,
+          "end": 3.971
+        },
+        {
+          "word": "slice",
+          "start": 4.029,
+          "end": 4.342
+        },
+        {
+          "word": "Riya's",
+          "start": 4.389,
+          "end": 4.667
+        },
+        {
+          "word": "sentence",
+          "start": 4.702,
+          "end": 5.097
+        },
+        {
+          "word": "in",
+          "start": 5.132,
+          "end": 5.213
+        },
+        {
+          "word": "half,",
+          "start": 5.294,
+          "end": 5.77
+        },
+        {
+          "word": "and",
+          "start": 5.886,
+          "end": 6.026
+        },
+        {
+          "word": "neither",
+          "start": 6.095,
+          "end": 6.351
+        },
+        {
+          "word": "chunk",
+          "start": 6.397,
+          "end": 6.664
+        },
+        {
+          "word": "holds",
+          "start": 6.734,
+          "end": 6.989
+        },
+        {
+          "word": "the",
+          "start": 7.024,
+          "end": 7.094
+        },
+        {
+          "word": "answer.",
+          "start": 7.152,
+          "end": 8.127
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "overlap",
+      "text": "The fix is overlap. Repeat about fifty tokens from the end of one chunk at the start of the next.",
+      "src": "assets/vo/l06.mp3",
+      "start": 40.668,
+      "duration": 6.269,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "fix",
+          "start": 0.232,
+          "end": 0.488
+        },
+        {
+          "word": "is",
+          "start": 0.557,
+          "end": 0.639
+        },
+        {
+          "word": "overlap.",
+          "start": 0.708,
+          "end": 1.393
+        },
+        {
+          "word": "Repeat",
+          "start": 1.707,
+          "end": 2.032
+        },
+        {
+          "word": "about",
+          "start": 2.078,
+          "end": 2.299
+        },
+        {
+          "word": "fifty",
+          "start": 2.357,
+          "end": 2.647
+        },
+        {
+          "word": "tokens",
+          "start": 2.705,
+          "end": 3.181
+        },
+        {
+          "word": "from",
+          "start": 3.297,
+          "end": 3.46
+        },
+        {
+          "word": "the",
+          "start": 3.495,
+          "end": 3.564
+        },
+        {
+          "word": "end",
+          "start": 3.634,
+          "end": 3.796
+        },
+        {
+          "word": "of",
+          "start": 3.855,
+          "end": 3.913
+        },
+        {
+          "word": "one",
+          "start": 4.005,
+          "end": 4.18
+        },
+        {
+          "word": "chunk",
+          "start": 4.214,
+          "end": 4.493
+        },
+        {
+          "word": "at",
+          "start": 4.551,
+          "end": 4.644
+        },
+        {
+          "word": "the",
+          "start": 4.679,
+          "end": 4.748
+        },
+        {
+          "word": "start",
+          "start": 4.783,
+          "end": 5.062
+        },
+        {
+          "word": "of",
+          "start": 5.097,
+          "end": 5.143
+        },
+        {
+          "word": "the",
+          "start": 5.19,
+          "end": 5.259
+        },
+        {
+          "word": "next.",
+          "start": 5.317,
+          "end": 6.269
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "overlap",
+      "text": "Now the sentence survives whole in at least one chunk. Better still, split on paragraphs and sentences, not character counts.",
+      "src": "assets/vo/l07.mp3",
+      "start": 47.287,
+      "duration": 8.034,
+      "words": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "word": "the",
+          "start": 0.29,
+          "end": 0.372
+        },
+        {
+          "word": "sentence",
+          "start": 0.43,
+          "end": 0.824
+        },
+        {
+          "word": "survives",
+          "start": 0.848,
+          "end": 1.289
+        },
+        {
+          "word": "whole",
+          "start": 1.324,
+          "end": 1.625
+        },
+        {
+          "word": "in",
+          "start": 1.672,
+          "end": 1.765
+        },
+        {
+          "word": "at",
+          "start": 1.8,
+          "end": 1.869
+        },
+        {
+          "word": "least",
+          "start": 1.904,
+          "end": 2.09
+        },
+        {
+          "word": "one",
+          "start": 2.148,
+          "end": 2.322
+        },
+        {
+          "word": "chunk.",
+          "start": 2.368,
+          "end": 2.844
+        },
+        {
+          "word": "Better",
+          "start": 3.332,
+          "end": 3.611
+        },
+        {
+          "word": "still,",
+          "start": 3.657,
+          "end": 4.098
+        },
+        {
+          "word": "split",
+          "start": 4.214,
+          "end": 4.516
+        },
+        {
+          "word": "on",
+          "start": 4.574,
+          "end": 4.644
+        },
+        {
+          "word": "paragraphs",
+          "start": 4.714,
+          "end": 5.294
+        },
+        {
+          "word": "and",
+          "start": 5.341,
+          "end": 5.422
+        },
+        {
+          "word": "sentences,",
+          "start": 5.492,
+          "end": 6.235
+        },
+        {
+          "word": "not",
+          "start": 6.432,
+          "end": 6.594
+        },
+        {
+          "word": "character",
+          "start": 6.653,
+          "end": 7.036
+        },
+        {
+          "word": "counts.",
+          "start": 7.082,
+          "end": 8.034
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "meta",
+      "text": "Give every chunk an ID card: the file name and the page number. That becomes your citation later.",
+      "src": "assets/vo/l08.mp3",
+      "start": 55.671,
+      "duration": 6.502,
+      "words": [
+        {
+          "word": "Give",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "word": "every",
+          "start": 0.302,
+          "end": 0.534
+        },
+        {
+          "word": "chunk",
+          "start": 0.58,
+          "end": 0.836
+        },
+        {
+          "word": "an",
+          "start": 0.894,
+          "end": 0.964
+        },
+        {
+          "word": "ID",
+          "start": 1.045,
+          "end": 1.277
+        },
+        {
+          "word": "card:",
+          "start": 1.44,
+          "end": 1.892
+        },
+        {
+          "word": "the",
+          "start": 2.032,
+          "end": 2.136
+        },
+        {
+          "word": "file",
+          "start": 2.194,
+          "end": 2.485
+        },
+        {
+          "word": "name",
+          "start": 2.519,
+          "end": 2.74
+        },
+        {
+          "word": "and",
+          "start": 2.775,
+          "end": 2.868
+        },
+        {
+          "word": "the",
+          "start": 2.902,
+          "end": 2.972
+        },
+        {
+          "word": "page",
+          "start": 3.007,
+          "end": 3.286
+        },
+        {
+          "word": "number.",
+          "start": 3.332,
+          "end": 3.785
+        },
+        {
+          "word": "That",
+          "start": 4.017,
+          "end": 4.238
+        },
+        {
+          "word": "becomes",
+          "start": 4.296,
+          "end": 4.656
+        },
+        {
+          "word": "your",
+          "start": 4.702,
+          "end": 4.83
+        },
+        {
+          "word": "citation",
+          "start": 4.888,
+          "end": 5.445
+        },
+        {
+          "word": "later.",
+          "start": 5.515,
+          "end": 6.502
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "meta",
+      "text": "Then measure. Chunk the same PDF three ways, ask the same questions, and keep the one that retrieves the right passage.",
+      "src": "assets/vo/l09.mp3",
+      "start": 62.523,
+      "duration": 7.895,
+      "words": [
+        {
+          "word": "Then",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "word": "measure.",
+          "start": 0.325,
+          "end": 0.824
+        },
+        {
+          "word": "Chunk",
+          "start": 1.242,
+          "end": 1.544
+        },
+        {
+          "word": "the",
+          "start": 1.614,
+          "end": 1.695
+        },
+        {
+          "word": "same",
+          "start": 1.741,
+          "end": 1.974
+        },
+        {
+          "word": "PDF",
+          "start": 2.02,
+          "end": 2.415
+        },
+        {
+          "word": "three",
+          "start": 2.473,
+          "end": 2.717
+        },
+        {
+          "word": "ways,",
+          "start": 2.763,
+          "end": 3.216
+        },
+        {
+          "word": "ask",
+          "start": 3.379,
+          "end": 3.646
+        },
+        {
+          "word": "the",
+          "start": 3.715,
+          "end": 3.785
+        },
+        {
+          "word": "same",
+          "start": 3.831,
+          "end": 4.04
+        },
+        {
+          "word": "questions,",
+          "start": 4.087,
+          "end": 4.76
+        },
+        {
+          "word": "and",
+          "start": 4.899,
+          "end": 5.039
+        },
+        {
+          "word": "keep",
+          "start": 5.108,
+          "end": 5.283
+        },
+        {
+          "word": "the",
+          "start": 5.317,
+          "end": 5.387
+        },
+        {
+          "word": "one",
+          "start": 5.457,
+          "end": 5.608
+        },
+        {
+          "word": "that",
+          "start": 5.631,
+          "end": 5.735
+        },
+        {
+          "word": "retrieves",
+          "start": 5.782,
+          "end": 6.235
+        },
+        {
+          "word": "the",
+          "start": 6.281,
+          "end": 6.351
+        },
+        {
+          "word": "right",
+          "start": 6.409,
+          "end": 6.594
+        },
+        {
+          "word": "passage.",
+          "start": 6.641,
+          "end": 7.895
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "claim",
+      "text": "Remember this: bad chunking ruins good models. Start at five hundred tokens with fifty of overlap, then measure.",
+      "src": "assets/vo/l10.mp3",
+      "start": 70.768,
+      "duration": 7.895,
+      "words": [
+        {
+          "word": "Remember",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "word": "this:",
+          "start": 0.418,
+          "end": 0.824
+        },
+        {
+          "word": "bad",
+          "start": 1.138,
+          "end": 1.393
+        },
+        {
+          "word": "chunking",
+          "start": 1.44,
+          "end": 1.811
+        },
+        {
+          "word": "ruins",
+          "start": 1.881,
+          "end": 2.287
+        },
+        {
+          "word": "good",
+          "start": 2.403,
+          "end": 2.624
+        },
+        {
+          "word": "models.",
+          "start": 2.67,
+          "end": 3.274
+        },
+        {
+          "word": "Start",
+          "start": 3.855,
+          "end": 4.191
+        },
+        {
+          "word": "at",
+          "start": 4.238,
+          "end": 4.307
+        },
+        {
+          "word": "five",
+          "start": 4.365,
+          "end": 4.621
+        },
+        {
+          "word": "hundred",
+          "start": 4.656,
+          "end": 4.911
+        },
+        {
+          "word": "tokens",
+          "start": 4.957,
+          "end": 5.352
+        },
+        {
+          "word": "with",
+          "start": 5.387,
+          "end": 5.538
+        },
+        {
+          "word": "fifty",
+          "start": 5.584,
+          "end": 5.875
+        },
+        {
+          "word": "of",
+          "start": 5.933,
+          "end": 5.979
+        },
+        {
+          "word": "overlap,",
+          "start": 6.037,
+          "end": 6.594
+        },
+        {
+          "word": "then",
+          "start": 6.711,
+          "end": 6.92
+        },
+        {
+          "word": "measure.",
+          "start": 7.001,
+          "end": 7.895
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "claim",
+      "text": "Next lesson: the full RAG pipeline, with citations.",
+      "src": "assets/vo/l11.mp3",
+      "start": 79.013,
+      "duration": 3.297,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "word": "lesson:",
+          "start": 0.348,
+          "end": 0.755
+        },
+        {
+          "word": "the",
+          "start": 0.836,
+          "end": 0.94
+        },
+        {
+          "word": "full",
+          "start": 0.998,
+          "end": 1.196
+        },
+        {
+          "word": "RAG",
+          "start": 1.277,
+          "end": 1.474
+        },
+        {
+          "word": "pipeline,",
+          "start": 1.533,
+          "end": 2.032
+        },
+        {
+          "word": "with",
+          "start": 2.055,
+          "end": 2.194
+        },
+        {
+          "word": "citations.",
+          "start": 2.229,
+          "end": 3.297
+        }
+      ]
+    }
+  ],
+  "total": 82.66
+}

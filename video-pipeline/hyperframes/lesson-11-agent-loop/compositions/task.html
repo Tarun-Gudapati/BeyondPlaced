@@ -1,0 +1,75 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .k-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    .k-sheet { position: absolute; top: 250px; width: 330px; height: 460px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 14px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 28px 26px; }
+    #k-s1 { left: 130px; }
+    #k-s2 { left: 350px; top: 215px; }
+    #k-s3 { left: 570px; }
+    .k-file { font-size: 30px; color: #0F766E; margin-bottom: 22px; }
+    .k-line { height: 16px; border-radius: 8px; background: #E2E8F0; margin-bottom: 18px; }
+    .k-line.s { width: 60%; }
+    .k-line.h { height: 24px; width: 75%; background: #0B1220; margin-bottom: 26px; }
+    #k-score { position: absolute; left: 26px; bottom: 26px; background: #0F766E; color: #FFFFFF; font-size: 40px; font-weight: 900; padding: 8px 18px; border-radius: 12px; }
+    #k-sample { position: absolute; left: 130px; top: 760px; font-size: 30px; font-weight: 700; color: #475569; }
+    #k-who { position: absolute; left: 1010px; top: 190px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #k-goal { position: absolute; left: 1010px; top: 240px; font-size: 96px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+    #k-once { position: absolute; left: 1010px; top: 480px; font-size: 44px; font-weight: 700; color: #475569; }
+    #k-once span { position: relative; }
+    #k-strike { position: absolute; left: -8px; right: -8px; top: 54%; height: 8px; background: #EA580C; border-radius: 4px; transform-origin: left center; }
+    #k-rail { position: absolute; left: 1026px; top: 620px; width: 8px; height: 230px; background: #99F6E4; border-radius: 4px; transform-origin: center top; }
+    .k-step { position: absolute; left: 1010px; display: flex; align-items: center; gap: 26px; font-size: 44px; font-weight: 700; }
+    .k-n { width: 40px; height: 56px; display: grid; place-items: center; background: #F0FDFA; color: #0F766E; font-weight: 900; }
+    #k-st1 { top: 590px; }
+    #k-st2 { top: 700px; }
+    #k-st3 { top: 810px; }
+  </style>
+  <div id="root" data-composition-id="task" data-width="1920" data-height="1080">
+    <div class="k-sheet" id="k-s1"><div class="k-file k-mono">karthik.pdf</div><div class="k-line h"></div><div class="k-line"></div><div class="k-line s"></div><div class="k-line"></div><div class="k-line"></div><div class="k-line s"></div><div id="k-score">8/10</div></div>
+    <div class="k-sheet" id="k-s2"><div class="k-file k-mono">meera.pdf</div><div class="k-line h"></div><div class="k-line"></div><div class="k-line"></div><div class="k-line s"></div><div class="k-line"></div><div class="k-line s"></div></div>
+    <div class="k-sheet" id="k-s3"><div class="k-file k-mono">imran.pdf</div><div class="k-line h"></div><div class="k-line s"></div><div class="k-line"></div><div class="k-line"></div><div class="k-line s"></div><div class="k-line"></div></div>
+    <div id="k-sample">sample resumes, sample score</div>
+    <div id="k-who">The recruiter</div>
+    <div id="k-goal">Shortlist<br />the best 2</div>
+    <div id="k-once">Answer <span>in one go?<span id="k-strike"></span></span></div>
+    <div id="k-rail"></div>
+    <div class="k-step" id="k-st1"><span class="k-n">1</span>read one resume</div>
+    <div class="k-step" id="k-st2"><span class="k-n">2</span>note a score</div>
+    <div class="k-step" id="k-st3"><span class="k-n">3</span>read the next one</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L2 = 4.437;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#k-s1", { rotation: -5 });
+    gsap.set("#k-s3", { rotation: 5 });
+    gsap.set("#k-score", { opacity: 0 });
+    gsap.set("#k-strike", { scaleX: 0 });
+    gsap.set("#k-rail", { scaleY: 0 });
+
+    tl.fromTo("#k-s1", { x: -40 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    tl.fromTo("#k-s2", { y: 30 }, { y: 0, duration: 0.6, ease: "expo.out" }, 0);
+    tl.fromTo("#k-s3", { x: 40 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#k-who", 0.174, 0.2);
+    blurIn("#k-goal", 2.531, 0.2);
+
+    blurIn("#k-once", L2 + 0.464, 0.2);
+    tl.to("#k-strike", { scaleX: 1, duration: 0.3, ease: "power3.out" }, L2 + 1.149);
+
+    blurIn("#k-st1", L2 + 1.985, 0.2);
+    tl.to("#k-s1", { y: -36, scale: 1.05, duration: 0.4, ease: "power2.inOut" }, L2 + 1.985);
+    blurIn("#k-st2", L2 + 2.682, 0.2);
+    tl.fromTo("#k-score", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L2 + 2.995);
+    blurIn("#k-sample", L2 + 3.1, 0.2);
+    blurIn("#k-st3", L2 + 3.622, 0.2);
+    tl.to("#k-s1", { y: 0, scale: 1, duration: 0.4, ease: "power2.inOut" }, L2 + 3.622);
+    tl.to("#k-s2", { y: -36, scale: 1.05, duration: 0.4, ease: "power2.inOut" }, L2 + 3.7);
+    tl.to("#k-rail", { scaleY: 1, duration: 0.6, ease: "power2.inOut" }, L2 + 4.911);
+
+    blurOut("#k-s1, #k-s2, #k-s3, #k-sample, #k-who, #k-goal, #k-once, #k-rail, #k-st1, #k-st2, #k-st3", 11.15, 0.25);
+
+    window.__timelines["task"] = tl;
+  </script>
+</template>

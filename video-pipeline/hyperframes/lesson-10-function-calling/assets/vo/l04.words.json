@@ -1,0 +1,52 @@
+[
+  {
+    "word": "The",
+    "start": 0,
+    "end": 0.151
+  },
+  {
+    "word": "model",
+    "start": 0.197,
+    "end": 0.453
+  },
+  {
+    "word": "never",
+    "start": 0.511,
+    "end": 0.708
+  },
+  {
+    "word": "sees",
+    "start": 0.755,
+    "end": 0.975
+  },
+  {
+    "word": "your",
+    "start": 1.022,
+    "end": 1.138
+  },
+  {
+    "word": "Python",
+    "start": 1.196,
+    "end": 1.567
+  },
+  {
+    "word": "code.",
+    "start": 1.649,
+    "end": 2.078
+  },
+  {
+    "word": "Only",
+    "start": 2.218,
+    "end": 2.461
+  },
+  {
+    "word": "this",
+    "start": 2.519,
+    "end": 2.694
+  },
+  {
+    "word": "menu.",
+    "start": 2.775,
+    "end": 3.576
+  }
+]

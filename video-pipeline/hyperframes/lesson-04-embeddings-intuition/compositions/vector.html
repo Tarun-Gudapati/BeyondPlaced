@@ -1,0 +1,98 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #v-plot { position: absolute; left: 150px; top: 130px; width: 1100px; height: 820px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #v-any { position: absolute; left: 180px; top: 196px; font-size: 32px; font-weight: 700; color: #475569; }
+    #v-text { position: absolute; left: 180px; top: 250px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 60px; padding: 14px 26px; border-radius: 8px; background: #CCFBF1; border: 3px solid #5EEAD4; line-height: 1.2; }
+    .v-arrow { position: absolute; background: #0F766E; border-radius: 4px; }
+    #v-arrow-in { left: 800px; top: 301px; width: 120px; height: 8px; transform-origin: left center; }
+    #v-arrow-in::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #v-model { position: absolute; left: 960px; top: 205px; width: 400px; height: 200px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; text-align: center; font-size: 50px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+    #v-arrow-out { left: 1156px; top: 420px; width: 8px; height: 96px; transform-origin: center top; }
+    #v-arrow-out::after { content: ""; position: absolute; left: -10px; bottom: -14px; border-top: 18px solid #0F766E; border-left: 14px solid transparent; border-right: 14px solid transparent; }
+    #v-note { position: absolute; left: 1240px; top: 470px; width: 446px; text-align: right; font-size: 28px; font-weight: 400; color: #475569; }
+    #v-row { position: absolute; left: 180px; top: 560px; display: flex; gap: 14px; }
+    .v-num { position: relative; width: 176px; height: 120px; display: grid; place-items: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 42px; background: #FFFFFF; border: 3px solid #0F766E; border-radius: 8px; }
+    .v-num .v-hot { position: absolute; inset: -3px; border-radius: 8px; border: 5px solid #EA580C; background: rgba(234,88,12,0.10); }
+    #v-alone { position: absolute; left: 448px; top: 494px; width: 400px; text-align: center; font-size: 34px; font-weight: 700; color: #EA580C; }
+    #v-brace { position: absolute; left: 180px; top: 716px; width: 1506px; height: 26px; border: 5px solid #0F766E; border-top: none; border-radius: 0 0 12px 12px; transform-origin: left center; }
+    #v-count { position: absolute; left: 180px; top: 772px; display: flex; align-items: baseline; gap: 26px; }
+    #v-count-n { font-family: "JetBrains Mono", monospace; font-size: 104px; font-weight: 700; color: #0F766E; line-height: 1; }
+    #v-count-l { font-size: 44px; font-weight: 700; }
+    #v-count-eg { font-size: 30px; font-weight: 400; color: #475569; }
+    #v-together { position: absolute; left: 180px; top: 772px; font-size: 64px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.6; }
+    #v-dot { position: absolute; left: 915px; top: 602px; width: 36px; height: 36px; border-radius: 50%; background: #0F766E; }
+    #v-dot-l { position: absolute; left: 310px; top: 296px; width: 320px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; line-height: 40px; }
+    #v-dot-l span { background: rgba(255,255,255,0.92); border-radius: 4px; padding: 2px 6px; }
+    #v-one { position: absolute; left: 1310px; top: 250px; font-size: 96px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+    #v-one span { display: block; }
+    #v-one-sub { position: absolute; left: 1310px; top: 480px; width: 430px; font-size: 36px; font-weight: 700; color: #475569; line-height: 1.3; }
+  </style>
+  <div id="root" data-composition-id="vector" data-width="1920" data-height="1080">
+    <div id="v-plot"></div>
+    <div id="v-any">Any text</div>
+    <div id="v-text">placement drive</div>
+    <div id="v-arrow-in" class="v-arrow"></div>
+    <div id="v-model">Embedding<br />model</div>
+    <div id="v-arrow-out" class="v-arrow"></div>
+    <div id="v-note">values are illustrative</div>
+    <div id="v-row">
+      <span class="v-num">0.021</span><span class="v-num">-0.447</span><span class="v-num"><span class="v-hot"></span>0.318</span><span class="v-num">0.006</span><span class="v-num">-0.129</span><span class="v-num">0.262</span><span class="v-num">…</span><span class="v-num">0.074</span>
+    </div>
+    <div id="v-alone">alone: no meaning</div>
+    <div id="v-brace"></div>
+    <div id="v-count"><span id="v-count-n">1536</span><span id="v-count-l">numbers, every time</span><span id="v-count-eg">e.g. text-embedding-3-small</span></div>
+    <div id="v-together">Together: coordinates</div>
+    <div id="v-dot"></div>
+    <div id="v-dot-l"><span>placement drive</span></div>
+    <div id="v-one"><span>One</span><span>point</span></div>
+    <div id="v-one-sub">in a space with 1536 dimensions</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l03":{"s":0,"w":[0,0.232,0.662,0.975,1.173,1.672,2.415,2.624,2.74,2.961,3.587,3.785,3.901,4.342,4.447,5.074,5.329,5.457,6.385,6.571,7.082,7.488,7.755,7.883,8.475,8.58]},"l04":{"s":9.87,"w":[9.87,10.172,10.52,10.81,11.077,11.449,12.389,12.842,13.005,13.26,13.446,14.305,14.549,14.862,14.978,15.048,15.303,15.605]}}; const END = 16.954; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l03.w, b = T.l04.w;
+    const nums = gsap.utils.toArray("#v-row .v-num");
+
+    gsap.set("#v-plot, #v-dot, .v-hot", { opacity: 0 });
+
+    // l03: text in, numbers out
+    tl.fromTo("#v-text", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#v-model", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, a[1]);
+    blurIn("#v-any", a[8], 0.2);
+    tl.fromTo("#v-arrow-in", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "expo.out" }, a[6]);
+    tl.fromTo("#v-arrow-out", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.3, ease: "expo.out" }, a[12]);
+    nums.forEach((el, i) => tl.fromTo(el, { opacity: 0, y: -22 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, a[14] + i * 0.07));
+    blurIn("#v-note", a[15], 0.2);
+    tl.fromTo("#v-brace", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.inOut" }, a[15]);
+    blurIn("#v-count-eg", a[18], 0.2);
+    blurIn("#v-count-n", a[20], 0.2);
+    blurIn("#v-count-l", a[23], 0.2);
+
+    // l04: one number means nothing; together they are a position
+    tl.to(".v-hot", { opacity: 1, duration: 0.2, ease: "power2.out" }, b[1]);
+    blurIn("#v-alone", b[3], 0.2);
+    tl.to(".v-hot", { opacity: 0, duration: 0.2 }, b[6] - 0.15);
+    blurOut("#v-alone", b[6] - 0.15, 0.15);
+    blurOut("#v-count", b[6] - 0.15, 0.15);
+    nums.forEach((el, i) => tl.fromTo(el, { backgroundColor: "#FFFFFF" }, { backgroundColor: "#CCFBF1", duration: 0.25, ease: "power2.out" }, b[6] + i * 0.05));
+    blurIn("#v-together", b[6] + 0.1, 0.2);
+
+    // the row collapses into one point, and the space grows around it
+    blurOut("#v-any, #v-text, #v-arrow-in, #v-model, #v-arrow-out, #v-note, #v-brace, #v-together", b[11] - 0.2, 0.2);
+    nums.forEach((el, i) => tl.to(el, { x: (3.5 - i) * 190, scale: 0.2, opacity: 0, duration: 0.5, ease: "power2.inOut" }, b[11]));
+    tl.fromTo("#v-dot", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, b[11] + 0.3);
+    blurIn("#v-one span:nth-child(1)", b[11], 0.15);
+    blurIn("#v-one span:nth-child(2)", b[12], 0.15);
+    tl.to("#v-plot", { opacity: 1, duration: 0.45, ease: "power2.inOut" }, b[13]);
+    tl.to("#v-dot", { x: -463, y: -260, duration: 0.6, ease: "power2.inOut" }, b[13] + 0.1);
+    blurIn("#v-one-sub", b[15], 0.2);
+    blurIn("#v-dot-l", b[17], 0.2);
+
+    blurOut("#v-one, #v-one-sub", END - 0.3, 0.2);
+
+    window.__timelines["vector"] = tl;
+  </script>
+</template>

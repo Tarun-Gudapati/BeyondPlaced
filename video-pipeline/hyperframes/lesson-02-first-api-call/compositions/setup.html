@@ -1,0 +1,91 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .s-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #s-term { position: absolute; left: 120px; top: 150px; width: 1000px; height: 320px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); overflow: hidden; }
+    #s-term-bar { height: 64px; display: flex; align-items: center; gap: 12px; padding: 0 28px; border-bottom: 2px solid #E2E8F0; font-size: 28px; font-weight: 700; color: #475569; }
+    .s-dot { width: 16px; height: 16px; border-radius: 50%; background: #CBD5E1; }
+    #s-term-title { margin-left: 14px; }
+    .s-cmd { position: absolute; left: 36px; font-size: 34px; line-height: 1.2; white-space: pre; }
+    .s-cmd b { color: #0F766E; }
+    #s-cmd1 { top: 104px; }
+    #s-cmd2 { top: 204px; }
+    #s-folder { position: absolute; left: 1200px; top: 150px; width: 600px; height: 320px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #s-folder-name { position: absolute; left: 32px; top: 24px; font-size: 32px; }
+    #s-venv { position: absolute; left: 32px; top: 90px; width: 536px; height: 200px; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 16px; }
+    #s-venv-name { position: absolute; left: 24px; top: 18px; font-size: 30px; color: #0F766E; }
+    #s-venv-note { position: absolute; right: 24px; top: 20px; font-size: 28px; font-weight: 700; color: #0F766E; }
+    .s-pkg { position: absolute; top: 96px; font-size: 30px; padding: 12px 18px; background: #FFFFFF; border: 3px solid #0F766E; border-radius: 10px; line-height: 1.2; }
+    #s-pkg1 { left: 24px; }
+    #s-pkg2 { left: 190px; }
+    #s-other { position: absolute; left: 1200px; top: 520px; width: 600px; height: 200px; border: 3px dashed #94A3B8; border-radius: 24px; }
+    #s-other-name { position: absolute; left: 32px; top: 24px; font-size: 30px; font-weight: 700; color: #475569; }
+    #s-other-ok { position: absolute; right: 32px; top: 24px; font-size: 30px; font-weight: 700; color: #0F766E; }
+    .s-proj { position: absolute; top: 100px; font-size: 28px; padding: 12px 18px; background: #E2E8F0; border-radius: 10px; color: #334155; line-height: 1.2; }
+    #s-proj1 { left: 32px; }
+    #s-proj2 { left: 280px; }
+    #s-env { position: absolute; left: 120px; top: 520px; width: 1000px; height: 250px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #s-env-tab { position: absolute; left: 36px; top: 28px; font-size: 36px; color: #0F766E; }
+    #s-env-line { position: absolute; left: 36px; top: 122px; font-size: 38px; line-height: 1.5; white-space: pre; display: flex; align-items: center; }
+    #s-env-key { display: inline-block; color: #C2410C; background: #FFEDD5; border: 3px solid #EA580C; border-radius: 10px; padding: 0 14px; margin-left: 6px; }
+    #s-note { position: absolute; left: 120px; top: 810px; font-size: 44px; font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="setup" data-width="1920" data-height="1080">
+    <div id="s-term">
+      <div id="s-term-bar"><span class="s-dot"></span><span class="s-dot"></span><span class="s-dot"></span><span id="s-term-title">terminal</span></div>
+      <div id="s-cmd1" class="s-cmd s-mono"><b>$</b> python -m venv .venv</div>
+      <div id="s-cmd2" class="s-cmd s-mono"><b>$</b> pip install openai python-dotenv</div>
+    </div>
+    <div id="s-folder">
+      <div id="s-folder-name" class="s-mono">study-buddy/</div>
+      <div id="s-venv">
+        <div id="s-venv-name" class="s-mono">.venv</div>
+        <div id="s-venv-note">its own packages</div>
+        <div id="s-pkg1" class="s-pkg s-mono">openai</div>
+        <div id="s-pkg2" class="s-pkg s-mono">python-dotenv</div>
+      </div>
+    </div>
+    <div id="s-other">
+      <div id="s-other-name">Her other projects</div>
+      <div id="s-other-ok">untouched</div>
+      <div id="s-proj1" class="s-proj s-mono">dsa-practice</div>
+      <div id="s-proj2" class="s-proj s-mono">college-project</div>
+    </div>
+    <div id="s-env">
+      <div id="s-env-tab" class="s-mono">.env</div>
+      <div id="s-env-line" class="s-mono"><span>OPENAI_API_KEY=</span><span id="s-env-key">sk-••••••••••••</span></div>
+    </div>
+    <div id="s-note">Keys live here, never in code</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const type = (sel, t, chars) => tl.fromTo(sel, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: chars * 0.028, ease: `steps(${chars})` }, t);
+
+    gsap.set("#s-folder, #s-venv, #s-other, #s-other-ok, #s-pkg1, #s-pkg2, #s-env, #s-env-tab, #s-env-line, #s-env-key, #s-note", { opacity: 0 });
+    gsap.set("#s-cmd1, #s-cmd2", { clipPath: "inset(0 100% 0 0)" });
+
+    // l03: First, a virtual environment, so this project's packages never break her other work.
+    tl.fromTo("#s-term", { clipPath: "inset(0 100% 0 0 round 24px)" }, { clipPath: "inset(0 0% 0 0 round 24px)", duration: 0.45, ease: "power2.inOut" }, 0);
+    type("#s-cmd1", 0.5, 24);
+    tl.fromTo("#s-folder", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0.987);
+    tl.fromTo("#s-venv", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, 1.4);
+    tl.fromTo("#s-other", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.647);
+    blurIn("#s-other-ok", 3.448, 0.2);
+
+    // l04: Then two installs, and a small file called dot env, which holds her API key.
+    type("#s-cmd2", 5.5, 34);
+    tl.fromTo("#s-pkg1", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 5.876);
+    tl.fromTo("#s-pkg2", { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 6.1);
+    tl.fromTo("#s-env", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 7.1);
+    blurIn("#s-env-tab", 7.931, 0.2);
+    blurIn("#s-env-line", 9.0, 0.2);
+    tl.fromTo("#s-env-key", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 9.6);
+    blurIn("#s-note", 8.85, 0.2);
+
+    blurOut("#s-term, #s-folder, #s-other, #s-env, #s-note", 11.25, 0.22);
+
+    window.__timelines["setup"] = tl;
+  </script>
+</template>

@@ -1,0 +1,20 @@
+{
+  "lesson": "first-api-call",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "editor", "text": "Ananya wants her own DSA tutor, not someone else's chatbot. All it takes is one short Python script." },
+    { "id": "l02", "scene": "editor", "text": "Because every serious AI product starts the same way: with an API call." },
+    { "id": "l03", "scene": "setup", "text": "First, a virtual environment, so this project's packages never break her other work." },
+    { "id": "l04", "scene": "setup", "text": "Then two installs, and a small file called dot env, which holds her API key." },
+    { "id": "l05", "scene": "request", "text": "The call itself is an ordinary HTTPS request. Her code sends a model name and a list of messages." },
+    { "id": "l06", "scene": "request", "text": "A system message sets the rules: you are a patient DSA tutor. A user message carries her question." },
+    { "id": "l07", "scene": "request", "text": "The key rides along in a header, and the provider runs the model on its own servers." },
+    { "id": "l08", "scene": "response", "text": "Back comes the answer, plus two fields beginners skip: the finish reason, and the usage." },
+    { "id": "l09", "scene": "response", "text": "Stop means the model finished. Length means it was cut off. Usage counts the tokens she is billed for." },
+    { "id": "l10", "scene": "resend", "text": "For a follow-up, her code sends the whole list again, because the model remembers nothing between calls." },
+    { "id": "l11", "scene": "key", "text": "One rule matters most. The key is a password. It lives in dot env, and dot env goes in git ignore." },
+    { "id": "l12", "scene": "key", "text": "If it ever leaks, deleting the commit is not enough. Revoke the key and create a new one." },
+    { "id": "l13", "scene": "claim", "text": "So that is an API call: messages out, text and a token count back, and the key never touches your code." },
+    { "id": "l14", "scene": "claim", "text": "Next lesson: prompt engineering that survives production." }
+  ]
+}

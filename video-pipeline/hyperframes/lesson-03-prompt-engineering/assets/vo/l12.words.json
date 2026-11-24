@@ -1,0 +1,87 @@
+[
+  {
+    "word": "And",
+    "start": 0,
+    "end": 0.197
+  },
+  {
+    "word": "treat",
+    "start": 0.244,
+    "end": 0.464
+  },
+  {
+    "word": "prompts",
+    "start": 0.522,
+    "end": 0.859
+  },
+  {
+    "word": "like",
+    "start": 0.917,
+    "end": 1.103
+  },
+  {
+    "word": "code:",
+    "start": 1.161,
+    "end": 1.649
+  },
+  {
+    "word": "keep",
+    "start": 1.846,
+    "end": 2.067
+  },
+  {
+    "word": "versions,",
+    "start": 2.136,
+    "end": 2.728
+  },
+  {
+    "word": "and",
+    "start": 2.786,
+    "end": 2.949
+  },
+  {
+    "word": "rerun",
+    "start": 3.042,
+    "end": 3.39
+  },
+  {
+    "word": "a",
+    "start": 3.437,
+    "end": 3.46
+  },
+  {
+    "word": "few",
+    "start": 3.529,
+    "end": 3.715
+  },
+  {
+    "word": "real",
+    "start": 3.808,
+    "end": 4.04
+  },
+  {
+    "word": "test",
+    "start": 4.11,
+    "end": 4.354
+  },
+  {
+    "word": "cases",
+    "start": 4.4,
+    "end": 4.772
+  },
+  {
+    "word": "after",
+    "start": 4.83,
+    "end": 5.132
+  },
+  {
+    "word": "every",
+    "start": 5.201,
+    "end": 5.457
+  },
+  {
+    "word": "change.",
+    "start": 5.503,
+    "end": 6.734
+  }
+]

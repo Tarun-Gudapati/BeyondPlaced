@@ -1,0 +1,108 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #a-g1, #a-g2 { position: absolute; inset: 0; }
+    #a-bot { position: absolute; left: 180px; top: 150px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .a-tag { position: absolute; top: 240px; font-size: 32px; font-weight: 700; color: #475569; }
+    #a-tag-q { left: 180px; } #a-tag-a { left: 1040px; }
+    #a-q { position: absolute; left: 180px; top: 290px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 44px; padding: 12px 22px; border-radius: 8px; background: #CCFBF1; border: 3px solid #5EEAD4; line-height: 1.2; white-space: nowrap; }
+    #a-q-vec { position: absolute; left: 180px; top: 398px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; color: #0F766E; white-space: nowrap; }
+    .a-card { position: absolute; width: 600px; height: 160px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 16px; box-shadow: 0 12px 24px rgba(11,18,32,0.10); padding: 22px 26px; }
+    #a-c3 { left: 1068px; top: 318px; } #a-c2 { left: 1054px; top: 304px; } #a-c1 { left: 1040px; top: 290px; }
+    #a-c1 b { display: block; font-size: 32px; font-weight: 700; line-height: 1.25; white-space: nowrap; }
+    #a-c1-vec { display: block; margin-top: 16px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; color: #0F766E; white-space: nowrap; }
+    #a-x50 { position: absolute; left: 1040px; top: 506px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 72px; color: #0F766E; line-height: 1.1; }
+    #a-which { position: absolute; left: 180px; top: 700px; font-size: 88px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; white-space: nowrap; }
+    #a-plot { position: absolute; left: 150px; top: 130px; width: 860px; height: 820px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #a-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    #a-arc-l { position: absolute; left: 470px; top: 606px; font-size: 40px; font-weight: 700; color: #EA580C; }
+    .a-leg { position: absolute; left: 1100px; display: flex; align-items: center; gap: 22px; font-size: 40px; font-weight: 700; }
+    .a-leg i { display: block; width: 80px; height: 10px; border-radius: 5px; }
+    #a-leg-q { top: 200px; } #a-leg-q i { background: #0B1220; }
+    #a-leg-a { top: 270px; } #a-leg-a i { background: #0F766E; }
+    #a-cos { position: absolute; left: 1100px; top: 420px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #a-is { position: absolute; left: 1100px; top: 470px; font-size: 104px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; white-space: nowrap; }
+    #a-is .a-accent { color: #EA580C; }
+    #a-len { position: absolute; left: 1100px; top: 670px; font-size: 64px; font-weight: 700; letter-spacing: -0.02em; white-space: nowrap; }
+    #a-len-sub { position: absolute; left: 1100px; top: 760px; font-size: 34px; font-weight: 700; color: #475569; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="arrows" data-width="1920" data-height="1080">
+    <div id="a-g1">
+      <div id="a-bot">Arjun's placement FAQ bot</div>
+      <div id="a-tag-q" class="a-tag">1 question</div>
+      <div id="a-q">aptitude round syllabus?</div>
+      <div id="a-q-vec">[0.31, -0.12, 0.44, …]</div>
+      <div id="a-tag-a" class="a-tag">50 stored answers</div>
+      <div id="a-c3" class="a-card"></div>
+      <div id="a-c2" class="a-card"></div>
+      <div id="a-c1" class="a-card"><b>Aptitude round: three sections</b><span id="a-c1-vec">[0.29, -0.10, 0.47, …]</span></div>
+      <div id="a-x50">× 50</div>
+      <div id="a-which">Which one is closest?</div>
+    </div>
+    <div id="a-g2">
+      <div id="a-plot"></div>
+      <svg id="a-svg" viewBox="0 0 1920 1080" data-layout-ignore>
+        <path id="a-arc" d="M 447.6 746.3 A 170 170 0 0 0 380.1 665.8" fill="none" stroke="#EA580C" stroke-width="9" stroke-linecap="round" />
+        <g id="a-va">
+          <line x1="290" y1="810" x2="830" y2="810" stroke="#0F766E" stroke-width="10" stroke-linecap="round" />
+          <path d="M 862 810 L 824 790 L 824 830 Z" fill="#0F766E" />
+        </g>
+        <g id="a-vq">
+          <line x1="290" y1="810" x2="790" y2="810" stroke="#0B1220" stroke-width="10" stroke-linecap="round" />
+          <path d="M 822 810 L 784 790 L 784 830 Z" fill="#0B1220" />
+        </g>
+        <circle cx="290" cy="810" r="13" fill="#0B1220" />
+      </svg>
+      <div id="a-arc-l">angle</div>
+      <div id="a-leg-q" class="a-leg"><i></i>question vector</div>
+      <div id="a-leg-a" class="a-leg"><i></i>answer vector</div>
+      <div id="a-cos">Cosine similarity measures</div>
+      <div id="a-is">the <span class="a-accent">angle</span></div>
+      <div id="a-len">length: ignored</div>
+      <div id="a-len-sub">longer or shorter, same score</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l01":{"s":0,"w":[0,0.604,1.138,1.765,2.218,2.461,2.682,3.1,3.274,3.355,4.098,4.319,4.667,5.074,5.793,6.049,6.211,6.293,7.349,7.628,7.988,8.104,8.568,8.707]},"l02":{"s":9.963,"w":[9.963,10.358,10.625,11.078,11.24,12.25,12.773,13.411,13.748,13.91,14.235,14.619,15.002,15.222,15.675,15.826,16.035,16.221]}}; const END = 17.604; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l01.w, b = T.l02.w;
+    const O = "290 810";
+
+    gsap.set("#a-g2", { opacity: 0 });
+    gsap.set("#a-vq", { rotation: -58, svgOrigin: O });
+    gsap.set("#a-va", { rotation: -22, svgOrigin: O });
+
+    // l01: one question, fifty answers
+    tl.fromTo("#a-q", { x: -30 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#a-tag-q", a[5], 0.2);
+    blurIn("#a-tag-a", a[11], 0.2);
+    ["#a-c3", "#a-c2", "#a-c1"].forEach((sel, i) => tl.fromTo(sel, { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, a[11] + 0.1 + i * 0.09));
+    blurIn("#a-x50", a[12] + 0.2, 0.2);
+    blurIn("#a-q-vec", a[15], 0.2);
+    blurIn("#a-c1-vec", a[16] + 0.1, 0.2);
+    blurIn("#a-which", a[18], 0.2);
+
+    // l02: two arrows and the angle between them
+    blurOut("#a-g1", T.l02.s - 0.25, 0.2);
+    tl.set("#a-g2", { opacity: 1 }, T.l02.s - 0.05);
+    tl.fromTo("#a-plot", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, T.l02.s - 0.05);
+    tl.fromTo("#a-vq", { opacity: 0, scaleX: 0.05 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "expo.out" }, b[1]);
+    tl.fromTo("#a-va", { opacity: 0, scaleX: 0.05 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "expo.out" }, b[1] + 0.2);
+    blurIn("#a-leg-q", b[2], 0.2);
+    blurIn("#a-leg-a", b[2] + 0.2, 0.2);
+    blurIn("#a-cos", b[5], 0.2);
+    blurIn("#a-is", b[8], 0.18);
+    tl.fromTo("#a-arc", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, b[9]);
+    blurIn("#a-arc-l", b[9] + 0.15, 0.18);
+    blurIn("#a-len", b[13], 0.2);
+    tl.to("#a-va", { scaleX: 0.55, duration: 0.55, ease: "power2.inOut" }, b[13] + 0.1);
+    tl.to("#a-va", { scaleX: 1.08, duration: 0.6, ease: "power2.inOut" }, b[15] + 0.1);
+    blurIn("#a-len-sub", b[15], 0.2);
+
+    blurOut("#a-g2", END - 0.3, 0.2);
+
+    window.__timelines["arrows"] = tl;
+  </script>
+</template>

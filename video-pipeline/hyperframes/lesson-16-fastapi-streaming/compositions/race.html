@@ -1,0 +1,154 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .r-win { position: absolute; top: 70px; width: 800px; height: 470px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 28px; box-shadow: 0 24px 48px rgba(11,18,32,0.14); overflow: hidden; }
+    #r-winA { left: 120px; }
+    #r-winB { left: 1000px; border-color: #0F766E; }
+    .r-head { height: 88px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 16px; padding: 0 30px; font-weight: 700; font-size: 32px; }
+    .r-av { width: 50px; height: 50px; border-radius: 12px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    .r-tag { margin-left: auto; font-size: 28px; font-weight: 700; color: #475569; }
+    #r-tagB { font-family: "JetBrains Mono", monospace; color: #0F766E; }
+    .r-msgs { padding: 26px 30px; display: flex; flex-direction: column; gap: 20px; }
+    .r-user { align-self: flex-end; background: #0F766E; color: #FFFFFF; border-radius: 26px 26px 8px 26px; padding: 16px 26px; font-size: 32px; line-height: 1.25; font-weight: 700; }
+    .r-slot { position: relative; align-self: flex-start; }
+    .r-bot { max-width: 660px; background: #F1F5F9; border-radius: 26px 26px 26px 8px; padding: 18px 26px; font-size: 32px; line-height: 1.32; }
+    #r-waitA { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .r-dot { width: 16px; height: 16px; border-radius: 50%; background: #475569; }
+    #r-secs { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; color: #475569; margin-left: 10px; }
+    .r-w { display: inline-block; }
+    #r-name { position: absolute; left: 1040px; top: 210px; }
+    #r-name-big { font-size: 96px; font-weight: 900; letter-spacing: -0.02em; }
+    #r-name-sub { font-size: 40px; font-weight: 700; color: #475569; margin-top: 8px; }
+    .r-lab { position: absolute; left: 120px; font-size: 34px; font-weight: 700; }
+    #r-lab1 { top: 640px; color: #475569; }
+    #r-lab2 { top: 750px; color: #0F766E; }
+    .r-track { position: absolute; left: 440px; width: 1260px; height: 60px; background: #E2E8F0; border-radius: 10px; overflow: hidden; }
+    #r-track1 { top: 630px; }
+    #r-track2 { top: 740px; }
+    .r-fill { position: absolute; top: 0; bottom: 0; transform-origin: left center; }
+    #r-fill1 { left: 0; right: 0; background: #94A3B8; }
+    #r-first { position: absolute; left: 0; top: 0; bottom: 0; width: 84px; background: #EA580C; transform-origin: left center; }
+    #r-fill2 { left: 84px; right: 0; background: #0F766E; }
+    .r-ttext { position: absolute; top: 0; line-height: 60px; font-size: 30px; font-weight: 700; white-space: nowrap; }
+    #r-t1-text { left: 24px; color: #0B1220; }
+    #r-t2-text { left: 110px; color: #FFFFFF; }
+    #r-t1-first { right: 22px; color: #0B1220; }
+    #r-first-l { position: absolute; left: 440px; top: 697px; font-size: 28px; font-weight: 700; color: #C2410C; }
+    .r-axis { position: absolute; top: 812px; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; color: #475569; }
+    #r-ax0 { left: 440px; }
+    #r-axm { left: 900px; font-family: Inter, sans-serif; font-weight: 400; }
+    #r-ax6 { right: 220px; }
+    #r-end { position: absolute; left: 1697px; top: 608px; width: 0; height: 200px; border-left: 6px dashed #0F766E; transform-origin: center top; }
+    #r-end-l { position: absolute; right: 120px; top: 562px; font-size: 30px; font-weight: 700; color: #0F766E; }
+    #r-ttft { position: absolute; left: 120px; top: 880px; display: flex; align-items: baseline; gap: 34px; white-space: nowrap; }
+    #r-ttft-l { font-size: 60px; font-weight: 900; letter-spacing: -0.02em; }
+    .r-val { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 76px; }
+    #r-v1 { color: #64748B; }
+    #r-arrow { color: #64748B; font-size: 56px; }
+    #r-v2 { color: #EA580C; display: inline-block; }
+    #r-ill { font-size: 28px; color: #475569; }
+  </style>
+  <div id="root" data-composition-id="race" data-width="1920" data-height="1080">
+    <div id="r-winA" class="r-win">
+      <div class="r-head"><span class="r-av">PB</span>Placement Bot<span class="r-tag">no streaming</span></div>
+      <div class="r-msgs">
+        <div id="r-qA" class="r-user">Explain binary search</div>
+        <div class="r-slot">
+          <div id="r-waitA" class="r-bot" data-layout-allow-overlap><span class="r-dot"></span><span class="r-dot"></span><span class="r-dot"></span><span id="r-secs">0.0 s</span></div>
+          <div id="r-ansA" class="r-bot" data-layout-allow-overlap>Check the middle element. Drop the half that can't hold the target. Repeat.</div>
+        </div>
+      </div>
+    </div>
+    <div id="r-name"><div id="r-name-big">Rahul</div><div id="r-name-sub">built a placement bot</div></div>
+    <div id="r-winB" class="r-win">
+      <div class="r-head"><span class="r-av">PB</span>Placement Bot<span id="r-tagB" class="r-tag">stream=True</span></div>
+      <div class="r-msgs">
+        <div id="r-qB" class="r-user">Explain binary search</div>
+        <div class="r-slot">
+          <div id="r-ansB" class="r-bot"><span class="r-w">Check</span> <span class="r-w">the</span> <span class="r-w">middle</span> <span class="r-w">element.</span> <span class="r-w">Drop</span> <span class="r-w">the</span> <span class="r-w">half</span> <span class="r-w">that</span> <span class="r-w">can't</span> <span class="r-w">hold</span> <span class="r-w">the</span> <span class="r-w">target.</span> <span class="r-w">Repeat.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="r-lab1" class="r-lab">no streaming</div>
+    <div id="r-track1" class="r-track"><div id="r-fill1" class="r-fill"></div><span id="r-t1-text" class="r-ttext">nothing on screen</span><span id="r-t1-first" class="r-ttext">first word: 6 s</span></div>
+    <div id="r-first-l">first word: 0.4 s</div>
+    <div id="r-lab2" class="r-lab">streaming</div>
+    <div id="r-track2" class="r-track"><div id="r-first"></div><div id="r-fill2" class="r-fill"></div><span id="r-t2-text" class="r-ttext">reading while it writes</span></div>
+    <div id="r-ax0" class="r-axis">0 s</div>
+    <div id="r-axm" class="r-axis">seconds (illustrative)</div>
+    <div id="r-ax6" class="r-axis">6 s</div>
+    <div id="r-end"></div>
+    <div id="r-end-l">last word</div>
+
+    <div id="r-ttft"><span id="r-ttft-l">Time to first token</span><span id="r-v1" class="r-val">6 s</span><span id="r-arrow" class="r-val">→</span><span id="r-v2" class="r-val">0.4 s</span><span id="r-ill">(illustrative)</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const W = {"l01":[0,0.488,0.743,0.813,1.265,2.101,2.287,2.612,2.728,2.856,3.332,3.773,4.412,4.621,4.969,5.05,5.422,5.573,5.851,6.118],"l02":[7.595,7.967,8.408,8.733,9.348,9.58,10.068,10.463,11.043,11.206,11.519,11.844,12.123,12.285,12.68,12.819],"l03":[14.168,14.365,14.714,15.016,15.236,16.026,16.188,16.513,16.757,17.117,17.233,17.314,17.697,17.988,18.557,18.719,18.835,19.125,19.427,19.752,19.845,19.961,20.228],"l04":[21.623,21.936,22.401,22.529,22.645,22.912,23.051,23.353,24.073,24.398,24.525,24.804,25.036,25.408,25.814]};
+    const at = (l, i) => W[l][i];
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const wordsB = gsap.utils.toArray("#r-ansB .r-w");
+    const dots = gsap.utils.toArray("#r-waitA .r-dot");
+
+    gsap.set("#r-qA, #r-waitA, #r-ansA, #r-winB, #r-tagB, #r-ansB, #r-name-sub", { opacity: 0 });
+    gsap.set("#r-lab1, #r-track1, #r-t1-text, #r-t1-first, #r-lab2, #r-track2, #r-t2-text, #r-first-l, .r-axis, #r-end-l", { opacity: 0 });
+    gsap.set("#r-ttft-l, #r-v1, #r-arrow, #r-v2, #r-ill", { opacity: 0 });
+    gsap.set(wordsB, { opacity: 0 });
+    gsap.set("#r-fill1, #r-fill2, #r-first", { scaleX: 0 });
+    gsap.set("#r-end", { scaleY: 0 });
+
+    // l01: the wait
+    tl.fromTo("#r-winA", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#r-name-sub", at("l01", 1), 0.2);
+    blurIn("#r-qA", at("l01", 6), 0.2);
+    blurIn("#r-waitA", at("l01", 13), 0.2);
+    dots.forEach((el, i) => tl.fromTo(el, { opacity: 0.25 }, { opacity: 1, duration: 0.3, yoyo: true, repeat: 7, ease: "power1.inOut" }, at("l01", 13) + i * 0.15));
+    blurIn("#r-lab1", at("l01", 13), 0.2);
+    blurIn("#r-track1", at("l01", 13), 0.2);
+    const waitStart = at("l01", 13) + 0.15, waitEnd = 7.2;
+    tl.fromTo("#r-fill1", { scaleX: 0 }, { scaleX: 1, duration: waitEnd - waitStart, ease: "none" }, waitStart);
+    const clock = { v: 0 };
+    tl.fromTo(clock, { v: 0 }, { v: 6, duration: waitEnd - waitStart, ease: "none", onUpdate: () => { document.getElementById("r-secs").textContent = clock.v.toFixed(1) + " s"; } }, waitStart);
+    blurIn("#r-t1-text", at("l01", 15), 0.2);
+    blurIn(".r-axis", at("l01", 17), 0.2);
+    blurOut("#r-waitA", 7.2, 0.12);
+    tl.fromTo("#r-ansA", { opacity: 0, scale: 0.96, transformOrigin: "left top" }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 7.32);
+
+    // l02: the same bot, streaming
+    blurOut("#r-name", at("l02", 0), 0.25);
+    tl.fromTo("#r-winB", { opacity: 0, x: 48 }, { opacity: 1, x: 0, duration: 0.55, ease: "expo.out" }, at("l02", 0) + 0.3);
+    blurIn("#r-tagB", at("l02", 5), 0.2);
+    blurIn("#r-lab2", at("l02", 8), 0.2);
+    blurIn("#r-track2", at("l02", 8), 0.2);
+    tl.set("#r-ansB", { opacity: 1 }, at("l02", 9));
+    tl.fromTo("#r-first", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, at("l02", 9));
+    blurIn(wordsB[0], at("l02", 10), 0.15);
+    blurIn("#r-first-l", at("l02", 13), 0.2);
+    const flowStart = at("l02", 10), flowEnd = at("l03", 16) + 0.1;
+    const step = (at("l03", 16) - 12.1) / (wordsB.length - 2);
+    wordsB.slice(1).forEach((el, i) => blurIn(el, 12.1 + i * step, 0.15));
+    tl.fromTo("#r-fill2", { scaleX: 0 }, { scaleX: 1, duration: flowEnd - flowStart, ease: "none" }, flowStart);
+
+    // l03: same finish
+    blurIn("#r-t2-text", at("l03", 7), 0.2);
+    tl.fromTo("#r-end", { scaleY: 0 }, { scaleY: 1, duration: 0.4, ease: "power2.inOut" }, at("l03", 16));
+    blurIn("#r-end-l", at("l03", 17), 0.2);
+    tl.fromTo("#r-ax6", { scale: 1, transformOrigin: "right center" }, { scale: 1.25, duration: 0.16, yoyo: true, repeat: 1, ease: "power1.out" }, at("l03", 21));
+    blurIn("#r-t1-first", at("l04", 1), 0.2);
+
+    // l04: time to first token
+    blurIn("#r-ttft-l", at("l04", 4), 0.2);
+    blurIn("#r-v1", at("l04", 6), 0.15);
+    blurIn("#r-arrow", at("l04", 7), 0.15);
+    blurIn("#r-v2", at("l04", 7) + 0.12, 0.15);
+    blurIn("#r-ill", at("l04", 7) + 0.4, 0.2);
+    tl.fromTo("#r-v2", { scale: 1 }, { scale: 1.12, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.out" }, at("l04", 10));
+    tl.fromTo("#r-first-l", { scale: 1, transformOrigin: "left center" }, { scale: 1.12, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.out" }, at("l04", 10));
+
+    blurOut("#r-winA, #r-winB, #r-lab1, #r-track1, #r-lab2, #r-track2, #r-first-l, .r-axis, #r-end, #r-end-l, #r-ttft", 26.6, 0.22);
+
+    window.__timelines["race"] = tl;
+  </script>
+</template>

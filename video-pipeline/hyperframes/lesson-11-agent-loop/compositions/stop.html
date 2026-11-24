@@ -1,0 +1,115 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .s-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #s-ring { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #s-llm { position: absolute; left: 280px; top: 215px; width: 240px; height: 110px; border-radius: 22px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 56px; font-weight: 900; letter-spacing: -0.02em; }
+    #s-orbit { position: absolute; left: 400px; top: 500px; width: 0; height: 0; }
+    #s-dot { position: absolute; left: -26px; top: -256px; width: 52px; height: 52px; border-radius: 50%; background: #0F766E; border: 8px solid #FFFFFF; box-shadow: 0 6px 14px rgba(11,18,32,0.3); }
+    #s-step { position: absolute; left: 240px; top: 450px; width: 320px; text-align: center; font-size: 72px; font-weight: 900; letter-spacing: -0.02em; color: #0F766E; line-height: 100px; }
+    #s-tools { position: absolute; left: 280px; top: 710px; width: 240px; text-align: center; font-size: 32px; font-weight: 700; color: #475569; background: #F0FDFA; }
+
+    #s-card { position: absolute; left: 800px; top: 170px; width: 960px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 34px 36px; }
+    #s-card-title { font-size: 34px; font-weight: 700; color: #0F766E; margin-bottom: 14px; }
+    .s-row { display: flex; align-items: center; height: 84px; font-size: 36px; white-space: nowrap; border-top: 3px solid #CCFBF1; }
+    .s-key { flex: none; width: 270px; color: #475569; }
+    #s-none { padding: 4px 12px; margin-left: -12px; border-radius: 8px; }
+    #s-final { position: absolute; left: 800px; top: 520px; font-size: 84px; font-weight: 900; letter-spacing: -0.02em; }
+    #s-return { position: absolute; left: 800px; top: 650px; font-size: 44px; color: #0F766E; }
+
+    .s-log { position: absolute; left: 800px; font-size: 38px; white-space: pre; }
+    .s-log i { font-style: normal; color: #475569; }
+    #s-rule { position: absolute; left: 800px; top: 548px; width: 900px; height: 10px; border-radius: 5px; background: #0B1220; transform-origin: left center; }
+    #s-halt { position: absolute; left: 800px; top: 574px; font-size: 38px; }
+    #s-max { position: absolute; left: 800px; top: 680px; font-size: 80px; color: #EA580C; letter-spacing: -0.02em; }
+    #s-tok-label { position: absolute; left: 800px; top: 830px; font-size: 34px; font-weight: 700; color: #475569; }
+    #s-track { position: absolute; left: 800px; top: 884px; width: 900px; height: 44px; background: #E2E8F0; border-radius: 8px; overflow: hidden; }
+    #s-fill { width: 100%; height: 100%; background: #0F766E; transform-origin: left center; }
+    #s-mark { position: absolute; left: 1560px; top: 866px; width: 8px; height: 80px; background: #0B1220; border-radius: 4px; }
+    #s-budget { position: absolute; left: 1390px; top: 818px; width: 340px; text-align: right; font-size: 34px; color: #0B1220; }
+  </style>
+  <div id="root" data-composition-id="stop" data-width="1920" data-height="1080">
+    <svg id="s-ring" viewBox="0 0 1920 1080" data-layout-ignore>
+      <circle cx="400" cy="500" r="230" fill="none" stroke="#0F766E" stroke-width="8" />
+    </svg>
+    <div id="s-orbit"><div id="s-dot"></div></div>
+    <div id="s-llm">LLM</div>
+    <div id="s-tools">tools</div>
+    <div id="s-step" class="s-mono">step <span id="s-step-n">3</span></div>
+
+    <div id="s-card">
+      <div id="s-card-title">The model's reply</div>
+      <div class="s-row s-mono"><span class="s-key">content</span><span>"Shortlist: karthik, imran"</span></div>
+      <div class="s-row s-mono"><span class="s-key">tool_calls</span><span id="s-none">None</span></div>
+    </div>
+    <div id="s-final">Final answer</div>
+    <div id="s-return" class="s-mono">return msg.content</div>
+
+    <div class="s-log s-mono" style="top: 160px"><i>step 3  </i>read_resume("priya.pdf")</div>
+    <div class="s-log s-mono" style="top: 224px"><i>step 4  </i>read_resume("priya.pdf")</div>
+    <div class="s-log s-mono" style="top: 288px"><i>step 5  </i>read_resume("priya.pdf")</div>
+    <div class="s-log s-mono" style="top: 352px"><i>step 6  </i>read_resume("priya.pdf")</div>
+    <div class="s-log s-mono" style="top: 416px"><i>step 7  </i>read_resume("priya.pdf")</div>
+    <div class="s-log s-mono" style="top: 480px"><i>step 8  </i>read_resume("priya.pdf")</div>
+    <div id="s-rule"></div>
+    <div id="s-halt" class="s-mono">Stopped: step limit reached</div>
+    <div id="s-max" class="s-mono">MAX_STEPS = 8</div>
+    <div id="s-tok-label">tokens used in this run</div>
+    <div id="s-track"><div id="s-fill"></div></div>
+    <div id="s-mark"></div>
+    <div id="s-budget" class="s-mono">token budget</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L7 = 6.573, L8 = 15.143;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const logs = gsap.utils.toArray(".s-log");
+    const logAt = [1.149, 1.75, 2.35, 3.007, 3.65, 4.3].map((t) => L7 + t);
+
+    gsap.set("#s-step, #s-track, #s-mark", { opacity: 0 });
+    gsap.set("#s-rule, #s-fill", { scaleX: 0 });
+
+    // l06: one last lap, then a plain-text reply ends the loop
+    tl.fromTo("#s-ring, #s-llm, #s-tools, #s-orbit", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
+    tl.fromTo("#s-orbit", { rotation: -314 }, { rotation: 46, duration: 0.9, ease: "power2.out" }, 0);
+    tl.fromTo("#s-card", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0.65);
+    tl.fromTo("#s-none", { backgroundColor: "rgba(153,246,228,0)" }, { backgroundColor: "rgba(153,246,228,1)", duration: 0.25, ease: "power2.out" }, 2.229);
+    blurIn("#s-final", 3.669, 0.2);
+    blurIn("#s-return", 4.783, 0.2);
+    tl.to("#s-ring, #s-llm, #s-tools, #s-orbit", { opacity: 0.3, duration: 0.4, ease: "power2.inOut" }, 4.783);
+
+    // l07: a stuck model repeats the same call until MAX_STEPS
+    blurOut("#s-card, #s-final, #s-return", L7 - 0.3, 0.2);
+    tl.to("#s-ring, #s-llm, #s-tools, #s-orbit", { opacity: 1, duration: 0.3, ease: "power2.out" }, L7);
+    tl.to("#s-step", { opacity: 1, duration: 0.2 }, logAt[0]);
+    logs.forEach((el, i) => {
+      tl.fromTo(el, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "expo.out" }, logAt[i]);
+      tl.fromTo("#s-orbit", { rotation: i * 360 + 46 }, { rotation: (i + 1) * 360 + 46, duration: 0.55, ease: "power1.inOut", immediateRender: false }, logAt[i]);
+    });
+    const clock = { v: 0 };
+    const t0 = logAt[0], t1 = logAt[5] + 0.01;
+    tl.fromTo(clock, { v: 0 }, { v: 1, duration: t1 - t0, ease: "none", onUpdate: () => {
+      const now = t0 + clock.v * (t1 - t0);
+      document.getElementById("s-step-n").textContent = String(2 + Math.max(1, logAt.filter((t) => t <= now).length));
+    } }, t0);
+    blurIn("#s-tok-label", L7 + 3.274, 0.2);
+    tl.to("#s-track", { opacity: 1, duration: 0.2 }, L7 + 3.274);
+    tl.to("#s-fill", { scaleX: 0.62, duration: 1.6, ease: "power1.inOut" }, L7 + 3.4);
+
+    blurIn("#s-max", L7 + 5.724, 0.2);
+    tl.to("#s-rule", { scaleX: 1, duration: 0.3, ease: "power3.out" }, L7 + 6.861);
+    blurIn("#s-halt", L7 + 7.14, 0.2);
+    tl.to("#s-ring, #s-llm, #s-tools, #s-orbit", { opacity: 0.3, duration: 0.3, ease: "power2.inOut" }, L7 + 7.14);
+
+    // l08: a token budget is a second way to stop
+    tl.fromTo("#s-mark", { opacity: 0, scaleY: 0.3 }, { opacity: 1, scaleY: 1, duration: 0.3, ease: "expo.out" }, L8 + 0.337);
+    blurIn("#s-budget", L8 + 0.5, 0.2);
+    tl.to("#s-fill", { scaleX: 0.84, duration: 1.1, ease: "power2.in" }, L8 + 1.904);
+    tl.fromTo("#s-mark", { scaleX: 1 }, { scaleX: 2.2, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, L8 + 3.0);
+
+    blurOut("#s-ring, #s-llm, #s-tools, #s-orbit, #s-step, .s-log, #s-rule, #s-halt, #s-max, #s-tok-label, #s-track, #s-mark, #s-budget", 19.15, 0.25);
+
+    window.__timelines["stop"] = tl;
+  </script>
+</template>

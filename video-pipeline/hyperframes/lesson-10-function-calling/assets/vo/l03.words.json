@@ -1,0 +1,122 @@
+[
+  {
+    "word": "So",
+    "start": 0,
+    "end": 0.174
+  },
+  {
+    "word": "your",
+    "start": 0.244,
+    "end": 0.383
+  },
+  {
+    "word": "app",
+    "start": 0.453,
+    "end": 0.639
+  },
+  {
+    "word": "sends",
+    "start": 0.72,
+    "end": 0.975
+  },
+  {
+    "word": "her",
+    "start": 1.01,
+    "end": 1.103
+  },
+  {
+    "word": "question",
+    "start": 1.161,
+    "end": 1.533
+  },
+  {
+    "word": "together",
+    "start": 1.591,
+    "end": 1.997
+  },
+  {
+    "word": "with",
+    "start": 2.113,
+    "end": 2.276
+  },
+  {
+    "word": "a",
+    "start": 2.31,
+    "end": 2.334
+  },
+  {
+    "word": "menu",
+    "start": 2.392,
+    "end": 2.67
+  },
+  {
+    "word": "of",
+    "start": 2.728,
+    "end": 2.786
+  },
+  {
+    "word": "tools.",
+    "start": 2.833,
+    "end": 3.413
+  },
+  {
+    "word": "Each",
+    "start": 3.831,
+    "end": 4.063
+  },
+  {
+    "word": "tool",
+    "start": 4.11,
+    "end": 4.365
+  },
+  {
+    "word": "has",
+    "start": 4.423,
+    "end": 4.551
+  },
+  {
+    "word": "a",
+    "start": 4.598,
+    "end": 4.632
+  },
+  {
+    "word": "name,",
+    "start": 4.714,
+    "end": 5.097
+  },
+  {
+    "word": "a",
+    "start": 5.178,
+    "end": 5.248
+  },
+  {
+    "word": "description,",
+    "start": 5.317,
+    "end": 6.037
+  },
+  {
+    "word": "and",
+    "start": 6.2,
+    "end": 6.362
+  },
+  {
+    "word": "the",
+    "start": 6.409,
+    "end": 6.478
+  },
+  {
+    "word": "arguments",
+    "start": 6.548,
+    "end": 7.012
+  },
+  {
+    "word": "it",
+    "start": 7.059,
+    "end": 7.14
+  },
+  {
+    "word": "needs.",
+    "start": 7.198,
+    "end": 8.127
+  }
+]

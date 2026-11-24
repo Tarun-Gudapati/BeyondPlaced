@@ -1,0 +1,67 @@
+[
+  {
+    "word": "Now",
+    "start": 0,
+    "end": 0.221
+  },
+  {
+    "word": "Riya's",
+    "start": 0.279,
+    "end": 0.58
+  },
+  {
+    "word": "search",
+    "start": 0.615,
+    "end": 0.882
+  },
+  {
+    "word": "is",
+    "start": 0.929,
+    "end": 0.987
+  },
+  {
+    "word": "simple:",
+    "start": 1.033,
+    "end": 1.533
+  },
+  {
+    "word": "embed",
+    "start": 1.73,
+    "end": 2.078
+  },
+  {
+    "word": "the",
+    "start": 2.125,
+    "end": 2.194
+  },
+  {
+    "word": "query,",
+    "start": 2.252,
+    "end": 2.694
+  },
+  {
+    "word": "and",
+    "start": 2.717,
+    "end": 2.844
+  },
+  {
+    "word": "return",
+    "start": 2.902,
+    "end": 3.251
+  },
+  {
+    "word": "the",
+    "start": 3.297,
+    "end": 3.367
+  },
+  {
+    "word": "nearest",
+    "start": 3.402,
+    "end": 3.692
+  },
+  {
+    "word": "points.",
+    "start": 3.75,
+    "end": 4.876
+  }
+]

@@ -1,0 +1,133 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.670
+Ananya asks her college placement bot a simple
+
+2
+00:00:02.705 --> 00:00:05.573
+question: what is my CGPA?
+
+3
+00:00:05.923 --> 00:00:08.593
+But a language model only writes text. It
+
+4
+00:00:08.640 --> 00:00:11.240
+can't open the college database. Left alone, it
+
+5
+00:00:11.264 --> 00:00:12.471
+would guess.
+
+6
+00:00:12.821 --> 00:00:15.097
+So your app sends her question together with
+
+7
+00:00:15.131 --> 00:00:17.453
+a menu of tools. Each tool has a
+
+8
+00:00:17.535 --> 00:00:20.948
+name, a description, and the arguments it needs.
+
+9
+00:00:21.298 --> 00:00:23.759
+The model never sees your Python code. Only
+
+10
+00:00:23.817 --> 00:00:24.874
+this menu.
+
+11
+00:00:25.224 --> 00:00:27.558
+The model doesn't answer. It replies with a
+
+12
+00:00:27.616 --> 00:00:30.681
+tool call: the function name, get student, and
+
+13
+00:00:30.727 --> 00:00:32.840
+the arguments as JSON.
+
+14
+00:00:33.190 --> 00:00:35.500
+Notice what did not happen. Nothing has run
+
+15
+00:00:35.570 --> 00:00:37.741
+yet. The model only asked.
+
+16
+00:00:38.091 --> 00:00:40.750
+Your code parses the arguments, checks them, and
+
+17
+00:00:40.808 --> 00:00:44.082
+runs the real Python function against the database.
+
+18
+00:00:44.432 --> 00:00:46.371
+Because your code sits in the middle, a
+
+19
+00:00:46.441 --> 00:00:48.774
+wrong roll number becomes a clear error, not
+
+20
+00:00:48.821 --> 00:00:49.912
+a crash.
+
+21
+00:00:50.262 --> 00:00:52.387
+Then it adds the result to the conversation
+
+22
+00:00:52.549 --> 00:00:54.674
+as a tool message, and calls the model
+
+23
+00:00:54.743 --> 00:00:56.392
+a second time.
+
+24
+00:00:56.742 --> 00:00:58.449
+Now the model has the facts, so it
+
+25
+00:00:58.483 --> 00:01:01.316
+writes the answer: your CGPA is eight point
+
+26
+00:01:01.386 --> 00:01:02.361
+four.
+
+27
+00:01:02.711 --> 00:01:05.822
+One question, two API calls. And the model
+
+28
+00:01:05.892 --> 00:01:08.098
+chose that tool using only the description you
+
+29
+00:01:08.144 --> 00:01:09.259
+wrote.
+
+30
+00:01:09.609 --> 00:01:12.628
+So remember the split: the model proposes, your
+
+31
+00:01:12.697 --> 00:01:14.207
+code executes.
+
+32
+00:01:14.557 --> 00:01:16.554
+Next lesson: put this in a loop, and
+
+33
+00:01:16.600 --> 00:01:17.715
+you have an agent.

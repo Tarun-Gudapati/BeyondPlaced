@@ -1,0 +1,87 @@
+[
+  {
+    "word": "Then",
+    "start": 0,
+    "end": 0.255
+  },
+  {
+    "word": "spell",
+    "start": 0.337,
+    "end": 0.58
+  },
+  {
+    "word": "out",
+    "start": 0.627,
+    "end": 0.755
+  },
+  {
+    "word": "the",
+    "start": 0.789,
+    "end": 0.871
+  },
+  {
+    "word": "exact",
+    "start": 0.929,
+    "end": 1.289
+  },
+  {
+    "word": "output:",
+    "start": 1.347,
+    "end": 1.904
+  },
+  {
+    "word": "JSON,",
+    "start": 2.136,
+    "end": 2.601
+  },
+  {
+    "word": "with",
+    "start": 2.635,
+    "end": 2.798
+  },
+  {
+    "word": "a",
+    "start": 2.844,
+    "end": 2.868
+  },
+  {
+    "word": "role,",
+    "start": 2.926,
+    "end": 3.355
+  },
+  {
+    "word": "a",
+    "start": 3.471,
+    "end": 3.529
+  },
+  {
+    "word": "list",
+    "start": 3.599,
+    "end": 3.796
+  },
+  {
+    "word": "of",
+    "start": 3.843,
+    "end": 3.901
+  },
+  {
+    "word": "skills,",
+    "start": 3.947,
+    "end": 4.493
+  },
+  {
+    "word": "and",
+    "start": 4.551,
+    "end": 4.714
+  },
+  {
+    "word": "the",
+    "start": 4.76,
+    "end": 4.83
+  },
+  {
+    "word": "CTC.",
+    "start": 4.876,
+    "end": 6.269
+  }
+]

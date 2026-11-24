@@ -1,0 +1,42 @@
+[
+  {
+    "word": "Next",
+    "start": 0,
+    "end": 0.313
+  },
+  {
+    "word": "lesson:",
+    "start": 0.372,
+    "end": 0.778
+  },
+  {
+    "word": "cosine",
+    "start": 0.94,
+    "end": 1.393
+  },
+  {
+    "word": "similarity",
+    "start": 1.428,
+    "end": 1.974
+  },
+  {
+    "word": "from",
+    "start": 2.02,
+    "end": 2.159
+  },
+  {
+    "word": "scratch",
+    "start": 2.229,
+    "end": 2.612
+  },
+  {
+    "word": "with",
+    "start": 2.647,
+    "end": 2.786
+  },
+  {
+    "word": "NumPy.",
+    "start": 2.844,
+    "end": 3.669
+  }
+]

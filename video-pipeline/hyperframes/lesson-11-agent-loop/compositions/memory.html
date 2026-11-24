@@ -1,0 +1,68 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .y-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #y-head { position: absolute; left: 150px; top: 84px; font-size: 56px; font-weight: 900; letter-spacing: -0.02em; }
+    #y-card { position: absolute; left: 150px; top: 180px; width: 620px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 30px 34px; }
+    #y-card-title { font-size: 34px; color: #0F766E; margin-bottom: 14px; }
+    .y-row { display: flex; align-items: center; height: 72px; font-size: 30px; }
+    .y-role { flex: none; width: 190px; color: #475569; }
+    .y-bar { height: 40px; border-radius: 10px; transform-origin: left center; }
+    .y-bar.sys { width: 220px; background: #0B1220; }
+    .y-bar.usr { width: 260px; background: #0F766E; }
+    .y-bar.ast { width: 180px; background: #94A3B8; }
+    .y-bar.tool { width: 150px; background: #5EEAD4; }
+    #y-fat { width: 350px; }
+    #y-turns-label { position: absolute; left: 900px; top: 372px; font-size: 44px; font-weight: 700; }
+    .y-turn { position: absolute; bottom: 300px; width: 280px; background: #FFFFFF; border: 3px solid #0F766E; border-radius: 16px; padding: 18px 22px 24px; }
+    .y-turn-l { font-size: 32px; color: #0F766E; }
+    .y-mini { height: 28px; margin-top: 12px; border-radius: 8px; }
+    .y-mini.sys { width: 140px; background: #0B1220; }
+    .y-mini.usr { width: 170px; background: #0F766E; }
+    .y-mini.ast { width: 120px; background: #94A3B8; }
+    .y-mini.tool { width: 200px; background: #5EEAD4; }
+    #y-t1 { left: 900px; }
+    #y-t2 { left: 1205px; }
+    #y-t3 { left: 1510px; }
+    #y-trim { position: absolute; left: 900px; top: 820px; font-size: 44px; }
+    #y-trim b { color: #C2410C; }
+  </style>
+  <div id="root" data-composition-id="memory" data-width="1920" data-height="1080">
+    <div id="y-head">Short-term memory</div>
+    <div id="y-card">
+      <div id="y-card-title" class="y-mono">messages</div>
+      <div class="y-row y-mono"><span class="y-role">system</span><span class="y-bar sys"></span></div>
+      <div class="y-row y-mono"><span class="y-role">user</span><span class="y-bar usr"></span></div>
+      <div class="y-row y-mono"><span class="y-role">assistant</span><span class="y-bar ast"></span></div>
+      <div class="y-row y-mono"><span class="y-role">tool</span><span class="y-bar tool"></span></div>
+      <div class="y-row y-mono"><span class="y-role">assistant</span><span class="y-bar ast"></span></div>
+      <div class="y-row y-mono"><span class="y-role">tool</span><span class="y-bar tool" id="y-fat"></span></div>
+      <div class="y-row y-mono"><span class="y-role">assistant</span><span class="y-bar ast"></span></div>
+      <div class="y-row y-mono"><span class="y-role">tool</span><span class="y-bar tool"></span></div>
+    </div>
+    <div id="y-turns-label">Sent again, in full</div>
+    <div class="y-turn" id="y-t1"><div class="y-turn-l y-mono">turn 1</div><div class="y-mini sys"></div><div class="y-mini usr"></div></div>
+    <div class="y-turn" id="y-t2"><div class="y-turn-l y-mono">turn 2</div><div class="y-mini sys"></div><div class="y-mini usr"></div><div class="y-mini ast"></div><div class="y-mini tool"></div></div>
+    <div class="y-turn" id="y-t3"><div class="y-turn-l y-mono">turn 3</div><div class="y-mini sys"></div><div class="y-mini usr"></div><div class="y-mini ast"></div><div class="y-mini tool"></div><div class="y-mini ast"></div><div class="y-mini tool"></div></div>
+    <div id="y-trim" class="y-mono">observation = text<b>[:3000]</b></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    tl.fromTo("#y-card", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    gsap.utils.toArray("#y-card .y-bar").forEach((el, i) => tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "expo.out" }, 0.3 + i * 0.07));
+    blurIn("#y-head", 1.776, 0.2);
+
+    blurIn("#y-turns-label", 3.785, 0.2);
+    [3.785, 4.284, 4.899].forEach((t, i) => tl.fromTo(`#y-t${i + 1}`, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, t));
+
+    tl.to("#y-fat", { scaleX: 0.4, backgroundColor: "#EA580C", duration: 0.5, ease: "power2.inOut" }, 5.968);
+    blurIn("#y-trim", 6.235, 0.2);
+
+    blurOut("#y-head, #y-card, #y-turns-label, #y-t1, #y-t2, #y-t3, #y-trim", 7.9, 0.25);
+
+    window.__timelines["memory"] = tl;
+  </script>
+</template>

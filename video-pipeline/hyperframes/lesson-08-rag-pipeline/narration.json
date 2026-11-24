@@ -1,0 +1,16 @@
+{
+  "lesson": "rag-pipeline",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "puzzle", "text": "The model has never read Riya's college placement policy. So how does the bot answer from it, and even name the page?" },
+    { "id": "l02", "scene": "puzzle", "text": "The trick is RAG: retrieval-augmented generation. First retrieve the relevant text, then let the model generate from it. An open-book exam." },
+    { "id": "l03", "scene": "index", "text": "Phase one happens once, offline. Read the PDF, cut it into chunks, embed each chunk, and store the vectors with their page numbers." },
+    { "id": "l04", "scene": "retrieve", "text": "Phase two runs on every question. Embed the question with the same model, and fetch the four nearest chunks." },
+    { "id": "l05", "scene": "prompt", "text": "Paste those chunks into the prompt, each with a number. Then add three rules: answer only from the context, cite the number, and if the answer isn't there, say you don't know." },
+    { "id": "l06", "scene": "answer", "text": "The model answers, and cites chunk two. Your code maps that number back to page four, so anyone can check it." },
+    { "id": "l07", "scene": "answer", "text": "Ask something the PDF can't answer, like the hostel wifi password, and a good bot refuses instead of inventing." },
+    { "id": "l08", "scene": "debug", "text": "When an answer is wrong, print the retrieved chunks first. If the evidence never arrived, no prompt can fix it." },
+    { "id": "l09", "scene": "claim", "text": "So remember: RAG doesn't train the model. It hands it the right page, at the right moment." },
+    { "id": "l10", "scene": "claim", "text": "Next lesson: evaluating RAG, so you can prove it works." }
+  ]
+}

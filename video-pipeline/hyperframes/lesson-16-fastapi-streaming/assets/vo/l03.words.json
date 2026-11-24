@@ -1,0 +1,117 @@
+[
+  {
+    "word": "The",
+    "start": 0,
+    "end": 0.139
+  },
+  {
+    "word": "model",
+    "start": 0.197,
+    "end": 0.476
+  },
+  {
+    "word": "isn't",
+    "start": 0.546,
+    "end": 0.801
+  },
+  {
+    "word": "any",
+    "start": 0.848,
+    "end": 0.998
+  },
+  {
+    "word": "faster.",
+    "start": 1.068,
+    "end": 1.66
+  },
+  {
+    "word": "It",
+    "start": 1.858,
+    "end": 1.985
+  },
+  {
+    "word": "writes",
+    "start": 2.02,
+    "end": 2.276
+  },
+  {
+    "word": "one",
+    "start": 2.345,
+    "end": 2.554
+  },
+  {
+    "word": "token",
+    "start": 2.589,
+    "end": 2.902
+  },
+  {
+    "word": "at",
+    "start": 2.949,
+    "end": 3.019
+  },
+  {
+    "word": "a",
+    "start": 3.065,
+    "end": 3.088
+  },
+  {
+    "word": "time",
+    "start": 3.146,
+    "end": 3.471
+  },
+  {
+    "word": "either",
+    "start": 3.529,
+    "end": 3.773
+  },
+  {
+    "word": "way,",
+    "start": 3.82,
+    "end": 4.226
+  },
+  {
+    "word": "and",
+    "start": 4.389,
+    "end": 4.516
+  },
+  {
+    "word": "the",
+    "start": 4.551,
+    "end": 4.621
+  },
+  {
+    "word": "last",
+    "start": 4.667,
+    "end": 4.899
+  },
+  {
+    "word": "word",
+    "start": 4.957,
+    "end": 5.19
+  },
+  {
+    "word": "lands",
+    "start": 5.259,
+    "end": 5.55
+  },
+  {
+    "word": "at",
+    "start": 5.584,
+    "end": 5.642
+  },
+  {
+    "word": "the",
+    "start": 5.677,
+    "end": 5.747
+  },
+  {
+    "word": "same",
+    "start": 5.793,
+    "end": 6.014
+  },
+  {
+    "word": "moment.",
+    "start": 6.06,
+    "end": 7.105
+  }
+]

@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .x-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #x-title { position: absolute; left: 120px; top: 150px; font-size: 32px; color: #475569; }
+    .x-row { position: absolute; left: 120px; width: 880px; height: 112px; border-radius: 16px; display: flex; align-items: center; padding: 0 28px; }
+    .x-role { width: 190px; font-size: 30px; color: #0F766E; }
+    .x-text { font-size: 34px; font-weight: 700; }
+    #x-r1 { top: 210px; background: #CCFBF1; border: 3px solid #5EEAD4; }
+    #x-r2 { top: 338px; background: #FFFFFF; border: 3px solid #0F766E; }
+    #x-r3 { top: 466px; background: #E2E8F0; border: 3px solid #CBD5E1; }
+    #x-r3 .x-role { color: #334155; }
+    #x-r4 { top: 594px; background: #FFFFFF; border: 3px solid #0F766E; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #x-new { position: absolute; left: 120px; top: 730px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #x-bar { position: absolute; left: 1030px; top: 210px; width: 8px; height: 496px; background: #0F766E; border-radius: 4px; transform-origin: center top; }
+    #x-arrow { position: absolute; left: 1038px; top: 454px; width: 330px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #x-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #x-label { position: absolute; left: 1070px; top: 340px; font-size: 40px; font-weight: 700; color: #0F766E; line-height: 1.2; }
+    #x-llm { position: absolute; left: 1400px; top: 300px; width: 400px; height: 320px; border-radius: 28px; background: #0B1220; color: #FFFFFF; }
+    #x-llm-t { position: absolute; left: 0; right: 0; top: 56px; text-align: center; font-size: 84px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    #x-mem { position: absolute; left: 36px; right: 36px; top: 186px; border: 3px dashed #94A3B8; border-radius: 12px; padding: 14px 0; text-align: center; font-size: 34px; font-weight: 700; color: #E2E8F0; }
+    #x-mem b { color: #F97316; }
+    #x-grow { position: absolute; left: 1400px; top: 650px; width: 400px; text-align: center; font-size: 32px; font-weight: 700; color: #475569; }
+  </style>
+  <div id="root" data-composition-id="resend" data-width="1920" data-height="1080">
+    <div id="x-title" class="x-mono">messages</div>
+    <div id="x-r1" class="x-row"><span class="x-role x-mono">system</span><span class="x-text">You are a patient DSA tutor.</span></div>
+    <div id="x-r2" class="x-row"><span class="x-role x-mono">user</span><span class="x-text">Explain binary search.</span></div>
+    <div id="x-r3" class="x-row"><span class="x-role x-mono">assistant</span><span class="x-text">Check the middle, drop half.</span></div>
+    <div id="x-r4" class="x-row"><span class="x-role x-mono">user</span><span class="x-text">Now show it in Python.</span></div>
+    <div id="x-new">her follow-up</div>
+    <div id="x-bar"></div>
+    <div id="x-arrow"></div>
+    <div id="x-label">all four,<br />every call</div>
+    <div id="x-llm"><div id="x-llm-t">LLM</div><div id="x-mem">memory: <b>none</b></div></div>
+    <div id="x-grow">input grows every turn</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#x-r4, #x-new, #x-label, #x-mem, #x-grow", { opacity: 0 });
+    gsap.set("#x-bar", { scaleY: 0 });
+    gsap.set("#x-arrow", { scaleX: 0 });
+
+    // l10: For a follow-up, her code sends the whole list again, because the model remembers nothing between calls.
+    blurIn("#x-title", 0, 0.2);
+    ["#x-r1", "#x-r2", "#x-r3"].forEach((sel, i) => tl.fromTo(sel, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, i * 0.06));
+    tl.fromTo("#x-llm", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, 0.1);
+    tl.fromTo("#x-r4", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0.337);
+    blurIn("#x-new", 0.6, 0.2);
+    tl.to("#x-bar", { scaleY: 1, duration: 0.4, ease: "power2.inOut" }, 1.44);
+    tl.to("#x-arrow", { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 1.846);
+    blurIn("#x-label", 1.846, 0.2);
+    tl.fromTo("#x-llm", { scale: 1 }, { scale: 1.05, duration: 0.1, yoyo: true, repeat: 1, immediateRender: false }, 2.345);
+    blurIn("#x-mem", 3.634, 0.2);
+    blurIn("#x-grow", 3.95, 0.2);
+
+    blurOut("#x-title, #x-r1, #x-r2, #x-r3, #x-r4, #x-new, #x-bar, #x-arrow, #x-label, #x-llm, #x-grow", 5.72, 0.22);
+
+    window.__timelines["resend"] = tl;
+  </script>
+</template>

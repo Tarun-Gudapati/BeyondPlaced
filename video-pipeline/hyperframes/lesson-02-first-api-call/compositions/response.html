@@ -1,0 +1,86 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .p-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #p-llm { position: absolute; left: 1400px; top: 400px; width: 400px; height: 320px; border-radius: 28px; background: #0B1220; color: #FFFFFF; }
+    #p-llm-t { position: absolute; left: 0; right: 0; top: 62px; text-align: center; font-size: 84px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    #p-llm-s { position: absolute; left: 0; right: 0; top: 196px; text-align: center; font-size: 32px; font-weight: 700; color: #CBD5E1; }
+    #p-wire { position: absolute; left: 976px; top: 556px; width: 396px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: right center; }
+    #p-wire::after { content: ""; position: absolute; left: -14px; top: -10px; border-right: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #p-card { position: absolute; left: 120px; top: 130px; width: 820px; height: 800px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #p-title { position: absolute; left: 36px; top: 26px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #p-answer { position: absolute; left: 36px; top: 84px; width: 740px; height: 150px; background: #F1F5F9; border-radius: 20px 20px 20px 6px; padding: 22px 28px; font-size: 34px; line-height: 1.3; }
+    .p-key { position: absolute; left: 36px; font-size: 34px; }
+    #p-fin-k { top: 272px; }
+    #p-use-k { top: 510px; }
+    #p-use-note { position: absolute; left: 190px; top: 516px; font-size: 28px; color: #475569; }
+    .p-tile { position: absolute; top: 334px; width: 350px; height: 150px; border-radius: 16px; padding: 18px 24px; }
+    #p-stop { left: 36px; background: #CCFBF1; border: 3px solid #5EEAD4; }
+    #p-len { left: 426px; background: #FFFFFF; border: 3px dashed #64748B; }
+    .p-val { font-size: 42px; line-height: 1.2; }
+    .p-means { font-size: 30px; font-weight: 700; color: #334155; margin-top: 8px; }
+    .p-num { position: absolute; top: 574px; height: 180px; border-radius: 16px; padding: 14px 12px; }
+    .p-num b { display: block; font-family: "JetBrains Mono", monospace; font-size: 68px; font-weight: 700; color: #0F766E; line-height: 1.15; }
+    .p-num span { display: block; font-size: 28px; font-weight: 700; color: #334155; margin-top: 4px; }
+    #p-n1 { left: 36px; width: 210px; }
+    #p-n2 { left: 296px; width: 250px; }
+    #p-n3 { left: 600px; width: 180px; }
+    #p-n3 b { color: #C2410C; }
+    .p-op { position: absolute; top: 596px; font-size: 56px; color: #475569; line-height: 1.15; }
+    #p-plus { left: 252px; }
+    #p-eq { left: 552px; }
+    #p-bill { position: absolute; left: 590px; top: 564px; width: 200px; height: 200px; border: 4px solid #EA580C; border-radius: 16px; background: rgba(234,88,12,0.08); }
+  </style>
+  <div id="root" data-composition-id="response" data-width="1920" data-height="1080">
+    <div id="p-llm"><div id="p-llm-t">LLM</div><div id="p-llm-s">provider's servers</div></div>
+    <div id="p-wire"></div>
+    <div id="p-card">
+      <div id="p-title">Response</div>
+      <div id="p-answer">Binary search checks the middle, then throws away half the list at every step.</div>
+      <div id="p-fin-k" class="p-key p-mono">finish_reason</div>
+      <div id="p-stop" class="p-tile"><div class="p-val p-mono">"stop"</div><div class="p-means">finished</div></div>
+      <div id="p-len" class="p-tile"><div class="p-val p-mono">"length"</div><div class="p-means">cut off</div></div>
+      <div id="p-use-k" class="p-key p-mono">usage</div>
+      <div id="p-use-note">(illustrative numbers)</div>
+      <div id="p-bill" data-layout-ignore></div>
+      <div id="p-n1" class="p-num"><b>31</b><span>tokens sent</span></div>
+      <div id="p-plus" class="p-op p-mono">+</div>
+      <div id="p-n2" class="p-num"><b>142</b><span>tokens written</span></div>
+      <div id="p-eq" class="p-op p-mono">=</div>
+      <div id="p-n3" class="p-num"><b>173</b><span>billed</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L9 = 6.48;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#p-card, #p-answer, #p-fin-k, #p-use-k, #p-use-note, #p-stop, #p-len, #p-n1, #p-n2, #p-n3, #p-plus, #p-eq, #p-bill", { opacity: 0 });
+    gsap.set("#p-wire", { scaleX: 0 });
+
+    // l08: Back comes the answer, plus two fields beginners skip: the finish reason, and the usage.
+    tl.fromTo("#p-llm", { scale: 1 }, { scale: 1.06, duration: 0.1, yoyo: true, repeat: 1 }, 0.0);
+    tl.to("#p-wire", { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, 0.05);
+    tl.fromTo("#p-card", { opacity: 0, x: 1070, y: 30, scale: 0.3 }, { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.6, ease: "expo.out" }, 0.2);
+    blurIn("#p-answer", 0.836, 0.25);
+    blurIn("#p-fin-k", 3.82, 0.2);
+    blurIn("#p-use-k", 4.888, 0.2);
+
+    // l09: Stop means the model finished. Length means it was cut off. Usage counts the tokens she is billed for.
+    tl.to("#p-llm, #p-wire", { opacity: 0.35, duration: 0.4, ease: "power2.inOut" }, L9 - 0.3);
+    tl.fromTo("#p-stop", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L9);
+    tl.fromTo("#p-len", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L9 + 2.032);
+    blurIn("#p-use-note", L9 + 3.947, 0.2);
+    blurIn("#p-n1", L9 + 3.947, 0.18);
+    blurIn("#p-plus", L9 + 4.25, 0.15);
+    blurIn("#p-n2", L9 + 4.4, 0.18);
+    blurIn("#p-eq", L9 + 4.75, 0.15);
+    blurIn("#p-n3", L9 + 4.865, 0.18);
+    tl.fromTo("#p-bill", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L9 + 5.596);
+
+    blurOut("#p-card, #p-llm, #p-wire", 12.98, 0.22);
+
+    window.__timelines["response"] = tl;
+  </script>
+</template>

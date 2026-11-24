@@ -1,0 +1,16 @@
+{
+  "lesson": "evaluating-rag",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "ask", "text": "Riya demos her PDF bot in an interview. The interviewer asks just one question: how do you know it works?" },
+    { "id": "l02", "scene": "ask", "text": "Three hand-picked questions are not an answer. A small test set and a few numbers are." },
+    { "id": "l03", "scene": "golden", "text": "Step one: write a golden set. Twenty to thirty questions, each with a reference answer and the page it lives on." },
+    { "id": "l04", "scene": "golden", "text": "Include a few the document cannot answer. The right behaviour there is: I don't know." },
+    { "id": "l05", "scene": "hit", "text": "Step two: measure retrieval. For each question, did the right page appear in the top four chunks? That is hit rate at four." },
+    { "id": "l06", "scene": "judge", "text": "Step three: measure the answer. A second model acts as judge: is every claim supported by the retrieved context? That is faithfulness." },
+    { "id": "l07", "scene": "diagnose", "text": "Now the numbers tell you where to work. Low hit rate: fix retrieval. High hit rate but low faithfulness: fix the prompt." },
+    { "id": "l08", "scene": "diagnose", "text": "Change one thing at a time, re-run, and write the result in your README." },
+    { "id": "l09", "scene": "claim", "text": "So when someone asks how you know it works, don't say it seems fine. Show the numbers." },
+    { "id": "l10", "scene": "claim", "text": "Next module: agents and tool calling." }
+  ]
+}

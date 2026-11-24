@@ -1,0 +1,76 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #d-title { position: absolute; left: 120px; top: 104px; font-size: 64px; font-weight: 900; letter-spacing: -0.02em; }
+    #d-sub { position: absolute; left: 120px; top: 190px; font-size: 36px; font-weight: 700; color: #475569; }
+    .d-card { position: absolute; top: 330px; width: 360px; height: 360px; background: #FFFFFF; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #d-api { left: 120px; border: 4px solid #0F766E; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+    #d-api-t { font-size: 56px; font-weight: 900; letter-spacing: -0.02em; }
+    #d-api-s { font-size: 30px; font-weight: 700; color: #475569; }
+    #d-proxy { left: 780px; border: 5px solid #EA580C; }
+    #d-proxy-t { position: absolute; left: 0; right: 0; top: 18px; text-align: center; font-size: 44px; font-weight: 900; letter-spacing: -0.02em; }
+    #d-proxy-s { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-size: 30px; font-weight: 700; color: #C2410C; }
+    #d-br { left: 1440px; border: 3px solid #CBD5E1; overflow: hidden; }
+    #d-br-head { height: 60px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 10px; padding: 0 20px; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; color: #475569; }
+    .d-hd { width: 14px; height: 14px; border-radius: 50%; background: #CBD5E1; }
+    .d-arrow { position: absolute; top: 506px; width: 256px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    .d-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #d-a1 { left: 494px; }
+    #d-a2 { left: 1154px; }
+    .d-tok { position: absolute; left: 0; top: 0; height: 48px; line-height: 42px; padding: 0 14px; font-family: "JetBrains Mono", monospace; font-size: 28px; font-weight: 700; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 6px; white-space: nowrap; z-index: 3; }
+    #d-fix-l { position: absolute; left: 120px; top: 790px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #d-fix { position: absolute; left: 120px; top: 838px; font-family: "JetBrains Mono", monospace; font-size: 52px; font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="deploy" data-width="1920" data-height="1080">
+    <div id="d-title">Test on the deployed URL</div>
+    <div id="d-sub">not just on localhost</div>
+
+    <div id="d-api" class="d-card"><div id="d-api-t">FastAPI</div><div id="d-api-s">your server</div></div>
+    <div id="d-a1" class="d-arrow"></div>
+    <div id="d-proxy" class="d-card"><div id="d-proxy-t">proxy</div><div id="d-proxy-s">buffering</div></div>
+    <div id="d-a2" class="d-arrow"></div>
+    <div id="d-br" class="d-card"><div id="d-br-head"><span class="d-hd"></span><span class="d-hd"></span><span class="d-hd"></span>your-app.com</div></div>
+
+    <div class="d-tok">Check</div>
+    <div class="d-tok">the</div>
+    <div class="d-tok">middle</div>
+    <div class="d-tok">element.</div>
+
+    <div id="d-fix-l">Fix for nginx: one response header</div>
+    <div id="d-fix">X-Accel-Buffering: no</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const W = {"l11":[0,0.383,0.534,1.149,1.498,1.614,2.531,2.682,3.111,3.286,3.855,4.11,4.354,4.563,4.69,4.981,5.41,5.561,5.793]};
+    const at = (l, i) => W[l][i];
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const toks = gsap.utils.toArray(".d-tok");
+    const stackY = [436, 490, 544, 598];
+
+    gsap.set("#d-title, #d-sub, #d-proxy-s, #d-fix-l, #d-fix", { opacity: 0 });
+    gsap.set(toks, { xPercent: -50, yPercent: -50, x: 470, y: 510, opacity: 0 });
+
+    blurIn("#d-api", 0.05, 0.25);
+    tl.fromTo("#d-a1", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, 0.2);
+    tl.fromTo("#d-proxy", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, 0.3);
+    tl.fromTo("#d-a2", { scaleX: 0 }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, 0.5);
+    blurIn("#d-br", 0.6, 0.25);
+    blurIn("#d-title", at("l11", 3), 0.2);
+    blurIn("#d-sub", at("l11", 5), 0.2);
+
+    toks.forEach((el, k) => {
+      const s = 2.2 + k * 0.45;
+      tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power2.out" }, s);
+      tl.to(el, { x: 960, y: stackY[k], duration: 0.7, ease: "power2.inOut" }, s + 0.05);
+    });
+    blurIn("#d-proxy-s", at("l11", 9), 0.2);
+    blurIn("#d-fix-l", at("l11", 11), 0.2);
+    blurIn("#d-fix", at("l11", 11) + 0.15, 0.2);
+    tl.to(toks, { x: 1620, duration: 0.5, ease: "power2.inOut" }, at("l11", 17));
+
+    blurOut("#d-title, #d-sub, #d-api, #d-a1, #d-proxy, #d-a2, #d-br, .d-tok, #d-fix-l, #d-fix", 6.62, 0.22);
+
+    window.__timelines["deploy"] = tl;
+  </script>
+</template>

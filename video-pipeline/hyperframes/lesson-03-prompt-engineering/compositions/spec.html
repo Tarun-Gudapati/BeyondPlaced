@@ -1,0 +1,102 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .sp-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #sp-q { position: absolute; left: 180px; top: 170px; font-size: 40px; font-weight: 700; color: #0F766E; }
+    .sp-try { position: absolute; left: 180px; font-size: 84px; font-weight: 700; letter-spacing: -0.02em; color: #334155; line-height: 1.15; white-space: nowrap; }
+    #sp-try1 { top: 250px; }
+    #sp-try2 { top: 390px; }
+    #sp-try3 { top: 530px; }
+    .sp-strike { position: absolute; left: -10px; right: -10px; top: 52%; height: 8px; background: #0B1220; border-radius: 4px; transform-origin: left center; }
+    #sp-sheet { position: absolute; left: 120px; top: 90px; width: 1680px; height: 880px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #sp-tab { position: absolute; left: 44px; top: 26px; font-size: 34px; color: #0F766E; }
+    #sp-tab-r { position: absolute; right: 44px; top: 28px; font-size: 32px; font-weight: 700; color: #475569; }
+    .sp-sep { position: absolute; left: 44px; width: 1584px; height: 3px; background: #CBD5E1; transform-origin: left center; }
+    #sp-sep0 { top: 92px; }
+    #sp-sep1 { top: 236px; }
+    #sp-sep2 { top: 500px; }
+    .sp-tag { position: absolute; left: 44px; font-size: 34px; color: #0F766E; white-space: pre; }
+    #sp-tag1 { top: 138px; }
+    #sp-tag2 { top: 274px; }
+    #sp-tag3 { top: 536px; }
+    .sp-body { position: absolute; left: 380px; width: 1240px; }
+    #sp-b1 { top: 130px; font-size: 46px; font-weight: 700; line-height: 1.3; }
+    #sp-b2 { top: 266px; }
+    #sp-b2-sub { font-size: 32px; font-weight: 700; color: #475569; line-height: 1.5; }
+    #sp-b2-l1 { font-size: 46px; font-weight: 700; line-height: 1.3; margin-top: 10px; }
+    #sp-b2-l2 { font-size: 46px; font-weight: 900; line-height: 1.3; margin-top: 8px; color: #EA580C; }
+    #sp-b3 { top: 526px; width: 1000px; height: 330px; background: #F0FDFA; border: 3px solid #99F6E4; border-radius: 16px; padding: 24px 36px; font-size: 40px; line-height: 54px; white-space: pre; }
+    .sp-w { display: inline-block; }
+    .sp-j { height: 54px; }
+  </style>
+  <div id="root" data-composition-id="spec" data-width="1920" data-height="1080">
+    <div id="sp-q">Cleverer wording?</div>
+    <div id="sp-try1" class="sp-try">Tell me about this job.<span class="sp-strike"></span></div>
+    <div id="sp-try2" class="sp-try">Tell me, please!<span class="sp-strike"></span></div>
+    <div id="sp-try3" class="sp-try">Be VERY accurate!<span class="sp-strike"></span></div>
+    <div id="sp-sheet">
+      <div id="sp-tab" class="sp-mono">SYSTEM_V1</div>
+      <div id="sp-tab-r">the specification</div>
+      <div id="sp-sep0" class="sp-sep"></div>
+      <div id="sp-tag1" class="sp-tag sp-mono"><span id="sp-tag1a">role</span><span id="sp-tag1b"> + task</span></div>
+      <div id="sp-b1" class="sp-body"><span class="sp-w">You</span> <span class="sp-w">extract</span> <span class="sp-w">job</span> <span class="sp-w">details</span> <span class="sp-w">from</span> <span class="sp-w">a</span> <span class="sp-w">job</span> <span class="sp-w">description.</span></div>
+      <div id="sp-sep1" class="sp-sep"></div>
+      <div id="sp-tag2" class="sp-tag sp-mono">constraints</div>
+      <div id="sp-b2" class="sp-body">
+        <div id="sp-b2-sub">When information is missing:</div>
+        <div id="sp-b2-l1"><span class="sp-w">If</span> <span class="sp-w">the</span> <span class="sp-w">CTC</span> <span class="sp-w">is</span> <span class="sp-w">not</span> <span class="sp-w">stated,</span> <span class="sp-w">use</span> <span class="sp-w">null.</span></div>
+        <div id="sp-b2-l2"><span class="sp-w">Never</span> <span class="sp-w">guess.</span></div>
+      </div>
+      <div id="sp-sep2" class="sp-sep"></div>
+      <div id="sp-tag3" class="sp-tag sp-mono">output</div>
+      <div id="sp-b3" class="sp-body sp-mono"><div class="sp-j">{</div><div class="sp-j">  "role": string,</div><div class="sp-j">  "skills": [string],</div><div class="sp-j">  "ctc_lpa": number | null</div><div class="sp-j">}</div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L4 = 4.622, L5 = 10.591, L6 = 18.557;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const words = (sel) => gsap.utils.toArray(sel + " .sp-w");
+    const json = gsap.utils.toArray("#sp-b3 .sp-j");
+
+    gsap.set("#sp-sheet, #sp-tab-r, #sp-tag1a, #sp-tag1b, #sp-tag2, #sp-tag3, #sp-b2-sub, #sp-b3", { opacity: 0 });
+    gsap.set("#sp-b1 .sp-w, #sp-b2 .sp-w", { opacity: 0 });
+    gsap.set(json, { opacity: 0 });
+    gsap.set(".sp-strike, #sp-sep1, #sp-sep2", { scaleX: 0 });
+
+    // l03: The fix is not cleverer wording. A good prompt is a specification.
+    blurIn("#sp-q", 0.0, 0.2);
+    ["#sp-try1", "#sp-try2", "#sp-try3"].forEach((sel, i) => tl.fromTo(sel, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.3, ease: "expo.out" }, [0.1, 0.4, 0.7][i]));
+    gsap.utils.toArray(".sp-strike").forEach((el, i) => tl.to(el, { scaleX: 1, duration: 0.25, ease: "power3.out" }, 1.265 + i * 0.13));
+    blurOut("#sp-q, #sp-try1, #sp-try2, #sp-try3", 1.98, 0.2);
+    tl.fromTo("#sp-sheet", { opacity: 0, clipPath: "inset(0 0 100% 0 round 22px)" }, { opacity: 1, clipPath: "inset(0 0 0% 0 round 22px)", duration: 0.55, ease: "power2.inOut" }, 2.2);
+    blurIn("#sp-tab-r", 2.868, 0.2);
+
+    // l04: Start with a role and one clear task: you extract job details from a job description.
+    blurIn("#sp-tag1a", L4 + 0.627, 0.2);
+    blurIn("#sp-tag1b", L4 + 1.683, 0.2);
+    [2.438, 2.612, 3.088, 3.379, 3.901, 4.087, 4.168, 4.435].forEach((t, i) => blurIn(words("#sp-b1")[i], L4 + t, 0.13));
+
+    // l05: Add constraints: what to do when information is missing. If the CTC is not stated, use null. Never guess.
+    tl.to("#sp-sep1", { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, L5);
+    blurIn("#sp-tag2", L5 + 0.348, 0.2);
+    blurIn("#sp-b2-sub", L5 + 1.289, 0.2);
+    [3.599, 3.785, 3.901, 4.528, 4.679, 4.865, 5.55, 5.84].forEach((t, i) => blurIn(words("#sp-b2-l1")[i], L5 + t, 0.13));
+    [6.536, 6.827].forEach((t, i) => blurIn(words("#sp-b2-l2")[i], L5 + t, 0.15));
+
+    // l06: Then spell out the exact output: JSON, with a role, a list of skills, and the CTC.
+    tl.to("#sp-sep2", { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, L6);
+    blurIn("#sp-tag3", L6 + 1.347, 0.2);
+    tl.fromTo("#sp-b3", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, L6 + 1.9);
+    blurIn(json[0], L6 + 2.136, 0.15);
+    blurIn(json[4], L6 + 2.136, 0.15);
+    blurIn(json[1], L6 + 2.926, 0.15);
+    blurIn(json[2], L6 + 3.599, 0.15);
+    blurIn(json[3], L6 + 4.876, 0.15);
+
+    blurOut("#sp-sheet", 24.78, 0.22);
+
+    window.__timelines["spec"] = tl;
+  </script>
+</template>

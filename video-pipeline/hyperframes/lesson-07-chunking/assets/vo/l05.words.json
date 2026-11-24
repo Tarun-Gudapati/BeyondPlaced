@@ -1,0 +1,127 @@
+[
+  {
+    "word": "So",
+    "start": 0,
+    "end": 0.174
+  },
+  {
+    "word": "start",
+    "start": 0.244,
+    "end": 0.534
+  },
+  {
+    "word": "at",
+    "start": 0.58,
+    "end": 0.639
+  },
+  {
+    "word": "around",
+    "start": 0.673,
+    "end": 0.929
+  },
+  {
+    "word": "five",
+    "start": 1.01,
+    "end": 1.242
+  },
+  {
+    "word": "hundred",
+    "start": 1.265,
+    "end": 1.521
+  },
+  {
+    "word": "tokens",
+    "start": 1.567,
+    "end": 1.927
+  },
+  {
+    "word": "per",
+    "start": 1.974,
+    "end": 2.101
+  },
+  {
+    "word": "chunk.",
+    "start": 2.159,
+    "end": 2.647
+  },
+  {
+    "word": "But",
+    "start": 2.961,
+    "end": 3.111
+  },
+  {
+    "word": "a",
+    "start": 3.146,
+    "end": 3.17
+  },
+  {
+    "word": "fixed",
+    "start": 3.239,
+    "end": 3.506
+  },
+  {
+    "word": "cut",
+    "start": 3.564,
+    "end": 3.785
+  },
+  {
+    "word": "can",
+    "start": 3.843,
+    "end": 3.971
+  },
+  {
+    "word": "slice",
+    "start": 4.029,
+    "end": 4.342
+  },
+  {
+    "word": "Riya's",
+    "start": 4.389,
+    "end": 4.667
+  },
+  {
+    "word": "sentence",
+    "start": 4.702,
+    "end": 5.097
+  },
+  {
+    "word": "in",
+    "start": 5.132,
+    "end": 5.213
+  },
+  {
+    "word": "half,",
+    "start": 5.294,
+    "end": 5.77
+  },
+  {
+    "word": "and",
+    "start": 5.886,
+    "end": 6.026
+  },
+  {
+    "word": "neither",
+    "start": 6.095,
+    "end": 6.351
+  },
+  {
+    "word": "chunk",
+    "start": 6.397,
+    "end": 6.664
+  },
+  {
+    "word": "holds",
+    "start": 6.734,
+    "end": 6.989
+  },
+  {
+    "word": "the",
+    "start": 7.024,
+    "end": 7.094
+  },
+  {
+    "word": "answer.",
+    "start": 7.152,
+    "end": 8.127
+  }
+]

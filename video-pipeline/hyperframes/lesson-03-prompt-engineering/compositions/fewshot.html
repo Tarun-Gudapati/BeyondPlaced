@@ -1,0 +1,76 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .f-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    .f-tag { position: absolute; left: 120px; font-size: 30px; color: #0F766E; }
+    #f-tagA { top: 96px; }
+    #f-tagB { top: 356px; }
+    #f-tagC { top: 626px; color: #0B1220; }
+    #f-perfect { position: absolute; left: 940px; top: 96px; font-size: 30px; font-weight: 700; color: #475569; }
+    #f-name { position: absolute; right: 120px; top: 90px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .f-in { position: absolute; left: 120px; width: 700px; height: 200px; background: #FFFFFF; border: 3px solid #0F766E; border-radius: 18px; padding: 24px 28px; font-size: 34px; font-weight: 700; line-height: 1.3; }
+    .f-out { position: absolute; left: 940px; width: 860px; height: 200px; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 18px; padding: 20px 28px; font-size: 32px; line-height: 50px; white-space: pre; }
+    #f-inA, #f-outA { top: 140px; }
+    #f-inB, #f-outB { top: 400px; }
+    #f-inC, #f-outC { top: 670px; }
+    #f-inC { border-color: #0B1220; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #f-outC { background: #FFFFFF; border: 4px solid #EA580C; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    .f-arrow { position: absolute; left: 836px; width: 74px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    .f-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #f-arA { top: 234px; }
+    #f-arB { top: 494px; }
+    #f-arC { top: 764px; }
+    .f-j { height: 50px; }
+  </style>
+  <div id="root" data-composition-id="fewshot" data-width="1920" data-height="1080">
+    <div id="f-tagA" class="f-tag f-mono">example 1</div>
+    <div id="f-perfect">the perfect answer</div>
+    <div id="f-name">few-shot prompting</div>
+    <div id="f-inA" class="f-in">SDE Intern, Hyderabad. Java, Spring Boot. CTC 12 LPA.</div>
+    <div id="f-arA" class="f-arrow"></div>
+    <div id="f-outA" class="f-out f-mono">{"role": "SDE Intern",
+ "skills": ["Java", "Spring Boot"],
+ "ctc_lpa": 12}</div>
+    <div id="f-tagB" class="f-tag f-mono">example 2</div>
+    <div id="f-inB" class="f-in">Data Analyst trainee. Excel, SQL. Salary as per company norms.</div>
+    <div id="f-arB" class="f-arrow"></div>
+    <div id="f-outB" class="f-out f-mono">{"role": "Data Analyst trainee",
+ "skills": ["Excel", "SQL"],
+ "ctc_lpa": null}</div>
+    <div id="f-tagC" class="f-tag f-mono">new JD</div>
+    <div id="f-inC" class="f-in">Backend Engineer Intern, Bengaluru. Python, FastAPI, SQL. CTC: 8 LPA.</div>
+    <div id="f-arC" class="f-arrow"></div>
+    <div id="f-outC" class="f-out f-mono"><div class="f-j">{"role": "Backend Engineer Intern",</div><div class="f-j"> "skills": ["Python", "FastAPI", "SQL"],</div><div class="f-j"> "ctc_lpa": 8}</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const slide = (sel, t, x) => tl.fromTo(sel, { opacity: 0, x }, { opacity: 1, x: 0, duration: 0.35, ease: "expo.out" }, t);
+    const outC = gsap.utils.toArray("#f-outC .f-j");
+
+    gsap.set("#f-perfect, #f-name, #f-tagB, #f-tagC, #f-outC", { opacity: 0 });
+    gsap.set(".f-arrow", { scaleX: 0 });
+
+    // l09: Next, show one or two examples of a perfect answer. That is few-shot prompting: the model copies the pattern.
+    blurIn("#f-tagA", 0.0, 0.2);
+    slide("#f-inA", 0.0, -40);
+    tl.to("#f-arA", { scaleX: 1, duration: 0.25, ease: "power2.inOut" }, 0.557);
+    slide("#f-outA", 0.7, 40);
+    blurIn("#f-tagB", 1.126, 0.2);
+    slide("#f-inB", 1.126, -40);
+    tl.to("#f-arB", { scaleX: 1, duration: 0.25, ease: "power2.inOut" }, 1.4);
+    slide("#f-outB", 1.55, 40);
+    blurIn("#f-perfect", 2.055, 0.2);
+    blurIn("#f-name", 3.901, 0.2);
+    blurIn("#f-tagC", 3.3, 0.2);
+    slide("#f-inC", 3.3, -40);
+    tl.to("#f-arC", { scaleX: 1, duration: 0.25, ease: "power2.inOut" }, 5.2);
+    tl.fromTo("#f-outC", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 5.4);
+    outC.forEach((el, i) => tl.fromTo(el, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.22, ease: "steps(12)" }, 5.6 + i * 0.22));
+
+    blurOut("#f-tagA, #f-tagB, #f-tagC, #f-perfect, #f-name, #f-inA, #f-inB, #f-inC, #f-outA, #f-outB, #f-outC, #f-arA, #f-arB, #f-arC", 7.13, 0.22);
+
+    window.__timelines["fewshot"] = tl;
+  </script>
+</template>

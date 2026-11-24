@@ -1,0 +1,92 @@
+[
+  {
+    "word": "Because",
+    "start": 0,
+    "end": 0.36
+  },
+  {
+    "word": "your",
+    "start": 0.395,
+    "end": 0.522
+  },
+  {
+    "word": "code",
+    "start": 0.592,
+    "end": 0.906
+  },
+  {
+    "word": "sits",
+    "start": 0.94,
+    "end": 1.149
+  },
+  {
+    "word": "in",
+    "start": 1.184,
+    "end": 1.242
+  },
+  {
+    "word": "the",
+    "start": 1.289,
+    "end": 1.358
+  },
+  {
+    "word": "middle,",
+    "start": 1.393,
+    "end": 1.776
+  },
+  {
+    "word": "a",
+    "start": 1.869,
+    "end": 1.939
+  },
+  {
+    "word": "wrong",
+    "start": 2.009,
+    "end": 2.218
+  },
+  {
+    "word": "roll",
+    "start": 2.276,
+    "end": 2.496
+  },
+  {
+    "word": "number",
+    "start": 2.554,
+    "end": 2.786
+  },
+  {
+    "word": "becomes",
+    "start": 2.844,
+    "end": 3.158
+  },
+  {
+    "word": "a",
+    "start": 3.193,
+    "end": 3.216
+  },
+  {
+    "word": "clear",
+    "start": 3.274,
+    "end": 3.529
+  },
+  {
+    "word": "error,",
+    "start": 3.599,
+    "end": 4.052
+  },
+  {
+    "word": "not",
+    "start": 4.168,
+    "end": 4.342
+  },
+  {
+    "word": "a",
+    "start": 4.389,
+    "end": 4.412
+  },
+  {
+    "word": "crash.",
+    "start": 4.47,
+    "end": 5.48
+  }
+]

@@ -1,0 +1,133 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.228
+Arjun's placement FAQ bot has one question from
+
+2
+00:00:03.274 --> 00:00:06.188
+a student, and fifty stored answers, each one
+
+3
+00:00:06.211 --> 00:00:09.613
+a vector. Which answer is closest in meaning?
+
+4
+00:00:09.963 --> 00:00:13.713
+Picture two vectors as arrows. Cosine similarity measures
+
+5
+00:00:13.748 --> 00:00:15.989
+the angle between them, and ignores how long
+
+6
+00:00:16.035 --> 00:00:17.254
+they are.
+
+7
+00:00:17.604 --> 00:00:20.599
+Same direction scores one. A right angle scores
+
+8
+00:00:20.646 --> 00:00:24.442
+zero: nothing in common. Opposite directions score minus
+
+9
+00:00:24.524 --> 00:00:25.267
+one.
+
+10
+00:00:25.617 --> 00:00:28.601
+Forty-five degrees lands in between, at about zero
+
+11
+00:00:28.682 --> 00:00:30.168
+point seven one.
+
+12
+00:00:30.518 --> 00:00:33.571
+The formula is short: the dot product, divided
+
+13
+00:00:33.618 --> 00:00:36.369
+by the two lengths multiplied together.
+
+14
+00:00:36.719 --> 00:00:39.517
+Take three, four and six, eight. They point
+
+15
+00:00:39.563 --> 00:00:41.874
+the same way, so even with different lengths,
+
+16
+00:00:41.943 --> 00:00:43.917
+the score is exactly one.
+
+17
+00:00:44.267 --> 00:00:46.601
+Now the trick. Scale every vector to length
+
+18
+00:00:46.682 --> 00:00:50.142
+one, just once. After that, cosine similarity is
+
+19
+00:00:50.176 --> 00:00:51.930
+simply the dot product.
+
+20
+00:00:52.280 --> 00:00:55.206
+So stack all fifty answers into one matrix,
+
+21
+00:00:55.566 --> 00:00:57.783
+multiply by the question, and you get fifty
+
+22
+00:00:57.841 --> 00:00:59.060
+scores at once.
+
+23
+00:00:59.410 --> 00:01:01.860
+Sort them, keep the top three. That is
+
+24
+00:01:01.929 --> 00:01:04.565
+vector search, in a few lines of NumPy.
+
+25
+00:01:04.915 --> 00:01:07.945
+The answers are embedded once and saved. Only
+
+26
+00:01:07.992 --> 00:01:09.977
+the question is new each time.
+
+27
+00:01:10.327 --> 00:01:13.299
+One warning: a score is for ranking. Zero
+
+28
+00:01:13.392 --> 00:01:15.807
+point eight two does not mean eighty-two percent
+
+29
+00:01:15.865 --> 00:01:16.829
+correct.
+
+30
+00:01:17.179 --> 00:01:19.431
+So the line to remember: vector search is
+
+31
+00:01:19.478 --> 00:01:22.125
+a dot product and a sort. Everything after
+
+32
+00:01:22.171 --> 00:01:24.099
+that is about speed.
+
+33
+00:01:24.449 --> 00:01:27.050
+Next lesson: vector databases.

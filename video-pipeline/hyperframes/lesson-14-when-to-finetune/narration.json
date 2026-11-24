@@ -1,0 +1,18 @@
+{
+  "lesson": "when-to-finetune",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "bot", "text": "Meera's support bot for a Bengaluru food app keeps getting things wrong. Her first instinct: fine-tune it." },
+    { "id": "l02", "scene": "bot", "text": "But a model fails for three different reasons, and each one has a different fix." },
+    { "id": "l03", "scene": "prompt", "text": "Failure one: the reply is an essay when she wanted two lines. The model wasn't told. So fix the prompt." },
+    { "id": "l04", "scene": "prompt", "text": "Add the rule, add an example, run it again. That takes seconds, not days." },
+    { "id": "l05", "scene": "rag", "text": "Failure two: it quotes last year's refund policy. The model doesn't know. That's missing knowledge, so retrieve the right document. That's RAG." },
+    { "id": "l06", "scene": "rag", "text": "Update the document, and the answer updates. No training." },
+    { "id": "l07", "scene": "tune", "text": "Failure three: the facts are right, but one reply in five sounds stiff, not like the brand's Hinglish, even with examples in the prompt." },
+    { "id": "l08", "scene": "tune", "text": "That's behaviour. Now fine-tuning makes sense: train on a few hundred approved replies." },
+    { "id": "l09", "scene": "ladder", "text": "So climb in order: prompt, then RAG, then fine-tune. Cheapest first, and measure before every step." },
+    { "id": "l10", "scene": "ladder", "text": "And never fine-tune facts that change. Changing knowledge belongs in retrieval, not in weights." },
+    { "id": "l11", "scene": "claim", "text": "The line to remember: prompting changes instructions, RAG changes knowledge, fine-tuning changes behaviour." },
+    { "id": "l12", "scene": "claim", "text": "Next lesson: LoRA fine-tuning on a free Colab GPU." }
+  ]
+}

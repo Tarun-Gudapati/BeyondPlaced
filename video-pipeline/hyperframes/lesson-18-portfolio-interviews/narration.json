@@ -1,0 +1,20 @@
+{
+  "lesson": "portfolio-interviews",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "skim", "text": "Rahul has six projects and one resume line: worked on an AI chatbot. In placement season, that line gets a quick skim and nothing more." },
+    { "id": "l02", "scene": "skim", "text": "The fix isn't a seventh project. It's proof, built in layers, and each layer makes the next one believable." },
+    { "id": "l03", "scene": "stack", "text": "First, a demo. A live link and a short recording show that the thing actually works." },
+    { "id": "l04", "scene": "stack", "text": "Second, an architecture diagram, from the question to the answer. It shows you understand why it works." },
+    { "id": "l05", "scene": "stack", "text": "Third, metrics. Hit rate from your eval set, cost per query, and p ninety-five latency." },
+    { "id": "l06", "scene": "bullet", "text": "Now the resume line can change. Action, scope, metric: built a RAG bot over twelve hundred documents, with its hit rate and its cost." },
+    { "id": "l07", "scene": "bullet", "text": "Those numbers are only examples. Yours must come from your own scripts." },
+    { "id": "l08", "scene": "defend", "text": "Because the interviewer's next question is: how did you get eighty-seven percent?" },
+    { "id": "l09", "scene": "defend", "text": "A strong answer sounds like this: on sixty questions I wrote by hand, and the script is in the repo." },
+    { "id": "l10", "scene": "defend", "text": "Small, honest numbers beat big, vague ones." },
+    { "id": "l11", "scene": "pick", "text": "So pin three projects, not six, and make each one yours with your own data." },
+    { "id": "l12", "scene": "pick", "text": "Then practise out loud: walk me through your project, in two minutes." },
+    { "id": "l13", "scene": "claim", "text": "Remember: every number on your resume should be printed by a script in your repo." },
+    { "id": "l14", "scene": "claim", "text": "That's the course. Go ship your proof." }
+  ]
+}

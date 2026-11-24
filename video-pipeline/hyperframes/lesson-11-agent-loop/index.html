@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #F0FDFA; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #ground { position: absolute; inset: 0; background: #F0FDFA; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="80.411" data-width="1920" data-height="1080">
+      <div id="ground"></div>
+
+      <div id="task" data-composition-id="task" data-composition-src="compositions/task.html" data-start="0" data-duration="11.567" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="loop" data-composition-id="loop" data-composition-src="compositions/loop.html" data-start="11.567" data-duration="21.53" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="stop" data-composition-id="stop" data-composition-src="compositions/stop.html" data-start="33.097" data-duration="19.58" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="error" data-composition-id="error" data-composition-src="compositions/error.html" data-start="52.677" data-duration="7.502" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="memory" data-composition-id="memory" data-composition-src="compositions/memory.html" data-start="60.179" data-duration="8.291" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="claim" data-composition-id="claim" data-composition-src="compositions/claim.html" data-start="68.47" data-duration="11.941" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <audio id="vo-l01" class="clip" src="assets/vo/l01.mp3" data-start="0" data-duration="4.087" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l02" class="clip" src="assets/vo/l02.mp3" data-start="4.437" data-duration="6.78" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l03" class="clip" src="assets/vo/l03.mp3" data-start="11.567" data-duration="4.783" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l04" class="clip" src="assets/vo/l04.mp3" data-start="16.7" data-duration="8.87" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l05" class="clip" src="assets/vo/l05.mp3" data-start="25.92" data-duration="6.827" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l06" class="clip" src="assets/vo/l06.mp3" data-start="33.097" data-duration="6.223" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l07" class="clip" src="assets/vo/l07.mp3" data-start="39.67" data-duration="8.22" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l08" class="clip" src="assets/vo/l08.mp3" data-start="48.24" data-duration="4.087" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l09" class="clip" src="assets/vo/l09.mp3" data-start="52.677" data-duration="7.152" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l10" class="clip" src="assets/vo/l10.mp3" data-start="60.179" data-duration="7.941" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l11" class="clip" src="assets/vo/l11.mp3" data-start="68.47" data-duration="4.969" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l12" class="clip" src="assets/vo/l12.mp3" data-start="73.789" data-duration="4.272" data-track-index="5" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

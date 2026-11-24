@@ -1,0 +1,18 @@
+{
+  "lesson": "agent-loop",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "task", "text": "A recruiter hands you three resumes and says: shortlist the best two." },
+    { "id": "l02", "scene": "task", "text": "You wouldn't answer in one breath. You'd read one, note a score, read the next. Each step depends on the last." },
+    { "id": "l03", "scene": "loop", "text": "An agent works the same way. It's the tool call from last lesson, inside a loop." },
+    { "id": "l04", "scene": "loop", "text": "Think: the model reads everything so far and picks a tool. Act: your code runs it. Observe: the result joins the conversation." },
+    { "id": "l05", "scene": "loop", "text": "Then round again. List the files. Read a resume. Save a score. Every lap, the message list grows." },
+    { "id": "l06", "scene": "stop", "text": "When the model replies with plain text and no tool call, that's the final answer, and the loop ends." },
+    { "id": "l07", "scene": "stop", "text": "But a stuck model can repeat the same call forever, and every lap costs tokens. So you set max steps: a hard stop." },
+    { "id": "l08", "scene": "stop", "text": "Add a token budget as well, so one bad run can't drain your credits." },
+    { "id": "l09", "scene": "error", "text": "And when a tool fails, don't crash. Send the error back as an observation, and the model usually corrects itself." },
+    { "id": "l10", "scene": "memory", "text": "That message list is the agent's only memory. Your code resends all of it on every turn, so keep tool results short." },
+    { "id": "l11", "scene": "claim", "text": "So an agent is just a model, some tools, and a loop that always knows when to stop." },
+    { "id": "l12", "scene": "claim", "text": "Next lesson: guardrails, before your agent sends a single email." }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "word": "An",
+    "start": 0,
+    "end": 0.139
+  },
+  {
+    "word": "agent",
+    "start": 0.197,
+    "end": 0.453
+  },
+  {
+    "word": "works",
+    "start": 0.499,
+    "end": 0.731
+  },
+  {
+    "word": "the",
+    "start": 0.778,
+    "end": 0.848
+  },
+  {
+    "word": "same",
+    "start": 0.894,
+    "end": 1.115
+  },
+  {
+    "word": "way.",
+    "start": 1.149,
+    "end": 1.544
+  },
+  {
+    "word": "It's",
+    "start": 1.66,
+    "end": 1.858
+  },
+  {
+    "word": "the",
+    "start": 1.904,
+    "end": 1.974
+  },
+  {
+    "word": "tool",
+    "start": 2.032,
+    "end": 2.252
+  },
+  {
+    "word": "call",
+    "start": 2.322,
+    "end": 2.531
+  },
+  {
+    "word": "from",
+    "start": 2.589,
+    "end": 2.717
+  },
+  {
+    "word": "last",
+    "start": 2.798,
+    "end": 3.03
+  },
+  {
+    "word": "lesson,",
+    "start": 3.088,
+    "end": 3.46
+  },
+  {
+    "word": "inside",
+    "start": 3.506,
+    "end": 3.947
+  },
+  {
+    "word": "a",
+    "start": 3.982,
+    "end": 4.005
+  },
+  {
+    "word": "loop.",
+    "start": 4.052,
+    "end": 4.783
+  }
+]

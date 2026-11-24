@@ -1,0 +1,138 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #p-plot { position: absolute; left: 150px; top: 130px; width: 1100px; height: 820px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #p-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    .p-dot { position: absolute; width: 36px; height: 36px; border-radius: 50%; background: #0F766E; }
+    #p-d1 { left: 452px; top: 342px; } #p-d2 { left: 582px; top: 422px; } #p-d3 { left: 382px; top: 502px; }
+    #p-d4 { left: 992px; top: 782px; } #p-d5 { left: 1092px; top: 672px; }
+    #p-q { left: 452px; top: 342px; background: #EA580C; }
+    #p-hit { position: absolute; left: 570px; top: 410px; width: 60px; height: 60px; border-radius: 50%; border: 5px solid #0B1220; }
+    .p-lab { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; line-height: 40px; white-space: nowrap; }
+    .p-lab span { background: rgba(255,255,255,0.92); border-radius: 4px; padding: 2px 6px; }
+    #p-l1 { left: 310px; top: 296px; width: 320px; text-align: center; }
+    #p-l2 { left: 636px; top: 410px; }
+    #p-l3 { left: 230px; top: 548px; width: 340px; text-align: center; }
+    #p-l4 { left: 670px; top: 780px; width: 314px; text-align: right; }
+    #p-l5 { left: 830px; top: 670px; width: 252px; text-align: right; }
+    .p-tag { position: absolute; font-size: 30px; font-weight: 700; color: #0F766E; white-space: nowrap; }
+    #p-close { left: 436px; top: 408px; }
+    #p-far { left: 824px; top: 566px; color: #475569; }
+    #p-c1 { left: 360px; top: 642px; width: 240px; text-align: center; }
+    #p-c2 { left: 970px; top: 580px; width: 180px; text-align: center; }
+    #p-note { position: absolute; left: 180px; top: 884px; font-size: 28px; color: #475569; }
+    .p-rl { position: absolute; left: 1310px; top: 250px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    .p-pair { position: absolute; left: 1310px; font-size: 44px; font-weight: 700; white-space: nowrap; }
+    #p-pair1 { top: 316px; } #p-pair2 { top: 392px; }
+    #p-r1-sub { position: absolute; left: 1310px; top: 490px; width: 430px; font-size: 32px; font-weight: 400; color: #475569; line-height: 1.3; }
+    #p-r2-q { position: absolute; left: 1310px; top: 306px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 40px; padding: 10px 18px; border-radius: 8px; background: #FFEDD5; border: 4px solid #EA580C; line-height: 1.2; white-space: nowrap; }
+    #p-r2-a { position: absolute; left: 1310px; top: 420px; font-size: 32px; font-weight: 700; color: #475569; }
+    #p-r2-hit { position: absolute; left: 1310px; top: 480px; width: 430px; padding: 22px 26px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 16px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #p-r2-hit b { display: block; font-size: 36px; font-weight: 700; line-height: 1.25; }
+    #p-r2-hit span { display: block; font-size: 28px; color: #475569; margin-top: 6px; }
+    #p-r2-f { position: absolute; left: 1310px; top: 700px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #p-r3-rag { position: absolute; left: 1310px; top: 300px; font-size: 128px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; }
+    #p-r3-jd { position: absolute; left: 1310px; top: 480px; font-size: 48px; font-weight: 700; line-height: 1.2; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="space" data-width="1920" data-height="1080">
+    <div id="p-plot"></div>
+    <svg id="p-svg" viewBox="0 0 1920 1080" data-layout-ignore>
+      <ellipse id="p-e1" cx="480" cy="440" rx="235" ry="190" fill="rgba(15,118,110,0.06)" stroke="#0F766E" stroke-width="4" stroke-dasharray="14 12" />
+      <ellipse id="p-e2" cx="1060" cy="745" rx="130" ry="115" fill="rgba(15,118,110,0.06)" stroke="#0F766E" stroke-width="4" stroke-dasharray="14 12" />
+      <path id="p-line-close" d="M 470 360 L 600 440" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" />
+      <path id="p-line-far" d="M 600 440 L 1010 800" fill="none" stroke="#64748B" stroke-width="4" stroke-dasharray="14 12" />
+      <circle id="p-ring" cx="470" cy="360" r="190" fill="rgba(234,88,12,0.06)" stroke="#EA580C" stroke-width="5" />
+    </svg>
+    <div id="p-d1" class="p-dot"></div>
+    <div id="p-d2" class="p-dot"></div>
+    <div id="p-d3" class="p-dot"></div>
+    <div id="p-d4" class="p-dot"></div>
+    <div id="p-d5" class="p-dot"></div>
+    <div id="p-q" class="p-dot"></div>
+    <div id="p-hit"></div>
+    <div id="p-l1" class="p-lab"><span>placement drive</span></div>
+    <div id="p-l2" class="p-lab"><span>campus recruitment</span></div>
+    <div id="p-l3" class="p-lab"><span>internship offer</span></div>
+    <div id="p-l4" class="p-lab"><span>biryani recipe</span></div>
+    <div id="p-l5" class="p-lab"><span>dosa batter</span></div>
+    <div id="p-close" class="p-tag">close</div>
+    <div id="p-far" class="p-tag">far</div>
+    <div id="p-c1" class="p-tag">about placements</div>
+    <div id="p-c2" class="p-tag">about food</div>
+    <div id="p-note">2D sketch of a 1536-dimension space · illustrative</div>
+
+    <div id="p-r1-l" class="p-rl">How the model learned</div>
+    <div id="p-pair1" class="p-pair">question ↔ answer</div>
+    <div id="p-pair2" class="p-pair">title ↔ article</div>
+    <div id="p-r1-sub">matching pairs were pulled together, random pairs pushed apart</div>
+
+    <div id="p-r2-l" class="p-rl">Riya's query</div>
+    <div id="p-r2-q">placement drive</div>
+    <div id="p-r2-a">nearest point ↓</div>
+    <div id="p-r2-hit"><b>Campus recruitment starts Monday</b><span>Posted today</span></div>
+    <div id="p-r2-f">0 shared words needed</div>
+
+    <div id="p-r3-l" class="p-rl">Same idea powers</div>
+    <div id="p-r3-rag">RAG</div>
+    <div id="p-r3-jd">resume ↔<br />job description</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l05":{"s":0,"w":[0,0.279,0.406,0.615,1.265,1.683,1.811,2.043,3.251,3.773,4.191,4.551,4.783,5.178,5.596]},"l06":{"s":6.991,"w":[6.991,7.595,8.024,8.384,8.663,9.325,9.487,9.766,9.917,10.265,10.428,10.776,11.066,11.182,11.496,12.111,12.32,12.622,12.982,13.26,13.62]},"l07":{"s":15.004,"w":[15.004,15.283,15.619,15.933,16.037,16.734,17.129,17.256,17.721,17.906,18.301,18.406,18.754]},"l08":{"s":20.23,"w":[20.23,20.451,20.718,21.078,21.472,22.006,22.215,22.575,22.726,23.144,23.283,23.365,23.597]}}; const END = 25.131; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const drop = (sel, t) => tl.fromTo(sel, { opacity: 0, y: -70 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, t);
+    const c = T.l05.w, d = T.l06.w, e = T.l07.w, f = T.l08.w;
+
+    gsap.set("#p-e1, #p-e2, #p-line-close, #p-line-far, #p-ring, #p-q, #p-hit", { opacity: 0 });
+
+    // l05: the map, and the notice landing beside the query
+    blurIn("#p-note", c[4], 0.2);
+    tl.fromTo("#p-d1", { scale: 1 }, { scale: 1.5, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out" }, c[8]);
+    drop("#p-d2", c[10]);
+    blurIn("#p-l2", c[13], 0.18);
+    tl.to("#p-line-close", { opacity: 1, duration: 0.25, ease: "power2.out" }, c[11]);
+    blurIn("#p-close", c[12], 0.18);
+
+    // l06: biryani far away; trained on pairs; clusters
+    drop("#p-d4", d[0]);
+    blurIn("#p-l4", d[0] + 0.2, 0.18);
+    tl.to("#p-line-far", { opacity: 1, duration: 0.3, ease: "power2.out" }, d[3]);
+    blurIn("#p-far", d[3] + 0.15, 0.18);
+    blurIn("#p-r1-l", d[8], 0.2);
+    blurIn("#p-pair1", d[10], 0.18);
+    drop("#p-d3", d[11]);
+    blurIn("#p-l3", d[11] + 0.2, 0.18);
+    drop("#p-d5", d[12] + 0.1);
+    blurIn("#p-l5", d[12] + 0.3, 0.18);
+    blurIn("#p-pair2", d[13], 0.18);
+    blurIn("#p-r1-sub", d[15], 0.2);
+    tl.to("#p-e1", { opacity: 1, duration: 0.35, ease: "power2.out" }, d[16]);
+    tl.to("#p-e2", { opacity: 1, duration: 0.35, ease: "power2.out" }, d[16] + 0.15);
+    blurIn("#p-c1", d[19], 0.18);
+    blurIn("#p-c2", d[19] + 0.12, 0.18);
+
+    // l07: embed the query, return the nearest points
+    blurOut("#p-r1-l, #p-pair1, #p-pair2, #p-r1-sub", T.l07.s - 0.2, 0.18);
+    tl.to("#p-e1, #p-e2, #p-line-close, #p-line-far", { opacity: 0, duration: 0.3, ease: "power2.in" }, e[0]);
+    blurOut("#p-close, #p-far", e[0], 0.18);
+    blurIn("#p-r2-l", e[1], 0.2);
+    blurIn("#p-r2-q", e[5], 0.18);
+    tl.fromTo("#p-q", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, e[5] + 0.1);
+    tl.fromTo("#p-ring", { opacity: 0, scale: 0.1, svgOrigin: "470 360" }, { opacity: 1, scale: 1, svgOrigin: "470 360", duration: 0.7, ease: "expo.out" }, e[9]);
+    blurIn("#p-r2-a", e[9], 0.18);
+    tl.fromTo("#p-hit", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, e[11]);
+    tl.fromTo("#p-r2-hit", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, e[11] + 0.15);
+    blurIn("#p-r2-f", e[11] + 0.4, 0.2);
+
+    // l08: where the same idea shows up
+    blurOut("#p-r2-l, #p-r2-q, #p-r2-a, #p-r2-hit, #p-r2-f", T.l08.s, 0.18);
+    blurIn("#p-r3-l", f[1], 0.2);
+    blurIn("#p-r3-rag", f[4], 0.18);
+    blurIn("#p-r3-jd", f[6], 0.18);
+
+    blurOut("#p-plot, #p-svg, .p-dot, #p-hit, .p-lab, .p-tag, #p-note, #p-r3-l, #p-r3-rag, #p-r3-jd", END - 0.3, 0.2);
+
+    window.__timelines["space"] = tl;
+  </script>
+</template>

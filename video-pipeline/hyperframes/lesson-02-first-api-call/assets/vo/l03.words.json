@@ -1,0 +1,67 @@
+[
+  {
+    "word": "First,",
+    "start": 0,
+    "end": 0.418
+  },
+  {
+    "word": "a",
+    "start": 0.441,
+    "end": 0.488
+  },
+  {
+    "word": "virtual",
+    "start": 0.569,
+    "end": 0.929
+  },
+  {
+    "word": "environment,",
+    "start": 0.987,
+    "end": 1.66
+  },
+  {
+    "word": "so",
+    "start": 1.776,
+    "end": 1.904
+  },
+  {
+    "word": "this",
+    "start": 1.962,
+    "end": 2.101
+  },
+  {
+    "word": "project's",
+    "start": 2.159,
+    "end": 2.601
+  },
+  {
+    "word": "packages",
+    "start": 2.647,
+    "end": 3.123
+  },
+  {
+    "word": "never",
+    "start": 3.193,
+    "end": 3.402
+  },
+  {
+    "word": "break",
+    "start": 3.448,
+    "end": 3.68
+  },
+  {
+    "word": "her",
+    "start": 3.727,
+    "end": 3.82
+  },
+  {
+    "word": "other",
+    "start": 3.878,
+    "end": 4.075
+  },
+  {
+    "word": "work.",
+    "start": 4.122,
+    "end": 4.969
+  }
+]

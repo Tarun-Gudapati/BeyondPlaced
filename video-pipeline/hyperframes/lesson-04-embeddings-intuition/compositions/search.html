@@ -1,0 +1,86 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #s-win { position: absolute; left: 150px; top: 120px; width: 860px; height: 840px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 28px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    #s-bar { height: 92px; background: #0F766E; color: #FFFFFF; display: flex; align-items: center; gap: 18px; padding: 0 36px; font-size: 34px; font-weight: 700; }
+    #s-logo { width: 48px; height: 48px; border-radius: 12px; background: #FFFFFF; color: #0F766E; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    #s-box { position: absolute; left: 36px; top: 128px; width: 782px; height: 92px; border: 4px solid #0F766E; border-radius: 16px; display: flex; align-items: center; padding: 0 26px; gap: 20px; font-family: "JetBrains Mono", monospace; font-size: 44px; font-weight: 700; }
+    #s-box svg { flex: none; }
+    #s-zero { position: absolute; left: 36px; top: 250px; display: flex; align-items: baseline; gap: 18px; }
+    #s-zero-n { font-size: 60px; font-weight: 900; letter-spacing: -0.02em; color: #EA580C; }
+    #s-zero-t { font-size: 32px; font-weight: 400; color: #475569; }
+    #s-all { position: absolute; left: 36px; top: 366px; font-size: 32px; font-weight: 700; color: #475569; }
+    .s-row { position: absolute; left: 36px; width: 782px; height: 116px; border: 3px solid #E2E8F0; border-radius: 16px; padding: 16px 26px; background: #FFFFFF; }
+    .s-row b { display: block; font-size: 38px; font-weight: 700; line-height: 1.2; }
+    .s-row span { display: block; font-size: 28px; color: #475569; margin-top: 4px; }
+    #s-r1 { top: 426px; } #s-r2 { top: 558px; } #s-r3 { top: 690px; }
+    #s-r2-hot { position: absolute; left: 36px; top: 558px; width: 782px; height: 116px; border: 5px solid #0F766E; border-radius: 16px; background: rgba(15,118,110,0.08); }
+    #s-name { position: absolute; left: 1100px; top: 390px; }
+    #s-name-big { font-size: 104px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+    #s-name-sub { font-size: 40px; font-weight: 700; color: #475569; margin-top: 10px; }
+    #s-kw { position: absolute; left: 1090px; top: 200px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .s-phrase { position: absolute; left: 1090px; display: flex; gap: 18px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 52px; }
+    #s-p1 { top: 270px; } #s-p2 { top: 384px; }
+    .s-tile { padding: 6px 14px; border-radius: 6px; background: #CCFBF1; border: 3px solid #5EEAD4; line-height: 1.2; }
+    #s-shared { position: absolute; left: 1090px; top: 510px; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; color: #EA580C; }
+    #s-need { position: absolute; left: 1090px; top: 670px; font-size: 76px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; }
+    #s-need span { display: block; }
+    #s-need .s-teal { color: #0F766E; }
+  </style>
+  <div id="root" data-composition-id="search" data-width="1920" data-height="1080">
+    <div id="s-win">
+      <div id="s-bar"><span id="s-logo">N</span>College Notice Board</div>
+      <div id="s-box">
+        <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="18" cy="18" r="13" fill="none" stroke="#0F766E" stroke-width="5" /><path d="M28 28 L40 40" stroke="#0F766E" stroke-width="5" stroke-linecap="round" /></svg>
+        <span class="s-qw">placement</span><span class="s-qw">drive</span>
+      </div>
+      <div id="s-zero"><span id="s-zero-n">0 results</span><span id="s-zero-t">no notice contains these words</span></div>
+      <div id="s-all">All notices</div>
+      <div id="s-r1" class="s-row"><b>Hostel mess timings updated</b><span>Posted 2 days ago</span></div>
+      <div id="s-r2" class="s-row"><b>Campus recruitment starts Monday</b><span>Posted today</span></div>
+      <div id="s-r3" class="s-row"><b>Library closed this Saturday</b><span>Posted yesterday</span></div>
+      <div id="s-r2-hot"></div>
+    </div>
+    <div id="s-name"><div id="s-name-big">Riya</div><div id="s-name-sub">searching the notice board</div></div>
+    <div id="s-kw">What keyword search compares</div>
+    <div id="s-p1" class="s-phrase"><span class="s-tile">placement</span><span class="s-tile">drive</span></div>
+    <div id="s-p2" class="s-phrase"><span class="s-tile">campus</span><span class="s-tile">recruitment</span></div>
+    <div id="s-shared">0 shared words</div>
+    <div id="s-need"><span id="s-need-1" class="s-teal">Match meaning,</span><span id="s-need-2">not letters</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l01":{"s":0,"w":[0,0.406,0.836,0.987,1.393,1.753,2.032,2.171,2.635,3.437,3.913,4.667,4.841,4.957,5.283,5.422,5.654,6.281,6.699,7.198,7.616]},"l02":{"s":8.988,"w":[8.988,9.557,9.905,10.335,10.95,11.147,11.368,11.589,12.053,12.343,12.541,13.307,13.504,13.748,13.853,14.212,14.398,14.816]}}; const END = 15.84; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l01.w, b = T.l02.w;
+
+    gsap.set("#s-r2-hot", { opacity: 0 });
+
+    // l01: the search that finds nothing
+    tl.fromTo("#s-win", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#s-name-sub", a[1], 0.2);
+    gsap.utils.toArray("#s-box .s-qw").forEach((el, i) => blurIn(el, a[7 + i], 0.12));
+    blurIn("#s-zero-n", a[9], 0.18);
+    blurIn("#s-zero-t", a[10] + 0.1, 0.2);
+    blurIn("#s-all", a[11], 0.2);
+    ["#s-r1", "#s-r2", "#s-r3"].forEach((sel, i) => tl.fromTo(sel, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, a[12] + i * 0.07));
+    tl.to("#s-name", { opacity: 0.35, duration: 0.4, ease: "power2.inOut" }, a[13]);
+    tl.fromTo("#s-r2-hot", { opacity: 0, scale: 1.03 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, a[17]);
+
+    // l02: no shared words
+    blurOut("#s-name", T.l02.s - 0.1, 0.2);
+    blurIn("#s-kw", b[0] + 0.1, 0.2);
+    gsap.utils.toArray("#s-p1 .s-tile").forEach((el, i) => blurIn(el, b[1] + i * 0.08, 0.15));
+    gsap.utils.toArray("#s-p2 .s-tile").forEach((el, i) => blurIn(el, b[2] + i * 0.08, 0.15));
+    gsap.utils.toArray("#s-p1 .s-tile").forEach((el, i) => tl.fromTo(el, { backgroundColor: "#CCFBF1" }, { backgroundColor: "#5EEAD4", duration: 0.14, yoyo: true, repeat: 1, ease: "power1.inOut" }, b[5] + i * 0.1));
+    gsap.utils.toArray("#s-p2 .s-tile").forEach((el, i) => tl.fromTo(el, { backgroundColor: "#CCFBF1" }, { backgroundColor: "#5EEAD4", duration: 0.14, yoyo: true, repeat: 1, ease: "power1.inOut" }, b[6] + 0.1 + i * 0.1));
+    blurIn("#s-shared", b[9], 0.18);
+    blurIn("#s-need-1", b[14], 0.18);
+    blurIn("#s-need-2", b[16] + 0.1, 0.18);
+
+    blurOut("#s-win, #s-kw, #s-p1, #s-p2, #s-shared, #s-need", END - 0.3, 0.2);
+
+    window.__timelines["search"] = tl;
+  </script>
+</template>

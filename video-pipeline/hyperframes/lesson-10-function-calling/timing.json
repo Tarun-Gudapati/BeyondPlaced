@@ -1,0 +1,1173 @@
+{
+  "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+  "modelId": "eleven_multilingual_v2",
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "ask",
+      "text": "Ananya asks her college placement bot a simple question: what is my CGPA?",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 5.573,
+      "words": [
+        {
+          "word": "Ananya",
+          "start": 0,
+          "end": 0.476
+        },
+        {
+          "word": "asks",
+          "start": 0.546,
+          "end": 0.882
+        },
+        {
+          "word": "her",
+          "start": 0.929,
+          "end": 1.022
+        },
+        {
+          "word": "college",
+          "start": 1.091,
+          "end": 1.416
+        },
+        {
+          "word": "placement",
+          "start": 1.451,
+          "end": 1.869
+        },
+        {
+          "word": "bot",
+          "start": 1.916,
+          "end": 2.159
+        },
+        {
+          "word": "a",
+          "start": 2.218,
+          "end": 2.276
+        },
+        {
+          "word": "simple",
+          "start": 2.357,
+          "end": 2.67
+        },
+        {
+          "word": "question:",
+          "start": 2.705,
+          "end": 3.309
+        },
+        {
+          "word": "what",
+          "start": 3.796,
+          "end": 4.005
+        },
+        {
+          "word": "is",
+          "start": 4.063,
+          "end": 4.145
+        },
+        {
+          "word": "my",
+          "start": 4.203,
+          "end": 4.307
+        },
+        {
+          "word": "CGPA?",
+          "start": 4.377,
+          "end": 5.573
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "ask",
+      "text": "But a language model only writes text. It can't open the college database. Left alone, it would guess.",
+      "src": "assets/vo/l02.mp3",
+      "start": 5.923,
+      "duration": 6.548,
+      "words": [
+        {
+          "word": "But",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "a",
+          "start": 0.221,
+          "end": 0.244
+        },
+        {
+          "word": "language",
+          "start": 0.302,
+          "end": 0.662
+        },
+        {
+          "word": "model",
+          "start": 0.708,
+          "end": 0.964
+        },
+        {
+          "word": "only",
+          "start": 1.033,
+          "end": 1.254
+        },
+        {
+          "word": "writes",
+          "start": 1.3,
+          "end": 1.591
+        },
+        {
+          "word": "text.",
+          "start": 1.649,
+          "end": 2.218
+        },
+        {
+          "word": "It",
+          "start": 2.531,
+          "end": 2.67
+        },
+        {
+          "word": "can't",
+          "start": 2.717,
+          "end": 2.961
+        },
+        {
+          "word": "open",
+          "start": 3.007,
+          "end": 3.228
+        },
+        {
+          "word": "the",
+          "start": 3.262,
+          "end": 3.332
+        },
+        {
+          "word": "college",
+          "start": 3.367,
+          "end": 3.68
+        },
+        {
+          "word": "database.",
+          "start": 3.727,
+          "end": 4.481
+        },
+        {
+          "word": "Left",
+          "start": 4.621,
+          "end": 4.841
+        },
+        {
+          "word": "alone,",
+          "start": 4.899,
+          "end": 5.236
+        },
+        {
+          "word": "it",
+          "start": 5.259,
+          "end": 5.317
+        },
+        {
+          "word": "would",
+          "start": 5.341,
+          "end": 5.492
+        },
+        {
+          "word": "guess.",
+          "start": 5.526,
+          "end": 6.548
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "tools",
+      "text": "So your app sends her question together with a menu of tools. Each tool has a name, a description, and the arguments it needs.",
+      "src": "assets/vo/l03.mp3",
+      "start": 12.821,
+      "duration": 8.127,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "your",
+          "start": 0.244,
+          "end": 0.383
+        },
+        {
+          "word": "app",
+          "start": 0.453,
+          "end": 0.639
+        },
+        {
+          "word": "sends",
+          "start": 0.72,
+          "end": 0.975
+        },
+        {
+          "word": "her",
+          "start": 1.01,
+          "end": 1.103
+        },
+        {
+          "word": "question",
+          "start": 1.161,
+          "end": 1.533
+        },
+        {
+          "word": "together",
+          "start": 1.591,
+          "end": 1.997
+        },
+        {
+          "word": "with",
+          "start": 2.113,
+          "end": 2.276
+        },
+        {
+          "word": "a",
+          "start": 2.31,
+          "end": 2.334
+        },
+        {
+          "word": "menu",
+          "start": 2.392,
+          "end": 2.67
+        },
+        {
+          "word": "of",
+          "start": 2.728,
+          "end": 2.786
+        },
+        {
+          "word": "tools.",
+          "start": 2.833,
+          "end": 3.413
+        },
+        {
+          "word": "Each",
+          "start": 3.831,
+          "end": 4.063
+        },
+        {
+          "word": "tool",
+          "start": 4.11,
+          "end": 4.365
+        },
+        {
+          "word": "has",
+          "start": 4.423,
+          "end": 4.551
+        },
+        {
+          "word": "a",
+          "start": 4.598,
+          "end": 4.632
+        },
+        {
+          "word": "name,",
+          "start": 4.714,
+          "end": 5.097
+        },
+        {
+          "word": "a",
+          "start": 5.178,
+          "end": 5.248
+        },
+        {
+          "word": "description,",
+          "start": 5.317,
+          "end": 6.037
+        },
+        {
+          "word": "and",
+          "start": 6.2,
+          "end": 6.362
+        },
+        {
+          "word": "the",
+          "start": 6.409,
+          "end": 6.478
+        },
+        {
+          "word": "arguments",
+          "start": 6.548,
+          "end": 7.012
+        },
+        {
+          "word": "it",
+          "start": 7.059,
+          "end": 7.14
+        },
+        {
+          "word": "needs.",
+          "start": 7.198,
+          "end": 8.127
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "tools",
+      "text": "The model never sees your Python code. Only this menu.",
+      "src": "assets/vo/l04.mp3",
+      "start": 21.298,
+      "duration": 3.576,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "model",
+          "start": 0.197,
+          "end": 0.453
+        },
+        {
+          "word": "never",
+          "start": 0.511,
+          "end": 0.708
+        },
+        {
+          "word": "sees",
+          "start": 0.755,
+          "end": 0.975
+        },
+        {
+          "word": "your",
+          "start": 1.022,
+          "end": 1.138
+        },
+        {
+          "word": "Python",
+          "start": 1.196,
+          "end": 1.567
+        },
+        {
+          "word": "code.",
+          "start": 1.649,
+          "end": 2.078
+        },
+        {
+          "word": "Only",
+          "start": 2.218,
+          "end": 2.461
+        },
+        {
+          "word": "this",
+          "start": 2.519,
+          "end": 2.694
+        },
+        {
+          "word": "menu.",
+          "start": 2.775,
+          "end": 3.576
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "call",
+      "text": "The model doesn't answer. It replies with a tool call: the function name, get student, and the arguments as JSON.",
+      "src": "assets/vo/l05.mp3",
+      "start": 25.224,
+      "duration": 7.616,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "model",
+          "start": 0.197,
+          "end": 0.441
+        },
+        {
+          "word": "doesn't",
+          "start": 0.499,
+          "end": 0.789
+        },
+        {
+          "word": "answer.",
+          "start": 0.848,
+          "end": 1.382
+        },
+        {
+          "word": "It",
+          "start": 1.521,
+          "end": 1.66
+        },
+        {
+          "word": "replies",
+          "start": 1.707,
+          "end": 2.113
+        },
+        {
+          "word": "with",
+          "start": 2.148,
+          "end": 2.276
+        },
+        {
+          "word": "a",
+          "start": 2.31,
+          "end": 2.334
+        },
+        {
+          "word": "tool",
+          "start": 2.392,
+          "end": 2.612
+        },
+        {
+          "word": "call:",
+          "start": 2.682,
+          "end": 3.088
+        },
+        {
+          "word": "the",
+          "start": 3.286,
+          "end": 3.379
+        },
+        {
+          "word": "function",
+          "start": 3.437,
+          "end": 3.785
+        },
+        {
+          "word": "name,",
+          "start": 3.843,
+          "end": 4.226
+        },
+        {
+          "word": "get",
+          "start": 4.342,
+          "end": 4.539
+        },
+        {
+          "word": "student,",
+          "start": 4.609,
+          "end": 5.201
+        },
+        {
+          "word": "and",
+          "start": 5.317,
+          "end": 5.457
+        },
+        {
+          "word": "the",
+          "start": 5.503,
+          "end": 5.573
+        },
+        {
+          "word": "arguments",
+          "start": 5.642,
+          "end": 6.142
+        },
+        {
+          "word": "as",
+          "start": 6.177,
+          "end": 6.258
+        },
+        {
+          "word": "JSON.",
+          "start": 6.339,
+          "end": 7.616
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "call",
+      "text": "Notice what did not happen. Nothing has run yet. The model only asked.",
+      "src": "assets/vo/l06.mp3",
+      "start": 33.19,
+      "duration": 4.551,
+      "words": [
+        {
+          "word": "Notice",
+          "start": 0,
+          "end": 0.383
+        },
+        {
+          "word": "what",
+          "start": 0.406,
+          "end": 0.546
+        },
+        {
+          "word": "did",
+          "start": 0.592,
+          "end": 0.72
+        },
+        {
+          "word": "not",
+          "start": 0.766,
+          "end": 0.894
+        },
+        {
+          "word": "happen.",
+          "start": 0.952,
+          "end": 1.451
+        },
+        {
+          "word": "Nothing",
+          "start": 1.614,
+          "end": 1.927
+        },
+        {
+          "word": "has",
+          "start": 1.962,
+          "end": 2.067
+        },
+        {
+          "word": "run",
+          "start": 2.136,
+          "end": 2.31
+        },
+        {
+          "word": "yet.",
+          "start": 2.38,
+          "end": 2.775
+        },
+        {
+          "word": "The",
+          "start": 2.937,
+          "end": 3.042
+        },
+        {
+          "word": "model",
+          "start": 3.1,
+          "end": 3.367
+        },
+        {
+          "word": "only",
+          "start": 3.448,
+          "end": 3.692
+        },
+        {
+          "word": "asked.",
+          "start": 3.762,
+          "end": 4.551
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "run",
+      "text": "Your code parses the arguments, checks them, and runs the real Python function against the database.",
+      "src": "assets/vo/l07.mp3",
+      "start": 38.091,
+      "duration": 5.991,
+      "words": [
+        {
+          "word": "Your",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "code",
+          "start": 0.267,
+          "end": 0.511
+        },
+        {
+          "word": "parses",
+          "start": 0.557,
+          "end": 0.964
+        },
+        {
+          "word": "the",
+          "start": 1.01,
+          "end": 1.091
+        },
+        {
+          "word": "arguments,",
+          "start": 1.161,
+          "end": 1.73
+        },
+        {
+          "word": "checks",
+          "start": 1.823,
+          "end": 2.125
+        },
+        {
+          "word": "them,",
+          "start": 2.171,
+          "end": 2.426
+        },
+        {
+          "word": "and",
+          "start": 2.508,
+          "end": 2.659
+        },
+        {
+          "word": "runs",
+          "start": 2.717,
+          "end": 2.961
+        },
+        {
+          "word": "the",
+          "start": 3.019,
+          "end": 3.088
+        },
+        {
+          "word": "real",
+          "start": 3.158,
+          "end": 3.367
+        },
+        {
+          "word": "Python",
+          "start": 3.448,
+          "end": 3.796
+        },
+        {
+          "word": "function",
+          "start": 3.866,
+          "end": 4.238
+        },
+        {
+          "word": "against",
+          "start": 4.307,
+          "end": 4.679
+        },
+        {
+          "word": "the",
+          "start": 4.714,
+          "end": 4.783
+        },
+        {
+          "word": "database.",
+          "start": 4.83,
+          "end": 5.991
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "run",
+      "text": "Because your code sits in the middle, a wrong roll number becomes a clear error, not a crash.",
+      "src": "assets/vo/l08.mp3",
+      "start": 44.432,
+      "duration": 5.48,
+      "words": [
+        {
+          "word": "Because",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "your",
+          "start": 0.395,
+          "end": 0.522
+        },
+        {
+          "word": "code",
+          "start": 0.592,
+          "end": 0.906
+        },
+        {
+          "word": "sits",
+          "start": 0.94,
+          "end": 1.149
+        },
+        {
+          "word": "in",
+          "start": 1.184,
+          "end": 1.242
+        },
+        {
+          "word": "the",
+          "start": 1.289,
+          "end": 1.358
+        },
+        {
+          "word": "middle,",
+          "start": 1.393,
+          "end": 1.776
+        },
+        {
+          "word": "a",
+          "start": 1.869,
+          "end": 1.939
+        },
+        {
+          "word": "wrong",
+          "start": 2.009,
+          "end": 2.218
+        },
+        {
+          "word": "roll",
+          "start": 2.276,
+          "end": 2.496
+        },
+        {
+          "word": "number",
+          "start": 2.554,
+          "end": 2.786
+        },
+        {
+          "word": "becomes",
+          "start": 2.844,
+          "end": 3.158
+        },
+        {
+          "word": "a",
+          "start": 3.193,
+          "end": 3.216
+        },
+        {
+          "word": "clear",
+          "start": 3.274,
+          "end": 3.529
+        },
+        {
+          "word": "error,",
+          "start": 3.599,
+          "end": 4.052
+        },
+        {
+          "word": "not",
+          "start": 4.168,
+          "end": 4.342
+        },
+        {
+          "word": "a",
+          "start": 4.389,
+          "end": 4.412
+        },
+        {
+          "word": "crash.",
+          "start": 4.47,
+          "end": 5.48
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "run",
+      "text": "Then it adds the result to the conversation as a tool message, and calls the model a second time.",
+      "src": "assets/vo/l09.mp3",
+      "start": 50.262,
+      "duration": 6.13,
+      "words": [
+        {
+          "word": "Then",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "word": "it",
+          "start": 0.302,
+          "end": 0.383
+        },
+        {
+          "word": "adds",
+          "start": 0.441,
+          "end": 0.673
+        },
+        {
+          "word": "the",
+          "start": 0.72,
+          "end": 0.789
+        },
+        {
+          "word": "result",
+          "start": 0.859,
+          "end": 1.196
+        },
+        {
+          "word": "to",
+          "start": 1.231,
+          "end": 1.277
+        },
+        {
+          "word": "the",
+          "start": 1.335,
+          "end": 1.405
+        },
+        {
+          "word": "conversation",
+          "start": 1.451,
+          "end": 2.125
+        },
+        {
+          "word": "as",
+          "start": 2.287,
+          "end": 2.45
+        },
+        {
+          "word": "a",
+          "start": 2.496,
+          "end": 2.531
+        },
+        {
+          "word": "tool",
+          "start": 2.577,
+          "end": 2.821
+        },
+        {
+          "word": "message,",
+          "start": 2.879,
+          "end": 3.379
+        },
+        {
+          "word": "and",
+          "start": 3.518,
+          "end": 3.657
+        },
+        {
+          "word": "calls",
+          "start": 3.727,
+          "end": 3.994
+        },
+        {
+          "word": "the",
+          "start": 4.04,
+          "end": 4.11
+        },
+        {
+          "word": "model",
+          "start": 4.156,
+          "end": 4.412
+        },
+        {
+          "word": "a",
+          "start": 4.481,
+          "end": 4.516
+        },
+        {
+          "word": "second",
+          "start": 4.586,
+          "end": 4.899
+        },
+        {
+          "word": "time.",
+          "start": 4.946,
+          "end": 6.13
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "answer",
+      "text": "Now the model has the facts, so it writes the answer: your CGPA is eight point four.",
+      "src": "assets/vo/l10.mp3",
+      "start": 56.742,
+      "duration": 5.619,
+      "words": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "the",
+          "start": 0.255,
+          "end": 0.325
+        },
+        {
+          "word": "model",
+          "start": 0.383,
+          "end": 0.615
+        },
+        {
+          "word": "has",
+          "start": 0.662,
+          "end": 0.778
+        },
+        {
+          "word": "the",
+          "start": 0.836,
+          "end": 0.906
+        },
+        {
+          "word": "facts,",
+          "start": 0.964,
+          "end": 1.416
+        },
+        {
+          "word": "so",
+          "start": 1.463,
+          "end": 1.591
+        },
+        {
+          "word": "it",
+          "start": 1.66,
+          "end": 1.707
+        },
+        {
+          "word": "writes",
+          "start": 1.741,
+          "end": 1.997
+        },
+        {
+          "word": "the",
+          "start": 2.043,
+          "end": 2.125
+        },
+        {
+          "word": "answer:",
+          "start": 2.194,
+          "end": 2.717
+        },
+        {
+          "word": "your",
+          "start": 2.984,
+          "end": 3.146
+        },
+        {
+          "word": "CGPA",
+          "start": 3.193,
+          "end": 3.901
+        },
+        {
+          "word": "is",
+          "start": 3.959,
+          "end": 4.075
+        },
+        {
+          "word": "eight",
+          "start": 4.145,
+          "end": 4.331
+        },
+        {
+          "word": "point",
+          "start": 4.377,
+          "end": 4.574
+        },
+        {
+          "word": "four.",
+          "start": 4.644,
+          "end": 5.619
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "answer",
+      "text": "One question, two API calls. And the model chose that tool using only the description you wrote.",
+      "src": "assets/vo/l11.mp3",
+      "start": 62.711,
+      "duration": 6.548,
+      "words": [
+        {
+          "word": "One",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "word": "question,",
+          "start": 0.302,
+          "end": 0.824
+        },
+        {
+          "word": "two",
+          "start": 0.94,
+          "end": 1.115
+        },
+        {
+          "word": "API",
+          "start": 1.207,
+          "end": 1.614
+        },
+        {
+          "word": "calls.",
+          "start": 1.695,
+          "end": 2.229
+        },
+        {
+          "word": "And",
+          "start": 2.589,
+          "end": 2.717
+        },
+        {
+          "word": "the",
+          "start": 2.763,
+          "end": 2.833
+        },
+        {
+          "word": "model",
+          "start": 2.868,
+          "end": 3.111
+        },
+        {
+          "word": "chose",
+          "start": 3.181,
+          "end": 3.448
+        },
+        {
+          "word": "that",
+          "start": 3.483,
+          "end": 3.646
+        },
+        {
+          "word": "tool",
+          "start": 3.704,
+          "end": 4.005
+        },
+        {
+          "word": "using",
+          "start": 4.098,
+          "end": 4.342
+        },
+        {
+          "word": "only",
+          "start": 4.4,
+          "end": 4.621
+        },
+        {
+          "word": "the",
+          "start": 4.679,
+          "end": 4.748
+        },
+        {
+          "word": "description",
+          "start": 4.795,
+          "end": 5.259
+        },
+        {
+          "word": "you",
+          "start": 5.306,
+          "end": 5.387
+        },
+        {
+          "word": "wrote.",
+          "start": 5.433,
+          "end": 6.548
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "scene": "claim",
+      "text": "So remember the split: the model proposes, your code executes.",
+      "src": "assets/vo/l12.mp3",
+      "start": 69.609,
+      "duration": 4.598,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.174
+        },
+        {
+          "word": "remember",
+          "start": 0.244,
+          "end": 0.546
+        },
+        {
+          "word": "the",
+          "start": 0.592,
+          "end": 0.662
+        },
+        {
+          "word": "split:",
+          "start": 0.708,
+          "end": 1.219
+        },
+        {
+          "word": "the",
+          "start": 1.533,
+          "end": 1.625
+        },
+        {
+          "word": "model",
+          "start": 1.683,
+          "end": 1.916
+        },
+        {
+          "word": "proposes,",
+          "start": 1.974,
+          "end": 2.705
+        },
+        {
+          "word": "your",
+          "start": 2.868,
+          "end": 3.019
+        },
+        {
+          "word": "code",
+          "start": 3.088,
+          "end": 3.39
+        },
+        {
+          "word": "executes.",
+          "start": 3.437,
+          "end": 4.598
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "scene": "claim",
+      "text": "Next lesson: put this in a loop, and you have an agent.",
+      "src": "assets/vo/l13.mp3",
+      "start": 74.557,
+      "duration": 3.158,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "word": "lesson:",
+          "start": 0.36,
+          "end": 0.824
+        },
+        {
+          "word": "put",
+          "start": 0.94,
+          "end": 1.115
+        },
+        {
+          "word": "this",
+          "start": 1.149,
+          "end": 1.289
+        },
+        {
+          "word": "in",
+          "start": 1.347,
+          "end": 1.416
+        },
+        {
+          "word": "a",
+          "start": 1.463,
+          "end": 1.486
+        },
+        {
+          "word": "loop,",
+          "start": 1.544,
+          "end": 1.846
+        },
+        {
+          "word": "and",
+          "start": 1.869,
+          "end": 1.997
+        },
+        {
+          "word": "you",
+          "start": 2.043,
+          "end": 2.113
+        },
+        {
+          "word": "have",
+          "start": 2.171,
+          "end": 2.31
+        },
+        {
+          "word": "an",
+          "start": 2.334,
+          "end": 2.392
+        },
+        {
+          "word": "agent.",
+          "start": 2.438,
+          "end": 3.158
+        }
+      ]
+    }
+  ],
+  "total": 78.065
+}

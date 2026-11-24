@@ -1,0 +1,112 @@
+[
+  {
+    "word": "That's",
+    "start": 0,
+    "end": 0.29
+  },
+  {
+    "word": "what",
+    "start": 0.325,
+    "end": 0.453
+  },
+  {
+    "word": "Ollama",
+    "start": 0.511,
+    "end": 0.789
+  },
+  {
+    "word": "does.",
+    "start": 0.848,
+    "end": 1.277
+  },
+  {
+    "word": "It's",
+    "start": 1.591,
+    "end": 1.788
+  },
+  {
+    "word": "a",
+    "start": 1.823,
+    "end": 1.846
+  },
+  {
+    "word": "small",
+    "start": 1.904,
+    "end": 2.206
+  },
+  {
+    "word": "server:",
+    "start": 2.287,
+    "end": 2.821
+  },
+  {
+    "word": "it",
+    "start": 2.961,
+    "end": 3.088
+  },
+  {
+    "word": "downloads",
+    "start": 3.135,
+    "end": 3.634
+  },
+  {
+    "word": "open",
+    "start": 3.704,
+    "end": 3.994
+  },
+  {
+    "word": "model",
+    "start": 4.063,
+    "end": 4.307
+  },
+  {
+    "word": "weights,",
+    "start": 4.377,
+    "end": 4.783
+  },
+  {
+    "word": "like",
+    "start": 4.841,
+    "end": 5.039
+  },
+  {
+    "word": "Llama",
+    "start": 5.108,
+    "end": 5.422
+  },
+  {
+    "word": "or",
+    "start": 5.48,
+    "end": 5.573
+  },
+  {
+    "word": "Qwen,",
+    "start": 5.642,
+    "end": 6.13
+  },
+  {
+    "word": "and",
+    "start": 6.246,
+    "end": 6.397
+  },
+  {
+    "word": "loads",
+    "start": 6.467,
+    "end": 6.722
+  },
+  {
+    "word": "them",
+    "start": 6.757,
+    "end": 6.873
+  },
+  {
+    "word": "into",
+    "start": 6.908,
+    "end": 7.059
+  },
+  {
+    "word": "memory.",
+    "start": 7.14,
+    "end": 8.173
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "word": "Picture",
+    "start": 0,
+    "end": 0.372
+  },
+  {
+    "word": "two",
+    "start": 0.395,
+    "end": 0.58
+  },
+  {
+    "word": "vectors",
+    "start": 0.662,
+    "end": 1.057
+  },
+  {
+    "word": "as",
+    "start": 1.115,
+    "end": 1.207
+  },
+  {
+    "word": "arrows.",
+    "start": 1.277,
+    "end": 1.927
+  },
+  {
+    "word": "Cosine",
+    "start": 2.287,
+    "end": 2.763
+  },
+  {
+    "word": "similarity",
+    "start": 2.81,
+    "end": 3.379
+  },
+  {
+    "word": "measures",
+    "start": 3.448,
+    "end": 3.75
+  },
+  {
+    "word": "the",
+    "start": 3.785,
+    "end": 3.866
+  },
+  {
+    "word": "angle",
+    "start": 3.947,
+    "end": 4.238
+  },
+  {
+    "word": "between",
+    "start": 4.272,
+    "end": 4.621
+  },
+  {
+    "word": "them,",
+    "start": 4.656,
+    "end": 4.899
+  },
+  {
+    "word": "and",
+    "start": 5.039,
+    "end": 5.19
+  },
+  {
+    "word": "ignores",
+    "start": 5.259,
+    "end": 5.677
+  },
+  {
+    "word": "how",
+    "start": 5.712,
+    "end": 5.817
+  },
+  {
+    "word": "long",
+    "start": 5.863,
+    "end": 6.026
+  },
+  {
+    "word": "they",
+    "start": 6.072,
+    "end": 6.2
+  },
+  {
+    "word": "are.",
+    "start": 6.258,
+    "end": 7.291
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "word": "Next",
+    "start": 0,
+    "end": 0.313
+  },
+  {
+    "word": "lesson:",
+    "start": 0.372,
+    "end": 0.801
+  },
+  {
+    "word": "prompting,",
+    "start": 0.94,
+    "end": 1.474
+  },
+  {
+    "word": "RAG,",
+    "start": 1.567,
+    "end": 1.881
+  },
+  {
+    "word": "or",
+    "start": 1.927,
+    "end": 2.009
+  },
+  {
+    "word": "fine-tuning?",
+    "start": 2.067,
+    "end": 3.019
+  }
+]

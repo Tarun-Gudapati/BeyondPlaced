@@ -1,0 +1,85 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .k-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #k-label { position: absolute; left: 180px; top: 96px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #k-line { position: absolute; left: 180px; top: 146px; font-size: 104px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; }
+    .k-w { display: inline-block; }
+    .k-file { position: absolute; top: 320px; height: 210px; background: #FFFFFF; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #k-env { left: 180px; width: 680px; border: 4px solid #0F766E; }
+    #k-ign { left: 980px; width: 560px; border: 4px solid #0F766E; }
+    .k-tab { position: absolute; left: 32px; top: 24px; font-size: 34px; color: #0F766E; }
+    .k-body { position: absolute; left: 32px; top: 110px; font-size: 34px; line-height: 1.5; white-space: pre; }
+    #k-old, #k-newkey { position: absolute; left: 340px; top: 110px; font-size: 34px; line-height: 1.5; white-space: pre; }
+    #k-newkey { color: #0F766E; background: #CCFBF1; border-radius: 8px; padding: 0 10px; left: 330px; }
+    #k-ign-note { position: absolute; right: 32px; top: 118px; font-size: 28px; font-weight: 700; color: #475569; }
+    #k-link { position: absolute; left: 872px; top: 421px; width: 80px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #k-link::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #k-commit { position: absolute; left: 180px; top: 600px; width: 1360px; height: 320px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #k-pub { position: absolute; left: 32px; top: 26px; font-size: 28px; font-weight: 700; color: #334155; background: #E2E8F0; border-radius: 8px; padding: 6px 14px; }
+    #k-sha { position: absolute; left: 256px; top: 32px; font-size: 28px; color: #475569; }
+    #k-del { position: absolute; left: 540px; top: 26px; font-size: 28px; font-weight: 700; color: #334155; border: 3px dashed #64748B; border-radius: 8px; padding: 3px 14px; }
+    #k-code { position: absolute; left: 32px; top: 112px; height: 84px; display: flex; align-items: center; font-size: 40px; white-space: pre; background: #FFF7ED; border-radius: 12px; padding: 0 20px; }
+    #k-leak { position: relative; display: inline-block; color: #C2410C; }
+    #k-strike { position: absolute; left: -6px; right: -6px; top: 50%; height: 8px; background: #EA580C; border-radius: 4px; transform-origin: left center; }
+    #k-revoked { position: absolute; left: 760px; top: 124px; font-size: 32px; color: #C2410C; border: 4px solid #EA580C; border-radius: 10px; padding: 6px 16px; background: #FFFFFF; }
+    #k-still { position: absolute; left: 32px; top: 226px; font-size: 36px; font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="key" data-width="1920" data-height="1080">
+    <div id="k-label">Rule one</div>
+    <div id="k-line"><span class="k-w">The</span> <span class="k-w">key</span> <span class="k-w">is</span> <span class="k-w">a</span> <span class="k-w">password</span></div>
+    <div id="k-env" class="k-file">
+      <div class="k-tab k-mono">.env</div>
+      <div class="k-body k-mono">OPENAI_API_KEY=</div>
+      <div id="k-old" class="k-mono">sk-••••••••</div>
+      <div id="k-newkey" class="k-mono">sk-new-••••••</div>
+    </div>
+    <div id="k-link"></div>
+    <div id="k-ign" class="k-file">
+      <div class="k-tab k-mono">.gitignore</div>
+      <div id="k-ign-body" class="k-body k-mono">.env</div>
+      <div id="k-ign-note">git skips this file</div>
+    </div>
+    <div id="k-commit">
+      <div id="k-pub">public repo</div>
+      <div id="k-sha" class="k-mono">commit a1b2c3f</div>
+      <div id="k-del">commit deleted</div>
+      <div id="k-code" class="k-mono"><span>api_key = "</span><span id="k-leak">sk-proj-9fK2x7<span id="k-strike"></span></span><span>"</span></div>
+      <div id="k-revoked" class="k-mono">revoked</div>
+      <div id="k-still">Still in the git history, and maybe already copied</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L12 = 8.338;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#k-line .k-w, #k-env, #k-ign, #k-ign-body, #k-ign-note, #k-commit, #k-del, #k-still, #k-revoked, #k-newkey", { opacity: 0 });
+    gsap.set("#k-link, #k-strike", { scaleX: 0 });
+
+    // l11: One rule matters most. The key is a password. It lives in dot env, and dot env goes in git ignore.
+    blurIn("#k-label", 0.0, 0.2);
+    [1.834, 1.997, 2.194, 2.322, 2.403].forEach((t, i) => blurIn(gsap.utils.toArray("#k-line .k-w")[i], t, 0.15));
+    tl.fromTo("#k-env", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 3.715);
+    tl.to("#k-link", { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, 5.155);
+    tl.fromTo("#k-ign", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 5.863);
+    blurIn("#k-ign-body", 6.3, 0.2);
+    blurIn("#k-ign-note", 6.745, 0.2);
+
+    // l12: If it ever leaks, deleting the commit is not enough. Revoke the key and create a new one.
+    tl.fromTo("#k-commit", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, L12);
+    tl.fromTo("#k-code", { backgroundColor: "#FFF7ED" }, { backgroundColor: "#FFEDD5", duration: 0.2 }, L12 + 0.58);
+    tl.fromTo("#k-del", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L12 + 1.173);
+    tl.to("#k-sha", { opacity: 0.4, duration: 0.2 }, L12 + 1.173);
+    blurIn("#k-still", L12 + 2.148, 0.2);
+    tl.to("#k-strike", { scaleX: 1, duration: 0.3, ease: "power3.out" }, L12 + 3.471);
+    tl.fromTo("#k-revoked", { opacity: 0, scale: 1.2 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, L12 + 3.65);
+    tl.to("#k-old", { opacity: 0, duration: 0.15 }, L12 + 4.45);
+    tl.fromTo("#k-newkey", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L12 + 4.563);
+
+    blurOut("#k-label, #k-line, #k-env, #k-link, #k-ign, #k-commit", 14.4, 0.22);
+
+    window.__timelines["key"] = tl;
+  </script>
+</template>

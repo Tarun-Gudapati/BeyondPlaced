@@ -1,0 +1,98 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #m-chunk { position: absolute; left: 150px; top: 200px; width: 900px; height: 340px; background: #FFFFFF; border: 4px solid #94A3B8; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); padding: 40px 40px 0 40px; }
+    #m-chunk-lab { position: absolute; left: 150px; top: 140px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .m-line { height: 20px; border-radius: 10px; background: #E2E8F0; margin-bottom: 24px; }
+    #m-sent { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 38px; line-height: 1.35; background: #FFEDD5; padding: 12px 18px; border-radius: 10px; margin-bottom: 26px; }
+    #m-card { position: absolute; left: 1090px; top: 200px; width: 680px; height: 340px; background: #0F766E; color: #FFFFFF; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 34px 40px; }
+    #m-card-t { font-size: 34px; font-weight: 700; color: #CCFBF1; }
+    .m-row { display: flex; align-items: baseline; gap: 24px; margin-top: 30px; }
+    .m-k { width: 130px; font-size: 34px; font-weight: 700; color: #CCFBF1; }
+    .m-v { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 34px; }
+    #m-cite { position: absolute; left: 150px; top: 610px; width: 1620px; height: 250px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); padding: 40px 48px; }
+    #m-cite-a { font-size: 52px; font-weight: 900; letter-spacing: -0.02em; }
+    #m-cite-s { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 38px; color: #0F766E; margin-top: 28px; }
+    .m-n { color: #C2410C; }
+
+    #m-t { position: absolute; left: 150px; top: 100px; font-size: 88px; font-weight: 900; letter-spacing: -0.02em; }
+    #m-sub { position: absolute; left: 150px; top: 226px; font-size: 40px; font-weight: 700; color: #334155; }
+    #m-sub small { font-size: 30px; font-weight: 400; color: #475569; margin-left: 14px; }
+    #m-head { position: absolute; left: 900px; top: 330px; font-size: 34px; font-weight: 700; color: #475569; }
+    .m-strat { position: absolute; left: 150px; width: 1500px; height: 130px; display: flex; align-items: center; }
+    #m-r1 { top: 400px; } #m-r2 { top: 550px; } #m-r3 { top: 700px; }
+    .m-name { width: 750px; padding-left: 30px; font-size: 44px; font-weight: 700; }
+    .m-dots { display: flex; gap: 26px; width: 460px; }
+    .m-dot { width: 60px; height: 60px; border-radius: 50%; border: 6px solid #94A3B8; background: #FFFFFF; position: relative; }
+    .m-dot i { position: absolute; inset: -6px; border-radius: 50%; background: #0F766E; }
+    .m-score { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 48px; }
+    #m-keep { position: absolute; left: 150px; top: 550px; width: 1500px; height: 130px; border: 6px solid #EA580C; border-radius: 20px; background: rgba(234,88,12,0.07); }
+    #m-keep-lab { position: absolute; left: 1680px; top: 588px; font-size: 48px; font-weight: 900; color: #C2410C; }
+  </style>
+  <div id="root" data-composition-id="meta" data-width="1920" data-height="1080">
+    <div id="m-a">
+      <div id="m-chunk-lab">one chunk</div>
+      <div id="m-chunk">
+        <div class="m-line" style="width: 92%"></div>
+        <div id="m-sent">Students with active backlogs are not eligible.</div>
+        <div class="m-line"></div>
+        <div class="m-line" style="width: 74%"></div>
+      </div>
+      <div id="m-card">
+        <div id="m-card-t">ID card (metadata)</div>
+        <div id="m-row1" class="m-row"><span class="m-k">source</span><span class="m-v">placement_policy.pdf</span></div>
+        <div id="m-row2" class="m-row"><span class="m-k">page</span><span class="m-v">4</span></div>
+      </div>
+      <div id="m-cite">
+        <div id="m-cite-a">Active backlogs make you ineligible. <span class="m-n">[1]</span></div>
+        <div id="m-cite-s"><span class="m-n">[1]</span> placement_policy.pdf, page 4</div>
+      </div>
+    </div>
+
+    <div id="m-b">
+      <div id="m-t">Then measure</div>
+      <div id="m-sub">same PDF, same 5 questions<small>(illustrative results)</small></div>
+      <div id="m-head">right passage in top 3</div>
+      <div id="m-keep"></div>
+      <div id="m-keep-lab">keep</div>
+      <div id="m-r1" class="m-strat"><div class="m-name">300 chars, no overlap</div><div class="m-dots"><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"></div><div class="m-dot"></div><div class="m-dot"></div></div><div class="m-score">2 / 5</div></div>
+      <div id="m-r2" class="m-strat"><div class="m-name">1,000 chars, sentence-aware</div><div class="m-dots"><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"></div></div><div class="m-score">4 / 5</div></div>
+      <div id="m-r3" class="m-strat"><div class="m-name">3,000 chars</div><div class="m-dots"><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"><i></i></div><div class="m-dot"></div><div class="m-dot"></div></div><div class="m-score">3 / 5</div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const rows = gsap.utils.toArray(".m-strat");
+
+    gsap.set("#m-card, #m-row1, #m-row2, #m-cite, #m-cite-s, #m-t, #m-sub, #m-head, #m-keep, #m-keep-lab", { opacity: 0 });
+    gsap.set(rows, { opacity: 0 });
+    gsap.set(".m-dot i, .m-score", { opacity: 0 });
+
+    // l08: every chunk gets an ID card
+    tl.fromTo("#m-chunk, #m-chunk-lab", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#m-card", { opacity: 0, x: 120 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 1.045);
+    blurIn("#m-row1", 2.194, 0.2);
+    blurIn("#m-row2", 3.007, 0.2);
+    tl.fromTo("#m-cite", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 4.296);
+    blurIn("#m-cite-s", 4.888, 0.2);
+    blurOut("#m-a", 6.5, 0.22);
+
+    // l09: then measure
+    blurIn("#m-t", 7.177, 0.2);
+    blurIn("#m-sub", 8.593, 0.2);
+    rows.forEach((el, i) => tl.fromTo(el, { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 9.325 + i * 0.15));
+    blurIn("#m-head", 10.231, 0.2);
+    rows.forEach((el, i) => {
+      el.querySelectorAll(".m-dot i").forEach((dot, j) => tl.fromTo(dot, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 10.567 + i * 0.22 + j * 0.07));
+      blurIn(el.querySelector(".m-score"), 11.25 + i * 0.12, 0.2);
+    });
+    tl.fromTo("#m-keep", { opacity: 0, scale: 1.03 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 11.96);
+    blurIn("#m-keep-lab", 12.309, 0.2);
+
+    blurOut("#m-b", 14.65, 0.22);
+
+    window.__timelines["meta"] = tl;
+  </script>
+</template>

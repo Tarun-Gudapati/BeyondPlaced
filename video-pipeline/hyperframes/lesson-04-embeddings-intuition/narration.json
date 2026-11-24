@@ -1,0 +1,18 @@
+{
+  "lesson": "embeddings-intuition",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "search", "text": "Riya searches her college notice board for placement drive. Zero results. But the notice is right there: campus recruitment starts Monday." },
+    { "id": "l02", "scene": "search", "text": "Keyword search matches letters, and these two phrases share no words. She needs a search that matches meaning." },
+    { "id": "l03", "scene": "vector", "text": "An embedding model does exactly that. Give it any text, and it returns a fixed-length list of numbers: for example, fifteen hundred and thirty-six of them." },
+    { "id": "l04", "scene": "vector", "text": "No single number means anything alone. Together, they work like coordinates: one point in a very large space." },
+    { "id": "l05", "scene": "space", "text": "Here is that space, flattened to two dimensions. Placement drive lands right beside campus recruitment." },
+    { "id": "l06", "scene": "space", "text": "Biryani recipe lands far away. The model was trained on huge numbers of text pairs, so close points mean similar things." },
+    { "id": "l07", "scene": "space", "text": "Now Riya's search is simple: embed the query, and return the nearest points." },
+    { "id": "l08", "scene": "space", "text": "The same idea powers RAG, and matching your resume to a job description." },
+    { "id": "l09", "scene": "rules", "text": "Two rules. First, embed documents and queries with the same model. Every model draws its own map." },
+    { "id": "l10", "scene": "rules", "text": "Second, similar is not the same as true. I love DSA and I hate DSA often land close together." },
+    { "id": "l11", "scene": "claim", "text": "So here's the line to remember: an embedding turns meaning into a position. Close together means similar meaning." },
+    { "id": "l12", "scene": "claim", "text": "Next lesson: cosine similarity from scratch with NumPy." }
+  ]
+}

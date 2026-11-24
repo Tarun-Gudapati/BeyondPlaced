@@ -1,0 +1,132 @@
+[
+  {
+    "word": "An",
+    "start": 0,
+    "end": 0.186
+  },
+  {
+    "word": "embedding",
+    "start": 0.232,
+    "end": 0.615
+  },
+  {
+    "word": "model",
+    "start": 0.662,
+    "end": 0.906
+  },
+  {
+    "word": "does",
+    "start": 0.975,
+    "end": 1.126
+  },
+  {
+    "word": "exactly",
+    "start": 1.173,
+    "end": 1.614
+  },
+  {
+    "word": "that.",
+    "start": 1.672,
+    "end": 2.055
+  },
+  {
+    "word": "Give",
+    "start": 2.415,
+    "end": 2.589
+  },
+  {
+    "word": "it",
+    "start": 2.624,
+    "end": 2.694
+  },
+  {
+    "word": "any",
+    "start": 2.74,
+    "end": 2.902
+  },
+  {
+    "word": "text,",
+    "start": 2.961,
+    "end": 3.506
+  },
+  {
+    "word": "and",
+    "start": 3.587,
+    "end": 3.727
+  },
+  {
+    "word": "it",
+    "start": 3.785,
+    "end": 3.843
+  },
+  {
+    "word": "returns",
+    "start": 3.901,
+    "end": 4.307
+  },
+  {
+    "word": "a",
+    "start": 4.342,
+    "end": 4.377
+  },
+  {
+    "word": "fixed-length",
+    "start": 4.447,
+    "end": 5.004
+  },
+  {
+    "word": "list",
+    "start": 5.074,
+    "end": 5.283
+  },
+  {
+    "word": "of",
+    "start": 5.329,
+    "end": 5.387
+  },
+  {
+    "word": "numbers:",
+    "start": 5.457,
+    "end": 6.026
+  },
+  {
+    "word": "for",
+    "start": 6.385,
+    "end": 6.513
+  },
+  {
+    "word": "example,",
+    "start": 6.571,
+    "end": 7.047
+  },
+  {
+    "word": "fifteen",
+    "start": 7.082,
+    "end": 7.442
+  },
+  {
+    "word": "hundred",
+    "start": 7.488,
+    "end": 7.732
+  },
+  {
+    "word": "and",
+    "start": 7.755,
+    "end": 7.825
+  },
+  {
+    "word": "thirty-six",
+    "start": 7.883,
+    "end": 8.417
+  },
+  {
+    "word": "of",
+    "start": 8.475,
+    "end": 8.533
+  },
+  {
+    "word": "them.",
+    "start": 8.58,
+    "end": 9.52
+  }
+]

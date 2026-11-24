@@ -1,0 +1,77 @@
+[
+  {
+    "word": "He",
+    "start": 0,
+    "end": 0.128
+  },
+  {
+    "word": "doesn't",
+    "start": 0.174,
+    "end": 0.418
+  },
+  {
+    "word": "need",
+    "start": 0.453,
+    "end": 0.604
+  },
+  {
+    "word": "more",
+    "start": 0.65,
+    "end": 0.789
+  },
+  {
+    "word": "credits.",
+    "start": 0.836,
+    "end": 1.37
+  },
+  {
+    "word": "He",
+    "start": 1.509,
+    "end": 1.602
+  },
+  {
+    "word": "needs",
+    "start": 1.672,
+    "end": 1.881
+  },
+  {
+    "word": "a",
+    "start": 1.916,
+    "end": 1.939
+  },
+  {
+    "word": "model",
+    "start": 2.009,
+    "end": 2.276
+  },
+  {
+    "word": "that",
+    "start": 2.322,
+    "end": 2.438
+  },
+  {
+    "word": "runs",
+    "start": 2.496,
+    "end": 2.717
+  },
+  {
+    "word": "on",
+    "start": 2.763,
+    "end": 2.833
+  },
+  {
+    "word": "his",
+    "start": 2.879,
+    "end": 2.972
+  },
+  {
+    "word": "own",
+    "start": 3.03,
+    "end": 3.216
+  },
+  {
+    "word": "laptop.",
+    "start": 3.286,
+    "end": 4.319
+  }
+]

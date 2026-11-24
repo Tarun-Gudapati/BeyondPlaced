@@ -1,0 +1,111 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #t-g1, #t-g2 { position: absolute; inset: 0; }
+    .t-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; white-space: pre; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
+    .t-k { position: absolute; left: 150px; top: 140px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .t-name { position: absolute; left: 150px; top: 186px; font-size: 112px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; white-space: nowrap; }
+    #t-code { position: absolute; left: 150px; top: 370px; width: 960px; height: 330px; border-radius: 20px; background: #0B1220; padding: 32px 36px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #t-code div { font-size: 32px; line-height: 53px; color: #E2E8F0; }
+    #t-code .t-hl { color: #5EEAD4; }
+    #t-arrow { position: absolute; left: 1130px; top: 531px; width: 70px; height: 8px; border-radius: 4px; background: #0F766E; transform-origin: left center; }
+    #t-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #t-folder { position: absolute; left: 1250px; top: 400px; width: 340px; height: 270px; }
+    #t-folder-tab { position: absolute; left: 0; top: 0; width: 150px; height: 60px; border-radius: 14px 14px 0 0; background: #0F766E; }
+    #t-folder-body { position: absolute; left: 0; top: 40px; width: 340px; height: 230px; border-radius: 0 18px 18px 18px; background: #CCFBF1; border: 5px solid #0F766E; display: grid; place-items: center; font-size: 38px; }
+    #t-folder-sub { position: absolute; left: 1250px; top: 700px; width: 480px; font-size: 36px; font-weight: 700; color: #475569; line-height: 1.25; }
+    #t-tname { position: absolute; left: 150px; top: 354px; font-size: 30px; line-height: 40px; color: #475569; }
+    #t-table { position: absolute; left: 150px; top: 404px; width: 730px; border: 3px solid #0F766E; border-radius: 14px 0 0 14px; overflow: hidden; background: #FFFFFF; }
+    #t-emb { position: absolute; left: 880px; top: 404px; width: 280px; border: 3px solid #0F766E; border-left: none; border-radius: 0 14px 14px 0; overflow: hidden; background: #FFFFFF; }
+    .t-tr { display: flex; height: 72px; align-items: center; border-top: 2px solid #CBD5E1; font-size: 30px; }
+    .t-tr.t-th { border-top: none; background: #0F766E; color: #FFFFFF; font-weight: 700; }
+    .t-tr span { display: block; padding-left: 18px; white-space: nowrap; overflow: hidden; }
+    .t-c1 { width: 90px; } .t-c2 { width: 140px; } .t-c3 { width: 110px; } .t-c4 { width: 384px; }
+    #t-emb .t-tr span { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; color: #0F766E; }
+    #t-emb .t-th span { color: #FFFFFF; }
+    #t-emb-ring { position: absolute; left: 874px; top: 398px; width: 292px; height: 312px; border: 6px solid #EA580C; border-radius: 6px 18px 18px 6px; }
+    #t-emb-l { position: absolute; left: 880px; top: 716px; font-size: 30px; font-weight: 700; color: #EA580C; white-space: nowrap; }
+    #t-sql { position: absolute; left: 1250px; top: 380px; width: 520px; height: 290px; border-radius: 20px; background: #0B1220; padding: 26px 30px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #t-sql div { font-size: 30px; line-height: 47px; color: #E2E8F0; }
+    #t-sql .t-hl { color: #5EEAD4; }
+    #t-pg-sub { position: absolute; left: 1250px; top: 700px; width: 480px; font-size: 36px; font-weight: 700; color: #475569; line-height: 1.25; }
+  </style>
+  <div id="root" data-composition-id="tools" data-width="1920" data-height="1080">
+    <div id="t-g1">
+      <div id="t-k1" class="t-k">To start</div>
+      <div id="t-chroma" class="t-name">Chroma</div>
+      <div id="t-code">
+        <div class="t-mono t-cl">import chromadb</div>
+        <div class="t-mono t-cl">db = chromadb.PersistentClient(<span class="t-hl">"./chroma_db"</span>)</div>
+        <div class="t-mono t-cl">papers = db.get_or_create_collection("papers")</div>
+        <div class="t-mono t-cl">papers.upsert(ids=ids, documents=texts)</div>
+        <div class="t-mono t-cl">papers.query(query_texts=[q], n_results=5)</div>
+      </div>
+      <div id="t-arrow"></div>
+      <div id="t-folder"><div id="t-folder-tab"></div><div id="t-folder-body" class="t-mono">./chroma_db</div></div>
+      <div id="t-folder-sub">the whole database, in one folder</div>
+    </div>
+    <div id="t-g2">
+      <div id="t-k2" class="t-k">In a real app</div>
+      <div id="t-pg" class="t-name">pgvector</div>
+      <div id="t-tname" class="t-mono">questions  (an ordinary Postgres table)</div>
+      <div id="t-table">
+        <div class="t-tr t-th"><span class="t-c1">id</span><span class="t-c2">subject</span><span class="t-c3">year</span><span class="t-c4">content</span></div>
+        <div class="t-tr"><span class="t-c1">1</span><span class="t-c2">DSA</span><span class="t-c3">2023</span><span class="t-c4">Dijkstra shortest path</span></div>
+        <div class="t-tr"><span class="t-c1">2</span><span class="t-c2">DSA</span><span class="t-c3">2022</span><span class="t-c4">0/1 knapsack with DP</span></div>
+        <div class="t-tr"><span class="t-c1">3</span><span class="t-c2">DBMS</span><span class="t-c3">2023</span><span class="t-c4">Third normal form</span></div>
+      </div>
+      <div id="t-emb">
+        <div class="t-tr t-th"><span>embedding</span></div>
+        <div class="t-tr"><span>[0.02, …]</span></div>
+        <div class="t-tr"><span>[0.12, …]</span></div>
+        <div class="t-tr"><span>[-0.33, …]</span></div>
+      </div>
+      <div id="t-emb-ring"></div>
+      <div id="t-emb-l">vector(1536) column</div>
+      <div id="t-sql">
+        <div class="t-mono t-sl">SELECT content</div>
+        <div class="t-mono t-sl">FROM questions</div>
+        <div class="t-mono t-sl">WHERE subject = 'DSA'</div>
+        <div class="t-mono t-sl">ORDER BY <span class="t-hl">embedding &lt;=&gt; $1</span></div>
+        <div class="t-mono t-sl">LIMIT 5;</div>
+      </div>
+      <div id="t-pg-sub">SQL filters and joins you already know</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l10":{"s":0,"w":[0,0.197,0.658,0.921,1.447,1.579,1.842,2.237,2.434,2.961,3.224,3.553,4.145,4.342,4.474,4.934,5.132,5.461]},"l11":{"s":6.277,"w":[6.277,6.474,6.606,6.935,7.264,7.461,7.922,8.316,8.58,9.106,9.566,10.224,10.619,10.948,11.145,11.474,11.935]}}; const END = 12.751; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l10.w, b = T.l11.w;
+
+    gsap.set("#t-emb-ring", { opacity: 0 });
+
+    // l10: Chroma, a database in a folder
+    blurIn("#t-k1", 0.05, 0.2);
+    blurIn("#t-chroma", a[3], 0.18);
+    tl.fromTo("#t-code", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, a[4]);
+    gsap.utils.toArray("#t-code .t-cl").forEach((el, i) => blurIn(el, a[5] + i * 0.16, 0.15));
+    tl.fromTo("#t-arrow", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "expo.out" }, a[11]);
+    tl.fromTo("#t-folder", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, a[13]);
+    blurIn("#t-folder-sub", a[13] + 0.1, 0.2);
+    blurOut("#t-g1", T.l11.s - 0.1, 0.2);
+
+    // l11: pgvector, a vector column inside Postgres
+    blurIn("#t-k2", T.l11.s + 0.15, 0.2);
+    blurIn("#t-pg", b[4], 0.18);
+    tl.fromTo("#t-table", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, b[4] + 0.25);
+    blurIn("#t-tname", b[4] + 0.45, 0.2);
+    tl.fromTo("#t-emb", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, b[8]);
+    tl.fromTo("#t-emb-ring", { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, b[9] + 0.2);
+    blurIn("#t-emb-l", b[9] + 0.3, 0.18);
+    tl.fromTo("#t-sql", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, b[11]);
+    gsap.utils.toArray("#t-sql .t-sl").forEach((el, i) => blurIn(el, b[11] + 0.15 + i * 0.12, 0.15));
+    blurIn("#t-pg-sub", b[11] + 0.1, 0.2);
+
+    blurOut("#t-g2", END - 0.3, 0.2);
+
+    window.__timelines["tools"] = tl;
+  </script>
+</template>

@@ -1,0 +1,100 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #g-all { position: absolute; inset: 0; }
+    #g-plot { position: absolute; left: 150px; top: 130px; width: 940px; height: 820px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #g-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    .g-vl { position: absolute; left: 0; top: 0; width: 44px; text-align: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 44px; line-height: 52px; }
+    #g-lb { color: #0F766E; }
+    #g-score-l { position: absolute; left: 1180px; top: 230px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #g-score { position: absolute; left: 1180px; top: 280px; width: 560px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 176px; line-height: 1.1; white-space: nowrap; }
+    #g-deg { position: absolute; left: 1180px; top: 500px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 52px; color: #475569; white-space: nowrap; }
+    .g-cap { position: absolute; left: 1180px; top: 630px; font-size: 68px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.1; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="angle" data-width="1920" data-height="1080">
+    <div id="g-all">
+      <div id="g-plot"></div>
+      <svg id="g-svg" viewBox="0 0 1920 1080" data-layout-ignore>
+        <path id="g-arc" d="M 730 600 A 110 110 0 0 0 715.3 545" fill="none" stroke="#EA580C" stroke-width="9" stroke-linecap="round" />
+        <g id="g-va">
+          <line x1="620" y1="600" x2="970" y2="600" stroke="#0B1220" stroke-width="10" stroke-linecap="round" />
+          <path d="M 1002 600 L 964 580 L 964 620 Z" fill="#0B1220" />
+        </g>
+        <g id="g-vb">
+          <line x1="620" y1="600" x2="970" y2="600" stroke="#0F766E" stroke-width="10" stroke-linecap="round" />
+          <path d="M 1002 600 L 964 580 L 964 620 Z" fill="#0F766E" />
+        </g>
+        <circle cx="620" cy="600" r="13" fill="#0B1220" />
+      </svg>
+      <div id="g-la" class="g-vl">a</div>
+      <div id="g-lb" class="g-vl">b</div>
+      <div id="g-score-l">cosine similarity</div>
+      <div id="g-score">0.87</div>
+      <div id="g-deg">angle <span id="g-deg-n">30</span>°</div>
+      <div id="g-c0" class="g-cap">same direction</div>
+      <div id="g-c1" class="g-cap">unrelated</div>
+      <div id="g-c2" class="g-cap">opposite</div>
+      <div id="g-c3" class="g-cap">in between</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l03":{"s":0,"w":[0,0.348,0.836,1.265,1.904,2.078,2.345,2.67,3.042,3.936,4.284,4.423,5.178,5.642,6.188,6.513,6.92]},"l04":{"s":8.013,"w":[8.013,8.675,9.128,9.453,9.569,10.242,10.405,10.672,11.078,11.368,11.717]}}; const END = 12.914; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l03.w, b = T.l04.w;
+
+    // Arrow b's angle is a pure function of scene time, so every frame renders on its own.
+    const OX = 620, OY = 600, R = 382, ARC = 110;
+    const ease = gsap.parseEase("power2.inOut");
+    const moves = [
+      { at: 0.0, to: 0, dur: 0.55 },      // "Same direction"
+      { at: a[4], to: 90, dur: 0.75 },    // "A right angle"
+      { at: a[12], to: 180, dur: 0.85 },  // "Opposite directions"
+      { at: b[0], to: 45, dur: 0.9 },     // "Forty-five degrees"
+    ];
+    const thetaAt = (t) => {
+      let th = 30;
+      for (const m of moves) {
+        if (t <= m.at) break;
+        th += (m.to - th) * ease(Math.min(1, (t - m.at) / m.dur));
+      }
+      return th;
+    };
+    const arc = document.getElementById("g-arc");
+    const scoreEl = document.getElementById("g-score");
+    const degEl = document.getElementById("g-deg-n");
+    const render = (t) => {
+      const th = thetaAt(t);
+      const rad = (th * Math.PI) / 180;
+      const cx = Math.cos(rad), sy = Math.sin(rad);
+      gsap.set("#g-vb", { rotation: -th, svgOrigin: OX + " " + OY });
+      gsap.set("#g-lb", { x: OX + (R + 50) * cx - 22, y: OY - (R + 50) * sy - 26 });
+      const shown = Math.max(th, 0.5);
+      const r2 = (shown * Math.PI) / 180;
+      arc.setAttribute("d", "M " + (OX + ARC) + " " + OY + " A " + ARC + " " + ARC + " 0 0 0 " + (OX + ARC * Math.cos(r2)).toFixed(1) + " " + (OY - ARC * Math.sin(r2)).toFixed(1));
+      let s = cx.toFixed(2);
+      if (s === "-0.00") s = "0.00";
+      scoreEl.textContent = s;
+      degEl.textContent = String(Math.round(th));
+    };
+    const clock = { t: 0 };
+    gsap.set("#g-la", { x: OX + R - 40, y: OY + 24 });
+    gsap.set("#g-c1, #g-c2, #g-c3", { opacity: 0 });
+    render(0);
+    tl.fromTo(clock, { t: 0 }, { t: END, duration: END, ease: "none", onUpdate: () => render(clock.t) }, 0);
+
+    blurIn("#g-all", 0, 0.25);
+
+    // captions change with the angle
+    const swap = (from, to, t) => { blurOut(from, t, 0.15); blurIn(to, t + 0.15, 0.18); };
+    swap("#g-c0", "#g-c1", a[4] + 0.5);
+    swap("#g-c1", "#g-c2", a[12] + 0.55);
+    swap("#g-c2", "#g-c3", b[0] + 0.6);
+    [a[3], a[8], a[15], b[7]].forEach((t) => tl.fromTo("#g-score", { scale: 1 }, { scale: 1.06, transformOrigin: "0% 50%", duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, t));
+
+    blurOut("#g-all", END - 0.3, 0.2);
+
+    window.__timelines["angle"] = tl;
+  </script>
+</template>

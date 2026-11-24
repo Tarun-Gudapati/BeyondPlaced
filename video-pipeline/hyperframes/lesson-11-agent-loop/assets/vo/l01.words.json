@@ -1,0 +1,62 @@
+[
+  {
+    "word": "A",
+    "start": 0,
+    "end": 0.093
+  },
+  {
+    "word": "recruiter",
+    "start": 0.174,
+    "end": 0.592
+  },
+  {
+    "word": "hands",
+    "start": 0.65,
+    "end": 0.859
+  },
+  {
+    "word": "you",
+    "start": 0.894,
+    "end": 0.975
+  },
+  {
+    "word": "three",
+    "start": 1.045,
+    "end": 1.265
+  },
+  {
+    "word": "resumes",
+    "start": 1.324,
+    "end": 1.776
+  },
+  {
+    "word": "and",
+    "start": 1.823,
+    "end": 1.892
+  },
+  {
+    "word": "says:",
+    "start": 1.95,
+    "end": 2.299
+  },
+  {
+    "word": "shortlist",
+    "start": 2.531,
+    "end": 3.042
+  },
+  {
+    "word": "the",
+    "start": 3.088,
+    "end": 3.158
+  },
+  {
+    "word": "best",
+    "start": 3.204,
+    "end": 3.413
+  },
+  {
+    "word": "two.",
+    "start": 3.46,
+    "end": 4.087
+  }
+]

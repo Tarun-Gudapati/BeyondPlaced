@@ -1,0 +1,87 @@
+[
+  {
+    "word": "One",
+    "start": 0,
+    "end": 0.244
+  },
+  {
+    "word": "warning:",
+    "start": 0.279,
+    "end": 0.789
+  },
+  {
+    "word": "a",
+    "start": 0.882,
+    "end": 0.94
+  },
+  {
+    "word": "score",
+    "start": 1.022,
+    "end": 1.382
+  },
+  {
+    "word": "is",
+    "start": 1.428,
+    "end": 1.521
+  },
+  {
+    "word": "for",
+    "start": 1.567,
+    "end": 1.672
+  },
+  {
+    "word": "ranking.",
+    "start": 1.73,
+    "end": 2.276
+  },
+  {
+    "word": "Zero",
+    "start": 2.589,
+    "end": 2.972
+  },
+  {
+    "word": "point",
+    "start": 3.065,
+    "end": 3.297
+  },
+  {
+    "word": "eight",
+    "start": 3.355,
+    "end": 3.541
+  },
+  {
+    "word": "two",
+    "start": 3.576,
+    "end": 3.82
+  },
+  {
+    "word": "does",
+    "start": 4.052,
+    "end": 4.238
+  },
+  {
+    "word": "not",
+    "start": 4.284,
+    "end": 4.4
+  },
+  {
+    "word": "mean",
+    "start": 4.447,
+    "end": 4.609
+  },
+  {
+    "word": "eighty-two",
+    "start": 4.679,
+    "end": 5.097
+  },
+  {
+    "word": "percent",
+    "start": 5.155,
+    "end": 5.48
+  },
+  {
+    "word": "correct.",
+    "start": 5.538,
+    "end": 6.502
+  }
+]

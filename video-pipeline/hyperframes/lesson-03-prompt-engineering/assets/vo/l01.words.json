@@ -1,0 +1,77 @@
+[
+  {
+    "word": "Ananya",
+    "start": 0,
+    "end": 0.453
+  },
+  {
+    "word": "pastes",
+    "start": 0.522,
+    "end": 0.906
+  },
+  {
+    "word": "a",
+    "start": 0.952,
+    "end": 0.987
+  },
+  {
+    "word": "job",
+    "start": 1.057,
+    "end": 1.242
+  },
+  {
+    "word": "description",
+    "start": 1.3,
+    "end": 1.776
+  },
+  {
+    "word": "into",
+    "start": 1.846,
+    "end": 2.032
+  },
+  {
+    "word": "her",
+    "start": 2.101,
+    "end": 2.194
+  },
+  {
+    "word": "script",
+    "start": 2.252,
+    "end": 2.624
+  },
+  {
+    "word": "and",
+    "start": 2.659,
+    "end": 2.752
+  },
+  {
+    "word": "asks:",
+    "start": 2.81,
+    "end": 3.297
+  },
+  {
+    "word": "tell",
+    "start": 3.529,
+    "end": 3.727
+  },
+  {
+    "word": "me",
+    "start": 3.773,
+    "end": 3.843
+  },
+  {
+    "word": "about",
+    "start": 3.878,
+    "end": 4.098
+  },
+  {
+    "word": "this",
+    "start": 4.133,
+    "end": 4.272
+  },
+  {
+    "word": "job.",
+    "start": 4.331,
+    "end": 5.155
+  }
+]

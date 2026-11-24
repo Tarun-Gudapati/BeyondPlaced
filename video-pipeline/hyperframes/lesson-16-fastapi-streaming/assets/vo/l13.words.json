@@ -1,0 +1,32 @@
+[
+  {
+    "word": "Next",
+    "start": 0,
+    "end": 0.313
+  },
+  {
+    "word": "lesson:",
+    "start": 0.372,
+    "end": 0.882
+  },
+  {
+    "word": "cost,",
+    "start": 1.022,
+    "end": 1.428
+  },
+  {
+    "word": "latency",
+    "start": 1.544,
+    "end": 2.055
+  },
+  {
+    "word": "and",
+    "start": 2.113,
+    "end": 2.218
+  },
+  {
+    "word": "caching.",
+    "start": 2.276,
+    "end": 3.019
+  }
+]

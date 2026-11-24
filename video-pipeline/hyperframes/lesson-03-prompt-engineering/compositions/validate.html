@@ -1,0 +1,92 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .va-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #va-mode { position: absolute; left: 120px; top: 96px; width: 900px; height: 88px; background: #0B1220; border-radius: 16px; display: flex; align-items: center; padding: 0 30px; font-size: 34px; color: #F1F5F9; white-space: pre; }
+    #va-mode b { color: #5EEAD4; }
+    #va-reply { position: absolute; left: 120px; top: 220px; width: 760px; height: 420px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    .va-label { position: absolute; left: 32px; top: 24px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #va-ok { position: absolute; right: 28px; top: 20px; font-size: 30px; color: #0F766E; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 10px; padding: 6px 14px; line-height: 1.2; }
+    #va-json { position: absolute; left: 32px; top: 96px; font-size: 36px; line-height: 58px; white-space: pre; }
+    .va-l { height: 58px; }
+    #va-bad { display: inline-block; position: relative; isolation: isolate; }
+    #va-bad-bg { position: absolute; left: -8px; right: -8px; top: 4px; bottom: 4px; background: #FFEDD5; border: 4px solid #EA580C; border-radius: 10px; z-index: -1; }
+    #va-q { position: absolute; left: 1040px; top: 290px; width: 760px; }
+    #va-q1 { font-size: 120px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; color: #0F766E; }
+    #va-q2 { font-size: 72px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; margin-top: 16px; }
+    #va-arrow { position: absolute; left: 896px; top: 426px; width: 112px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #va-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #va-schema { position: absolute; left: 1040px; top: 220px; width: 760px; height: 420px; background: #0B1220; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); color: #F1F5F9; }
+    #va-schema-label { position: absolute; left: 32px; top: 26px; font-size: 30px; color: #CBD5E1; }
+    #va-schema-code { position: absolute; left: 32px; top: 104px; font-size: 36px; line-height: 62px; white-space: pre; }
+    #va-schema-code b { color: #5EEAD4; }
+    #va-verdict { position: absolute; left: 1040px; top: 676px; width: 760px; height: 92px; background: #FFEDD5; border: 4px solid #EA580C; border-radius: 16px; display: flex; align-items: center; padding: 0 28px; font-size: 32px; color: #9A3412; white-space: pre; }
+    #va-back { position: absolute; left: 912px; top: 718px; width: 112px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: right center; }
+    #va-back::after { content: ""; position: absolute; left: -14px; top: -10px; border-right: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #va-back-l { position: absolute; left: 1040px; top: 790px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #va-reply2 { position: absolute; left: 120px; top: 664px; width: 760px; height: 190px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #va-json2 { position: absolute; left: 32px; top: 96px; font-size: 36px; line-height: 58px; white-space: pre; }
+    #va-json2 b { color: #0F766E; }
+    #va-pass { position: absolute; right: 28px; top: 20px; font-size: 30px; color: #0F766E; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 10px; padding: 6px 14px; line-height: 1.2; }
+  </style>
+  <div id="root" data-composition-id="validate" data-width="1920" data-height="1080">
+    <div id="va-mode" class="va-mono"><span>response_format={"type": </span><b>"json_object"</b><span>}</span></div>
+    <div id="va-reply">
+      <div class="va-label">Reply 1</div>
+      <div id="va-ok" class="va-mono">valid JSON</div>
+      <div id="va-json" class="va-mono"><div class="va-l">{</div><div class="va-l">  "role": "SDE Intern",</div><div class="va-l">  "skills": ["Java"],</div><div class="va-l">  "ctc_lpa": <span id="va-bad"><span id="va-bad-bg"></span>"twelve"</span></div><div class="va-l">}</div></div>
+    </div>
+    <div id="va-q"><div id="va-q1">It parses.</div><div id="va-q2">But is it right?</div></div>
+    <div id="va-arrow"></div>
+    <div id="va-schema">
+      <div id="va-schema-label" class="va-mono">schema (Pydantic)</div>
+      <div id="va-schema-code" class="va-mono">class Job(BaseModel):
+    role: <b>str</b>
+    skills: <b>list[str]</b>
+    ctc_lpa: <b>float | None</b></div>
+    </div>
+    <div id="va-verdict" class="va-mono">rejected: ctc_lpa is not a number</div>
+    <div id="va-back"></div>
+    <div id="va-back-l">error sent back, one retry</div>
+    <div id="va-reply2">
+      <div class="va-label">Reply 2</div>
+      <div id="va-pass" class="va-mono">passes</div>
+      <div id="va-json2" class="va-mono">  "ctc_lpa": <b>12.0</b></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L11 = 8.849;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#va-ok, #va-q1, #va-q2, #va-bad-bg, #va-schema, #va-verdict, #va-back-l, #va-reply2, #va-pass", { opacity: 0 });
+    gsap.set("#va-arrow, #va-back", { scaleX: 0 });
+
+    // l10: Turn on JSON mode, and the reply parses as JSON. But valid JSON can still be wrong: here, the CTC came back as a word.
+    tl.fromTo("#va-mode", { clipPath: "inset(0 100% 0 0 round 16px)" }, { clipPath: "inset(0 0% 0 0 round 16px)", duration: 0.7, ease: "steps(20)" }, 0.0);
+    tl.fromTo("#va-reply", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 1.4);
+    tl.fromTo("#va-json", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "none" }, 1.683);
+    tl.fromTo("#va-ok", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 2.519);
+    blurIn("#va-q1", 2.078, 0.2);
+    tl.fromTo("#va-ok", { scale: 1 }, { scale: 1.1, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, 3.889);
+    blurIn("#va-q2", 4.632, 0.2);
+    tl.fromTo("#va-bad", { scale: 1 }, { scale: 1.08, duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, 6.42);
+    tl.fromTo("#va-bad-bg", { opacity: 0, scale: 1.1 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 7.094);
+
+    // l11: So check every reply against a schema. If it fails, send the error back and ask once more.
+    blurOut("#va-q", L11 - 0.1, 0.2);
+    tl.fromTo("#va-schema", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, L11 + 0.255);
+    tl.to("#va-arrow", { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, L11 + 0.871);
+    tl.fromTo("#va-schema-code", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "none" }, L11 + 1.25);
+    tl.fromTo("#va-verdict", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L11 + 3.007);
+    tl.to("#va-back", { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, L11 + 3.622);
+    blurIn("#va-back-l", L11 + 3.9, 0.2);
+    tl.fromTo("#va-reply2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, L11 + 4.6);
+    tl.fromTo("#va-pass", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, L11 + 5.2);
+
+    blurOut("#va-mode, #va-reply, #va-arrow, #va-schema, #va-verdict, #va-back, #va-back-l, #va-reply2", 15.25, 0.22);
+
+    window.__timelines["validate"] = tl;
+  </script>
+</template>

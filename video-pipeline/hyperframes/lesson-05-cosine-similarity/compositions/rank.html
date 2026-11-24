@@ -1,0 +1,123 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #k-all { position: absolute; inset: 0; }
+    .k-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; white-space: pre; }
+    .k-t { position: absolute; top: 176px; font-size: 32px; line-height: 40px; }
+    #k-t-ans { left: 150px; } #k-t-docs { left: 650px; } #k-t-q { left: 1070px; } #k-t-s { left: 1300px; }
+    #k-t-ill { position: absolute; left: 1432px; top: 180px; font-size: 28px; line-height: 36px; color: #475569; }
+    .k-tag { position: absolute; top: 126px; font-size: 30px; font-weight: 700; white-space: nowrap; }
+    #k-once { left: 650px; color: #0F766E; } #k-new { left: 1070px; color: #0B1220; }
+    .k-row { position: absolute; left: 150px; width: 1330px; height: 66px; isolation: isolate; }
+    .k-hl { position: absolute; left: -14px; width: 848px; top: -7px; bottom: -7px; border-radius: 10px; background: #CCFBF1; border: 3px solid #5EEAD4; z-index: -1; }
+    .k-hl.k-hl2 { left: 1134px; width: 212px; }
+    .k-name { position: absolute; left: 0; top: 0; width: 480px; font-size: 32px; font-weight: 700; line-height: 66px; white-space: nowrap; }
+    .k-cells { position: absolute; left: 500px; top: 5px; display: flex; gap: 10px; }
+    .k-cells i, #k-q i { display: block; width: 56px; height: 56px; border-radius: 6px; border: 2px solid #0F766E; }
+    .k-score { position: absolute; left: 1150px; top: 0; font-size: 44px; line-height: 66px; }
+    .c1 { background: #F0FDFA; } .c2 { background: #CCFBF1; } .c3 { background: #99F6E4; } .c4 { background: #5EEAD4; } .c5 { background: #2DD4BF; }
+    .k-sym { position: absolute; top: 440px; width: 60px; text-align: center; font-size: 64px; line-height: 80px; }
+    #k-at { left: 1004px; } #k-eq { left: 1196px; }
+    #k-q { position: absolute; left: 1090px; top: 323px; display: flex; flex-direction: column; gap: 10px; }
+    #k-q i { border-color: #0B1220; }
+    #k-more { position: absolute; left: 150px; top: 744px; font-size: 28px; font-weight: 700; color: #475569; }
+    #k-whole { position: absolute; left: 560px; top: 750px; font-size: 30px; font-weight: 700; color: #0F766E; white-space: nowrap; }
+    #k-top-bar { position: absolute; left: 1506px; top: 233px; width: 8px; height: 248px; border-radius: 4px; background: #0F766E; transform-origin: center top; }
+    #k-top { position: absolute; left: 1536px; top: 318px; font-size: 64px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; color: #0F766E; white-space: nowrap; }
+    #k-code { position: absolute; left: 150px; top: 806px; width: 990px; height: 144px; border-radius: 16px; background: #0B1220; padding: 22px 30px; }
+    #k-code div { font-size: 36px; line-height: 50px; color: #E2E8F0; }
+    #k-ring { position: absolute; left: 1284px; top: 234px; width: 152px; height: 78px; border: 5px solid #EA580C; border-radius: 10px; }
+    #k-warn-sub { position: absolute; left: 1190px; top: 800px; font-size: 34px; font-weight: 700; color: #475569; white-space: nowrap; }
+    #k-warn { position: absolute; left: 1190px; top: 852px; font-size: 52px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; }
+    #k-warn span { display: inline-block; }
+    #k-warn .k-accent { color: #EA580C; }
+  </style>
+  <div id="root" data-composition-id="rank" data-width="1920" data-height="1080">
+    <div id="k-all">
+      <div id="k-once" class="k-tag">embedded once, saved</div>
+      <div id="k-new" class="k-tag">new each time</div>
+      <div id="k-t-ans" class="k-t k-mono">answers</div>
+      <div id="k-t-docs" class="k-t k-mono">docs (50 × 384)</div>
+      <div id="k-t-q" class="k-t k-mono">query</div>
+      <div id="k-t-s" class="k-t k-mono">scores</div>
+      <div id="k-t-ill">(illustrative)</div>
+
+      <div class="k-row" style="top: 240px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Aptitude round sections</div><div class="k-cells"><i class="c4"></i><i class="c1"></i><i class="c5"></i><i class="c2"></i><i class="c4"></i></div><div class="k-score k-mono">0.82</div></div>
+      <div class="k-row" style="top: 324px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Hostel mess timings</div><div class="k-cells"><i class="c1"></i><i class="c5"></i><i class="c2"></i><i class="c4"></i><i class="c1"></i></div><div class="k-score k-mono">0.21</div></div>
+      <div class="k-row" style="top: 408px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Resume format</div><div class="k-cells"><i class="c2"></i><i class="c3"></i><i class="c1"></i><i class="c5"></i><i class="c3"></i></div><div class="k-score k-mono">0.35</div></div>
+      <div class="k-row" style="top: 492px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Coding round topics</div><div class="k-cells"><i class="c3"></i><i class="c2"></i><i class="c4"></i><i class="c1"></i><i class="c5"></i></div><div class="k-score k-mono">0.64</div></div>
+      <div class="k-row" style="top: 576px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Placement drive dates</div><div class="k-cells"><i class="c5"></i><i class="c1"></i><i class="c3"></i><i class="c3"></i><i class="c2"></i></div><div class="k-score k-mono">0.58</div></div>
+      <div class="k-row" style="top: 660px"><div class="k-hl"></div><div class="k-hl k-hl2"></div><div class="k-name">Library hours</div><div class="k-cells"><i class="c1"></i><i class="c4"></i><i class="c1"></i><i class="c2"></i><i class="c5"></i></div><div class="k-score k-mono">0.17</div></div>
+      <div id="k-more">+ 44 more rows</div>
+      <div id="k-whole">the whole search: two lines ↓</div>
+
+      <div id="k-at" class="k-sym k-mono">@</div>
+      <div id="k-q"><i class="c4"></i><i class="c1"></i><i class="c5"></i><i class="c2"></i><i class="c3"></i></div>
+      <div id="k-eq" class="k-sym k-mono">=</div>
+
+      <div id="k-top-bar"></div>
+      <div id="k-top">top 3</div>
+      <div id="k-ring"></div>
+
+      <div id="k-code"><div id="k-code-1" class="k-mono">scores = docs @ query</div><div id="k-code-2" class="k-mono">top = np.argsort(scores)[::-1][:3]</div></div>
+      <div id="k-warn-sub">a score only ranks</div>
+      <div id="k-warn"><span>0.82</span> <span class="k-accent">≠</span> <span>82% correct</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l08":{"s":0,"w":[0,0.244,0.592,0.848,1.207,1.718,2.02,2.252,3.286,3.82,3.982,4.098,4.737,4.911,5.039,5.213,5.561,5.933,6.072]},"l09":{"s":7.13,"w":[7.13,7.502,7.873,8.117,8.233,8.5,9.208,9.498,9.649,10.032,10.416,10.555,10.636,10.88,11.182,11.298]},"l10":{"s":12.635,"w":[12.635,12.879,13.25,13.413,13.912,14.249,14.435,15.421,15.712,15.828,16.211,16.373,16.64,16.896]},"l11":{"s":18.047,"w":[18.047,18.326,18.929,19.069,19.475,19.614,19.777,20.636,21.112,21.402,21.623,22.099,22.331,22.494,22.726,23.202,23.585]}}; const END = 24.899; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l08.w, b = T.l09.w, c = T.l10.w, d = T.l11.w;
+    const rows = gsap.utils.toArray("#k-all .k-row");
+    const scores = gsap.utils.toArray("#k-all .k-score");
+    const sortedPos = [0, 4, 3, 1, 2, 5]; // where each row lands after sorting by score (illustrative values)
+    const top3 = [0, 3, 4];
+
+    gsap.set(".k-hl, #k-ring", { opacity: 0 });
+
+    // l08: matrix x query = every score at once
+    rows.forEach((el, i) => tl.fromTo(el, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, a[1] + i * 0.06));
+    blurIn("#k-more", a[3], 0.2);
+    blurIn("#k-t-ans", a[4], 0.2);
+    blurIn("#k-t-docs", a[6], 0.2);
+    blurIn("#k-at", a[8], 0.18);
+    gsap.utils.toArray("#k-q i").forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, a[9] + i * 0.05));
+    blurIn("#k-t-q", a[11], 0.2);
+    tl.fromTo("#k-code", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, a[8] + 0.2);
+    blurIn("#k-code-1", a[8] + 0.35, 0.18);
+    blurIn("#k-eq", a[13], 0.18);
+    scores.forEach((el, i) => blurIn(el, a[15] + i * 0.05, 0.15));
+    blurIn("#k-t-s", a[16], 0.2);
+    blurIn("#k-t-ill", a[16] + 0.15, 0.2);
+
+    // l09: sort, keep the top three
+    rows.forEach((el, i) => tl.to(el, { y: (sortedPos[i] - i) * 84, duration: 0.7, ease: "power2.inOut" }, b[0]));
+    blurIn("#k-code-2", b[0] + 0.25, 0.18);
+    rows.forEach((el, i) => {
+      if (top3.includes(i)) tl.to(el.querySelectorAll(".k-hl"), { opacity: 1, duration: 0.25, ease: "power2.out" }, b[4]);
+      else tl.to(el, { opacity: 0.4, duration: 0.3, ease: "power2.out" }, b[4]);
+    });
+    tl.fromTo("#k-top-bar", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.35, ease: "expo.out" }, b[4] + 0.05);
+    blurIn("#k-top", b[4] + 0.15, 0.18);
+
+    blurIn("#k-whole", b[8], 0.2);
+    tl.fromTo("#k-code", { scale: 1 }, { scale: 1.025, transformOrigin: "0% 50%", duration: 0.18, yoyo: true, repeat: 1, ease: "power1.inOut" }, b[13]);
+
+    // l10: documents embedded once, only the question is new
+    blurIn("#k-once", c[3], 0.2);
+    gsap.utils.toArray("#k-all .k-cells").forEach((el, i) => tl.fromTo(el, { scale: 1 }, { scale: 1.06, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.inOut" }, c[3] + i * 0.04));
+    blurIn("#k-new", c[11], 0.2);
+    tl.fromTo("#k-q", { scale: 1 }, { scale: 1.12, duration: 0.16, yoyo: true, repeat: 1, ease: "power1.inOut" }, c[9]);
+
+    // l11: a score ranks; it is not a percentage
+    blurIn("#k-warn-sub", d[3], 0.2);
+    tl.fromTo("#k-ring", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, d[7]);
+    gsap.utils.toArray("#k-warn span").forEach((el, i) => blurIn(el, [d[7] + 0.15, d[11], d[14]][i], 0.15));
+
+    blurOut("#k-all", END - 0.3, 0.2);
+
+    window.__timelines["rank"] = tl;
+  </script>
+</template>

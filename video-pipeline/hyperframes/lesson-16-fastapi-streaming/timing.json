@@ -1,0 +1,1253 @@
+{
+  "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+  "modelId": "eleven_multilingual_v2",
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "race",
+      "text": "Rahul built a placement bot. He asks it to explain binary search, then watches a spinner for six long seconds.",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 7.245,
+      "words": [
+        {
+          "word": "Rahul",
+          "start": 0,
+          "end": 0.43
+        },
+        {
+          "word": "built",
+          "start": 0.488,
+          "end": 0.697
+        },
+        {
+          "word": "a",
+          "start": 0.743,
+          "end": 0.766
+        },
+        {
+          "word": "placement",
+          "start": 0.813,
+          "end": 1.219
+        },
+        {
+          "word": "bot.",
+          "start": 1.265,
+          "end": 1.683
+        },
+        {
+          "word": "He",
+          "start": 2.101,
+          "end": 2.218
+        },
+        {
+          "word": "asks",
+          "start": 2.287,
+          "end": 2.566
+        },
+        {
+          "word": "it",
+          "start": 2.612,
+          "end": 2.694
+        },
+        {
+          "word": "to",
+          "start": 2.728,
+          "end": 2.786
+        },
+        {
+          "word": "explain",
+          "start": 2.856,
+          "end": 3.262
+        },
+        {
+          "word": "binary",
+          "start": 3.332,
+          "end": 3.704
+        },
+        {
+          "word": "search,",
+          "start": 3.773,
+          "end": 4.249
+        },
+        {
+          "word": "then",
+          "start": 4.412,
+          "end": 4.563
+        },
+        {
+          "word": "watches",
+          "start": 4.621,
+          "end": 4.923
+        },
+        {
+          "word": "a",
+          "start": 4.969,
+          "end": 5.004
+        },
+        {
+          "word": "spinner",
+          "start": 5.05,
+          "end": 5.375
+        },
+        {
+          "word": "for",
+          "start": 5.422,
+          "end": 5.526
+        },
+        {
+          "word": "six",
+          "start": 5.573,
+          "end": 5.782
+        },
+        {
+          "word": "long",
+          "start": 5.851,
+          "end": 6.049
+        },
+        {
+          "word": "seconds.",
+          "start": 6.118,
+          "end": 7.245
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "race",
+      "text": "Same bot, same model, with streaming switched on: the first word shows up almost at once.",
+      "src": "assets/vo/l02.mp3",
+      "start": 7.595,
+      "duration": 6.223,
+      "words": [
+        {
+          "word": "Same",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "word": "bot,",
+          "start": 0.372,
+          "end": 0.72
+        },
+        {
+          "word": "same",
+          "start": 0.813,
+          "end": 1.091
+        },
+        {
+          "word": "model,",
+          "start": 1.138,
+          "end": 1.637
+        },
+        {
+          "word": "with",
+          "start": 1.753,
+          "end": 1.939
+        },
+        {
+          "word": "streaming",
+          "start": 1.985,
+          "end": 2.403
+        },
+        {
+          "word": "switched",
+          "start": 2.473,
+          "end": 2.798
+        },
+        {
+          "word": "on:",
+          "start": 2.868,
+          "end": 3.216
+        },
+        {
+          "word": "the",
+          "start": 3.448,
+          "end": 3.553
+        },
+        {
+          "word": "first",
+          "start": 3.611,
+          "end": 3.878
+        },
+        {
+          "word": "word",
+          "start": 3.924,
+          "end": 4.191
+        },
+        {
+          "word": "shows",
+          "start": 4.249,
+          "end": 4.481
+        },
+        {
+          "word": "up",
+          "start": 4.528,
+          "end": 4.632
+        },
+        {
+          "word": "almost",
+          "start": 4.69,
+          "end": 5.039
+        },
+        {
+          "word": "at",
+          "start": 5.085,
+          "end": 5.155
+        },
+        {
+          "word": "once.",
+          "start": 5.224,
+          "end": 6.223
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "race",
+      "text": "The model isn't any faster. It writes one token at a time either way, and the last word lands at the same moment.",
+      "src": "assets/vo/l03.mp3",
+      "start": 14.168,
+      "duration": 7.105,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "model",
+          "start": 0.197,
+          "end": 0.476
+        },
+        {
+          "word": "isn't",
+          "start": 0.546,
+          "end": 0.801
+        },
+        {
+          "word": "any",
+          "start": 0.848,
+          "end": 0.998
+        },
+        {
+          "word": "faster.",
+          "start": 1.068,
+          "end": 1.66
+        },
+        {
+          "word": "It",
+          "start": 1.858,
+          "end": 1.985
+        },
+        {
+          "word": "writes",
+          "start": 2.02,
+          "end": 2.276
+        },
+        {
+          "word": "one",
+          "start": 2.345,
+          "end": 2.554
+        },
+        {
+          "word": "token",
+          "start": 2.589,
+          "end": 2.902
+        },
+        {
+          "word": "at",
+          "start": 2.949,
+          "end": 3.019
+        },
+        {
+          "word": "a",
+          "start": 3.065,
+          "end": 3.088
+        },
+        {
+          "word": "time",
+          "start": 3.146,
+          "end": 3.471
+        },
+        {
+          "word": "either",
+          "start": 3.529,
+          "end": 3.773
+        },
+        {
+          "word": "way,",
+          "start": 3.82,
+          "end": 4.226
+        },
+        {
+          "word": "and",
+          "start": 4.389,
+          "end": 4.516
+        },
+        {
+          "word": "the",
+          "start": 4.551,
+          "end": 4.621
+        },
+        {
+          "word": "last",
+          "start": 4.667,
+          "end": 4.899
+        },
+        {
+          "word": "word",
+          "start": 4.957,
+          "end": 5.19
+        },
+        {
+          "word": "lands",
+          "start": 5.259,
+          "end": 5.55
+        },
+        {
+          "word": "at",
+          "start": 5.584,
+          "end": 5.642
+        },
+        {
+          "word": "the",
+          "start": 5.677,
+          "end": 5.747
+        },
+        {
+          "word": "same",
+          "start": 5.793,
+          "end": 6.014
+        },
+        {
+          "word": "moment.",
+          "start": 6.06,
+          "end": 7.105
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "race",
+      "text": "What changed is the time to first token. That's the clock your users actually feel.",
+      "src": "assets/vo/l04.mp3",
+      "start": 21.623,
+      "duration": 5.108,
+      "words": [
+        {
+          "word": "What",
+          "start": 0,
+          "end": 0.255
+        },
+        {
+          "word": "changed",
+          "start": 0.313,
+          "end": 0.731
+        },
+        {
+          "word": "is",
+          "start": 0.778,
+          "end": 0.859
+        },
+        {
+          "word": "the",
+          "start": 0.906,
+          "end": 0.975
+        },
+        {
+          "word": "time",
+          "start": 1.022,
+          "end": 1.265
+        },
+        {
+          "word": "to",
+          "start": 1.289,
+          "end": 1.347
+        },
+        {
+          "word": "first",
+          "start": 1.428,
+          "end": 1.683
+        },
+        {
+          "word": "token.",
+          "start": 1.73,
+          "end": 2.287
+        },
+        {
+          "word": "That's",
+          "start": 2.45,
+          "end": 2.728
+        },
+        {
+          "word": "the",
+          "start": 2.775,
+          "end": 2.844
+        },
+        {
+          "word": "clock",
+          "start": 2.902,
+          "end": 3.123
+        },
+        {
+          "word": "your",
+          "start": 3.181,
+          "end": 3.332
+        },
+        {
+          "word": "users",
+          "start": 3.413,
+          "end": 3.738
+        },
+        {
+          "word": "actually",
+          "start": 3.785,
+          "end": 4.122
+        },
+        {
+          "word": "feel.",
+          "start": 4.191,
+          "end": 5.108
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "pipe",
+      "text": "Here's the path. The browser sends one request to your FastAPI backend, which calls the model with stream set to true.",
+      "src": "assets/vo/l05.mp3",
+      "start": 27.081,
+      "duration": 7.43,
+      "words": [
+        {
+          "word": "Here's",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "the",
+          "start": 0.36,
+          "end": 0.43
+        },
+        {
+          "word": "path.",
+          "start": 0.476,
+          "end": 0.975
+        },
+        {
+          "word": "The",
+          "start": 1.138,
+          "end": 1.242
+        },
+        {
+          "word": "browser",
+          "start": 1.289,
+          "end": 1.625
+        },
+        {
+          "word": "sends",
+          "start": 1.672,
+          "end": 1.904
+        },
+        {
+          "word": "one",
+          "start": 1.974,
+          "end": 2.171
+        },
+        {
+          "word": "request",
+          "start": 2.218,
+          "end": 2.601
+        },
+        {
+          "word": "to",
+          "start": 2.624,
+          "end": 2.67
+        },
+        {
+          "word": "your",
+          "start": 2.728,
+          "end": 2.844
+        },
+        {
+          "word": "FastAPI",
+          "start": 2.914,
+          "end": 3.576
+        },
+        {
+          "word": "backend,",
+          "start": 3.669,
+          "end": 4.331
+        },
+        {
+          "word": "which",
+          "start": 4.563,
+          "end": 4.748
+        },
+        {
+          "word": "calls",
+          "start": 4.795,
+          "end": 5.05
+        },
+        {
+          "word": "the",
+          "start": 5.097,
+          "end": 5.166
+        },
+        {
+          "word": "model",
+          "start": 5.213,
+          "end": 5.433
+        },
+        {
+          "word": "with",
+          "start": 5.48,
+          "end": 5.608
+        },
+        {
+          "word": "stream",
+          "start": 5.654,
+          "end": 5.933
+        },
+        {
+          "word": "set",
+          "start": 6.002,
+          "end": 6.2
+        },
+        {
+          "word": "to",
+          "start": 6.246,
+          "end": 6.316
+        },
+        {
+          "word": "true.",
+          "start": 6.385,
+          "end": 7.43
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "pipe",
+      "text": "Every chunk that comes back is yielded into a streaming response, so it leaves your server immediately.",
+      "src": "assets/vo/l06.mp3",
+      "start": 34.861,
+      "duration": 5.991,
+      "words": [
+        {
+          "word": "Every",
+          "start": 0,
+          "end": 0.325
+        },
+        {
+          "word": "chunk",
+          "start": 0.383,
+          "end": 0.627
+        },
+        {
+          "word": "that",
+          "start": 0.685,
+          "end": 0.801
+        },
+        {
+          "word": "comes",
+          "start": 0.848,
+          "end": 1.08
+        },
+        {
+          "word": "back",
+          "start": 1.138,
+          "end": 1.37
+        },
+        {
+          "word": "is",
+          "start": 1.44,
+          "end": 1.521
+        },
+        {
+          "word": "yielded",
+          "start": 1.602,
+          "end": 1.95
+        },
+        {
+          "word": "into",
+          "start": 1.997,
+          "end": 2.148
+        },
+        {
+          "word": "a",
+          "start": 2.218,
+          "end": 2.241
+        },
+        {
+          "word": "streaming",
+          "start": 2.287,
+          "end": 2.67
+        },
+        {
+          "word": "response,",
+          "start": 2.74,
+          "end": 3.437
+        },
+        {
+          "word": "so",
+          "start": 3.669,
+          "end": 3.785
+        },
+        {
+          "word": "it",
+          "start": 3.855,
+          "end": 3.913
+        },
+        {
+          "word": "leaves",
+          "start": 3.959,
+          "end": 4.18
+        },
+        {
+          "word": "your",
+          "start": 4.214,
+          "end": 4.342
+        },
+        {
+          "word": "server",
+          "start": 4.4,
+          "end": 4.725
+        },
+        {
+          "word": "immediately.",
+          "start": 4.783,
+          "end": 5.991
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "wire",
+      "text": "On the wire it's Server-Sent Events: a line starting with data, then a blank line. Plain HTTP.",
+      "src": "assets/vo/l07.mp3",
+      "start": 41.202,
+      "duration": 6.873,
+      "words": [
+        {
+          "word": "On",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "the",
+          "start": 0.209,
+          "end": 0.279
+        },
+        {
+          "word": "wire",
+          "start": 0.337,
+          "end": 0.639
+        },
+        {
+          "word": "it's",
+          "start": 0.685,
+          "end": 0.824
+        },
+        {
+          "word": "Server-Sent",
+          "start": 0.859,
+          "end": 1.405
+        },
+        {
+          "word": "Events:",
+          "start": 1.451,
+          "end": 1.985
+        },
+        {
+          "word": "a",
+          "start": 2.183,
+          "end": 2.241
+        },
+        {
+          "word": "line",
+          "start": 2.334,
+          "end": 2.612
+        },
+        {
+          "word": "starting",
+          "start": 2.647,
+          "end": 3.007
+        },
+        {
+          "word": "with",
+          "start": 3.042,
+          "end": 3.158
+        },
+        {
+          "word": "data,",
+          "start": 3.204,
+          "end": 3.704
+        },
+        {
+          "word": "then",
+          "start": 3.866,
+          "end": 4.029
+        },
+        {
+          "word": "a",
+          "start": 4.075,
+          "end": 4.098
+        },
+        {
+          "word": "blank",
+          "start": 4.145,
+          "end": 4.389
+        },
+        {
+          "word": "line.",
+          "start": 4.47,
+          "end": 4.923
+        },
+        {
+          "word": "Plain",
+          "start": 5.41,
+          "end": 5.724
+        },
+        {
+          "word": "HTTP.",
+          "start": 5.793,
+          "end": 6.873
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "wire",
+      "text": "Wrap each token in JSON, because a token can contain a newline, and a raw newline breaks the message.",
+      "src": "assets/vo/l08.mp3",
+      "start": 48.425,
+      "duration": 6.502,
+      "words": [
+        {
+          "word": "Wrap",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "word": "each",
+          "start": 0.36,
+          "end": 0.557
+        },
+        {
+          "word": "token",
+          "start": 0.615,
+          "end": 0.94
+        },
+        {
+          "word": "in",
+          "start": 0.998,
+          "end": 1.068
+        },
+        {
+          "word": "JSON,",
+          "start": 1.149,
+          "end": 1.695
+        },
+        {
+          "word": "because",
+          "start": 1.811,
+          "end": 2.09
+        },
+        {
+          "word": "a",
+          "start": 2.113,
+          "end": 2.136
+        },
+        {
+          "word": "token",
+          "start": 2.194,
+          "end": 2.519
+        },
+        {
+          "word": "can",
+          "start": 2.577,
+          "end": 2.705
+        },
+        {
+          "word": "contain",
+          "start": 2.752,
+          "end": 3.146
+        },
+        {
+          "word": "a",
+          "start": 3.204,
+          "end": 3.239
+        },
+        {
+          "word": "newline,",
+          "start": 3.32,
+          "end": 3.936
+        },
+        {
+          "word": "and",
+          "start": 4.052,
+          "end": 4.18
+        },
+        {
+          "word": "a",
+          "start": 4.249,
+          "end": 4.272
+        },
+        {
+          "word": "raw",
+          "start": 4.342,
+          "end": 4.528
+        },
+        {
+          "word": "newline",
+          "start": 4.598,
+          "end": 5.004
+        },
+        {
+          "word": "breaks",
+          "start": 5.05,
+          "end": 5.317
+        },
+        {
+          "word": "the",
+          "start": 5.364,
+          "end": 5.433
+        },
+        {
+          "word": "message.",
+          "start": 5.48,
+          "end": 6.502
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "wire",
+      "text": "In the browser, fetch reads the stream. One read can hold three events, or half of one.",
+      "src": "assets/vo/l09.mp3",
+      "start": 55.277,
+      "duration": 5.944,
+      "words": [
+        {
+          "word": "In",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "the",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "word": "browser,",
+          "start": 0.337,
+          "end": 0.813
+        },
+        {
+          "word": "fetch",
+          "start": 0.929,
+          "end": 1.207
+        },
+        {
+          "word": "reads",
+          "start": 1.277,
+          "end": 1.533
+        },
+        {
+          "word": "the",
+          "start": 1.591,
+          "end": 1.672
+        },
+        {
+          "word": "stream.",
+          "start": 1.718,
+          "end": 2.264
+        },
+        {
+          "word": "One",
+          "start": 2.682,
+          "end": 2.914
+        },
+        {
+          "word": "read",
+          "start": 2.961,
+          "end": 3.146
+        },
+        {
+          "word": "can",
+          "start": 3.204,
+          "end": 3.309
+        },
+        {
+          "word": "hold",
+          "start": 3.367,
+          "end": 3.553
+        },
+        {
+          "word": "three",
+          "start": 3.599,
+          "end": 3.808
+        },
+        {
+          "word": "events,",
+          "start": 3.843,
+          "end": 4.342
+        },
+        {
+          "word": "or",
+          "start": 4.423,
+          "end": 4.586
+        },
+        {
+          "word": "half",
+          "start": 4.656,
+          "end": 4.841
+        },
+        {
+          "word": "of",
+          "start": 4.899,
+          "end": 4.957
+        },
+        {
+          "word": "one.",
+          "start": 5.05,
+          "end": 5.944
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "wire",
+      "text": "So keep a buffer, split on the blank line, and add each token to the page.",
+      "src": "assets/vo/l10.mp3",
+      "start": 61.571,
+      "duration": 4.458,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "keep",
+          "start": 0.221,
+          "end": 0.383
+        },
+        {
+          "word": "a",
+          "start": 0.441,
+          "end": 0.464
+        },
+        {
+          "word": "buffer,",
+          "start": 0.511,
+          "end": 0.975
+        },
+        {
+          "word": "split",
+          "start": 1.115,
+          "end": 1.428
+        },
+        {
+          "word": "on",
+          "start": 1.474,
+          "end": 1.544
+        },
+        {
+          "word": "the",
+          "start": 1.579,
+          "end": 1.649
+        },
+        {
+          "word": "blank",
+          "start": 1.683,
+          "end": 1.916
+        },
+        {
+          "word": "line,",
+          "start": 1.985,
+          "end": 2.345
+        },
+        {
+          "word": "and",
+          "start": 2.485,
+          "end": 2.624
+        },
+        {
+          "word": "add",
+          "start": 2.682,
+          "end": 2.844
+        },
+        {
+          "word": "each",
+          "start": 2.914,
+          "end": 3.123
+        },
+        {
+          "word": "token",
+          "start": 3.17,
+          "end": 3.483
+        },
+        {
+          "word": "to",
+          "start": 3.529,
+          "end": 3.576
+        },
+        {
+          "word": "the",
+          "start": 3.634,
+          "end": 3.704
+        },
+        {
+          "word": "page.",
+          "start": 3.75,
+          "end": 4.458
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "deploy",
+      "text": "After you deploy, test it again. A proxy that buffers will hand over the whole answer in one lump.",
+      "src": "assets/vo/l11.mp3",
+      "start": 66.379,
+      "duration": 6.641,
+      "words": [
+        {
+          "word": "After",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "word": "you",
+          "start": 0.383,
+          "end": 0.464
+        },
+        {
+          "word": "deploy,",
+          "start": 0.534,
+          "end": 1.08
+        },
+        {
+          "word": "test",
+          "start": 1.149,
+          "end": 1.44
+        },
+        {
+          "word": "it",
+          "start": 1.498,
+          "end": 1.579
+        },
+        {
+          "word": "again.",
+          "start": 1.614,
+          "end": 2.113
+        },
+        {
+          "word": "A",
+          "start": 2.531,
+          "end": 2.601
+        },
+        {
+          "word": "proxy",
+          "start": 2.682,
+          "end": 3.053
+        },
+        {
+          "word": "that",
+          "start": 3.111,
+          "end": 3.228
+        },
+        {
+          "word": "buffers",
+          "start": 3.286,
+          "end": 3.715
+        },
+        {
+          "word": "will",
+          "start": 3.855,
+          "end": 4.052
+        },
+        {
+          "word": "hand",
+          "start": 4.11,
+          "end": 4.284
+        },
+        {
+          "word": "over",
+          "start": 4.354,
+          "end": 4.516
+        },
+        {
+          "word": "the",
+          "start": 4.563,
+          "end": 4.644
+        },
+        {
+          "word": "whole",
+          "start": 4.69,
+          "end": 4.934
+        },
+        {
+          "word": "answer",
+          "start": 4.981,
+          "end": 5.341
+        },
+        {
+          "word": "in",
+          "start": 5.41,
+          "end": 5.48
+        },
+        {
+          "word": "one",
+          "start": 5.561,
+          "end": 5.735
+        },
+        {
+          "word": "lump.",
+          "start": 5.793,
+          "end": 6.641
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "scene": "claim",
+      "text": "So remember: streaming doesn't cut total time or cost. It cuts the wait before the first word.",
+      "src": "assets/vo/l12.mp3",
+      "start": 73.37,
+      "duration": 5.991,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "remember:",
+          "start": 0.221,
+          "end": 0.708
+        },
+        {
+          "word": "streaming",
+          "start": 0.871,
+          "end": 1.277
+        },
+        {
+          "word": "doesn't",
+          "start": 1.335,
+          "end": 1.602
+        },
+        {
+          "word": "cut",
+          "start": 1.66,
+          "end": 1.892
+        },
+        {
+          "word": "total",
+          "start": 1.95,
+          "end": 2.299
+        },
+        {
+          "word": "time",
+          "start": 2.357,
+          "end": 2.624
+        },
+        {
+          "word": "or",
+          "start": 2.67,
+          "end": 2.752
+        },
+        {
+          "word": "cost.",
+          "start": 2.821,
+          "end": 3.286
+        },
+        {
+          "word": "It",
+          "start": 3.518,
+          "end": 3.646
+        },
+        {
+          "word": "cuts",
+          "start": 3.704,
+          "end": 3.936
+        },
+        {
+          "word": "the",
+          "start": 3.994,
+          "end": 4.063
+        },
+        {
+          "word": "wait",
+          "start": 4.122,
+          "end": 4.296
+        },
+        {
+          "word": "before",
+          "start": 4.354,
+          "end": 4.598
+        },
+        {
+          "word": "the",
+          "start": 4.632,
+          "end": 4.702
+        },
+        {
+          "word": "first",
+          "start": 4.748,
+          "end": 5.004
+        },
+        {
+          "word": "word.",
+          "start": 5.062,
+          "end": 5.991
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "scene": "claim",
+      "text": "Next lesson: cost, latency and caching.",
+      "src": "assets/vo/l13.mp3",
+      "start": 79.711,
+      "duration": 3.019,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "word": "lesson:",
+          "start": 0.372,
+          "end": 0.882
+        },
+        {
+          "word": "cost,",
+          "start": 1.022,
+          "end": 1.428
+        },
+        {
+          "word": "latency",
+          "start": 1.544,
+          "end": 2.055
+        },
+        {
+          "word": "and",
+          "start": 2.113,
+          "end": 2.218
+        },
+        {
+          "word": "caching.",
+          "start": 2.276,
+          "end": 3.019
+        }
+      ]
+    }
+  ],
+  "total": 83.08
+}

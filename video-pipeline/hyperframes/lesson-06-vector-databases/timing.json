@@ -1,0 +1,1217 @@
+{
+  "provisional": true,
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "scale",
+      "text": "Meera built semantic search over five question papers. It compares her query with every stored vector, and it's instant.",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 7.901,
+      "words": [
+        {
+          "word": "Meera",
+          "start": 0,
+          "end": 0.335
+        },
+        {
+          "word": "built",
+          "start": 0.395,
+          "end": 0.729
+        },
+        {
+          "word": "semantic",
+          "start": 0.789,
+          "end": 1.322
+        },
+        {
+          "word": "search",
+          "start": 1.382,
+          "end": 1.782
+        },
+        {
+          "word": "over",
+          "start": 1.842,
+          "end": 2.111
+        },
+        {
+          "word": "five",
+          "start": 2.171,
+          "end": 2.44
+        },
+        {
+          "word": "question",
+          "start": 2.5,
+          "end": 3.032
+        },
+        {
+          "word": "papers.",
+          "start": 3.092,
+          "end": 3.558
+        },
+        {
+          "word": "It",
+          "start": 3.618,
+          "end": 3.756
+        },
+        {
+          "word": "compares",
+          "start": 3.816,
+          "end": 4.348
+        },
+        {
+          "word": "her",
+          "start": 4.408,
+          "end": 4.611
+        },
+        {
+          "word": "query",
+          "start": 4.671,
+          "end": 5.006
+        },
+        {
+          "word": "with",
+          "start": 5.066,
+          "end": 5.335
+        },
+        {
+          "word": "every",
+          "start": 5.395,
+          "end": 5.729
+        },
+        {
+          "word": "stored",
+          "start": 5.789,
+          "end": 6.19
+        },
+        {
+          "word": "vector,",
+          "start": 6.25,
+          "end": 6.716
+        },
+        {
+          "word": "and",
+          "start": 6.776,
+          "end": 6.979
+        },
+        {
+          "word": "it's",
+          "start": 7.039,
+          "end": 7.308
+        },
+        {
+          "word": "instant.",
+          "start": 7.368,
+          "end": 7.901
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "scale",
+      "text": "Now add every paper from every department, for ten years. Millions of vectors, and every single search checks them all.",
+      "src": "assets/vo/l02.mp3",
+      "start": 8.251,
+      "duration": 7.835,
+      "words": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.203
+        },
+        {
+          "word": "add",
+          "start": 0.263,
+          "end": 0.466
+        },
+        {
+          "word": "every",
+          "start": 0.526,
+          "end": 0.861
+        },
+        {
+          "word": "paper",
+          "start": 0.921,
+          "end": 1.256
+        },
+        {
+          "word": "from",
+          "start": 1.316,
+          "end": 1.585
+        },
+        {
+          "word": "every",
+          "start": 1.645,
+          "end": 1.979
+        },
+        {
+          "word": "department,",
+          "start": 2.039,
+          "end": 2.769
+        },
+        {
+          "word": "for",
+          "start": 2.829,
+          "end": 3.032
+        },
+        {
+          "word": "ten",
+          "start": 3.092,
+          "end": 3.295
+        },
+        {
+          "word": "years.",
+          "start": 3.355,
+          "end": 3.756
+        },
+        {
+          "word": "Millions",
+          "start": 3.816,
+          "end": 4.348
+        },
+        {
+          "word": "of",
+          "start": 4.408,
+          "end": 4.545
+        },
+        {
+          "word": "vectors,",
+          "start": 4.605,
+          "end": 5.137
+        },
+        {
+          "word": "and",
+          "start": 5.197,
+          "end": 5.401
+        },
+        {
+          "word": "every",
+          "start": 5.461,
+          "end": 5.795
+        },
+        {
+          "word": "single",
+          "start": 5.855,
+          "end": 6.256
+        },
+        {
+          "word": "search",
+          "start": 6.316,
+          "end": 6.716
+        },
+        {
+          "word": "checks",
+          "start": 6.776,
+          "end": 7.177
+        },
+        {
+          "word": "them",
+          "start": 7.237,
+          "end": 7.506
+        },
+        {
+          "word": "all.",
+          "start": 7.566,
+          "end": 7.835
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "scale",
+      "text": "And it all lives in memory, gone when the script stops.",
+      "src": "assets/vo/l03.mp3",
+      "start": 16.436,
+      "duration": 3.624,
+      "words": [
+        {
+          "word": "And",
+          "start": 0,
+          "end": 0.203
+        },
+        {
+          "word": "it",
+          "start": 0.263,
+          "end": 0.401
+        },
+        {
+          "word": "all",
+          "start": 0.461,
+          "end": 0.664
+        },
+        {
+          "word": "lives",
+          "start": 0.724,
+          "end": 1.058
+        },
+        {
+          "word": "in",
+          "start": 1.118,
+          "end": 1.256
+        },
+        {
+          "word": "memory,",
+          "start": 1.316,
+          "end": 1.782
+        },
+        {
+          "word": "gone",
+          "start": 1.842,
+          "end": 2.111
+        },
+        {
+          "word": "when",
+          "start": 2.171,
+          "end": 2.44
+        },
+        {
+          "word": "the",
+          "start": 2.5,
+          "end": 2.703
+        },
+        {
+          "word": "script",
+          "start": 2.763,
+          "end": 3.164
+        },
+        {
+          "word": "stops.",
+          "start": 3.224,
+          "end": 3.624
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "graph",
+      "text": "A vector database fixes that with an index. Picture every vector as a point, linked to a handful of its nearest neighbours.",
+      "src": "assets/vo/l04.mp3",
+      "start": 20.41,
+      "duration": 8.098,
+      "words": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.072
+        },
+        {
+          "word": "vector",
+          "start": 0.132,
+          "end": 0.532
+        },
+        {
+          "word": "database",
+          "start": 0.592,
+          "end": 1.124
+        },
+        {
+          "word": "fixes",
+          "start": 1.184,
+          "end": 1.519
+        },
+        {
+          "word": "that",
+          "start": 1.579,
+          "end": 1.848
+        },
+        {
+          "word": "with",
+          "start": 1.908,
+          "end": 2.177
+        },
+        {
+          "word": "an",
+          "start": 2.237,
+          "end": 2.374
+        },
+        {
+          "word": "index.",
+          "start": 2.434,
+          "end": 2.835
+        },
+        {
+          "word": "Picture",
+          "start": 2.895,
+          "end": 3.361
+        },
+        {
+          "word": "every",
+          "start": 3.421,
+          "end": 3.756
+        },
+        {
+          "word": "vector",
+          "start": 3.816,
+          "end": 4.216
+        },
+        {
+          "word": "as",
+          "start": 4.276,
+          "end": 4.414
+        },
+        {
+          "word": "a",
+          "start": 4.474,
+          "end": 4.545
+        },
+        {
+          "word": "point,",
+          "start": 4.605,
+          "end": 5.006
+        },
+        {
+          "word": "linked",
+          "start": 5.066,
+          "end": 5.466
+        },
+        {
+          "word": "to",
+          "start": 5.526,
+          "end": 5.664
+        },
+        {
+          "word": "a",
+          "start": 5.724,
+          "end": 5.795
+        },
+        {
+          "word": "handful",
+          "start": 5.855,
+          "end": 6.322
+        },
+        {
+          "word": "of",
+          "start": 6.382,
+          "end": 6.519
+        },
+        {
+          "word": "its",
+          "start": 6.579,
+          "end": 6.782
+        },
+        {
+          "word": "nearest",
+          "start": 6.842,
+          "end": 7.308
+        },
+        {
+          "word": "neighbours.",
+          "start": 7.368,
+          "end": 8.098
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "graph",
+      "text": "A search starts at one point, hops to whichever neighbour is closer to the query, and repeats. Most points are never touched.",
+      "src": "assets/vo/l05.mp3",
+      "start": 28.858,
+      "duration": 8.229,
+      "words": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.072
+        },
+        {
+          "word": "search",
+          "start": 0.132,
+          "end": 0.532
+        },
+        {
+          "word": "starts",
+          "start": 0.592,
+          "end": 0.993
+        },
+        {
+          "word": "at",
+          "start": 1.053,
+          "end": 1.19
+        },
+        {
+          "word": "one",
+          "start": 1.25,
+          "end": 1.453
+        },
+        {
+          "word": "point,",
+          "start": 1.513,
+          "end": 1.914
+        },
+        {
+          "word": "hops",
+          "start": 1.974,
+          "end": 2.243
+        },
+        {
+          "word": "to",
+          "start": 2.303,
+          "end": 2.44
+        },
+        {
+          "word": "whichever",
+          "start": 2.5,
+          "end": 3.098
+        },
+        {
+          "word": "neighbour",
+          "start": 3.158,
+          "end": 3.756
+        },
+        {
+          "word": "is",
+          "start": 3.816,
+          "end": 3.953
+        },
+        {
+          "word": "closer",
+          "start": 4.013,
+          "end": 4.414
+        },
+        {
+          "word": "to",
+          "start": 4.474,
+          "end": 4.611
+        },
+        {
+          "word": "the",
+          "start": 4.671,
+          "end": 4.874
+        },
+        {
+          "word": "query,",
+          "start": 4.934,
+          "end": 5.335
+        },
+        {
+          "word": "and",
+          "start": 5.395,
+          "end": 5.598
+        },
+        {
+          "word": "repeats.",
+          "start": 5.658,
+          "end": 6.19
+        },
+        {
+          "word": "Most",
+          "start": 6.25,
+          "end": 6.519
+        },
+        {
+          "word": "points",
+          "start": 6.579,
+          "end": 6.979
+        },
+        {
+          "word": "are",
+          "start": 7.039,
+          "end": 7.243
+        },
+        {
+          "word": "never",
+          "start": 7.303,
+          "end": 7.637
+        },
+        {
+          "word": "touched.",
+          "start": 7.697,
+          "end": 8.229
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "graph",
+      "text": "The catch: it's approximate. You give up a tiny bit of accuracy for a very large gain in speed.",
+      "src": "assets/vo/l06.mp3",
+      "start": 37.437,
+      "duration": 6.256,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.203
+        },
+        {
+          "word": "catch:",
+          "start": 0.263,
+          "end": 0.664
+        },
+        {
+          "word": "it's",
+          "start": 0.724,
+          "end": 0.993
+        },
+        {
+          "word": "approximate.",
+          "start": 1.053,
+          "end": 1.848
+        },
+        {
+          "word": "You",
+          "start": 1.908,
+          "end": 2.111
+        },
+        {
+          "word": "give",
+          "start": 2.171,
+          "end": 2.44
+        },
+        {
+          "word": "up",
+          "start": 2.5,
+          "end": 2.637
+        },
+        {
+          "word": "a",
+          "start": 2.697,
+          "end": 2.769
+        },
+        {
+          "word": "tiny",
+          "start": 2.829,
+          "end": 3.098
+        },
+        {
+          "word": "bit",
+          "start": 3.158,
+          "end": 3.361
+        },
+        {
+          "word": "of",
+          "start": 3.421,
+          "end": 3.558
+        },
+        {
+          "word": "accuracy",
+          "start": 3.618,
+          "end": 4.151
+        },
+        {
+          "word": "for",
+          "start": 4.211,
+          "end": 4.414
+        },
+        {
+          "word": "a",
+          "start": 4.474,
+          "end": 4.545
+        },
+        {
+          "word": "very",
+          "start": 4.605,
+          "end": 4.874
+        },
+        {
+          "word": "large",
+          "start": 4.934,
+          "end": 5.269
+        },
+        {
+          "word": "gain",
+          "start": 5.329,
+          "end": 5.598
+        },
+        {
+          "word": "in",
+          "start": 5.658,
+          "end": 5.795
+        },
+        {
+          "word": "speed.",
+          "start": 5.855,
+          "end": 6.256
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "meta",
+      "text": "Each vector is stored on disk with its text and metadata: subject, year, page.",
+      "src": "assets/vo/l07.mp3",
+      "start": 44.043,
+      "duration": 5.137,
+      "words": [
+        {
+          "word": "Each",
+          "start": 0,
+          "end": 0.269
+        },
+        {
+          "word": "vector",
+          "start": 0.329,
+          "end": 0.729
+        },
+        {
+          "word": "is",
+          "start": 0.789,
+          "end": 0.927
+        },
+        {
+          "word": "stored",
+          "start": 0.987,
+          "end": 1.387
+        },
+        {
+          "word": "on",
+          "start": 1.447,
+          "end": 1.585
+        },
+        {
+          "word": "disk",
+          "start": 1.645,
+          "end": 1.914
+        },
+        {
+          "word": "with",
+          "start": 1.974,
+          "end": 2.243
+        },
+        {
+          "word": "its",
+          "start": 2.303,
+          "end": 2.506
+        },
+        {
+          "word": "text",
+          "start": 2.566,
+          "end": 2.835
+        },
+        {
+          "word": "and",
+          "start": 2.895,
+          "end": 3.098
+        },
+        {
+          "word": "metadata:",
+          "start": 3.158,
+          "end": 3.756
+        },
+        {
+          "word": "subject,",
+          "start": 3.816,
+          "end": 4.348
+        },
+        {
+          "word": "year,",
+          "start": 4.408,
+          "end": 4.743
+        },
+        {
+          "word": "page.",
+          "start": 4.803,
+          "end": 5.137
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "meta",
+      "text": "So Meera can filter to DSA papers since twenty twenty-two, and then search by meaning inside that filter.",
+      "src": "assets/vo/l08.mp3",
+      "start": 49.53,
+      "duration": 6.914,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.137
+        },
+        {
+          "word": "Meera",
+          "start": 0.197,
+          "end": 0.532
+        },
+        {
+          "word": "can",
+          "start": 0.592,
+          "end": 0.795
+        },
+        {
+          "word": "filter",
+          "start": 0.855,
+          "end": 1.256
+        },
+        {
+          "word": "to",
+          "start": 1.316,
+          "end": 1.453
+        },
+        {
+          "word": "DSA",
+          "start": 1.513,
+          "end": 1.716
+        },
+        {
+          "word": "papers",
+          "start": 1.776,
+          "end": 2.177
+        },
+        {
+          "word": "since",
+          "start": 2.237,
+          "end": 2.572
+        },
+        {
+          "word": "twenty",
+          "start": 2.632,
+          "end": 3.032
+        },
+        {
+          "word": "twenty-two,",
+          "start": 3.092,
+          "end": 3.822
+        },
+        {
+          "word": "and",
+          "start": 3.882,
+          "end": 4.085
+        },
+        {
+          "word": "then",
+          "start": 4.145,
+          "end": 4.414
+        },
+        {
+          "word": "search",
+          "start": 4.474,
+          "end": 4.874
+        },
+        {
+          "word": "by",
+          "start": 4.934,
+          "end": 5.072
+        },
+        {
+          "word": "meaning",
+          "start": 5.132,
+          "end": 5.598
+        },
+        {
+          "word": "inside",
+          "start": 5.658,
+          "end": 6.058
+        },
+        {
+          "word": "that",
+          "start": 6.118,
+          "end": 6.387
+        },
+        {
+          "word": "filter.",
+          "start": 6.447,
+          "end": 6.914
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "meta",
+      "text": "Every result comes back with its source, so she knows which paper and which page.",
+      "src": "assets/vo/l09.mp3",
+      "start": 56.794,
+      "duration": 5.335,
+      "words": [
+        {
+          "word": "Every",
+          "start": 0,
+          "end": 0.335
+        },
+        {
+          "word": "result",
+          "start": 0.395,
+          "end": 0.795
+        },
+        {
+          "word": "comes",
+          "start": 0.855,
+          "end": 1.19
+        },
+        {
+          "word": "back",
+          "start": 1.25,
+          "end": 1.519
+        },
+        {
+          "word": "with",
+          "start": 1.579,
+          "end": 1.848
+        },
+        {
+          "word": "its",
+          "start": 1.908,
+          "end": 2.111
+        },
+        {
+          "word": "source,",
+          "start": 2.171,
+          "end": 2.637
+        },
+        {
+          "word": "so",
+          "start": 2.697,
+          "end": 2.835
+        },
+        {
+          "word": "she",
+          "start": 2.895,
+          "end": 3.098
+        },
+        {
+          "word": "knows",
+          "start": 3.158,
+          "end": 3.493
+        },
+        {
+          "word": "which",
+          "start": 3.553,
+          "end": 3.887
+        },
+        {
+          "word": "paper",
+          "start": 3.947,
+          "end": 4.282
+        },
+        {
+          "word": "and",
+          "start": 4.342,
+          "end": 4.545
+        },
+        {
+          "word": "which",
+          "start": 4.605,
+          "end": 4.94
+        },
+        {
+          "word": "page.",
+          "start": 5,
+          "end": 5.335
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "tools",
+      "text": "To start, use Chroma: a few lines of Python, and your database is a folder on your laptop.",
+      "src": "assets/vo/l10.mp3",
+      "start": 62.479,
+      "duration": 5.927,
+      "words": [
+        {
+          "word": "To",
+          "start": 0,
+          "end": 0.137
+        },
+        {
+          "word": "start,",
+          "start": 0.197,
+          "end": 0.598
+        },
+        {
+          "word": "use",
+          "start": 0.658,
+          "end": 0.861
+        },
+        {
+          "word": "Chroma:",
+          "start": 0.921,
+          "end": 1.387
+        },
+        {
+          "word": "a",
+          "start": 1.447,
+          "end": 1.519
+        },
+        {
+          "word": "few",
+          "start": 1.579,
+          "end": 1.782
+        },
+        {
+          "word": "lines",
+          "start": 1.842,
+          "end": 2.177
+        },
+        {
+          "word": "of",
+          "start": 2.237,
+          "end": 2.374
+        },
+        {
+          "word": "Python,",
+          "start": 2.434,
+          "end": 2.901
+        },
+        {
+          "word": "and",
+          "start": 2.961,
+          "end": 3.164
+        },
+        {
+          "word": "your",
+          "start": 3.224,
+          "end": 3.493
+        },
+        {
+          "word": "database",
+          "start": 3.553,
+          "end": 4.085
+        },
+        {
+          "word": "is",
+          "start": 4.145,
+          "end": 4.282
+        },
+        {
+          "word": "a",
+          "start": 4.342,
+          "end": 4.414
+        },
+        {
+          "word": "folder",
+          "start": 4.474,
+          "end": 4.874
+        },
+        {
+          "word": "on",
+          "start": 4.934,
+          "end": 5.072
+        },
+        {
+          "word": "your",
+          "start": 5.132,
+          "end": 5.401
+        },
+        {
+          "word": "laptop.",
+          "start": 5.461,
+          "end": 5.927
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "tools",
+      "text": "In a real app, PG vector keeps the vectors inside Postgres, right next to your normal tables.",
+      "src": "assets/vo/l11.mp3",
+      "start": 68.756,
+      "duration": 6.124,
+      "words": [
+        {
+          "word": "In",
+          "start": 0,
+          "end": 0.137
+        },
+        {
+          "word": "a",
+          "start": 0.197,
+          "end": 0.269
+        },
+        {
+          "word": "real",
+          "start": 0.329,
+          "end": 0.598
+        },
+        {
+          "word": "app,",
+          "start": 0.658,
+          "end": 0.927
+        },
+        {
+          "word": "PG",
+          "start": 0.987,
+          "end": 1.124
+        },
+        {
+          "word": "vector",
+          "start": 1.184,
+          "end": 1.585
+        },
+        {
+          "word": "keeps",
+          "start": 1.645,
+          "end": 1.979
+        },
+        {
+          "word": "the",
+          "start": 2.039,
+          "end": 2.243
+        },
+        {
+          "word": "vectors",
+          "start": 2.303,
+          "end": 2.769
+        },
+        {
+          "word": "inside",
+          "start": 2.829,
+          "end": 3.229
+        },
+        {
+          "word": "Postgres,",
+          "start": 3.289,
+          "end": 3.887
+        },
+        {
+          "word": "right",
+          "start": 3.947,
+          "end": 4.282
+        },
+        {
+          "word": "next",
+          "start": 4.342,
+          "end": 4.611
+        },
+        {
+          "word": "to",
+          "start": 4.671,
+          "end": 4.808
+        },
+        {
+          "word": "your",
+          "start": 4.868,
+          "end": 5.137
+        },
+        {
+          "word": "normal",
+          "start": 5.197,
+          "end": 5.598
+        },
+        {
+          "word": "tables.",
+          "start": 5.658,
+          "end": 6.124
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "scene": "claim",
+      "text": "So the line to remember: embed once, store with metadata, and let the index find the neighbours.",
+      "src": "assets/vo/l12.mp3",
+      "start": 75.23,
+      "duration": 6.322,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.137
+        },
+        {
+          "word": "the",
+          "start": 0.197,
+          "end": 0.401
+        },
+        {
+          "word": "line",
+          "start": 0.461,
+          "end": 0.729
+        },
+        {
+          "word": "to",
+          "start": 0.789,
+          "end": 0.927
+        },
+        {
+          "word": "remember:",
+          "start": 0.987,
+          "end": 1.585
+        },
+        {
+          "word": "embed",
+          "start": 1.645,
+          "end": 1.979
+        },
+        {
+          "word": "once,",
+          "start": 2.039,
+          "end": 2.374
+        },
+        {
+          "word": "store",
+          "start": 2.434,
+          "end": 2.769
+        },
+        {
+          "word": "with",
+          "start": 2.829,
+          "end": 3.098
+        },
+        {
+          "word": "metadata,",
+          "start": 3.158,
+          "end": 3.756
+        },
+        {
+          "word": "and",
+          "start": 3.816,
+          "end": 4.019
+        },
+        {
+          "word": "let",
+          "start": 4.079,
+          "end": 4.282
+        },
+        {
+          "word": "the",
+          "start": 4.342,
+          "end": 4.545
+        },
+        {
+          "word": "index",
+          "start": 4.605,
+          "end": 4.94
+        },
+        {
+          "word": "find",
+          "start": 5,
+          "end": 5.269
+        },
+        {
+          "word": "the",
+          "start": 5.329,
+          "end": 5.532
+        },
+        {
+          "word": "neighbours.",
+          "start": 5.592,
+          "end": 6.322
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "scene": "claim",
+      "text": "Next module: retrieval-augmented generation.",
+      "src": "assets/vo/l13.mp3",
+      "start": 81.902,
+      "duration": 2.901,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.269
+        },
+        {
+          "word": "module:",
+          "start": 0.329,
+          "end": 0.795
+        },
+        {
+          "word": "retrieval-augmented",
+          "start": 0.855,
+          "end": 2.111
+        },
+        {
+          "word": "generation.",
+          "start": 2.171,
+          "end": 2.901
+        }
+      ]
+    }
+  ],
+  "total": 85.153
+}

@@ -1,0 +1,96 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #s-all { position: absolute; inset: 0; }
+    #s-plot { position: absolute; left: 150px; top: 130px; width: 860px; height: 820px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #s-many { position: absolute; left: 184px; top: 164px; width: 792px; height: 752px; background-image: radial-gradient(#0F766E 5px, transparent 6px); background-size: 36px 36px; background-position: 0 0; }
+    #s-scan { position: absolute; left: 184px; top: 164px; width: 96px; height: 752px; background: rgba(15,118,110,0.22); border-right: 5px solid #0B1220; }
+    #s-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    .s-dot { position: absolute; width: 40px; height: 40px; border-radius: 50%; background: #0F766E; border: 4px solid #FFFFFF; }
+    #s-q { position: absolute; left: 398px; top: 538px; width: 44px; height: 44px; border-radius: 50%; background: #EA580C; border: 4px solid #FFFFFF; }
+    #s-q-l { position: absolute; left: 372px; top: 588px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; line-height: 38px; }
+    #s-q-l span { background: rgba(255,255,255,0.92); border-radius: 4px; padding: 2px 6px; }
+    #s-five { position: absolute; left: 190px; top: 150px; font-size: 30px; font-weight: 700; color: #0F766E; white-space: nowrap; }
+    #s-who { position: absolute; left: 1100px; top: 190px; font-size: 36px; font-weight: 700; color: #0F766E; white-space: nowrap; }
+    #s-cmp-l { position: absolute; left: 1100px; top: 290px; font-size: 34px; font-weight: 700; color: #475569; white-space: nowrap; }
+    #s-cmp-5 { position: absolute; left: 1100px; top: 330px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 200px; line-height: 1.1; }
+    #s-cmp-m { position: absolute; left: 1100px; top: 368px; font-size: 128px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; }
+    .s-line { position: absolute; left: 1100px; top: 610px; width: 640px; font-size: 48px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+    #s-instant { color: #0F766E; }
+    #s-ram { position: absolute; left: 1100px; top: 770px; font-size: 40px; font-weight: 700; color: #475569; white-space: nowrap; }
+    #s-gone { position: absolute; left: 1100px; top: 834px; font-size: 48px; font-weight: 900; letter-spacing: -0.02em; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="scale" data-width="1920" data-height="1080">
+    <div id="s-all">
+      <div id="s-plot"></div>
+      <div id="s-many"></div>
+      <div id="s-scan"></div>
+      <svg id="s-svg" viewBox="0 0 1920 1080" data-layout-ignore>
+        <path class="s-cmp" d="M 420 560 L 300 330" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+        <path class="s-cmp" d="M 420 560 L 620 300" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+        <path class="s-cmp" d="M 420 560 L 770 520" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+        <path class="s-cmp" d="M 420 560 L 640 770" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+        <path class="s-cmp" d="M 420 560 L 320 790" fill="none" stroke="#0F766E" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+      </svg>
+      <div class="s-dot" style="left: 280px; top: 310px"></div>
+      <div class="s-dot" style="left: 600px; top: 280px"></div>
+      <div class="s-dot" style="left: 750px; top: 500px"></div>
+      <div class="s-dot" style="left: 620px; top: 750px"></div>
+      <div class="s-dot" style="left: 300px; top: 770px"></div>
+      <div id="s-five">5 question papers</div>
+      <div id="s-q"></div>
+      <div id="s-q-l"><span>query</span></div>
+
+      <div id="s-who">Meera's question-paper search</div>
+      <div id="s-cmp-l">comparisons per search</div>
+      <div id="s-cmp-5">5</div>
+      <div id="s-cmp-m">millions</div>
+      <div id="s-instant" class="s-line">instant</div>
+      <div id="s-every" class="s-line">every search scans every vector</div>
+      <div id="s-ram">kept in memory only</div>
+      <div id="s-gone">script stops → all gone</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l01":{"s":0,"w":[0,0.395,0.789,1.382,1.842,2.171,2.5,3.092,3.618,3.816,4.408,4.671,5.066,5.395,5.789,6.25,6.776,7.039,7.368]},"l02":{"s":8.251,"w":[8.251,8.514,8.777,9.172,9.567,9.896,10.29,11.08,11.343,11.606,12.067,12.659,12.856,13.448,13.712,14.106,14.567,15.027,15.488,15.817]},"l03":{"s":16.436,"w":[16.436,16.699,16.897,17.16,17.554,17.752,18.278,18.607,18.936,19.199,19.66]}}; const END = 20.41; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l01.w, b = T.l02.w, c = T.l03.w;
+    const cmps = gsap.utils.toArray("#s-svg .s-cmp");
+
+    gsap.set("#s-many", { opacity: 0, clipPath: "inset(0 100% 0 0)" });
+    gsap.set("#s-scan", { opacity: 0 });
+
+    // l01: five papers, five comparisons
+    tl.fromTo("#s-plot", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#s-q-l", a[2], 0.2);
+    gsap.utils.toArray("#s-all .s-dot").forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, a[5] + i * 0.08));
+    blurIn("#s-five", a[5], 0.2);
+    blurIn("#s-cmp-l", a[9], 0.2);
+    cmps.forEach((el, i) => tl.to(el, { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.inOut" }, a[9] + i * 0.16));
+    blurIn("#s-cmp-5", a[13], 0.18);
+    blurIn("#s-instant", a[18], 0.18);
+
+    // l02: every paper from every department
+    blurOut("#s-instant", T.l02.s - 0.1, 0.15);
+    tl.to(cmps, { opacity: 0, duration: 0.3, ease: "power2.in" }, b[0]);
+    blurOut("#s-five", b[0], 0.2);
+    tl.to("#s-many", { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 1.6, ease: "power2.inOut" }, b[1]);
+    blurOut("#s-cmp-5", b[10] - 0.15, 0.15);
+    blurIn("#s-cmp-m", b[10], 0.18);
+    blurIn("#s-every", b[14], 0.2);
+    tl.to("#s-scan", { opacity: 1, duration: 0.2, ease: "power2.out" }, b[14]);
+    tl.fromTo("#s-scan", { x: 0 }, { x: 696, duration: 2.2, ease: "none" }, b[14] + 0.1);
+    tl.to("#s-scan", { opacity: 0, duration: 0.2, ease: "power2.in" }, b[14] + 2.2);
+
+    // l03: and it only lives in memory
+    blurIn("#s-ram", c[3], 0.2);
+    tl.to("#s-many, .s-dot", { opacity: 0.1, duration: 0.5, ease: "power2.in" }, c[6]);
+    blurIn("#s-gone", c[6] + 0.1, 0.2);
+
+    blurOut("#s-all", END - 0.3, 0.2);
+
+    window.__timelines["scale"] = tl;
+  </script>
+</template>

@@ -1,0 +1,104 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #a-phone { position: absolute; left: 180px; top: 60px; width: 540px; height: 960px; border: 16px solid #0B1220; border-radius: 68px; background: #FFFFFF; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    .a-head { height: 104px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 16px; padding: 0 36px; font-weight: 700; font-size: 32px; }
+    .a-avatar { width: 48px; height: 48px; border-radius: 12px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    .a-msgs { padding: 36px 30px; display: flex; flex-direction: column; gap: 24px; }
+    .a-user { align-self: flex-end; max-width: 410px; background: #0F766E; color: #FFFFFF; border-radius: 30px 30px 8px 30px; padding: 22px 28px; font-size: 34px; line-height: 1.25; font-weight: 700; }
+    .a-bot { align-self: flex-start; max-width: 430px; background: #F1F5F9; border-radius: 30px 30px 30px 8px; padding: 22px 28px; font-size: 34px; line-height: 1.3; }
+    .a-w { display: inline-block; }
+    #a-name { position: absolute; left: 800px; top: 400px; }
+    #a-name-big { font-size: 96px; font-weight: 900; letter-spacing: -0.02em; }
+    #a-name-sub { font-size: 40px; font-weight: 700; color: #475569; margin-top: 8px; }
+    #a-doc { position: absolute; left: 1080px; top: 110px; width: 660px; height: 860px; isolation: isolate; }
+    .a-under { position: absolute; left: 0; top: 0; width: 660px; height: 860px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; z-index: -1; }
+    #a-page { position: absolute; left: 0; top: 0; width: 660px; height: 860px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); padding: 44px 44px 0 44px; }
+    #a-page-title { font-size: 44px; font-weight: 900; letter-spacing: -0.02em; }
+    #a-page-no { font-size: 32px; font-weight: 700; color: #0F766E; margin-top: 8px; }
+    .a-line { height: 18px; border-radius: 9px; background: #E2E8F0; margin-top: 30px; }
+    #a-sent { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 36px; line-height: 1.3; background: #FFEDD5; border-left: 8px solid #EA580C; padding: 18px 22px; margin-top: 34px; border-radius: 0 10px 10px 0; }
+    #a-llm { position: absolute; left: 220px; top: 400px; width: 260px; height: 260px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 72px; font-weight: 900; letter-spacing: -0.02em; }
+    #a-llm-note { position: absolute; left: 150px; top: 690px; width: 400px; text-align: center; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #a-arrow { position: absolute; left: 512px; top: 526px; width: 92px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: right center; }
+    #a-arrow::after { content: ""; position: absolute; left: -14px; top: -10px; border-right: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #a-chunks-label { position: absolute; left: 630px; top: 262px; font-size: 34px; font-weight: 700; color: #475569; }
+    .a-chunk { position: absolute; left: 630px; width: 330px; height: 124px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 16px; padding: 26px 26px 0 26px; box-shadow: 0 12px 24px rgba(11,18,32,0.10); }
+    .a-chunk i { display: block; height: 16px; border-radius: 8px; background: #CBD5E1; margin-bottom: 20px; }
+    .a-chunk i.a-hot { background: #EA580C; }
+    .a-chunk i.a-short { width: 60%; }
+    #a-ch1 { top: 320px; } #a-ch2 { top: 468px; } #a-ch3 { top: 616px; }
+    #a-claim { position: absolute; left: 180px; top: 820px; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; }
+  </style>
+  <div id="root" data-composition-id="ask" data-width="1920" data-height="1080">
+    <div id="a-phone">
+      <div class="a-head"><span class="a-avatar">AI</span>Placement bot</div>
+      <div class="a-msgs">
+        <div id="a-q" class="a-user"><span class="a-w">How</span> <span class="a-w">many</span> <span class="a-w">active</span> <span class="a-w">backlogs</span> <span class="a-w">are</span> <span class="a-w">allowed?</span></div>
+        <div id="a-r" class="a-bot">Checking the policy…</div>
+      </div>
+    </div>
+    <div id="a-name"><div id="a-name-big">Riya</div><div id="a-name-sub">asks the placement bot</div></div>
+    <div id="a-doc">
+      <div id="a-under2" class="a-under"></div>
+      <div id="a-under1" class="a-under"></div>
+      <div id="a-page">
+        <div id="a-page-title">Placement Policy</div>
+        <div id="a-page-no">page 4 of 40</div>
+        <div class="a-line"></div>
+        <div class="a-line" style="width: 88%"></div>
+        <div class="a-line" style="width: 94%"></div>
+        <div id="a-sent">Students with active backlogs are not eligible.</div>
+        <div class="a-line"></div>
+        <div class="a-line" style="width: 82%"></div>
+        <div class="a-line" style="width: 96%"></div>
+        <div class="a-line" style="width: 70%"></div>
+        <div class="a-line"></div>
+        <div class="a-line" style="width: 58%"></div>
+      </div>
+    </div>
+    <div id="a-llm">LLM</div>
+    <div id="a-llm-note">sees only these</div>
+    <div id="a-arrow"></div>
+    <div id="a-chunks-label">retrieved chunks</div>
+    <div id="a-ch1" class="a-chunk"><i></i><i class="a-short"></i></div>
+    <div id="a-ch2" class="a-chunk"><i class="a-hot"></i><i class="a-short"></i></div>
+    <div id="a-ch3" class="a-chunk"><i></i><i class="a-short"></i></div>
+    <div id="a-claim">The cut decides the answer</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#a-q, #a-r, #a-doc, #a-sent, #a-page-no, #a-llm, #a-llm-note, #a-arrow, #a-chunks-label, .a-chunk, #a-claim", { opacity: 0 });
+
+    // l01: Riya asks; the answer is one sentence on page four
+    tl.fromTo("#a-phone", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#a-name-sub", 0.418);
+    tl.set("#a-q", { opacity: 1 }, 2.6);
+    [2.635, 2.833, 3.088, 3.506, 4.029, 4.168].forEach((t, i) => blurIn(`#a-q .a-w:nth-child(${i + 1})`, t, 0.12));
+    blurIn("#a-r", 4.62, 0.2);
+    blurOut("#a-name", 4.75, 0.25);
+    tl.fromTo("#a-doc", { opacity: 0, x: 90 }, { opacity: 1, x: 0, duration: 0.55, ease: "expo.out" }, 5.143);
+    blurIn("#a-sent", 5.875, 0.25);
+    blurIn("#a-page-no", 7.024, 0.2);
+
+    // l02: the model never reads the whole PDF, only the retrieved chunks
+    const L2 = 9.917;
+    blurOut("#a-phone", L2 - 0.05, 0.25);
+    tl.fromTo("#a-llm", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 10.265);
+    tl.to("#a-page", { opacity: 0.45, duration: 0.4, ease: "power2.inOut" }, 10.567);
+    tl.fromTo("#a-under1", { x: 0, y: 0 }, { x: 18, y: 18, duration: 0.45, ease: "expo.out" }, 11.182);
+    tl.fromTo("#a-under2", { x: 0, y: 0 }, { x: 36, y: 36, duration: 0.45, ease: "expo.out" }, 11.182);
+    ["#a-ch1", "#a-ch2", "#a-ch3"].forEach((sel, i) => tl.fromTo(sel, { opacity: 0, x: 430 }, { opacity: 1, x: 0, duration: 0.55, ease: "expo.out" }, 12.645 + i * 0.14));
+    blurIn("#a-chunks-label", 13.609, 0.2);
+    tl.fromTo("#a-arrow", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "expo.out" }, 14.131);
+    blurIn("#a-llm-note", 14.45, 0.2);
+    blurIn("#a-claim", 15.768, 0.25);
+
+    blurOut("#a-doc, #a-llm, #a-llm-note, #a-arrow, #a-chunks-label, .a-chunk, #a-claim", 17.8, 0.22);
+
+    window.__timelines["ask"] = tl;
+  </script>
+</template>

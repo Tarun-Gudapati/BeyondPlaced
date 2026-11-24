@@ -1,0 +1,82 @@
+[
+  {
+    "word": "So",
+    "start": 0,
+    "end": 0.151
+  },
+  {
+    "word": "keep",
+    "start": 0.221,
+    "end": 0.383
+  },
+  {
+    "word": "a",
+    "start": 0.441,
+    "end": 0.464
+  },
+  {
+    "word": "buffer,",
+    "start": 0.511,
+    "end": 0.975
+  },
+  {
+    "word": "split",
+    "start": 1.115,
+    "end": 1.428
+  },
+  {
+    "word": "on",
+    "start": 1.474,
+    "end": 1.544
+  },
+  {
+    "word": "the",
+    "start": 1.579,
+    "end": 1.649
+  },
+  {
+    "word": "blank",
+    "start": 1.683,
+    "end": 1.916
+  },
+  {
+    "word": "line,",
+    "start": 1.985,
+    "end": 2.345
+  },
+  {
+    "word": "and",
+    "start": 2.485,
+    "end": 2.624
+  },
+  {
+    "word": "add",
+    "start": 2.682,
+    "end": 2.844
+  },
+  {
+    "word": "each",
+    "start": 2.914,
+    "end": 3.123
+  },
+  {
+    "word": "token",
+    "start": 3.17,
+    "end": 3.483
+  },
+  {
+    "word": "to",
+    "start": 3.529,
+    "end": 3.576
+  },
+  {
+    "word": "the",
+    "start": 3.634,
+    "end": 3.704
+  },
+  {
+    "word": "page.",
+    "start": 3.75,
+    "end": 4.458
+  }
+]

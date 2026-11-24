@@ -1,0 +1,117 @@
+[
+  {
+    "word": "But",
+    "start": 0,
+    "end": 0.174
+  },
+  {
+    "word": "a",
+    "start": 0.209,
+    "end": 0.232
+  },
+  {
+    "word": "stuck",
+    "start": 0.29,
+    "end": 0.557
+  },
+  {
+    "word": "model",
+    "start": 0.639,
+    "end": 0.917
+  },
+  {
+    "word": "can",
+    "start": 0.975,
+    "end": 1.091
+  },
+  {
+    "word": "repeat",
+    "start": 1.149,
+    "end": 1.451
+  },
+  {
+    "word": "the",
+    "start": 1.498,
+    "end": 1.567
+  },
+  {
+    "word": "same",
+    "start": 1.614,
+    "end": 1.846
+  },
+  {
+    "word": "call",
+    "start": 1.892,
+    "end": 2.125
+  },
+  {
+    "word": "forever,",
+    "start": 2.183,
+    "end": 2.717
+  },
+  {
+    "word": "and",
+    "start": 2.81,
+    "end": 2.949
+  },
+  {
+    "word": "every",
+    "start": 3.007,
+    "end": 3.216
+  },
+  {
+    "word": "lap",
+    "start": 3.274,
+    "end": 3.506
+  },
+  {
+    "word": "costs",
+    "start": 3.587,
+    "end": 3.936
+  },
+  {
+    "word": "tokens.",
+    "start": 3.994,
+    "end": 4.667
+  },
+  {
+    "word": "So",
+    "start": 5.085,
+    "end": 5.224
+  },
+  {
+    "word": "you",
+    "start": 5.283,
+    "end": 5.364
+  },
+  {
+    "word": "set",
+    "start": 5.433,
+    "end": 5.642
+  },
+  {
+    "word": "max",
+    "start": 5.724,
+    "end": 5.968
+  },
+  {
+    "word": "steps:",
+    "start": 6.014,
+    "end": 6.548
+  },
+  {
+    "word": "a",
+    "start": 6.711,
+    "end": 6.769
+  },
+  {
+    "word": "hard",
+    "start": 6.861,
+    "end": 7.082
+  },
+  {
+    "word": "stop.",
+    "start": 7.14,
+    "end": 8.22
+  }
+]

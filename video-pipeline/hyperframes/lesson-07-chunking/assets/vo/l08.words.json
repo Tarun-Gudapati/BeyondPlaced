@@ -1,0 +1,92 @@
+[
+  {
+    "word": "Give",
+    "start": 0,
+    "end": 0.255
+  },
+  {
+    "word": "every",
+    "start": 0.302,
+    "end": 0.534
+  },
+  {
+    "word": "chunk",
+    "start": 0.58,
+    "end": 0.836
+  },
+  {
+    "word": "an",
+    "start": 0.894,
+    "end": 0.964
+  },
+  {
+    "word": "ID",
+    "start": 1.045,
+    "end": 1.277
+  },
+  {
+    "word": "card:",
+    "start": 1.44,
+    "end": 1.892
+  },
+  {
+    "word": "the",
+    "start": 2.032,
+    "end": 2.136
+  },
+  {
+    "word": "file",
+    "start": 2.194,
+    "end": 2.485
+  },
+  {
+    "word": "name",
+    "start": 2.519,
+    "end": 2.74
+  },
+  {
+    "word": "and",
+    "start": 2.775,
+    "end": 2.868
+  },
+  {
+    "word": "the",
+    "start": 2.902,
+    "end": 2.972
+  },
+  {
+    "word": "page",
+    "start": 3.007,
+    "end": 3.286
+  },
+  {
+    "word": "number.",
+    "start": 3.332,
+    "end": 3.785
+  },
+  {
+    "word": "That",
+    "start": 4.017,
+    "end": 4.238
+  },
+  {
+    "word": "becomes",
+    "start": 4.296,
+    "end": 4.656
+  },
+  {
+    "word": "your",
+    "start": 4.702,
+    "end": 4.83
+  },
+  {
+    "word": "citation",
+    "start": 4.888,
+    "end": 5.445
+  },
+  {
+    "word": "later.",
+    "start": 5.515,
+    "end": 6.502
+  }
+]

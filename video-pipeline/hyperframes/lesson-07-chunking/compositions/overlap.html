@@ -1,0 +1,99 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #o-title { position: absolute; left: 120px; top: 60px; font-size: 68px; font-weight: 900; letter-spacing: -0.02em; }
+    .o-lab { position: absolute; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #o-lab1 { left: 120px; top: 164px; }
+    #o-lab2 { left: 1664px; top: 448px; }
+    .o-card { position: absolute; height: 170px; background: #FFFFFF; border: 4px solid #94A3B8; border-radius: 18px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); z-index: 1; }
+    #o-c1 { left: 120px; top: 216px; width: 1100px; }
+    #o-c2 { left: 600px; top: 500px; width: 1200px; }
+    .o-line { position: absolute; height: 20px; border-radius: 10px; background: #E2E8F0; }
+    .o-s { position: absolute; top: 46px; height: 70px; line-height: 70px; background: #FFEDD5; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 34px; white-space: nowrap; border-radius: 8px; }
+    #o-s1 { left: 478px; padding: 0 12px; }
+    #o-s2 { left: 0; padding: 0 12px 0 10px; }
+    #o-edge { position: absolute; left: 1218px; top: 500px; width: 4px; height: 170px; background: #94A3B8; z-index: 2; }
+    #o-band { position: absolute; left: 600px; top: 216px; width: 620px; height: 454px; background: rgba(15,118,110,0.14); border-left: 5px dashed #0F766E; border-right: 5px dashed #0F766E; z-index: 0; }
+    #o-band-lab { position: absolute; left: 600px; top: 420px; width: 620px; text-align: center; font-size: 38px; font-weight: 700; color: #0F766E; z-index: 2; }
+    #o-ring { position: absolute; left: 602px; top: 540px; width: 990px; height: 90px; border: 6px solid #EA580C; border-radius: 14px; z-index: 3; }
+    #o-whole { position: absolute; left: 604px; top: 690px; font-size: 40px; font-weight: 900; letter-spacing: -0.01em; color: #0F766E; }
+    #o-better { position: absolute; left: 120px; top: 800px; font-size: 38px; font-weight: 700; color: #334155; }
+    #o-split { position: absolute; left: 120px; top: 862px; display: flex; align-items: center; }
+    .o-seg { height: 76px; line-height: 68px; padding: 0 22px; background: #FFFFFF; border: 4px solid #94A3B8; border-radius: 12px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; white-space: nowrap; }
+    .o-tick { width: 44px; height: 110px; display: grid; place-items: center; }
+    .o-tick i { display: block; width: 7px; height: 110px; border-radius: 4px; background: #0F766E; transform-origin: center top; }
+    #o-bad { position: absolute; left: 800px; top: 848px; width: 0; height: 104px; border-left: 6px dashed #64748B; z-index: 2; }
+    #o-bad-lab { position: absolute; left: 700px; top: 958px; font-size: 32px; font-weight: 700; color: #475569; }
+  </style>
+  <div id="root" data-composition-id="overlap" data-width="1920" data-height="1080">
+    <div id="o-title">The fix: overlap</div>
+    <div id="o-band"></div>
+    <div id="o-lab1" class="o-lab">chunk 1</div>
+    <div id="o-c1" class="o-card">
+      <div class="o-line" style="left: 30px; top: 40px; width: 410px"></div>
+      <div class="o-line" style="left: 30px; top: 76px; width: 360px"></div>
+      <div class="o-line" style="left: 30px; top: 112px; width: 410px"></div>
+      <div id="o-s1" class="o-s">Students with active backlogs</div>
+    </div>
+    <div id="o-lab2" class="o-lab">chunk 2</div>
+    <div id="o-c2" class="o-card">
+      <div id="o-s2" class="o-s">Students with active backlogs are not eligible.</div>
+      <div class="o-line" style="left: 1010px; top: 56px; width: 150px"></div>
+      <div class="o-line" style="left: 1010px; top: 92px; width: 110px"></div>
+    </div>
+    <div id="o-edge"></div>
+    <div id="o-band-lab">overlap · about 50 tokens</div>
+    <div id="o-ring"></div>
+    <div id="o-whole">whole in chunk 2</div>
+    <div id="o-better">Better: cut where sentences end</div>
+    <div id="o-split">
+      <div class="o-seg">Minimum CGPA is 7.5.</div>
+      <div class="o-tick"><i id="o-t1"></i></div>
+      <div class="o-seg">No active backlogs.</div>
+      <div class="o-tick"><i id="o-t2"></i></div>
+      <div class="o-seg">Register before each drive.</div>
+    </div>
+    <div id="o-bad"></div>
+    <div id="o-bad-lab">fixed-size cut</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#o-title, #o-band-lab, #o-ring, #o-whole, #o-better, #o-split, #o-bad, #o-bad-lab", { opacity: 0 });
+    gsap.set("#o-c2", { clipPath: "inset(0px 0px 0px 620px)" });
+    gsap.set("#o-band", { clipPath: "inset(0px 0px 100% 0px)" });
+    gsap.set("#o-t1, #o-t2", { scaleY: 0 });
+
+    // the two chunks from the cut: the sentence is still split
+    tl.fromTo("#o-c1, #o-lab1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#o-c2, #o-lab2, #o-edge", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    blurIn("#o-title", 0.232, 0.2);
+
+    // "Repeat about fifty tokens": chunk 2 starts earlier
+    tl.to("#o-edge", { opacity: 0, duration: 0.15 }, 1.707);
+    tl.to("#o-c2", { clipPath: "inset(0px 0px 0px 0px)", duration: 0.95, ease: "power2.inOut" }, 1.707);
+    blurIn("#o-band-lab", 2.357, 0.2);
+    // "from the end of one chunk at the start of the next"
+    tl.to("#o-band", { clipPath: "inset(0px 0px 0% 0px)", duration: 0.9, ease: "power2.inOut" }, 3.634);
+
+    // "the sentence survives whole"
+    tl.fromTo("#o-ring", { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 7.467);
+    blurIn("#o-whole", 7.943, 0.2);
+
+    // "split on paragraphs and sentences, not character counts"
+    blurIn("#o-better", 10.276, 0.2);
+    tl.fromTo("#o-split", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 10.833);
+    blurIn("#o-bad", 10.95, 0.2);
+    blurIn("#o-bad-lab", 10.95, 0.2);
+    tl.to("#o-t1", { scaleY: 1, duration: 0.3, ease: "power4.out" }, 11.333);
+    tl.to("#o-t2", { scaleY: 1, duration: 0.3, ease: "power4.out" }, 12.111);
+    blurOut("#o-bad", 13.051, 0.25);
+    blurOut("#o-bad-lab", 13.051, 0.25);
+
+    blurOut("#o-title, #o-band, #o-lab1, #o-c1, #o-lab2, #o-c2, #o-band-lab, #o-ring, #o-whole, #o-better, #o-split", 14.55, 0.22);
+
+    window.__timelines["overlap"] = tl;
+  </script>
+</template>

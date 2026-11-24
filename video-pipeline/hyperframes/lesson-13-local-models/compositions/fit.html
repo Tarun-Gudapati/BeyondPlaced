@@ -1,0 +1,81 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #f-head { position: absolute; left: 180px; top: 110px; font-size: 76px; font-weight: 900; letter-spacing: -0.02em; }
+    #f-wl { position: absolute; left: 180px; top: 240px; font-size: 34px; font-weight: 700; color: #475569; }
+    #f-bits { position: absolute; left: 180px; top: 296px; display: flex; gap: 8px; }
+    .f-bit { width: 64px; height: 64px; border-radius: 8px; background: #99F6E4; border: 3px solid #0F766E; }
+    #f-count { position: absolute; left: 180px; top: 384px; width: 330px; height: 90px; font-family: "JetBrains Mono", monospace; font-size: 68px; font-weight: 700; line-height: 90px; }
+    #f-c16, #f-c4 { position: absolute; left: 0; top: 0; white-space: nowrap; }
+    #f-c4 { color: #EA580C; }
+    #f-q1 { position: absolute; left: 520px; top: 404px; font-size: 44px; font-weight: 900; color: #0F766E; }
+    #f-q2 { position: absolute; left: 780px; top: 410px; font-size: 36px; font-weight: 700; color: #475569; }
+    .f-bl { position: absolute; left: 180px; font-size: 34px; font-weight: 700; }
+    #f-b1l { top: 548px; }
+    #f-b2l { top: 728px; }
+    .f-barwrap { position: absolute; left: 180px; height: 96px; }
+    #f-b1w { top: 598px; width: 720px; }
+    #f-b2w { top: 778px; width: 1440px; }
+    .f-bar { position: absolute; inset: 0; border: 4px solid #0B1220; border-radius: 14px; background: #FFFFFF; }
+    .f-os { position: absolute; left: 8px; top: 8px; width: 262px; height: 80px; border-radius: 8px; background: #E2E8F0; display: grid; place-items: center; font-size: 28px; font-weight: 700; color: #475569; }
+    .f-m { position: absolute; top: 8px; height: 80px; border-radius: 8px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-family: "JetBrains Mono", monospace; font-size: 36px; font-weight: 700; }
+    #f-m3 { left: 278px; width: 180px; }
+    #f-m8 { left: 278px; width: 405px; }
+    #f-fit { position: absolute; left: 930px; top: 622px; font-size: 38px; font-weight: 900; color: #0F766E; }
+    #f-more { position: absolute; left: 900px; top: 804px; font-size: 34px; font-weight: 700; color: #475569; }
+    #f-note { position: absolute; left: 1120px; top: 896px; width: 500px; text-align: right; font-size: 28px; color: #64748B; }
+  </style>
+  <div id="root" data-composition-id="fit" data-width="1920" data-height="1080">
+    <div id="f-head">Will it fit in RAM?</div>
+    <div id="f-wl">one weight</div>
+    <div id="f-bits">
+      <i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i><i class="f-bit"></i>
+    </div>
+    <div id="f-count" data-layout-allow-overlap><span id="f-c16" data-layout-allow-overlap>16 bits</span><span id="f-c4" data-layout-allow-overlap>4 bits</span></div>
+    <div id="f-q1">quantised</div>
+    <div id="f-q2">about ¼ of the memory, slightly worse answers</div>
+    <div id="f-b1l" class="f-bl">8 GB laptop</div>
+    <div id="f-b1w" class="f-barwrap"><div class="f-bar"></div><div class="f-os">OS + apps</div><div id="f-m3" class="f-m">3B</div></div>
+    <div id="f-fit">fits · about 2 GB</div>
+    <div id="f-b2l" class="f-bl">16 GB laptop</div>
+    <div id="f-b2w" class="f-barwrap"><div class="f-bar"></div><div class="f-os">OS + apps</div><div id="f-m8" class="f-m">8B</div></div>
+    <div id="f-more">room for 7B–8B</div>
+    <div id="f-note">block sizes are illustrative</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L10 = 9.034;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const bits = gsap.utils.toArray(".f-bit");
+
+    gsap.set("#f-wl, #f-c16, #f-c4, #f-q1, #f-q2, #f-b1l, #f-b1w, #f-m3, #f-fit, #f-b2l, #f-b2w, #f-m8, #f-more, #f-note", { opacity: 0 });
+    gsap.set(bits, { opacity: 0 });
+
+    // l09: every weight must fit in RAM, so 16 bits become about 4
+    tl.fromTo("#f-head", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0.1);
+    blurIn("#f-wl", 1.544, 0.2);
+    bits.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 1.892 + i * 0.035));
+    blurIn("#f-c16", 2.6, 0.2);
+    blurIn("#f-q1", 4.435, 0.2);
+    bits.slice(4).forEach((el, i) => tl.to(el, { opacity: 0, scale: 0.5, duration: 0.25, ease: "power3.in" }, 5.968 + (11 - i) * 0.045));
+    tl.to("#f-c16", { opacity: 0, duration: 0.2 }, 5.968);
+    tl.fromTo("#f-c4", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 6.15);
+    blurIn("#f-q2", 7.488, 0.2);
+
+    // l10: 8 GB holds a 3B model; bigger models need more RAM
+    blurIn("#f-b1l", L10 + 0.372, 0.2);
+    tl.fromTo("#f-b1w", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, L10 + 0.5);
+    tl.fromTo("#f-m3", { opacity: 0, x: 380 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, L10 + 1.939);
+    blurIn("#f-fit", L10 + 3.425, 0.2);
+    blurIn("#f-b2l", L10 + 4.261, 0.2);
+    tl.fromTo("#f-b2w", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.55, ease: "power2.inOut" }, L10 + 4.3);
+    tl.fromTo("#f-m8", { opacity: 0, x: 500 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, L10 + 4.75);
+    blurIn("#f-more", L10 + 4.95, 0.2);
+    blurIn("#f-note", L10 + 0.9, 0.2);
+
+    blurOut("#f-head, #f-wl, #f-bits, #f-count, #f-q1, #f-q2, #f-b1l, #f-b1w, #f-fit, #f-b2l, #f-b2w, #f-more, #f-note", 15.45, 0.2);
+
+    window.__timelines["fit"] = tl;
+  </script>
+</template>

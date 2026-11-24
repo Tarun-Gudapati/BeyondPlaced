@@ -1,0 +1,97 @@
+[
+  {
+    "word": "Rules",
+    "start": 0,
+    "end": 0.372
+  },
+  {
+    "word": "live",
+    "start": 0.441,
+    "end": 0.615
+  },
+  {
+    "word": "in",
+    "start": 0.639,
+    "end": 0.697
+  },
+  {
+    "word": "the",
+    "start": 0.731,
+    "end": 0.801
+  },
+  {
+    "word": "system",
+    "start": 0.848,
+    "end": 1.184
+  },
+  {
+    "word": "prompt.",
+    "start": 1.254,
+    "end": 1.73
+  },
+  {
+    "word": "The",
+    "start": 1.892,
+    "end": 2.009
+  },
+  {
+    "word": "job",
+    "start": 2.078,
+    "end": 2.276
+  },
+  {
+    "word": "description",
+    "start": 2.334,
+    "end": 2.868
+  },
+  {
+    "word": "goes",
+    "start": 2.937,
+    "end": 3.193
+  },
+  {
+    "word": "in",
+    "start": 3.239,
+    "end": 3.297
+  },
+  {
+    "word": "the",
+    "start": 3.332,
+    "end": 3.402
+  },
+  {
+    "word": "user",
+    "start": 3.471,
+    "end": 3.715
+  },
+  {
+    "word": "message,",
+    "start": 3.75,
+    "end": 4.226
+  },
+  {
+    "word": "wrapped",
+    "start": 4.319,
+    "end": 4.644
+  },
+  {
+    "word": "in",
+    "start": 4.679,
+    "end": 4.76
+  },
+  {
+    "word": "tags,",
+    "start": 4.841,
+    "end": 5.352
+  },
+  {
+    "word": "as",
+    "start": 5.399,
+    "end": 5.561
+  },
+  {
+    "word": "data.",
+    "start": 5.642,
+    "end": 6.502
+  }
+]

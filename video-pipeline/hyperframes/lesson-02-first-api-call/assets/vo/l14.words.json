@@ -1,0 +1,37 @@
+[
+  {
+    "word": "Next",
+    "start": 0,
+    "end": 0.325
+  },
+  {
+    "word": "lesson:",
+    "start": 0.383,
+    "end": 0.801
+  },
+  {
+    "word": "prompt",
+    "start": 0.964,
+    "end": 1.277
+  },
+  {
+    "word": "engineering",
+    "start": 1.324,
+    "end": 1.869
+  },
+  {
+    "word": "that",
+    "start": 1.916,
+    "end": 2.032
+  },
+  {
+    "word": "survives",
+    "start": 2.078,
+    "end": 2.508
+  },
+  {
+    "word": "production.",
+    "start": 2.554,
+    "end": 3.437
+  }
+]

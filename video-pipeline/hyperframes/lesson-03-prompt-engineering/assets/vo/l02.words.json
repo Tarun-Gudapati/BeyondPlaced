@@ -1,0 +1,87 @@
+[
+  {
+    "word": "Back",
+    "start": 0,
+    "end": 0.313
+  },
+  {
+    "word": "comes",
+    "start": 0.406,
+    "end": 0.662
+  },
+  {
+    "word": "a",
+    "start": 0.708,
+    "end": 0.731
+  },
+  {
+    "word": "friendly",
+    "start": 0.789,
+    "end": 1.126
+  },
+  {
+    "word": "paragraph.",
+    "start": 1.184,
+    "end": 1.892
+  },
+  {
+    "word": "But",
+    "start": 2.252,
+    "end": 2.403
+  },
+  {
+    "word": "a",
+    "start": 2.438,
+    "end": 2.461
+  },
+  {
+    "word": "program",
+    "start": 2.519,
+    "end": 2.961
+  },
+  {
+    "word": "is",
+    "start": 3.019,
+    "end": 3.088
+  },
+  {
+    "word": "reading",
+    "start": 3.158,
+    "end": 3.437
+  },
+  {
+    "word": "this",
+    "start": 3.471,
+    "end": 3.587
+  },
+  {
+    "word": "reply,",
+    "start": 3.657,
+    "end": 4.261
+  },
+  {
+    "word": "so",
+    "start": 4.377,
+    "end": 4.516
+  },
+  {
+    "word": "prose",
+    "start": 4.586,
+    "end": 4.957
+  },
+  {
+    "word": "is",
+    "start": 4.992,
+    "end": 5.074
+  },
+  {
+    "word": "a",
+    "start": 5.12,
+    "end": 5.155
+  },
+  {
+    "word": "bug.",
+    "start": 5.201,
+    "end": 6.13
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "word": "In",
+    "start": 0,
+    "end": 0.186
+  },
+  {
+    "word": "the",
+    "start": 0.232,
+    "end": 0.302
+  },
+  {
+    "word": "browser,",
+    "start": 0.337,
+    "end": 0.813
+  },
+  {
+    "word": "fetch",
+    "start": 0.929,
+    "end": 1.207
+  },
+  {
+    "word": "reads",
+    "start": 1.277,
+    "end": 1.533
+  },
+  {
+    "word": "the",
+    "start": 1.591,
+    "end": 1.672
+  },
+  {
+    "word": "stream.",
+    "start": 1.718,
+    "end": 2.264
+  },
+  {
+    "word": "One",
+    "start": 2.682,
+    "end": 2.914
+  },
+  {
+    "word": "read",
+    "start": 2.961,
+    "end": 3.146
+  },
+  {
+    "word": "can",
+    "start": 3.204,
+    "end": 3.309
+  },
+  {
+    "word": "hold",
+    "start": 3.367,
+    "end": 3.553
+  },
+  {
+    "word": "three",
+    "start": 3.599,
+    "end": 3.808
+  },
+  {
+    "word": "events,",
+    "start": 3.843,
+    "end": 4.342
+  },
+  {
+    "word": "or",
+    "start": 4.423,
+    "end": 4.586
+  },
+  {
+    "word": "half",
+    "start": 4.656,
+    "end": 4.841
+  },
+  {
+    "word": "of",
+    "start": 4.899,
+    "end": 4.957
+  },
+  {
+    "word": "one.",
+    "start": 5.05,
+    "end": 5.944
+  }
+]

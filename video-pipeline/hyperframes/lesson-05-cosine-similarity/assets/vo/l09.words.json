@@ -1,0 +1,82 @@
+[
+  {
+    "word": "Sort",
+    "start": 0,
+    "end": 0.337
+  },
+  {
+    "word": "them,",
+    "start": 0.372,
+    "end": 0.627
+  },
+  {
+    "word": "keep",
+    "start": 0.743,
+    "end": 0.94
+  },
+  {
+    "word": "the",
+    "start": 0.987,
+    "end": 1.057
+  },
+  {
+    "word": "top",
+    "start": 1.103,
+    "end": 1.312
+  },
+  {
+    "word": "three.",
+    "start": 1.37,
+    "end": 1.846
+  },
+  {
+    "word": "That",
+    "start": 2.078,
+    "end": 2.31
+  },
+  {
+    "word": "is",
+    "start": 2.368,
+    "end": 2.45
+  },
+  {
+    "word": "vector",
+    "start": 2.519,
+    "end": 2.844
+  },
+  {
+    "word": "search,",
+    "start": 2.902,
+    "end": 3.262
+  },
+  {
+    "word": "in",
+    "start": 3.286,
+    "end": 3.39
+  },
+  {
+    "word": "a",
+    "start": 3.425,
+    "end": 3.448
+  },
+  {
+    "word": "few",
+    "start": 3.506,
+    "end": 3.692
+  },
+  {
+    "word": "lines",
+    "start": 3.75,
+    "end": 4.017
+  },
+  {
+    "word": "of",
+    "start": 4.052,
+    "end": 4.11
+  },
+  {
+    "word": "NumPy.",
+    "start": 4.168,
+    "end": 5.155
+  }
+]

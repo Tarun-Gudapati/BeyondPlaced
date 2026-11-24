@@ -1,0 +1,67 @@
+[
+  {
+    "word": "The",
+    "start": 0,
+    "end": 0.163
+  },
+  {
+    "word": "same",
+    "start": 0.221,
+    "end": 0.441
+  },
+  {
+    "word": "idea",
+    "start": 0.488,
+    "end": 0.778
+  },
+  {
+    "word": "powers",
+    "start": 0.848,
+    "end": 1.161
+  },
+  {
+    "word": "RAG,",
+    "start": 1.242,
+    "end": 1.66
+  },
+  {
+    "word": "and",
+    "start": 1.776,
+    "end": 1.927
+  },
+  {
+    "word": "matching",
+    "start": 1.985,
+    "end": 2.299
+  },
+  {
+    "word": "your",
+    "start": 2.345,
+    "end": 2.461
+  },
+  {
+    "word": "resume",
+    "start": 2.496,
+    "end": 2.879
+  },
+  {
+    "word": "to",
+    "start": 2.914,
+    "end": 2.984
+  },
+  {
+    "word": "a",
+    "start": 3.053,
+    "end": 3.077
+  },
+  {
+    "word": "job",
+    "start": 3.135,
+    "end": 3.309
+  },
+  {
+    "word": "description.",
+    "start": 3.367,
+    "end": 4.551
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "word": "And",
+    "start": 0,
+    "end": 0.163
+  },
+  {
+    "word": "when",
+    "start": 0.209,
+    "end": 0.337
+  },
+  {
+    "word": "a",
+    "start": 0.372,
+    "end": 0.395
+  },
+  {
+    "word": "tool",
+    "start": 0.453,
+    "end": 0.685
+  },
+  {
+    "word": "fails,",
+    "start": 0.755,
+    "end": 1.265
+  },
+  {
+    "word": "don't",
+    "start": 1.347,
+    "end": 1.556
+  },
+  {
+    "word": "crash.",
+    "start": 1.602,
+    "end": 2.148
+  },
+  {
+    "word": "Send",
+    "start": 2.728,
+    "end": 2.984
+  },
+  {
+    "word": "the",
+    "start": 3.03,
+    "end": 3.111
+  },
+  {
+    "word": "error",
+    "start": 3.181,
+    "end": 3.413
+  },
+  {
+    "word": "back",
+    "start": 3.46,
+    "end": 3.669
+  },
+  {
+    "word": "as",
+    "start": 3.738,
+    "end": 3.843
+  },
+  {
+    "word": "an",
+    "start": 3.878,
+    "end": 3.924
+  },
+  {
+    "word": "observation,",
+    "start": 3.971,
+    "end": 4.725
+  },
+  {
+    "word": "and",
+    "start": 4.865,
+    "end": 5.004
+  },
+  {
+    "word": "the",
+    "start": 5.05,
+    "end": 5.12
+  },
+  {
+    "word": "model",
+    "start": 5.155,
+    "end": 5.41
+  },
+  {
+    "word": "usually",
+    "start": 5.503,
+    "end": 5.828
+  },
+  {
+    "word": "corrects",
+    "start": 5.875,
+    "end": 6.2
+  },
+  {
+    "word": "itself.",
+    "start": 6.235,
+    "end": 7.152
+  }
+]

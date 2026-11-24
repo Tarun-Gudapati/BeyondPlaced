@@ -1,0 +1,75 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #s-top { position: absolute; left: 0; top: 0; width: 1920px; height: 540px; }
+    #s-big-label { position: absolute; left: 150px; top: 100px; font-size: 72px; font-weight: 900; letter-spacing: -0.02em; }
+    #s-big { position: absolute; left: 150px; top: 216px; width: 1620px; height: 190px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 22px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); display: flex; gap: 14px; padding: 22px; }
+    .s-topic { flex: 1; border-radius: 12px; background: #CCFBF1; border: 3px solid #5EEAD4; display: grid; place-items: center; font-size: 34px; font-weight: 700; }
+    .s-topic.s-hot { background: #FFEDD5; border-color: #EA580C; }
+    #s-n1 { position: absolute; left: 150px; top: 430px; font-size: 38px; font-weight: 700; color: #334155; }
+    #s-n2 { position: absolute; left: 980px; top: 430px; font-size: 38px; font-weight: 700; color: #334155; }
+    #s-small-label { position: absolute; left: 150px; top: 560px; font-size: 72px; font-weight: 900; letter-spacing: -0.02em; }
+    #s-small { position: absolute; left: 150px; top: 676px; width: 1620px; display: flex; gap: 14px; }
+    .s-tiny { flex: 1; height: 76px; border-radius: 12px; background: #FFFFFF; border: 4px solid #0F766E; }
+    #s-frag { position: absolute; left: 150px; top: 800px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 18px; padding: 24px 34px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 50px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    .s-fw { display: inline-block; }
+    #s-it { color: #C2410C; }
+    #s-q { position: absolute; left: 1380px; top: 822px; font-size: 54px; font-weight: 900; letter-spacing: -0.02em; color: #C2410C; }
+  </style>
+  <div id="root" data-composition-id="size" data-width="1920" data-height="1080">
+    <div id="s-top">
+      <div id="s-big-label">Too large</div>
+      <div id="s-big">
+        <div class="s-topic">eligibility</div>
+        <div class="s-topic">dress code</div>
+        <div class="s-topic">stipend</div>
+        <div class="s-topic s-hot">backlogs</div>
+        <div class="s-topic">hostel</div>
+        <div class="s-topic">leave</div>
+      </div>
+      <div id="s-n1">6 topics, 1 vector: a noisy match</div>
+      <div id="s-n2">5 of 6 parts are paid filler</div>
+    </div>
+    <div id="s-small-label">Too small</div>
+    <div id="s-small">
+      <div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div>
+      <div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div><div class="s-tiny"></div>
+    </div>
+    <div id="s-frag"><span class="s-fw" id="s-it">It</span> <span class="s-fw">must</span> <span class="s-fw">be</span> <span class="s-fw">cleared</span> <span class="s-fw">before</span> <span class="s-fw">the</span> <span class="s-fw">drive.</span></div>
+    <div id="s-q">what is “it”?</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const topics = gsap.utils.toArray("#s-big .s-topic");
+    const tiny = gsap.utils.toArray("#s-small .s-tiny");
+    const words = gsap.utils.toArray("#s-frag .s-fw");
+
+    gsap.set("#s-big-label, #s-n1, #s-n2, #s-small-label, #s-frag, #s-q", { opacity: 0 });
+    gsap.set(topics, { opacity: 0 });
+    gsap.set(tiny, { opacity: 0 });
+    gsap.set(words, { opacity: 0 });
+
+    // l03: too large
+    tl.fromTo("#s-big", { clipPath: "inset(0 100% 0 0 round 22px)" }, { clipPath: "inset(0 0% 0 0 round 22px)", duration: 0.7, ease: "power2.inOut" }, 0.05);
+    blurIn("#s-big-label", 0.766, 0.2);
+    topics.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 2.264 + i * 0.13));
+    blurIn("#s-n1", 4.795, 0.2);
+    blurIn("#s-n2", 5.341, 0.2);
+    topics.forEach((el, i) => { if (i !== 3) tl.to(el, { backgroundColor: "#E2E8F0", borderColor: "#CBD5E1", duration: 0.3, ease: "power2.out" }, 6.281 + i * 0.03); });
+
+    // l04: too small
+    tl.to("#s-top", { opacity: 0.3, duration: 0.4, ease: "power2.inOut" }, 7.595);
+    blurIn("#s-small-label", 8.059, 0.2);
+    tiny.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 8.315 + i * 0.04));
+    tl.to(tiny[6], { backgroundColor: "#FFEDD5", borderColor: "#EA580C", y: 14, duration: 0.3, ease: "expo.out" }, 10.05);
+    tl.set("#s-frag", { opacity: 1 }, 10.15);
+    [10.172, 10.335, 10.532, 10.66, 10.997, 11.345, 11.461].forEach((t, i) => blurIn(words[i], t, 0.12));
+    tl.fromTo("#s-q", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 12.251);
+
+    blurOut("#s-top, #s-small-label, #s-small, #s-frag, #s-q", 13.5, 0.22);
+
+    window.__timelines["size"] = tl;
+  </script>
+</template>

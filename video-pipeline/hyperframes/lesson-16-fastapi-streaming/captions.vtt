@@ -1,0 +1,137 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.694
+Rahul built a placement bot. He asks it
+
+2
+00:00:02.728 --> 00:00:05.375
+to explain binary search, then watches a spinner
+
+3
+00:00:05.422 --> 00:00:07.245
+for six long seconds.
+
+4
+00:00:07.595 --> 00:00:10.811
+Same bot, same model, with streaming switched on:
+
+5
+00:00:11.043 --> 00:00:13.818
+the first word shows up almost at once.
+
+6
+00:00:14.168 --> 00:00:16.722
+The model isn't any faster. It writes one
+
+7
+00:00:16.757 --> 00:00:18.789
+token at a time either way, and the
+
+8
+00:00:18.835 --> 00:00:21.273
+last word lands at the same moment.
+
+9
+00:00:21.623 --> 00:00:23.910
+What changed is the time to first token.
+
+10
+00:00:24.073 --> 00:00:26.731
+That's the clock your users actually feel.
+
+11
+00:00:27.081 --> 00:00:29.682
+Here's the path. The browser sends one request
+
+12
+00:00:29.705 --> 00:00:32.514
+to your FastAPI backend, which calls the model
+
+13
+00:00:32.561 --> 00:00:34.511
+with stream set to true.
+
+14
+00:00:34.861 --> 00:00:37.009
+Every chunk that comes back is yielded into
+
+15
+00:00:37.079 --> 00:00:39.586
+a streaming response, so it leaves your server
+
+16
+00:00:39.644 --> 00:00:40.852
+immediately.
+
+17
+00:00:41.202 --> 00:00:43.814
+On the wire it's Server-Sent Events: a line
+
+18
+00:00:43.849 --> 00:00:46.926
+starting with data, then a blank line. Plain
+
+19
+00:00:46.995 --> 00:00:48.075
+HTTP.
+
+20
+00:00:48.425 --> 00:00:50.944
+Wrap each token in JSON, because a token
+
+21
+00:00:51.002 --> 00:00:53.429
+can contain a newline, and a raw newline
+
+22
+00:00:53.475 --> 00:00:54.927
+breaks the message.
+
+23
+00:00:55.277 --> 00:00:58.191
+In the browser, fetch reads the stream. One
+
+24
+00:00:58.238 --> 00:01:00.234
+read can hold three events, or half of
+
+25
+00:01:00.327 --> 00:01:01.221
+one.
+
+26
+00:01:01.571 --> 00:01:03.487
+So keep a buffer, split on the blank
+
+27
+00:01:03.556 --> 00:01:06.029
+line, and add each token to the page.
+
+28
+00:01:06.379 --> 00:01:09.432
+After you deploy, test it again. A proxy
+
+29
+00:01:09.490 --> 00:01:11.720
+that buffers will hand over the whole answer
+
+30
+00:01:11.789 --> 00:01:13.020
+in one lump.
+
+31
+00:01:13.370 --> 00:01:16.122
+So remember: streaming doesn't cut total time or
+
+32
+00:01:16.191 --> 00:01:18.374
+cost. It cuts the wait before the first
+
+33
+00:01:18.432 --> 00:01:19.361
+word.
+
+34
+00:01:19.711 --> 00:01:22.730
+Next lesson: cost, latency and caching.

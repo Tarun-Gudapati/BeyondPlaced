@@ -1,0 +1,66 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #ed-win { position: absolute; left: 120px; top: 130px; width: 1270px; height: 800px; background: #0B1220; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    #ed-bar { height: 72px; display: flex; align-items: center; gap: 12px; padding: 0 32px; border-bottom: 2px solid #1E293B; }
+    .ed-dot { width: 16px; height: 16px; border-radius: 50%; background: #475569; }
+    #ed-file { margin-left: 16px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; color: #CBD5E1; }
+    #ed-code { position: absolute; left: 44px; top: 102px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; line-height: 44px; color: #F1F5F9; white-space: pre; }
+    .ed-ln { height: 44px; }
+    .ed-s { color: #5EEAD4; }
+    #ed-call { position: absolute; left: 20px; top: 362px; width: 1230px; height: 316px; border: 4px solid #EA580C; border-radius: 12px; background: rgba(234,88,12,0.12); }
+    #ed-name { position: absolute; left: 1440px; top: 300px; width: 380px; }
+    #ed-name-big { font-size: 80px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; }
+    #ed-name-sub { font-size: 34px; font-weight: 700; color: #475569; margin-top: 12px; line-height: 1.25; }
+    #ed-bot { position: absolute; left: 1470px; top: 540px; width: 230px; height: 340px; border: 10px solid #0B1220; border-radius: 40px; background: #FFFFFF; overflow: hidden; }
+    #ed-bot-h { height: 64px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; padding: 0 18px; font-size: 28px; font-weight: 700; color: #334155; }
+    .ed-bub { height: 34px; border-radius: 12px; margin: 18px 16px 0; }
+    .ed-bub.u { background: #0F766E; margin-left: 70px; }
+    .ed-bub.b { background: #E2E8F0; margin-right: 50px; }
+    #ed-say { position: absolute; left: 1440px; top: 440px; width: 380px; }
+    #ed-say-l { font-size: 34px; font-weight: 700; color: #0F766E; }
+    #ed-say-b { font-size: 68px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.08; margin-top: 10px; }
+    .ed-w { display: inline-block; }
+  </style>
+  <div id="root" data-composition-id="editor" data-width="1920" data-height="1080">
+    <div id="ed-win">
+      <div id="ed-bar"><span class="ed-dot"></span><span class="ed-dot"></span><span class="ed-dot"></span><span id="ed-file">tutor.py</span></div>
+      <div id="ed-code"><div class="ed-ln">from dotenv import load_dotenv</div><div class="ed-ln">from openai import OpenAI</div><div class="ed-ln"> </div><div class="ed-ln">load_dotenv()</div><div class="ed-ln">client = OpenAI()</div><div class="ed-ln"> </div><div class="ed-ln ed-c">resp = client.chat.completions.create(</div><div class="ed-ln ed-c">  model=<span class="ed-s">"gpt-4o-mini"</span>,</div><div class="ed-ln ed-c">  messages=[</div><div class="ed-ln ed-c">    {<span class="ed-s">"role"</span>: <span class="ed-s">"system"</span>, <span class="ed-s">"content"</span>: <span class="ed-s">"You are a patient DSA tutor."</span>},</div><div class="ed-ln ed-c">    {<span class="ed-s">"role"</span>: <span class="ed-s">"user"</span>, <span class="ed-s">"content"</span>: <span class="ed-s">"Explain binary search."</span>},</div><div class="ed-ln ed-c">  ],</div><div class="ed-ln ed-c">)</div><div class="ed-ln">print(resp.choices[0].message.content)</div></div>
+      <div id="ed-call" data-layout-ignore></div>
+    </div>
+    <div id="ed-name"><div id="ed-name-big">Ananya</div><div id="ed-name-sub">builds her own DSA tutor</div></div>
+    <div id="ed-bot"><div id="ed-bot-h">Chatbot</div><div class="ed-bub u"></div><div class="ed-bub b"></div><div class="ed-bub b"></div><div class="ed-bub u"></div></div>
+    <div id="ed-say">
+      <div id="ed-say-l">It starts with</div>
+      <div id="ed-say-b"><span class="ed-w">one</span><br /><span class="ed-w">API</span> <span class="ed-w">call</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const lines = gsap.utils.toArray("#ed-code .ed-ln");
+    const outside = lines.filter((el) => !el.classList.contains("ed-c"));
+
+    gsap.set(lines, { opacity: 0.6 });
+    gsap.set("#ed-name-sub, #ed-bot, #ed-call, #ed-say-l, #ed-say-b .ed-w", { opacity: 0 });
+
+    // l01: Ananya wants her own DSA tutor, not someone else's chatbot. All it takes is one short Python script.
+    tl.fromTo("#ed-win", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#ed-name-sub", 0.52, 0.2);
+    tl.fromTo("#ed-bot", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 2.38);
+    tl.to("#ed-bot", { opacity: 0, x: 260, rotation: 8, duration: 0.4, ease: "power3.in" }, 3.5);
+    lines.forEach((el, i) => tl.fromTo(el, { opacity: 0.6 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 5.4 + i * 0.07));
+
+    // l02: every serious AI product starts the same way: with an API call
+    blurOut("#ed-name", 7.5, 0.25);
+    tl.to(outside, { opacity: 0.5, duration: 0.4, ease: "power2.inOut" }, 8.9);
+    blurIn("#ed-say-l", 9.684, 0.2);
+    tl.fromTo("#ed-call", { opacity: 0, scale: 1.03 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 11.2);
+    [11.44, 11.542, 12.041].forEach((t, i) => blurIn(gsap.utils.toArray("#ed-say-b .ed-w")[i], t, 0.15));
+
+    blurOut("#ed-win, #ed-say", 12.98, 0.22);
+
+    window.__timelines["editor"] = tl;
+  </script>
+</template>

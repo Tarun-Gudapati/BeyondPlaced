@@ -1,0 +1,39 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #e-label { position: absolute; left: 180px; top: 220px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #e-l1 { position: absolute; left: 180px; top: 280px; font-size: 136px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
+    #e-l2 { position: absolute; left: 180px; top: 450px; font-size: 96px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+    .e-w { display: inline-block; }
+    .e-accent { color: #EA580C; font-family: "JetBrains Mono", monospace; letter-spacing: -0.04em; }
+    #e-next { position: absolute; left: 180px; top: 700px; width: 1560px; height: 200px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #e-next-l { position: absolute; left: 48px; top: 40px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #e-next-t { position: absolute; left: 48px; top: 92px; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; }
+    #e-mark { position: absolute; right: 48px; top: 70px; font-size: 52px; font-weight: 900; letter-spacing: -0.02em; color: #0F766E; }
+  </style>
+  <div id="root" data-composition-id="claim" data-width="1920" data-height="1080">
+    <div id="e-label">The one-line version</div>
+    <div id="e-l1"><span class="e-w">Same</span> <span class="e-w">SDK,</span></div>
+    <div id="e-l2"><span class="e-w">different</span> <span class="e-w e-accent">base_url</span></div>
+    <div id="e-next">
+      <div id="e-next-l">Next lesson</div>
+      <div id="e-next-t">Prompting vs RAG vs fine-tuning</div>
+      <div id="e-mark">BeyondPlaced</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L14 = 4.808;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+
+    gsap.set("#e-mark", { opacity: 0 });
+    blurIn("#e-label", 0.3, 0.2);
+    gsap.utils.toArray("#e-l1 .e-w").forEach((el, i) => blurIn(el, [1.544, 1.892][i], 0.15));
+    gsap.utils.toArray("#e-l2 .e-w").forEach((el, i) => blurIn(el, [2.74, 3.1][i], 0.15));
+
+    tl.fromTo("#e-next", { clipPath: "inset(0 100% 0 0 round 26px)" }, { clipPath: "inset(0 0% 0 0 round 26px)", duration: 0.6, ease: "power2.inOut" }, L14);
+    tl.fromTo("#e-mark", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, L14 + 2.6);
+
+    window.__timelines["claim"] = tl;
+  </script>
+</template>

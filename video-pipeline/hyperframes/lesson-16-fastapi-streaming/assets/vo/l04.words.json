@@ -1,0 +1,77 @@
+[
+  {
+    "word": "What",
+    "start": 0,
+    "end": 0.255
+  },
+  {
+    "word": "changed",
+    "start": 0.313,
+    "end": 0.731
+  },
+  {
+    "word": "is",
+    "start": 0.778,
+    "end": 0.859
+  },
+  {
+    "word": "the",
+    "start": 0.906,
+    "end": 0.975
+  },
+  {
+    "word": "time",
+    "start": 1.022,
+    "end": 1.265
+  },
+  {
+    "word": "to",
+    "start": 1.289,
+    "end": 1.347
+  },
+  {
+    "word": "first",
+    "start": 1.428,
+    "end": 1.683
+  },
+  {
+    "word": "token.",
+    "start": 1.73,
+    "end": 2.287
+  },
+  {
+    "word": "That's",
+    "start": 2.45,
+    "end": 2.728
+  },
+  {
+    "word": "the",
+    "start": 2.775,
+    "end": 2.844
+  },
+  {
+    "word": "clock",
+    "start": 2.902,
+    "end": 3.123
+  },
+  {
+    "word": "your",
+    "start": 3.181,
+    "end": 3.332
+  },
+  {
+    "word": "users",
+    "start": 3.413,
+    "end": 3.738
+  },
+  {
+    "word": "actually",
+    "start": 3.785,
+    "end": 4.122
+  },
+  {
+    "word": "feel.",
+    "start": 4.191,
+    "end": 5.108
+  }
+]

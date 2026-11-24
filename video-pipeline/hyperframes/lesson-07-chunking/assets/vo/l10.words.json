@@ -1,0 +1,92 @@
+[
+  {
+    "word": "Remember",
+    "start": 0,
+    "end": 0.372
+  },
+  {
+    "word": "this:",
+    "start": 0.418,
+    "end": 0.824
+  },
+  {
+    "word": "bad",
+    "start": 1.138,
+    "end": 1.393
+  },
+  {
+    "word": "chunking",
+    "start": 1.44,
+    "end": 1.811
+  },
+  {
+    "word": "ruins",
+    "start": 1.881,
+    "end": 2.287
+  },
+  {
+    "word": "good",
+    "start": 2.403,
+    "end": 2.624
+  },
+  {
+    "word": "models.",
+    "start": 2.67,
+    "end": 3.274
+  },
+  {
+    "word": "Start",
+    "start": 3.855,
+    "end": 4.191
+  },
+  {
+    "word": "at",
+    "start": 4.238,
+    "end": 4.307
+  },
+  {
+    "word": "five",
+    "start": 4.365,
+    "end": 4.621
+  },
+  {
+    "word": "hundred",
+    "start": 4.656,
+    "end": 4.911
+  },
+  {
+    "word": "tokens",
+    "start": 4.957,
+    "end": 5.352
+  },
+  {
+    "word": "with",
+    "start": 5.387,
+    "end": 5.538
+  },
+  {
+    "word": "fifty",
+    "start": 5.584,
+    "end": 5.875
+  },
+  {
+    "word": "of",
+    "start": 5.933,
+    "end": 5.979
+  },
+  {
+    "word": "overlap,",
+    "start": 6.037,
+    "end": 6.594
+  },
+  {
+    "word": "then",
+    "start": 6.711,
+    "end": 6.92
+  },
+  {
+    "word": "measure.",
+    "start": 7.001,
+    "end": 7.895
+  }
+]

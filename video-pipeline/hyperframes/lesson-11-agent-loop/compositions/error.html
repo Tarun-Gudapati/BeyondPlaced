@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .x-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #x-code-label { position: absolute; left: 1090px; top: 150px; font-size: 32px; font-weight: 700; color: #475569; }
+    #x-code { position: absolute; left: 1090px; top: 202px; width: 700px; background: #0B1220; color: #E2E8F0; border-radius: 20px; padding: 34px 38px; font-size: 32px; line-height: 1.6; white-space: pre; }
+    #x-code b { color: #5EEAD4; }
+    .x-row { position: absolute; left: 140px; display: flex; align-items: center; gap: 0; font-size: 38px; }
+    .x-role { width: 250px; flex: none; font-size: 34px; color: #475569; }
+    .x-box { background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 14px; padding: 16px 22px; }
+    #x-r1 { top: 210px; }
+    #x-r2 { top: 470px; }
+    #x-r3 { top: 730px; }
+    #x-r2 .x-box { border: 6px solid #EA580C; }
+    #x-r3 .x-box { border-color: #0F766E; background: #CCFBF1; }
+    .x-down { position: absolute; left: 480px; width: 8px; height: 100px; background: #0F766E; border-radius: 4px; transform-origin: center top; }
+    .x-down::after { content: ""; position: absolute; left: -10px; bottom: -14px; border-top: 18px solid #0F766E; border-left: 14px solid transparent; border-right: 14px solid transparent; }
+    #x-d1 { top: 322px; }
+    #x-d2 { top: 590px; }
+    #x-fail { position: absolute; left: 520px; top: 340px; font-size: 36px; font-weight: 700; color: #0B1220; }
+    #x-fix { position: absolute; left: 520px; top: 608px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #x-ok { margin-left: 24px; font-family: Inter, sans-serif; font-size: 56px; font-weight: 900; color: #0F766E; }
+  </style>
+  <div id="root" data-composition-id="error" data-width="1920" data-height="1080">
+    <div class="x-row x-mono" id="x-r1"><span class="x-role">assistant</span><span class="x-box">read_resume("priya.pdf")</span></div>
+    <div class="x-down" id="x-d1"></div>
+    <div id="x-fail">no such file</div>
+    <div class="x-row x-mono" id="x-r2"><span class="x-role">tool</span><span class="x-box">ERROR KeyError: 'priya.pdf'</span></div>
+    <div class="x-down" id="x-d2"></div>
+    <div id="x-fix">next turn</div>
+    <div class="x-row x-mono" id="x-r3"><span class="x-role">assistant</span><span class="x-box">list_resumes()</span><span id="x-ok">✓</span></div>
+
+    <div id="x-code-label">Your loop, around every tool call</div>
+    <div id="x-code" class="x-mono">try:
+    result = TOOLS[name](**args)
+<b>except Exception as e:
+    result = f"ERROR {e}"</b></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#x-code, #x-r2, #x-r3, #x-ok", { opacity: 0 });
+    gsap.set(".x-down", { scaleY: 0 });
+
+    tl.fromTo("#x-r1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 0.1);
+    blurIn("#x-fail", 0.755, 0.2);
+    blurIn("#x-code-label", 1.25, 0.2);
+    tl.fromTo("#x-code", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 1.347);
+
+    tl.to("#x-d1", { scaleY: 1, duration: 0.3, ease: "power2.inOut" }, 2.728);
+    tl.fromTo("#x-r2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 3.181);
+
+    tl.to("#x-d2", { scaleY: 1, duration: 0.3, ease: "power2.inOut" }, 4.865);
+    blurIn("#x-fix", 5.05, 0.2);
+    tl.fromTo("#x-r3", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 5.3);
+    tl.fromTo("#x-ok", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 5.875);
+
+    blurOut("#x-r1, #x-d1, #x-fail, #x-r2, #x-d2, #x-fix, #x-r3, #x-code-label, #x-code", 7.1, 0.25);
+
+    window.__timelines["error"] = tl;
+  </script>
+</template>

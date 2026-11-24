@@ -1,0 +1,82 @@
+[
+  {
+    "word": "On",
+    "start": 0,
+    "end": 0.197
+  },
+  {
+    "word": "an",
+    "start": 0.232,
+    "end": 0.302
+  },
+  {
+    "word": "eight",
+    "start": 0.372,
+    "end": 0.569
+  },
+  {
+    "word": "gigabyte",
+    "start": 0.627,
+    "end": 1.091
+  },
+  {
+    "word": "laptop,",
+    "start": 1.138,
+    "end": 1.707
+  },
+  {
+    "word": "a",
+    "start": 1.788,
+    "end": 1.858
+  },
+  {
+    "word": "three",
+    "start": 1.939,
+    "end": 2.183
+  },
+  {
+    "word": "billion",
+    "start": 2.241,
+    "end": 2.566
+  },
+  {
+    "word": "parameter",
+    "start": 2.624,
+    "end": 3.077
+  },
+  {
+    "word": "model",
+    "start": 3.111,
+    "end": 3.355
+  },
+  {
+    "word": "fits.",
+    "start": 3.425,
+    "end": 3.947
+  },
+  {
+    "word": "Bigger",
+    "start": 4.261,
+    "end": 4.551
+  },
+  {
+    "word": "models",
+    "start": 4.609,
+    "end": 4.946
+  },
+  {
+    "word": "need",
+    "start": 5.016,
+    "end": 5.213
+  },
+  {
+    "word": "more",
+    "start": 5.271,
+    "end": 5.445
+  },
+  {
+    "word": "RAM.",
+    "start": 5.492,
+    "end": 6.316
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "word": "Build",
+    "start": 0,
+    "end": 0.36
+  },
+  {
+    "word": "and",
+    "start": 0.406,
+    "end": 0.488
+  },
+  {
+    "word": "debug",
+    "start": 0.557,
+    "end": 0.975
+  },
+  {
+    "word": "on",
+    "start": 1.022,
+    "end": 1.091
+  },
+  {
+    "word": "the",
+    "start": 1.126,
+    "end": 1.196
+  },
+  {
+    "word": "free",
+    "start": 1.242,
+    "end": 1.463
+  },
+  {
+    "word": "local",
+    "start": 1.521,
+    "end": 1.811
+  },
+  {
+    "word": "model,",
+    "start": 1.881,
+    "end": 2.299
+  },
+  {
+    "word": "then",
+    "start": 2.461,
+    "end": 2.659
+  },
+  {
+    "word": "flip",
+    "start": 2.728,
+    "end": 2.961
+  },
+  {
+    "word": "one",
+    "start": 3.042,
+    "end": 3.239
+  },
+  {
+    "word": "setting",
+    "start": 3.286,
+    "end": 3.622
+  },
+  {
+    "word": "to",
+    "start": 3.68,
+    "end": 3.75
+  },
+  {
+    "word": "a",
+    "start": 3.831,
+    "end": 3.866
+  },
+  {
+    "word": "hosted",
+    "start": 3.936,
+    "end": 4.284
+  },
+  {
+    "word": "model",
+    "start": 4.342,
+    "end": 4.574
+  },
+  {
+    "word": "for",
+    "start": 4.632,
+    "end": 4.714
+  },
+  {
+    "word": "the",
+    "start": 4.748,
+    "end": 4.818
+  },
+  {
+    "word": "demo.",
+    "start": 4.865,
+    "end": 5.851
+  }
+]

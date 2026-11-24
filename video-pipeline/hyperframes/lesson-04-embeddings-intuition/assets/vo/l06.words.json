@@ -1,0 +1,107 @@
+[
+  {
+    "word": "Biryani",
+    "start": 0,
+    "end": 0.534
+  },
+  {
+    "word": "recipe",
+    "start": 0.604,
+    "end": 0.975
+  },
+  {
+    "word": "lands",
+    "start": 1.033,
+    "end": 1.335
+  },
+  {
+    "word": "far",
+    "start": 1.393,
+    "end": 1.625
+  },
+  {
+    "word": "away.",
+    "start": 1.672,
+    "end": 2.171
+  },
+  {
+    "word": "The",
+    "start": 2.334,
+    "end": 2.438
+  },
+  {
+    "word": "model",
+    "start": 2.496,
+    "end": 2.728
+  },
+  {
+    "word": "was",
+    "start": 2.775,
+    "end": 2.879
+  },
+  {
+    "word": "trained",
+    "start": 2.926,
+    "end": 3.239
+  },
+  {
+    "word": "on",
+    "start": 3.274,
+    "end": 3.355
+  },
+  {
+    "word": "huge",
+    "start": 3.437,
+    "end": 3.738
+  },
+  {
+    "word": "numbers",
+    "start": 3.785,
+    "end": 4.04
+  },
+  {
+    "word": "of",
+    "start": 4.075,
+    "end": 4.133
+  },
+  {
+    "word": "text",
+    "start": 4.191,
+    "end": 4.47
+  },
+  {
+    "word": "pairs,",
+    "start": 4.505,
+    "end": 4.981
+  },
+  {
+    "word": "so",
+    "start": 5.12,
+    "end": 5.259
+  },
+  {
+    "word": "close",
+    "start": 5.329,
+    "end": 5.596
+  },
+  {
+    "word": "points",
+    "start": 5.631,
+    "end": 5.921
+  },
+  {
+    "word": "mean",
+    "start": 5.991,
+    "end": 6.2
+  },
+  {
+    "word": "similar",
+    "start": 6.269,
+    "end": 6.571
+  },
+  {
+    "word": "things.",
+    "start": 6.629,
+    "end": 7.663
+  }
+]

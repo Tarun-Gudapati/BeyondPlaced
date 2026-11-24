@@ -1,0 +1,97 @@
+[
+  {
+    "word": "Stop",
+    "start": 0,
+    "end": 0.348
+  },
+  {
+    "word": "means",
+    "start": 0.418,
+    "end": 0.731
+  },
+  {
+    "word": "the",
+    "start": 0.789,
+    "end": 0.859
+  },
+  {
+    "word": "model",
+    "start": 0.917,
+    "end": 1.138
+  },
+  {
+    "word": "finished.",
+    "start": 1.196,
+    "end": 1.718
+  },
+  {
+    "word": "Length",
+    "start": 2.032,
+    "end": 2.345
+  },
+  {
+    "word": "means",
+    "start": 2.415,
+    "end": 2.717
+  },
+  {
+    "word": "it",
+    "start": 2.786,
+    "end": 2.868
+  },
+  {
+    "word": "was",
+    "start": 2.902,
+    "end": 3.007
+  },
+  {
+    "word": "cut",
+    "start": 3.053,
+    "end": 3.239
+  },
+  {
+    "word": "off.",
+    "start": 3.297,
+    "end": 3.68
+  },
+  {
+    "word": "Usage",
+    "start": 3.947,
+    "end": 4.354
+  },
+  {
+    "word": "counts",
+    "start": 4.4,
+    "end": 4.679
+  },
+  {
+    "word": "the",
+    "start": 4.737,
+    "end": 4.807
+  },
+  {
+    "word": "tokens",
+    "start": 4.865,
+    "end": 5.259
+  },
+  {
+    "word": "she",
+    "start": 5.294,
+    "end": 5.399
+  },
+  {
+    "word": "is",
+    "start": 5.457,
+    "end": 5.538
+  },
+  {
+    "word": "billed",
+    "start": 5.596,
+    "end": 5.84
+  },
+  {
+    "word": "for.",
+    "start": 5.886,
+    "end": 6.502
+  }
+]

@@ -1,0 +1,19 @@
+{
+  "lesson": "fastapi-streaming",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "race", "text": "Rahul built a placement bot. He asks it to explain binary search, then watches a spinner for six long seconds." },
+    { "id": "l02", "scene": "race", "text": "Same bot, same model, with streaming switched on: the first word shows up almost at once." },
+    { "id": "l03", "scene": "race", "text": "The model isn't any faster. It writes one token at a time either way, and the last word lands at the same moment." },
+    { "id": "l04", "scene": "race", "text": "What changed is the time to first token. That's the clock your users actually feel." },
+    { "id": "l05", "scene": "pipe", "text": "Here's the path. The browser sends one request to your FastAPI backend, which calls the model with stream set to true." },
+    { "id": "l06", "scene": "pipe", "text": "Every chunk that comes back is yielded into a streaming response, so it leaves your server immediately." },
+    { "id": "l07", "scene": "wire", "text": "On the wire it's Server-Sent Events: a line starting with data, then a blank line. Plain HTTP." },
+    { "id": "l08", "scene": "wire", "text": "Wrap each token in JSON, because a token can contain a newline, and a raw newline breaks the message." },
+    { "id": "l09", "scene": "wire", "text": "In the browser, fetch reads the stream. One read can hold three events, or half of one." },
+    { "id": "l10", "scene": "wire", "text": "So keep a buffer, split on the blank line, and add each token to the page." },
+    { "id": "l11", "scene": "deploy", "text": "After you deploy, test it again. A proxy that buffers will hand over the whole answer in one lump." },
+    { "id": "l12", "scene": "claim", "text": "So remember: streaming doesn't cut total time or cost. It cuts the wait before the first word." },
+    { "id": "l13", "scene": "claim", "text": "Next lesson: cost, latency and caching." }
+  ]
+}

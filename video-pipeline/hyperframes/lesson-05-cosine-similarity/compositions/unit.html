@@ -1,0 +1,71 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #u-all { position: absolute; inset: 0; }
+    .u-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; white-space: pre; }
+    #u-plot { position: absolute; left: 150px; top: 130px; width: 820px; height: 820px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #u-svg { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+    #u-len { position: absolute; left: 190px; top: 160px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #u-label { position: absolute; left: 1060px; top: 190px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    .u-f { position: absolute; left: 1060px; top: 250px; font-size: 56px; line-height: 1.2; }
+    #u-big { position: absolute; left: 1060px; top: 400px; font-size: 96px; line-height: 1.2; }
+    #u-big .u-accent { color: #EA580C; }
+    #u-code { position: absolute; left: 1060px; top: 590px; font-size: 44px; line-height: 1.2; padding: 16px 26px; border-radius: 12px; background: #0B1220; color: #99F6E4; }
+    #u-note { position: absolute; left: 1060px; top: 730px; width: 660px; font-size: 32px; font-weight: 700; color: #475569; line-height: 1.3; }
+  </style>
+  <div id="root" data-composition-id="unit" data-width="1920" data-height="1080">
+    <div id="u-all">
+      <div id="u-plot"></div>
+      <svg id="u-svg" viewBox="0 0 1920 1080" data-layout-ignore>
+        <circle id="u-circle" cx="560" cy="560" r="290" fill="rgba(15,118,110,0.05)" stroke="#0F766E" stroke-width="5" stroke-dasharray="16 12" />
+        <g class="u-v" data-len="370" data-ang="18"><line x1="560" y1="560" x2="892" y2="560" stroke="#0F766E" stroke-width="9" stroke-linecap="round" /><path d="M 930 560 L 888 539 L 888 581 Z" fill="#0F766E" /></g>
+        <g class="u-v" data-len="200" data-ang="72"><line x1="560" y1="560" x2="722" y2="560" stroke="#0F766E" stroke-width="9" stroke-linecap="round" /><path d="M 760 560 L 718 539 L 718 581 Z" fill="#0F766E" /></g>
+        <g class="u-v" data-len="340" data-ang="135"><line x1="560" y1="560" x2="862" y2="560" stroke="#0F766E" stroke-width="9" stroke-linecap="round" /><path d="M 900 560 L 858 539 L 858 581 Z" fill="#0F766E" /></g>
+        <g class="u-v" data-len="230" data-ang="205"><line x1="560" y1="560" x2="752" y2="560" stroke="#0F766E" stroke-width="9" stroke-linecap="round" /><path d="M 790 560 L 748 539 L 748 581 Z" fill="#0F766E" /></g>
+        <g class="u-v" data-len="190" data-ang="292"><line x1="560" y1="560" x2="712" y2="560" stroke="#0B1220" stroke-width="9" stroke-linecap="round" /><path d="M 750 560 L 708 539 L 708 581 Z" fill="#0B1220" /></g>
+        <circle cx="560" cy="560" r="13" fill="#0B1220" />
+      </svg>
+      <div id="u-len">every vector: length = 1</div>
+      <div id="u-label">Normalise once</div>
+      <div id="u-f1" class="u-f u-mono">a · b / (|a| × |b|)</div>
+      <div id="u-f2" class="u-f u-mono">a · b / (1 × 1)</div>
+      <div id="u-big" class="u-mono">cos = <span class="u-accent">a · b</span></div>
+      <div id="u-code" class="u-mono">scores = docs @ query</div>
+      <div id="u-note">OpenAI embeddings already arrive at length 1</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l07":{"s":0,"w":[0,0.209,0.337,0.964,1.358,1.637,1.985,2.113,2.415,2.844,3.135,3.994,4.331,4.714,5.19,5.805,5.909,6.258,6.374,6.653]}}; const END = 8.013; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const a = T.l07.w;
+    const O = "560 560", UNIT = 290;
+    const vecs = gsap.utils.toArray("#u-svg .u-v");
+
+    gsap.set("#u-circle", { opacity: 0 });
+    vecs.forEach((g) => gsap.set(g, { rotation: -Number(g.dataset.ang), svgOrigin: O }));
+
+    blurIn("#u-all", 0, 0.25);
+    blurIn("#u-label", a[3], 0.2);
+
+    // every arrow is scaled to length 1: its tip lands on the circle
+    tl.to("#u-circle", { opacity: 1, duration: 0.4, ease: "power2.out" }, a[3]);
+    vecs.forEach((g, i) => {
+      const len = Number(g.dataset.len);
+      tl.fromTo(g, { scaleX: 1 }, { scaleX: UNIT / len, duration: 0.7, ease: "power2.inOut" }, a[4] + i * 0.08);
+    });
+    blurIn("#u-len", a[7], 0.2);
+    blurIn("#u-note", a[9], 0.2);
+
+    // the denominator becomes 1 x 1 and disappears
+    blurOut("#u-f1", a[11] - 0.1, 0.15);
+    blurIn("#u-f2", a[11] + 0.05, 0.18);
+    blurIn("#u-big", a[15], 0.2);
+    blurIn("#u-code", a[18], 0.2);
+
+    blurOut("#u-all", END - 0.3, 0.2);
+
+    window.__timelines["unit"] = tl;
+  </script>
+</template>

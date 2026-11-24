@@ -1,0 +1,82 @@
+[
+  {
+    "word": "Write",
+    "start": 0,
+    "end": 0.325
+  },
+  {
+    "word": "the",
+    "start": 0.348,
+    "end": 0.418
+  },
+  {
+    "word": "prompt",
+    "start": 0.464,
+    "end": 0.778
+  },
+  {
+    "word": "like",
+    "start": 0.836,
+    "end": 0.998
+  },
+  {
+    "word": "a",
+    "start": 1.022,
+    "end": 1.045
+  },
+  {
+    "word": "spec.",
+    "start": 1.091,
+    "end": 1.614
+  },
+  {
+    "word": "Then",
+    "start": 1.846,
+    "end": 2.055
+  },
+  {
+    "word": "validate",
+    "start": 2.125,
+    "end": 2.554
+  },
+  {
+    "word": "what",
+    "start": 2.577,
+    "end": 2.705
+  },
+  {
+    "word": "comes",
+    "start": 2.763,
+    "end": 2.984
+  },
+  {
+    "word": "back,",
+    "start": 3.053,
+    "end": 3.379
+  },
+  {
+    "word": "before",
+    "start": 3.413,
+    "end": 3.704
+  },
+  {
+    "word": "your",
+    "start": 3.738,
+    "end": 3.866
+  },
+  {
+    "word": "code",
+    "start": 3.936,
+    "end": 4.214
+  },
+  {
+    "word": "trusts",
+    "start": 4.238,
+    "end": 4.586
+  },
+  {
+    "word": "it.",
+    "start": 4.644,
+    "end": 5.433
+  }
+]

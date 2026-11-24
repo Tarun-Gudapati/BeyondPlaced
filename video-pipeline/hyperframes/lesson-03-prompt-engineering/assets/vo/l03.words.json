@@ -1,0 +1,62 @@
+[
+  {
+    "word": "The",
+    "start": 0,
+    "end": 0.151
+  },
+  {
+    "word": "fix",
+    "start": 0.232,
+    "end": 0.464
+  },
+  {
+    "word": "is",
+    "start": 0.534,
+    "end": 0.615
+  },
+  {
+    "word": "not",
+    "start": 0.673,
+    "end": 0.801
+  },
+  {
+    "word": "cleverer",
+    "start": 0.848,
+    "end": 1.231
+  },
+  {
+    "word": "wording.",
+    "start": 1.265,
+    "end": 1.823
+  },
+  {
+    "word": "A",
+    "start": 1.962,
+    "end": 2.032
+  },
+  {
+    "word": "good",
+    "start": 2.101,
+    "end": 2.264
+  },
+  {
+    "word": "prompt",
+    "start": 2.322,
+    "end": 2.624
+  },
+  {
+    "word": "is",
+    "start": 2.67,
+    "end": 2.752
+  },
+  {
+    "word": "a",
+    "start": 2.798,
+    "end": 2.821
+  },
+  {
+    "word": "specification.",
+    "start": 2.868,
+    "end": 4.272
+  }
+]

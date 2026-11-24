@@ -1,0 +1,112 @@
+[
+  {
+    "word": "Think:",
+    "start": 0,
+    "end": 0.499
+  },
+  {
+    "word": "the",
+    "start": 0.557,
+    "end": 0.662
+  },
+  {
+    "word": "model",
+    "start": 0.72,
+    "end": 0.952
+  },
+  {
+    "word": "reads",
+    "start": 1.033,
+    "end": 1.254
+  },
+  {
+    "word": "everything",
+    "start": 1.312,
+    "end": 1.695
+  },
+  {
+    "word": "so",
+    "start": 1.765,
+    "end": 1.927
+  },
+  {
+    "word": "far",
+    "start": 2.009,
+    "end": 2.287
+  },
+  {
+    "word": "and",
+    "start": 2.357,
+    "end": 2.485
+  },
+  {
+    "word": "picks",
+    "start": 2.543,
+    "end": 2.775
+  },
+  {
+    "word": "a",
+    "start": 2.81,
+    "end": 2.844
+  },
+  {
+    "word": "tool.",
+    "start": 2.902,
+    "end": 3.332
+  },
+  {
+    "word": "Act:",
+    "start": 3.75,
+    "end": 4.191
+  },
+  {
+    "word": "your",
+    "start": 4.307,
+    "end": 4.447
+  },
+  {
+    "word": "code",
+    "start": 4.505,
+    "end": 4.772
+  },
+  {
+    "word": "runs",
+    "start": 4.807,
+    "end": 5.05
+  },
+  {
+    "word": "it.",
+    "start": 5.12,
+    "end": 5.399
+  },
+  {
+    "word": "Observe:",
+    "start": 5.817,
+    "end": 6.432
+  },
+  {
+    "word": "the",
+    "start": 6.571,
+    "end": 6.653
+  },
+  {
+    "word": "result",
+    "start": 6.711,
+    "end": 7.024
+  },
+  {
+    "word": "joins",
+    "start": 7.082,
+    "end": 7.384
+  },
+  {
+    "word": "the",
+    "start": 7.43,
+    "end": 7.5
+  },
+  {
+    "word": "conversation.",
+    "start": 7.546,
+    "end": 8.87
+  }
+]

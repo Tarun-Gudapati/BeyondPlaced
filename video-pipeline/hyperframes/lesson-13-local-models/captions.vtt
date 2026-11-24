@@ -1,0 +1,133 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.367
+It's two a.m. at a hackathon. Kabir's chatbot
+
+2
+00:00:03.437 --> 00:00:06.072
+finally works, and then his free API credits
+
+3
+00:00:06.118 --> 00:00:07.198
+run out.
+
+4
+00:00:07.548 --> 00:00:09.487
+He doesn't need more credits. He needs a
+
+5
+00:00:09.557 --> 00:00:11.867
+model that runs on his own laptop.
+
+6
+00:00:12.217 --> 00:00:15.038
+That's what Ollama does. It's a small server:
+
+7
+00:00:15.178 --> 00:00:17.790
+it downloads open model weights, like Llama or
+
+8
+00:00:17.859 --> 00:00:20.390
+Qwen, and loads them into memory.
+
+9
+00:00:20.740 --> 00:00:23.538
+Then it serves an API on localhost, right
+
+10
+00:00:23.573 --> 00:00:24.920
+on his machine.
+
+11
+00:00:25.270 --> 00:00:27.708
+One command pulls a model. One more, and
+
+12
+00:00:27.755 --> 00:00:29.496
+he's chatting in the terminal.
+
+13
+00:00:29.846 --> 00:00:32.133
+And here's the trick. Ollama speaks the same
+
+14
+00:00:32.180 --> 00:00:34.629
+format as the OpenAI API.
+
+15
+00:00:34.979 --> 00:00:37.289
+So Kabir changes the base URL and the
+
+16
+00:00:37.324 --> 00:00:39.286
+model name, and the rest of his code
+
+17
+00:00:39.333 --> 00:00:41.202
+stays exactly the same.
+
+18
+00:00:41.552 --> 00:00:43.851
+Build and debug on the free local model,
+
+19
+00:00:44.013 --> 00:00:46.126
+then flip one setting to a hosted model
+
+20
+00:00:46.184 --> 00:00:47.403
+for the demo.
+
+21
+00:00:47.753 --> 00:00:50.388
+The catch is memory. Every weight must fit
+
+22
+00:00:50.447 --> 00:00:53.651
+in RAM, so local models are quantised: about
+
+23
+00:00:53.721 --> 00:00:56.437
+four bits per weight instead of sixteen.
+
+24
+00:00:56.787 --> 00:00:59.353
+On an eight gigabyte laptop, a three billion
+
+25
+00:00:59.411 --> 00:01:03.103
+parameter model fits. Bigger models need more RAM.
+
+26
+00:01:03.453 --> 00:01:06.309
+What do you get? No bill, no internet,
+
+27
+00:01:06.379 --> 00:01:08.840
+and nothing you type leaves the laptop.
+
+28
+00:01:09.190 --> 00:01:11.361
+What do you give up? It's smaller and
+
+29
+00:01:11.431 --> 00:01:13.788
+slower than a hosted model, so test both
+
+30
+00:01:13.834 --> 00:01:15.645
+on your own questions.
+
+31
+00:01:15.995 --> 00:01:19.339
+Remember it like this: same SDK, different base
+
+32
+00:01:19.385 --> 00:01:20.453
+URL.
+
+33
+00:01:20.803 --> 00:01:23.822
+Next lesson: prompting, RAG, or fine-tuning?

@@ -1,0 +1,67 @@
+[
+  {
+    "word": "Ananya",
+    "start": 0,
+    "end": 0.476
+  },
+  {
+    "word": "asks",
+    "start": 0.546,
+    "end": 0.882
+  },
+  {
+    "word": "her",
+    "start": 0.929,
+    "end": 1.022
+  },
+  {
+    "word": "college",
+    "start": 1.091,
+    "end": 1.416
+  },
+  {
+    "word": "placement",
+    "start": 1.451,
+    "end": 1.869
+  },
+  {
+    "word": "bot",
+    "start": 1.916,
+    "end": 2.159
+  },
+  {
+    "word": "a",
+    "start": 2.218,
+    "end": 2.276
+  },
+  {
+    "word": "simple",
+    "start": 2.357,
+    "end": 2.67
+  },
+  {
+    "word": "question:",
+    "start": 2.705,
+    "end": 3.309
+  },
+  {
+    "word": "what",
+    "start": 3.796,
+    "end": 4.005
+  },
+  {
+    "word": "is",
+    "start": 4.063,
+    "end": 4.145
+  },
+  {
+    "word": "my",
+    "start": 4.203,
+    "end": 4.307
+  },
+  {
+    "word": "CGPA?",
+    "start": 4.377,
+    "end": 5.573
+  }
+]

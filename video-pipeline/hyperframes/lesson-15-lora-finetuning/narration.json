@@ -1,0 +1,18 @@
+{
+  "lesson": "lora-finetuning",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "gap", "text": "Meera has five hundred approved Hinglish replies, and a free Colab GPU. Can she really fine-tune a language model on that?" },
+    { "id": "l02", "scene": "gap", "text": "Not the usual way. Full fine-tuning updates billions of weights, and that needs far more memory." },
+    { "id": "l03", "scene": "lora", "text": "LoRA takes a shortcut. Freeze every original weight. Then, beside each big matrix, add two thin ones, called an adapter." },
+    { "id": "l04", "scene": "lora", "text": "Only the adapter is trained. That's usually well under one percent of the model." },
+    { "id": "l05", "scene": "lora", "text": "At the start the adapter adds nothing, so the model behaves exactly like the original." },
+    { "id": "l06", "scene": "qlora", "text": "To fit a free T4, load the frozen model in four bits, and train the adapter on top. That's QLoRA." },
+    { "id": "l07", "scene": "train", "text": "Now training. Her examples go in, the loss falls, and the adapter slowly learns the brand's voice." },
+    { "id": "l08", "scene": "train", "text": "Watch the validation loss. If it climbs while training loss falls, the model is memorising." },
+    { "id": "l09", "scene": "test", "text": "Then the honest test: a question it never saw in training. Before, stiff English. After, friendly Hinglish." },
+    { "id": "l10", "scene": "ship", "text": "What she publishes is tiny: megabytes, not gigabytes. Anyone can load the base model and put her adapter on top." },
+    { "id": "l11", "scene": "claim", "text": "So remember: freeze the model, train a small adapter." },
+    { "id": "l12", "scene": "claim", "text": "Next lesson: a FastAPI backend with streaming responses." }
+  ]
+}

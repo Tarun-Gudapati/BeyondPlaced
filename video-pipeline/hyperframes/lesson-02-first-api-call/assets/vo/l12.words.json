@@ -1,0 +1,92 @@
+[
+  {
+    "word": "If",
+    "start": 0,
+    "end": 0.186
+  },
+  {
+    "word": "it",
+    "start": 0.232,
+    "end": 0.302
+  },
+  {
+    "word": "ever",
+    "start": 0.36,
+    "end": 0.522
+  },
+  {
+    "word": "leaks,",
+    "start": 0.58,
+    "end": 1.057
+  },
+  {
+    "word": "deleting",
+    "start": 1.173,
+    "end": 1.591
+  },
+  {
+    "word": "the",
+    "start": 1.625,
+    "end": 1.695
+  },
+  {
+    "word": "commit",
+    "start": 1.753,
+    "end": 2.09
+  },
+  {
+    "word": "is",
+    "start": 2.148,
+    "end": 2.229
+  },
+  {
+    "word": "not",
+    "start": 2.287,
+    "end": 2.426
+  },
+  {
+    "word": "enough.",
+    "start": 2.485,
+    "end": 2.984
+  },
+  {
+    "word": "Revoke",
+    "start": 3.471,
+    "end": 3.855
+  },
+  {
+    "word": "the",
+    "start": 3.889,
+    "end": 3.959
+  },
+  {
+    "word": "key",
+    "start": 4.017,
+    "end": 4.296
+  },
+  {
+    "word": "and",
+    "start": 4.377,
+    "end": 4.505
+  },
+  {
+    "word": "create",
+    "start": 4.563,
+    "end": 4.899
+  },
+  {
+    "word": "a",
+    "start": 4.934,
+    "end": 4.957
+  },
+  {
+    "word": "new",
+    "start": 5.027,
+    "end": 5.166
+  },
+  {
+    "word": "one.",
+    "start": 5.236,
+    "end": 6.13
+  }
+]

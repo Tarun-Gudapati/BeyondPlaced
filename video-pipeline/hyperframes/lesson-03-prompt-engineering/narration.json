@@ -1,0 +1,19 @@
+{
+  "lesson": "prompt-engineering",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "vague", "text": "Ananya pastes a job description into her script and asks: tell me about this job." },
+    { "id": "l02", "scene": "vague", "text": "Back comes a friendly paragraph. But a program is reading this reply, so prose is a bug." },
+    { "id": "l03", "scene": "spec", "text": "The fix is not cleverer wording. A good prompt is a specification." },
+    { "id": "l04", "scene": "spec", "text": "Start with a role and one clear task: you extract job details from a job description." },
+    { "id": "l05", "scene": "spec", "text": "Add constraints: what to do when information is missing. If the CTC is not stated, use null. Never guess." },
+    { "id": "l06", "scene": "spec", "text": "Then spell out the exact output: JSON, with a role, a list of skills, and the CTC." },
+    { "id": "l07", "scene": "data", "text": "Rules live in the system prompt. The job description goes in the user message, wrapped in tags, as data." },
+    { "id": "l08", "scene": "data", "text": "So if that text says, ignore your instructions, it is less likely to work." },
+    { "id": "l09", "scene": "fewshot", "text": "Next, show one or two examples of a perfect answer. That is few-shot prompting: the model copies the pattern." },
+    { "id": "l10", "scene": "validate", "text": "Turn on JSON mode, and the reply parses as JSON. But valid JSON can still be wrong: here, the CTC came back as a word." },
+    { "id": "l11", "scene": "validate", "text": "So check every reply against a schema. If it fails, send the error back and ask once more." },
+    { "id": "l12", "scene": "tests", "text": "And treat prompts like code: keep versions, and rerun a few real test cases after every change." },
+    { "id": "l13", "scene": "claim", "text": "Write the prompt like a spec. Then validate what comes back, before your code trusts it." }
+  ]
+}

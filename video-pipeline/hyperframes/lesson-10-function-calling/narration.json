@@ -1,0 +1,19 @@
+{
+  "lesson": "function-calling",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "ask", "text": "Ananya asks her college placement bot a simple question: what is my CGPA?" },
+    { "id": "l02", "scene": "ask", "text": "But a language model only writes text. It can't open the college database. Left alone, it would guess." },
+    { "id": "l03", "scene": "tools", "text": "So your app sends her question together with a menu of tools. Each tool has a name, a description, and the arguments it needs." },
+    { "id": "l04", "scene": "tools", "text": "The model never sees your Python code. Only this menu." },
+    { "id": "l05", "scene": "call", "text": "The model doesn't answer. It replies with a tool call: the function name, get student, and the arguments as JSON." },
+    { "id": "l06", "scene": "call", "text": "Notice what did not happen. Nothing has run yet. The model only asked." },
+    { "id": "l07", "scene": "run", "text": "Your code parses the arguments, checks them, and runs the real Python function against the database." },
+    { "id": "l08", "scene": "run", "text": "Because your code sits in the middle, a wrong roll number becomes a clear error, not a crash." },
+    { "id": "l09", "scene": "run", "text": "Then it adds the result to the conversation as a tool message, and calls the model a second time." },
+    { "id": "l10", "scene": "answer", "text": "Now the model has the facts, so it writes the answer: your CGPA is eight point four." },
+    { "id": "l11", "scene": "answer", "text": "One question, two API calls. And the model chose that tool using only the description you wrote." },
+    { "id": "l12", "scene": "claim", "text": "So remember the split: the model proposes, your code executes." },
+    { "id": "l13", "scene": "claim", "text": "Next lesson: put this in a loop, and you have an agent." }
+  ]
+}

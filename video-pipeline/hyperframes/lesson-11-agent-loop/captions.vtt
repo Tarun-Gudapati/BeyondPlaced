@@ -1,0 +1,129 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.299
+A recruiter hands you three resumes and says:
+
+2
+00:00:02.531 --> 00:00:04.087
+shortlist the best two.
+
+3
+00:00:04.437 --> 00:00:06.620
+You wouldn't answer in one breath. You'd read
+
+4
+00:00:06.689 --> 00:00:09.569
+one, note a score, read the next. Each
+
+5
+00:00:09.603 --> 00:00:11.217
+step depends on the last.
+
+6
+00:00:11.567 --> 00:00:13.541
+An agent works the same way. It's the
+
+7
+00:00:13.599 --> 00:00:16.350
+tool call from last lesson, inside a loop.
+
+8
+00:00:16.700 --> 00:00:19.185
+Think: the model reads everything so far and
+
+9
+00:00:19.243 --> 00:00:22.099
+picks a tool. Act: your code runs it.
+
+10
+00:00:22.517 --> 00:00:25.570
+Observe: the result joins the conversation.
+
+11
+00:00:25.920 --> 00:00:28.358
+Then round again. List the files. Read a
+
+12
+00:00:28.405 --> 00:00:31.679
+resume. Save a score. Every lap, the message
+
+13
+00:00:31.713 --> 00:00:32.747
+list grows.
+
+14
+00:00:33.097 --> 00:00:35.256
+When the model replies with plain text and
+
+15
+00:00:35.326 --> 00:00:37.729
+no tool call, that's the final answer, and
+
+16
+00:00:37.776 --> 00:00:39.320
+the loop ends.
+
+17
+00:00:39.670 --> 00:00:41.516
+But a stuck model can repeat the same
+
+18
+00:00:41.562 --> 00:00:44.894
+call forever, and every lap costs tokens. So
+
+19
+00:00:44.953 --> 00:00:47.890
+you set max steps: a hard stop.
+
+20
+00:00:48.240 --> 00:00:50.330
+Add a token budget as well, so one
+
+21
+00:00:50.376 --> 00:00:52.327
+bad run can't drain your credits.
+
+22
+00:00:52.677 --> 00:00:55.661
+And when a tool fails, don't crash. Send
+
+23
+00:00:55.707 --> 00:00:57.797
+the error back as an observation, and the
+
+24
+00:00:57.832 --> 00:00:59.829
+model usually corrects itself.
+
+25
+00:01:00.179 --> 00:01:02.838
+That message list is the agent's only memory.
+
+26
+00:01:03.325 --> 00:01:05.322
+Your code resends all of it on every
+
+27
+00:01:05.380 --> 00:01:08.120
+turn, so keep tool results short.
+
+28
+00:01:08.470 --> 00:01:10.351
+So an agent is just a model, some
+
+29
+00:01:10.397 --> 00:01:12.243
+tools, and a loop that always knows when
+
+30
+00:01:12.290 --> 00:01:13.439
+to stop.
+
+31
+00:01:13.789 --> 00:01:16.854
+Next lesson: guardrails, before your agent sends a
+
+32
+00:01:16.900 --> 00:01:18.061
+single email.

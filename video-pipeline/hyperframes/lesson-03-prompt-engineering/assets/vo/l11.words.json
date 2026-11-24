@@ -1,0 +1,92 @@
+[
+  {
+    "word": "So",
+    "start": 0,
+    "end": 0.186
+  },
+  {
+    "word": "check",
+    "start": 0.255,
+    "end": 0.476
+  },
+  {
+    "word": "every",
+    "start": 0.557,
+    "end": 0.801
+  },
+  {
+    "word": "reply",
+    "start": 0.871,
+    "end": 1.196
+  },
+  {
+    "word": "against",
+    "start": 1.254,
+    "end": 1.567
+  },
+  {
+    "word": "a",
+    "start": 1.614,
+    "end": 1.649
+  },
+  {
+    "word": "schema.",
+    "start": 1.695,
+    "end": 2.264
+  },
+  {
+    "word": "If",
+    "start": 2.682,
+    "end": 2.821
+  },
+  {
+    "word": "it",
+    "start": 2.879,
+    "end": 2.949
+  },
+  {
+    "word": "fails,",
+    "start": 3.007,
+    "end": 3.553
+  },
+  {
+    "word": "send",
+    "start": 3.622,
+    "end": 3.878
+  },
+  {
+    "word": "the",
+    "start": 3.924,
+    "end": 3.994
+  },
+  {
+    "word": "error",
+    "start": 4.052,
+    "end": 4.261
+  },
+  {
+    "word": "back",
+    "start": 4.319,
+    "end": 4.551
+  },
+  {
+    "word": "and",
+    "start": 4.621,
+    "end": 4.702
+  },
+  {
+    "word": "ask",
+    "start": 4.76,
+    "end": 4.957
+  },
+  {
+    "word": "once",
+    "start": 5.027,
+    "end": 5.248
+  },
+  {
+    "word": "more.",
+    "start": 5.294,
+    "end": 6.409
+  }
+]

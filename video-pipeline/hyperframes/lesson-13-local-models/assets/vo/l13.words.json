@@ -1,0 +1,47 @@
+[
+  {
+    "word": "Remember",
+    "start": 0,
+    "end": 0.372
+  },
+  {
+    "word": "it",
+    "start": 0.418,
+    "end": 0.476
+  },
+  {
+    "word": "like",
+    "start": 0.522,
+    "end": 0.697
+  },
+  {
+    "word": "this:",
+    "start": 0.731,
+    "end": 1.231
+  },
+  {
+    "word": "same",
+    "start": 1.544,
+    "end": 1.858
+  },
+  {
+    "word": "SDK,",
+    "start": 1.892,
+    "end": 2.647
+  },
+  {
+    "word": "different",
+    "start": 2.74,
+    "end": 3.053
+  },
+  {
+    "word": "base",
+    "start": 3.1,
+    "end": 3.344
+  },
+  {
+    "word": "URL.",
+    "start": 3.39,
+    "end": 4.458
+  }
+]

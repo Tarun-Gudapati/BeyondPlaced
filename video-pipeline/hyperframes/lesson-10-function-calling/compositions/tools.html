@@ -1,0 +1,79 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .t-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #t-card { position: absolute; left: 140px; top: 170px; width: 820px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 36px; }
+    #t-title { font-size: 34px; font-weight: 700; color: #0F766E; margin-bottom: 24px; }
+    .t-sec { font-size: 30px; color: #475569; margin-bottom: 12px; }
+    #t-bubble { display: inline-block; background: #0F766E; color: #FFFFFF; border-radius: 30px 30px 8px 30px; padding: 20px 28px; font-size: 36px; font-weight: 700; line-height: 1.25; margin-bottom: 30px; }
+    #t-menu { position: relative; border: 3px solid #5EEAD4; border-radius: 18px; background: #F0FDFA; }
+    .t-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 22px; }
+    .t-row + .t-row { border-top: 3px solid #CCFBF1; }
+    #t-fn { font-size: 44px; }
+    #t-desc { font-size: 32px; line-height: 1.25; max-width: 470px; }
+    #t-args { font-size: 36px; }
+    .t-tag { flex: none; font-size: 30px; font-weight: 700; color: #0F766E; }
+    #t-ring { position: absolute; inset: -12px; border: 8px solid #EA580C; border-radius: 26px; }
+    #t-llm { position: absolute; left: 1400px; top: 200px; width: 320px; height: 270px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 80px; font-weight: 900; letter-spacing: -0.02em; }
+    #t-arrow { position: absolute; left: 990px; top: 331px; width: 370px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #t-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #t-call { position: absolute; left: 990px; top: 270px; width: 370px; text-align: center; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #t-code-label { position: absolute; left: 1080px; top: 560px; font-size: 32px; font-weight: 700; color: #475569; }
+    #t-code { position: absolute; left: 1080px; top: 612px; width: 700px; height: 220px; background: #0B1220; color: #E2E8F0; border-radius: 20px; padding: 44px 40px; font-size: 34px; line-height: 1.6; white-space: pre; }
+    #t-note { position: absolute; left: 1080px; top: 858px; font-size: 40px; font-weight: 700; color: #0B1220; }
+  </style>
+  <div id="root" data-composition-id="tools" data-width="1920" data-height="1080">
+    <div id="t-card">
+      <div id="t-title">The request your app builds</div>
+      <div id="t-sec-m" class="t-sec t-mono">messages</div>
+      <div id="t-bubble">What is my CGPA?</div>
+      <div id="t-sec-t" class="t-sec t-mono">tools</div>
+      <div id="t-menu">
+        <div class="t-row"><span id="t-fn" class="t-mono">get_student</span><span id="t-tag1" class="t-tag">name</span></div>
+        <div class="t-row" id="t-row2"><span id="t-desc">Look up a student's CGPA by roll number</span><span id="t-tag2" class="t-tag">description</span></div>
+        <div class="t-row" id="t-row3"><span id="t-args" class="t-mono">roll_no: string</span><span id="t-tag3" class="t-tag">arguments</span></div>
+        <div id="t-ring"></div>
+      </div>
+    </div>
+    <div id="t-call">API call 1</div>
+    <div id="t-arrow"></div>
+    <div id="t-llm">LLM</div>
+    <div id="t-code-label">get_student, the real function</div>
+    <div id="t-code" class="t-mono">def get_student(roll_no):
+    return STUDENTS[roll_no]</div>
+    <div id="t-note">stays in your app</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L4 = 8.477;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#t-menu, #t-ring, #t-code", { opacity: 0 });
+    gsap.set("#t-arrow", { scaleX: 0 });
+
+    tl.fromTo("#t-card", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    tl.fromTo("#t-llm", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0.3);
+    tl.to("#t-arrow", { scaleX: 1, duration: 0.4, ease: "power2.inOut" }, 0.72);
+    blurIn("#t-call", 0.95, 0.2);
+    blurIn("#t-sec-m", 1.05, 0.15);
+    tl.fromTo("#t-bubble", { opacity: 0, scale: 0.9, transformOrigin: "left center" }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 1.161);
+
+    blurIn("#t-sec-t", 2.31, 0.15);
+    tl.fromTo("#t-menu", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 2.392);
+    blurIn("#t-fn", 2.833, 0.2);
+    blurIn("#t-tag1", 4.714, 0.2);
+    blurIn("#t-row2", 5.317, 0.2);
+    blurIn("#t-row3", 6.548, 0.2);
+
+    blurIn("#t-code-label", L4 + 0.1, 0.2);
+    tl.fromTo("#t-code", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, L4 + 0.197);
+    tl.to("#t-code", { opacity: 0.55, duration: 0.3, ease: "power2.inOut" }, L4 + 0.755);
+    blurIn("#t-note", L4 + 0.9, 0.2);
+    tl.fromTo("#t-ring", { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L4 + 2.519);
+
+    blurOut("#t-card, #t-call, #t-arrow, #t-llm, #t-code-label, #t-code, #t-note", 12.0, 0.25);
+
+    window.__timelines["tools"] = tl;
+  </script>
+</template>

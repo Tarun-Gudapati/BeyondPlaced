@@ -1,0 +1,77 @@
+[
+  {
+    "word": "Then",
+    "start": 0,
+    "end": 0.267
+  },
+  {
+    "word": "two",
+    "start": 0.325,
+    "end": 0.476
+  },
+  {
+    "word": "installs,",
+    "start": 0.557,
+    "end": 1.265
+  },
+  {
+    "word": "and",
+    "start": 1.312,
+    "end": 1.451
+  },
+  {
+    "word": "a",
+    "start": 1.509,
+    "end": 1.533
+  },
+  {
+    "word": "small",
+    "start": 1.579,
+    "end": 1.869
+  },
+  {
+    "word": "file",
+    "start": 1.939,
+    "end": 2.252
+  },
+  {
+    "word": "called",
+    "start": 2.299,
+    "end": 2.554
+  },
+  {
+    "word": "dot",
+    "start": 2.612,
+    "end": 2.833
+  },
+  {
+    "word": "env,",
+    "start": 2.949,
+    "end": 3.564
+  },
+  {
+    "word": "which",
+    "start": 3.68,
+    "end": 3.878
+  },
+  {
+    "word": "holds",
+    "start": 3.924,
+    "end": 4.18
+  },
+  {
+    "word": "her",
+    "start": 4.226,
+    "end": 4.331
+  },
+  {
+    "word": "API",
+    "start": 4.4,
+    "end": 4.841
+  },
+  {
+    "word": "key.",
+    "start": 4.934,
+    "end": 5.898
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "word": "Wrap",
+    "start": 0,
+    "end": 0.29
+  },
+  {
+    "word": "each",
+    "start": 0.36,
+    "end": 0.557
+  },
+  {
+    "word": "token",
+    "start": 0.615,
+    "end": 0.94
+  },
+  {
+    "word": "in",
+    "start": 0.998,
+    "end": 1.068
+  },
+  {
+    "word": "JSON,",
+    "start": 1.149,
+    "end": 1.695
+  },
+  {
+    "word": "because",
+    "start": 1.811,
+    "end": 2.09
+  },
+  {
+    "word": "a",
+    "start": 2.113,
+    "end": 2.136
+  },
+  {
+    "word": "token",
+    "start": 2.194,
+    "end": 2.519
+  },
+  {
+    "word": "can",
+    "start": 2.577,
+    "end": 2.705
+  },
+  {
+    "word": "contain",
+    "start": 2.752,
+    "end": 3.146
+  },
+  {
+    "word": "a",
+    "start": 3.204,
+    "end": 3.239
+  },
+  {
+    "word": "newline,",
+    "start": 3.32,
+    "end": 3.936
+  },
+  {
+    "word": "and",
+    "start": 4.052,
+    "end": 4.18
+  },
+  {
+    "word": "a",
+    "start": 4.249,
+    "end": 4.272
+  },
+  {
+    "word": "raw",
+    "start": 4.342,
+    "end": 4.528
+  },
+  {
+    "word": "newline",
+    "start": 4.598,
+    "end": 5.004
+  },
+  {
+    "word": "breaks",
+    "start": 5.05,
+    "end": 5.317
+  },
+  {
+    "word": "the",
+    "start": 5.364,
+    "end": 5.433
+  },
+  {
+    "word": "message.",
+    "start": 5.48,
+    "end": 6.502
+  }
+]

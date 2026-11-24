@@ -1,0 +1,107 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .o-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #o-title { position: absolute; left: 130px; top: 84px; font-size: 96px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+    #o-ring { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+    #o-centre { position: absolute; left: 440px; top: 520px; width: 360px; height: 120px; display: grid; place-items: center; }
+    #o-one { font-size: 40px; font-weight: 700; color: #475569; text-align: center; line-height: 1.2; }
+    .o-stepn { position: absolute; left: 440px; top: 520px; width: 360px; height: 120px; display: grid; place-items: center; font-size: 72px; font-weight: 900; letter-spacing: -0.02em; color: #0F766E; }
+    .o-st { position: absolute; width: 300px; height: 130px; border-radius: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+    .o-st b { font-size: 44px; font-weight: 900; letter-spacing: 0.01em; }
+    .o-st span { font-size: 30px; font-weight: 700; }
+    #o-think { left: 470px; top: 225px; background: #0B1220; color: #FFFFFF; }
+    #o-think span { color: #99F6E4; }
+    #o-act { left: 721px; top: 660px; background: #FFFFFF; border: 4px solid #0F766E; }
+    #o-act span { color: #0F766E; }
+    #o-obs { left: 219px; top: 660px; background: #CCFBF1; border: 4px solid #5EEAD4; }
+    #o-obs span { color: #115E59; }
+    #o-orbit { position: absolute; left: 620px; top: 580px; width: 0; height: 0; }
+    #o-dot { position: absolute; left: -26px; top: -316px; width: 52px; height: 52px; border-radius: 50%; background: #0F766E; border: 8px solid #FFFFFF; box-shadow: 0 6px 14px rgba(11,18,32,0.3); }
+    #o-msgs { position: absolute; left: 1110px; top: 130px; width: 700px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 30px 32px 22px; }
+    #o-msgs-title { font-size: 34px; color: #0F766E; margin-bottom: 10px; }
+    .o-msg { display: flex; align-items: center; height: 62px; font-size: 28px; border-top: 3px solid #CCFBF1; }
+    .o-role { flex: none; width: 176px; color: #475569; }
+    #o-grow { position: absolute; inset: -18px; border: 8px solid #EA580C; border-radius: 36px; }
+    #o-count { position: absolute; left: 1110px; top: 812px; font-size: 40px; font-weight: 700; color: #0B1220; }
+  </style>
+  <div id="root" data-composition-id="loop" data-width="1920" data-height="1080">
+    <div id="o-title">Agent</div>
+    <svg id="o-ring" viewBox="0 0 1920 1080" data-layout-ignore>
+      <circle id="o-circle" cx="620" cy="580" r="290" fill="none" stroke="#0F766E" stroke-width="8" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" transform="rotate(-90 620 580)" />
+      <g id="o-heads" fill="#0F766E">
+        <polygon points="879.1,448.9 877.2,417.6 853,431.6" />
+        <polygon points="604,870 632,884 632,856" />
+        <polygon points="376.9,421.1 350.8,438.4 375,452.4" />
+      </g>
+    </svg>
+    <div id="o-centre"><div id="o-one">one tool call<br />and its result</div></div>
+    <div class="o-stepn" id="o-n1">lap 1</div>
+    <div class="o-stepn" id="o-n2">lap 2</div>
+    <div class="o-stepn" id="o-n3">lap 3</div>
+    <div id="o-orbit"><div id="o-dot"></div></div>
+    <div class="o-st" id="o-think"><b>THINK</b><span>the model</span></div>
+    <div class="o-st" id="o-act"><b>ACT</b><span>your code</span></div>
+    <div class="o-st" id="o-obs"><b>OBSERVE</b><span>the result</span></div>
+
+    <div id="o-msgs">
+      <div id="o-msgs-title" class="o-mono">messages</div>
+      <div class="o-msg o-mono" id="o-m1"><span class="o-role">system</span><span>You screen resumes</span></div>
+      <div class="o-msg o-mono" id="o-m2"><span class="o-role">user</span><span>Shortlist the top 2</span></div>
+      <div class="o-msg o-mono" id="o-m3"><span class="o-role">assistant</span><span>list_resumes()</span></div>
+      <div class="o-msg o-mono" id="o-m4"><span class="o-role">tool</span><span>3 files</span></div>
+      <div class="o-msg o-mono" id="o-m5"><span class="o-role">assistant</span><span>read_resume("karthik.pdf")</span></div>
+      <div class="o-msg o-mono" id="o-m6"><span class="o-role">tool</span><span>"Karthik S, B.Tech IT…"</span></div>
+      <div class="o-msg o-mono" id="o-m7"><span class="o-role">assistant</span><span>save_score(…, 8)</span></div>
+      <div class="o-msg o-mono" id="o-m8"><span class="o-role">tool</span><span>saved 8/10</span></div>
+      <div id="o-grow" data-layout-allow-overflow></div>
+    </div>
+    <div id="o-count">2 rows more on every lap</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L4 = 5.133, L5 = 14.353;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#o-heads, #o-orbit, #o-grow", { opacity: 0 });
+    gsap.set("#o-think, #o-act, #o-obs", { opacity: 0 });
+
+    blurIn("#o-title", 0.197, 0.2);
+    tl.fromTo("#o-msgs", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0.3);
+    blurIn("#o-one", 2.032, 0.2);
+    tl.to("#o-circle", { attr: { "stroke-dashoffset": 0 }, duration: 0.8, ease: "power2.inOut" }, 3.4);
+    tl.to("#o-heads", { opacity: 1, duration: 0.2 }, 4.1);
+
+    tl.fromTo("#o-think", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, L4 + 0.0);
+    blurIn("#o-m3", L4 + 2.543, 0.2);
+    tl.fromTo("#o-act", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, L4 + 3.75);
+    tl.fromTo("#o-obs", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, L4 + 5.817);
+    blurIn("#o-m4", L4 + 7.082, 0.2);
+
+    blurOut("#o-one", L5 - 0.1, 0.2);
+    tl.to("#o-orbit", { opacity: 1, duration: 0.15 }, L5 + 0.2);
+    tl.fromTo("#o-orbit", { rotation: 41 }, { rotation: 401, duration: 1.5, ease: "power2.inOut" }, L5 + 0.29);
+    blurIn("#o-n1", L5 + 0.29, 0.2);
+    tl.fromTo("#o-m3, #o-m4", { backgroundColor: "rgba(204,251,241,0)" }, { backgroundColor: "rgba(204,251,241,1)", duration: 0.25, yoyo: true, repeat: 1, ease: "power1.inOut" }, L5 + 1.207);
+
+    blurOut("#o-n1", L5 + 2.05, 0.12);
+    blurIn("#o-n2", L5 + 2.183, 0.15);
+    tl.fromTo("#o-orbit", { rotation: 401 }, { rotation: 761, duration: 0.9, ease: "power2.inOut", immediateRender: false }, L5 + 2.183);
+    blurIn("#o-m5", L5 + 2.3, 0.2);
+    blurIn("#o-m6", L5 + 2.75, 0.2);
+
+    blurOut("#o-n2", L5 + 3.03, 0.12);
+    blurIn("#o-n3", L5 + 3.158, 0.15);
+    tl.fromTo("#o-orbit", { rotation: 761 }, { rotation: 1121, duration: 0.9, ease: "power2.inOut", immediateRender: false }, L5 + 3.158);
+    blurIn("#o-m7", L5 + 3.3, 0.2);
+    blurIn("#o-m8", L5 + 3.75, 0.2);
+
+    tl.fromTo("#o-grow", { opacity: 0, scale: 1.03 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L5 + 5.294);
+    blurIn("#o-count", L5 + 4.9, 0.2);
+
+    blurOut("#o-title, #o-ring, #o-n3, #o-think, #o-act, #o-obs, #o-orbit, #o-msgs, #o-grow, #o-count", 21.1, 0.25);
+
+    window.__timelines["loop"] = tl;
+  </script>
+</template>

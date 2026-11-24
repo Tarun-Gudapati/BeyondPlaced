@@ -1,0 +1,109 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .r-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #r-code { position: absolute; left: 120px; top: 130px; width: 960px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 36px; }
+    #r-title { font-size: 34px; font-weight: 700; color: #0F766E; margin-bottom: 14px; }
+    .r-step { display: flex; align-items: center; gap: 24px; height: 84px; font-size: 38px; }
+    .r-step + .r-step { border-top: 3px solid #CCFBF1; }
+    #r-ok { font-family: Inter, sans-serif; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #r-result { margin-top: 10px; background: #CCFBF1; border: 3px solid #5EEAD4; border-radius: 14px; padding: 18px 22px; font-size: 36px; }
+    #r-db { position: absolute; left: 1440px; top: 140px; width: 260px; height: 300px; }
+    #r-db-sub { position: absolute; left: 1380px; top: 456px; width: 380px; text-align: center; font-size: 34px; font-weight: 700; }
+    #r-arrow { position: absolute; left: 1100px; top: 286px; width: 300px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #r-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #r-err-label { position: absolute; left: 120px; top: 668px; font-size: 34px; font-weight: 700; color: #475569; }
+    #r-err-row { position: absolute; left: 120px; top: 724px; display: flex; align-items: center; gap: 26px; font-size: 36px; }
+    #r-err-call { background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 14px; padding: 16px 22px; }
+    #r-err-to { font-size: 48px; font-weight: 900; color: #0F766E; }
+    #r-err-box { background: #FFFFFF; border: 5px solid #EA580C; border-radius: 14px; padding: 14px 22px; }
+    #r-trace { position: absolute; left: 120px; top: 846px; font-size: 34px; color: #475569; }
+    #r-trace-strike { position: absolute; left: -8px; right: -8px; top: 52%; height: 6px; background: #0B1220; border-radius: 3px; transform-origin: left center; }
+    #r-msgs { position: absolute; left: 1120px; top: 130px; width: 700px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 36px; }
+    #r-msgs-title { font-size: 34px; color: #0F766E; margin-bottom: 14px; }
+    .r-msg { display: flex; align-items: center; height: 88px; font-size: 30px; }
+    .r-msg + .r-msg { border-top: 3px solid #CCFBF1; }
+    .r-role { flex: none; width: 190px; }
+    .r-role span { padding: 6px 12px; margin-left: -12px; border-radius: 8px; color: #475569; }
+    #r-m3 { background: #CCFBF1; margin: 0 -18px; padding: 0 18px; border-radius: 12px; }
+    #r-down { position: absolute; left: 1466px; top: 536px; width: 8px; height: 84px; background: #0F766E; border-radius: 4px; transform-origin: center top; }
+    #r-down::after { content: ""; position: absolute; left: -10px; bottom: -14px; border-top: 18px solid #0F766E; border-left: 14px solid transparent; border-right: 14px solid transparent; }
+    #r-call2 { position: absolute; left: 1500px; top: 556px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #r-llm { position: absolute; left: 1310px; top: 650px; width: 320px; height: 230px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 80px; font-weight: 900; letter-spacing: -0.02em; }
+  </style>
+  <div id="root" data-composition-id="run" data-width="1920" data-height="1080">
+    <div id="r-code">
+      <div id="r-title">Your code</div>
+      <div class="r-step r-mono" id="r-s1">args = json.loads(arguments)</div>
+      <div class="r-step r-mono" id="r-s2">check(args)<span id="r-ok">✓ roll number looks valid</span></div>
+      <div class="r-step r-mono" id="r-s3">result = get_student(**args)</div>
+      <div id="r-result" class="r-mono">{"name": "Ananya Rao", "cgpa": 8.4}</div>
+    </div>
+    <div id="r-arrow"></div>
+    <svg id="r-db" viewBox="0 0 260 300">
+      <path d="M 14 50 L 14 250 A 116 36 0 0 0 246 250 L 246 50" fill="#FFFFFF" stroke="#0F766E" stroke-width="8" />
+      <ellipse cx="130" cy="50" rx="116" ry="36" fill="#CCFBF1" stroke="#0F766E" stroke-width="8" />
+      <path d="M 14 116 A 116 36 0 0 0 246 116" fill="none" stroke="#0F766E" stroke-width="6" />
+      <path d="M 14 183 A 116 36 0 0 0 246 183" fill="none" stroke="#0F766E" stroke-width="6" />
+    </svg>
+    <div id="r-db-sub">college database</div>
+
+    <div id="r-err-label">And a roll number that doesn't exist?</div>
+    <div id="r-err-row" class="r-mono">
+      <div id="r-err-call">get_student("21CS999")</div>
+      <div id="r-err-to">→</div>
+      <div id="r-err-box">{"error": "No student 21CS999"}</div>
+    </div>
+    <div id="r-trace" class="r-mono"><span style="position: relative">Traceback … KeyError<span id="r-trace-strike"></span></span></div>
+
+    <div id="r-msgs">
+      <div id="r-msgs-title" class="r-mono">messages</div>
+      <div class="r-msg" id="r-m1"><span class="r-role r-mono"><span>user</span></span><span>What is my CGPA?</span></div>
+      <div class="r-msg" id="r-m2"><span class="r-role r-mono"><span>assistant</span></span><span class="r-mono">tool_calls: get_student</span></div>
+      <div class="r-msg" id="r-m3"><span class="r-role r-mono"><span id="r-tool-role">tool</span></span><span class="r-mono">{"cgpa": 8.4, …}</span></div>
+    </div>
+    <div id="r-down"></div>
+    <div id="r-call2">API call 2</div>
+    <div id="r-llm">LLM</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L8 = 6.341, L9 = 12.171;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#r-db, #r-result, #r-err-call, #r-err-box, #r-msgs, #r-m3, #r-llm", { opacity: 0 });
+    gsap.set("#r-arrow, #r-trace-strike", { scaleX: 0 });
+    gsap.set("#r-down", { scaleY: 0 });
+
+    tl.fromTo("#r-code", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0);
+    blurIn("#r-s1", 0.557, 0.2);
+    blurIn("#r-s2", 1.823, 0.2);
+    blurIn("#r-ok", 2.3, 0.2);
+    blurIn("#r-s3", 2.717, 0.2);
+    tl.fromTo("#r-db", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 3.866);
+    tl.to("#r-arrow", { scaleX: 1, duration: 0.35, ease: "power2.inOut" }, 4.307);
+    blurIn("#r-db-sub", 4.83, 0.2);
+    tl.fromTo("#r-result", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, 5.35);
+
+    blurIn("#r-err-label", L8 + 1.869, 0.2);
+    tl.fromTo("#r-err-call", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, L8 + 2.276);
+    blurIn("#r-err-to", L8 + 2.844, 0.15);
+    tl.fromTo("#r-err-box", { opacity: 0, scale: 0.92, transformOrigin: "left center" }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, L8 + 3.274);
+    blurIn("#r-trace", L8 + 3.75, 0.2);
+    tl.to("#r-trace-strike", { scaleX: 1, duration: 0.25, ease: "power3.out" }, L8 + 4.3);
+
+    blurOut("#r-db, #r-db-sub, #r-arrow, #r-err-label, #r-err-row, #r-trace", L9 - 0.25, 0.2);
+    tl.fromTo("#r-msgs", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, L9 + 0.05);
+    tl.fromTo("#r-result", { backgroundColor: "#CCFBF1" }, { backgroundColor: "#5EEAD4", duration: 0.15, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, L9 + 0.6);
+    tl.fromTo("#r-m3", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, L9 + 0.859);
+    tl.fromTo("#r-tool-role", { backgroundColor: "rgba(15,118,110,0)", color: "#475569" }, { backgroundColor: "rgba(15,118,110,1)", color: "#FFFFFF", duration: 0.25, ease: "power2.out" }, L9 + 2.577);
+    tl.to("#r-down", { scaleY: 1, duration: 0.3, ease: "power2.inOut" }, L9 + 3.727);
+    blurIn("#r-call2", L9 + 3.9, 0.2);
+    tl.fromTo("#r-llm", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, L9 + 4.156);
+
+    blurOut("#r-code, #r-msgs, #r-down, #r-call2, #r-llm", 18.25, 0.25);
+
+    window.__timelines["run"] = tl;
+  </script>
+</template>

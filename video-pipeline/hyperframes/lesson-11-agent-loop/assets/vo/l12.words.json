@@ -1,0 +1,52 @@
+[
+  {
+    "word": "Next",
+    "start": 0,
+    "end": 0.302
+  },
+  {
+    "word": "lesson:",
+    "start": 0.36,
+    "end": 0.836
+  },
+  {
+    "word": "guardrails,",
+    "start": 1.033,
+    "end": 1.811
+  },
+  {
+    "word": "before",
+    "start": 1.892,
+    "end": 2.171
+  },
+  {
+    "word": "your",
+    "start": 2.206,
+    "end": 2.334
+  },
+  {
+    "word": "agent",
+    "start": 2.392,
+    "end": 2.728
+  },
+  {
+    "word": "sends",
+    "start": 2.775,
+    "end": 3.007
+  },
+  {
+    "word": "a",
+    "start": 3.03,
+    "end": 3.065
+  },
+  {
+    "word": "single",
+    "start": 3.111,
+    "end": 3.413
+  },
+  {
+    "word": "email.",
+    "start": 3.46,
+    "end": 4.272
+  }
+]

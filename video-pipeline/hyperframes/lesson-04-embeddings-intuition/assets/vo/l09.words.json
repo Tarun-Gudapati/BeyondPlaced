@@ -1,0 +1,87 @@
+[
+  {
+    "word": "Two",
+    "start": 0,
+    "end": 0.232
+  },
+  {
+    "word": "rules.",
+    "start": 0.313,
+    "end": 0.836
+  },
+  {
+    "word": "First,",
+    "start": 0.998,
+    "end": 1.579
+  },
+  {
+    "word": "embed",
+    "start": 1.637,
+    "end": 2.02
+  },
+  {
+    "word": "documents",
+    "start": 2.078,
+    "end": 2.566
+  },
+  {
+    "word": "and",
+    "start": 2.601,
+    "end": 2.682
+  },
+  {
+    "word": "queries",
+    "start": 2.752,
+    "end": 3.158
+  },
+  {
+    "word": "with",
+    "start": 3.193,
+    "end": 3.309
+  },
+  {
+    "word": "the",
+    "start": 3.344,
+    "end": 3.413
+  },
+  {
+    "word": "same",
+    "start": 3.46,
+    "end": 3.704
+  },
+  {
+    "word": "model.",
+    "start": 3.75,
+    "end": 4.249
+  },
+  {
+    "word": "Every",
+    "start": 4.563,
+    "end": 4.841
+  },
+  {
+    "word": "model",
+    "start": 4.899,
+    "end": 5.178
+  },
+  {
+    "word": "draws",
+    "start": 5.248,
+    "end": 5.573
+  },
+  {
+    "word": "its",
+    "start": 5.619,
+    "end": 5.735
+  },
+  {
+    "word": "own",
+    "start": 5.793,
+    "end": 5.979
+  },
+  {
+    "word": "map.",
+    "start": 6.037,
+    "end": 6.827
+  }
+]

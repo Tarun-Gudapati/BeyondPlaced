@@ -1,0 +1,87 @@
+[
+  {
+    "word": "Now",
+    "start": 0,
+    "end": 0.197
+  },
+  {
+    "word": "the",
+    "start": 0.255,
+    "end": 0.325
+  },
+  {
+    "word": "model",
+    "start": 0.383,
+    "end": 0.615
+  },
+  {
+    "word": "has",
+    "start": 0.662,
+    "end": 0.778
+  },
+  {
+    "word": "the",
+    "start": 0.836,
+    "end": 0.906
+  },
+  {
+    "word": "facts,",
+    "start": 0.964,
+    "end": 1.416
+  },
+  {
+    "word": "so",
+    "start": 1.463,
+    "end": 1.591
+  },
+  {
+    "word": "it",
+    "start": 1.66,
+    "end": 1.707
+  },
+  {
+    "word": "writes",
+    "start": 1.741,
+    "end": 1.997
+  },
+  {
+    "word": "the",
+    "start": 2.043,
+    "end": 2.125
+  },
+  {
+    "word": "answer:",
+    "start": 2.194,
+    "end": 2.717
+  },
+  {
+    "word": "your",
+    "start": 2.984,
+    "end": 3.146
+  },
+  {
+    "word": "CGPA",
+    "start": 3.193,
+    "end": 3.901
+  },
+  {
+    "word": "is",
+    "start": 3.959,
+    "end": 4.075
+  },
+  {
+    "word": "eight",
+    "start": 4.145,
+    "end": 4.331
+  },
+  {
+    "word": "point",
+    "start": 4.377,
+    "end": 4.574
+  },
+  {
+    "word": "four.",
+    "start": 4.644,
+    "end": 5.619
+  }
+]

@@ -1,0 +1,100 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .t-label { position: absolute; left: 180px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #t-l1 { top: 220px; }
+    .t-g { position: absolute; left: 180px; font-size: 80px; font-weight: 900; letter-spacing: -0.02em; line-height: 1; white-space: nowrap; }
+    #t-g1 { top: 290px; }
+    #t-g2 { top: 410px; }
+    #t-g3 { top: 530px; }
+    #t-lap { position: absolute; left: 1180px; top: 320px; width: 560px; height: 370px; border: 12px solid #0B1220; border-radius: 24px; background: #FFFFFF; box-shadow: 0 24px 48px rgba(11,18,32,0.16); }
+    #t-base { position: absolute; left: 1130px; top: 690px; width: 660px; height: 26px; background: #0B1220; border-radius: 6px 6px 20px 20px; }
+    #t-llm { position: absolute; left: 1350px; top: 420px; width: 220px; height: 170px; border-radius: 26px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 64px; font-weight: 900; letter-spacing: -0.02em; }
+    #t-ring { position: absolute; left: 1095px; top: 270px; width: 730px; height: 490px; border: 5px dashed #0F766E; border-radius: 44px; }
+    #t-ring-l { position: absolute; left: 1095px; top: 778px; width: 730px; text-align: center; font-size: 34px; font-weight: 700; color: #0F766E; }
+    #t-wifi { position: absolute; left: 1650px; top: 130px; width: 130px; height: 120px; }
+    #t-l2 { top: 150px; }
+    #t-q { position: absolute; left: 180px; top: 212px; background: #FFFFFF; border: 4px solid #CBD5E1; border-radius: 16px; padding: 18px 28px; font-family: "JetBrains Mono", monospace; font-size: 34px; font-weight: 700; white-space: nowrap; }
+    #t-yours { position: absolute; left: 960px; top: 232px; font-size: 36px; font-weight: 900; color: #EA580C; }
+    .t-blk { position: absolute; left: 180px; border-radius: 22px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-weight: 900; letter-spacing: -0.02em; }
+    #t-bl { top: 380px; width: 130px; height: 130px; font-size: 44px; }
+    #t-bh { top: 590px; width: 250px; height: 250px; font-size: 52px; }
+    .t-name { position: absolute; font-size: 34px; font-weight: 700; color: #475569; }
+    #t-nl { left: 350px; top: 380px; }
+    #t-nh { left: 470px; top: 596px; }
+    .t-row { position: absolute; display: flex; flex-wrap: wrap; gap: 12px 10px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 32px; }
+    #t-rl { left: 350px; top: 440px; width: 1300px; }
+    #t-rh { left: 470px; top: 656px; width: 1240px; }
+    .t-tile { padding: 6px 12px; border-radius: 6px; background: #CCFBF1; border: 3px solid #5EEAD4; line-height: 1.2; }
+    #t-rh .t-tile { background: #FFFFFF; border-color: #0F766E; }
+    #t-note { position: absolute; left: 470px; top: 800px; font-size: 28px; color: #64748B; }
+  </style>
+  <div id="root" data-composition-id="trade" data-width="1920" data-height="1080">
+    <div id="t-l1" class="t-label">You get</div>
+    <div id="t-g1" class="t-g">₹0 per token</div>
+    <div id="t-g2" class="t-g">Works offline</div>
+    <div id="t-g3" class="t-g">Data stays with you</div>
+    <div id="t-lap"></div>
+    <div id="t-base"></div>
+    <div id="t-llm">LLM</div>
+    <div id="t-ring"></div>
+    <div id="t-ring-l">prompts stay inside</div>
+    <svg id="t-wifi" viewBox="0 0 130 120" data-layout-ignore>
+      <path d="M 15 50 A 70 70 0 0 1 115 50" fill="none" stroke="#64748B" stroke-width="10" stroke-linecap="round" />
+      <path d="M 33 70 A 45 45 0 0 1 97 70" fill="none" stroke="#64748B" stroke-width="10" stroke-linecap="round" />
+      <circle cx="65" cy="95" r="9" fill="#64748B" />
+      <path id="t-wifi-x" d="M 18 108 L 112 14" fill="none" stroke="#0B1220" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1.2" stroke-dashoffset="1.1" />
+    </svg>
+
+    <div id="t-l2" class="t-label">You give up</div>
+    <div id="t-q">Q: process vs thread, in 3 lines?</div>
+    <div id="t-yours">← your own questions</div>
+    <div id="t-bl" class="t-blk">3B</div>
+    <div id="t-nl" class="t-name">local · llama3.2:3b</div>
+    <div id="t-rl" class="t-row"><span class="t-tile">A</span><span class="t-tile">process</span><span class="t-tile">has</span><span class="t-tile">its</span><span class="t-tile">own</span><span class="t-tile">memory</span><span class="t-tile">.</span></div>
+    <div id="t-bh" class="t-blk">hosted</div>
+    <div id="t-nh" class="t-name">hosted · gpt-4o-mini</div>
+    <div id="t-rh" class="t-row"><span class="t-tile">A</span><span class="t-tile">process</span><span class="t-tile">has</span><span class="t-tile">its</span><span class="t-tile">own</span><span class="t-tile">memory</span><span class="t-tile">.</span><span class="t-tile">Threads</span><span class="t-tile">share</span><span class="t-tile">one</span><span class="t-tile">process</span><span class="t-tile">.</span></div>
+    <div id="t-note">answers and speeds are illustrative</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L12 = 5.737;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const local = gsap.utils.toArray("#t-rl .t-tile");
+    const hosted = gsap.utils.toArray("#t-rh .t-tile");
+
+    gsap.set("#t-l1, .t-g, #t-ring, #t-ring-l, #t-wifi, #t-l2, #t-q, #t-yours, #t-bl, #t-bh, .t-name, #t-note", { opacity: 0 });
+    gsap.set([...local, ...hosted], { opacity: 0 });
+
+    // l11: what you get
+    tl.fromTo("#t-lap, #t-base, #t-llm", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 0);
+    blurIn("#t-l1", 0.3, 0.2);
+    blurIn("#t-g1", 1.486, 0.2);
+    blurIn("#t-g2", 2.113, 0.2);
+    blurIn("#t-wifi", 2.2, 0.2);
+    tl.to("#t-wifi-x", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power2.inOut" }, 2.35);
+    blurIn("#t-g3", 3.123, 0.2);
+    tl.fromTo("#t-ring", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.45, ease: "expo.out" }, 3.82);
+    blurIn("#t-ring-l", 4.168, 0.2);
+
+    // l12: what you give up
+    blurOut("#t-l1, .t-g, #t-lap, #t-base, #t-llm, #t-ring, #t-ring-l, #t-wifi", L12 - 0.2, 0.2);
+    blurIn("#t-l2", L12 + 0.1, 0.2);
+    tl.fromTo("#t-q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, L12 + 0.673);
+    tl.fromTo("#t-bl", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, L12 + 1.637);
+    blurIn("#t-nl", L12 + 1.75, 0.2);
+    local.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.2, ease: "expo.out" }, L12 + 2.241 + i * 0.6));
+    tl.fromTo("#t-bh", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out" }, L12 + 2.833);
+    blurIn("#t-nh", L12 + 2.95, 0.2);
+    hosted.forEach((el, i) => tl.fromTo(el, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.15, ease: "expo.out" }, L12 + 3.3 + i * 0.09));
+    blurIn("#t-note", L12 + 3.6, 0.2);
+    tl.to("#t-q", { borderColor: "#EA580C", duration: 0.25 }, L12 + 4.76);
+    blurIn("#t-yours", L12 + 4.76, 0.2);
+
+    blurOut("#t-l2, #t-q, #t-yours, #t-bl, #t-bh, .t-name, .t-row, #t-note", 12.15, 0.25);
+
+    window.__timelines["trade"] = tl;
+  </script>
+</template>

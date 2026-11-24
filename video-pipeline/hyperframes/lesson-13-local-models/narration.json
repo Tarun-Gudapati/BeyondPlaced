@@ -1,0 +1,20 @@
+{
+  "lesson": "local-models",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "credits", "text": "It's two a.m. at a hackathon. Kabir's chatbot finally works, and then his free API credits run out." },
+    { "id": "l02", "scene": "credits", "text": "He doesn't need more credits. He needs a model that runs on his own laptop." },
+    { "id": "l03", "scene": "server", "text": "That's what Ollama does. It's a small server: it downloads open model weights, like Llama or Qwen, and loads them into memory." },
+    { "id": "l04", "scene": "server", "text": "Then it serves an API on localhost, right on his machine." },
+    { "id": "l05", "scene": "server", "text": "One command pulls a model. One more, and he's chatting in the terminal." },
+    { "id": "l06", "scene": "swap", "text": "And here's the trick. Ollama speaks the same format as the OpenAI API." },
+    { "id": "l07", "scene": "swap", "text": "So Kabir changes the base URL and the model name, and the rest of his code stays exactly the same." },
+    { "id": "l08", "scene": "swap", "text": "Build and debug on the free local model, then flip one setting to a hosted model for the demo." },
+    { "id": "l09", "scene": "fit", "text": "The catch is memory. Every weight must fit in RAM, so local models are quantised: about four bits per weight instead of sixteen." },
+    { "id": "l10", "scene": "fit", "text": "On an eight gigabyte laptop, a three billion parameter model fits. Bigger models need more RAM." },
+    { "id": "l11", "scene": "trade", "text": "What do you get? No bill, no internet, and nothing you type leaves the laptop." },
+    { "id": "l12", "scene": "trade", "text": "What do you give up? It's smaller and slower than a hosted model, so test both on your own questions." },
+    { "id": "l13", "scene": "claim", "text": "Remember it like this: same SDK, different base URL." },
+    { "id": "l14", "scene": "claim", "text": "Next lesson: prompting, RAG, or fine-tuning?" }
+  ]
+}

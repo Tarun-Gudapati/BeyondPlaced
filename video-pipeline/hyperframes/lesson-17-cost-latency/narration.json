@@ -1,0 +1,19 @@
+{
+  "lesson": "cost-latency",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "meter", "text": "Rahul's placement bot goes live, and a few thousand students show up. Every question now costs tokens and seconds." },
+    { "id": "l02", "scene": "meter", "text": "The bill is simple: input tokens times the input price, plus output tokens times the output price." },
+    { "id": "l03", "scene": "meter", "text": "So measure first. Every response reports its own usage, so log tokens, seconds and cost for each request." },
+    { "id": "l04", "scene": "levers", "text": "Lever one: send fewer tokens. Trim the system prompt, retrieve four chunks instead of ten, and cap the output." },
+    { "id": "l05", "scene": "levers", "text": "Lever two: route. An easy question goes to a small model, and a hard one goes to the large one." },
+    { "id": "l06", "scene": "levers", "text": "Then rerun your eval set, because a cheaper wrong answer isn't cheaper." },
+    { "id": "l07", "scene": "cache", "text": "Lever three is the best one: a cache. Many students ask exactly the same question." },
+    { "id": "l08", "scene": "cache", "text": "Answer it once and store it. Every repeat is a cache hit that skips the model: no tokens, almost no wait." },
+    { "id": "l09", "scene": "cache", "text": "Careful when you match paraphrases. A TCS question and an Infosys question look almost identical, but need different answers." },
+    { "id": "l10", "scene": "tail", "text": "For speed, don't trust the average. One slow request in twenty hides inside it." },
+    { "id": "l11", "scene": "tail", "text": "Report p ninety-five instead: the time that ninety-five percent of requests beat." },
+    { "id": "l12", "scene": "claim", "text": "So the order is: measure, then cache, route and trim. The cheapest request is the one that never reaches the model." },
+    { "id": "l13", "scene": "claim", "text": "Next lesson: your portfolio, resume and interviews." }
+  ]
+}

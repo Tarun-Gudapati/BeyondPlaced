@@ -1,0 +1,19 @@
+{
+  "lesson": "cosine-similarity",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "arrows", "text": "Arjun's placement FAQ bot has one question from a student, and fifty stored answers, each one a vector. Which answer is closest in meaning?" },
+    { "id": "l02", "scene": "arrows", "text": "Picture two vectors as arrows. Cosine similarity measures the angle between them, and ignores how long they are." },
+    { "id": "l03", "scene": "angle", "text": "Same direction scores one. A right angle scores zero: nothing in common. Opposite directions score minus one." },
+    { "id": "l04", "scene": "angle", "text": "Forty-five degrees lands in between, at about zero point seven one." },
+    { "id": "l05", "scene": "formula", "text": "The formula is short: the dot product, divided by the two lengths multiplied together." },
+    { "id": "l06", "scene": "formula", "text": "Take three, four and six, eight. They point the same way, so even with different lengths, the score is exactly one." },
+    { "id": "l07", "scene": "unit", "text": "Now the trick. Scale every vector to length one, just once. After that, cosine similarity is simply the dot product." },
+    { "id": "l08", "scene": "rank", "text": "So stack all fifty answers into one matrix, multiply by the question, and you get fifty scores at once." },
+    { "id": "l09", "scene": "rank", "text": "Sort them, keep the top three. That is vector search, in a few lines of NumPy." },
+    { "id": "l10", "scene": "rank", "text": "The answers are embedded once and saved. Only the question is new each time." },
+    { "id": "l11", "scene": "rank", "text": "One warning: a score is for ranking. Zero point eight two does not mean eighty-two percent correct." },
+    { "id": "l12", "scene": "claim", "text": "So the line to remember: vector search is a dot product and a sort. Everything after that is about speed." },
+    { "id": "l13", "scene": "claim", "text": "Next lesson: vector databases." }
+  ]
+}

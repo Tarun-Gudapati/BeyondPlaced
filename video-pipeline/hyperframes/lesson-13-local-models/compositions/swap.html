@@ -1,0 +1,93 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #w-card { position: absolute; left: 120px; top: 170px; width: 1010px; height: 700px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #w-bar { height: 68px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; color: #475569; }
+    #w-same-l { font-family: Inter, sans-serif; font-size: 30px; font-weight: 700; color: #0F766E; }
+    #w-code { padding: 30px 36px 0 56px; font-family: "JetBrains Mono", monospace; font-size: 34px; font-weight: 700; }
+    .w-ln { position: relative; height: 54px; line-height: 54px; white-space: pre; isolation: isolate; }
+    .w-hl { position: absolute; left: -22px; right: -14px; top: 3px; bottom: 3px; border-radius: 8px; background: #FFEDD5; z-index: -1; }
+    .w-tick { position: absolute; left: -34px; top: 12px; width: 8px; height: 30px; border-radius: 4px; background: #0F766E; }
+    .w-swap { position: relative; display: inline-block; }
+    .w-l { position: absolute; left: 0; top: 0; color: #C2410C; }
+    .w-ep { position: absolute; left: 1210px; width: 590px; height: 170px; background: #FFFFFF; border-radius: 20px; padding: 26px 32px; }
+    #w-a { top: 250px; border: 3px solid #CBD5E1; }
+    #w-b { top: 560px; border: 4px solid #0F766E; }
+    .w-ep-t { font-size: 36px; font-weight: 900; letter-spacing: -0.01em; }
+    .w-ep-r { margin-top: 18px; font-family: "JetBrains Mono", monospace; font-size: 30px; font-weight: 700; color: #475569; }
+    #w-eq { position: absolute; left: 1210px; top: 448px; width: 590px; text-align: center; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; color: #0F766E; }
+    #w-env { position: absolute; left: 1210px; top: 300px; font-family: "JetBrains Mono", monospace; font-size: 40px; font-weight: 700; }
+    #w-sw { position: absolute; left: 1210px; top: 380px; width: 560px; height: 112px; border-radius: 56px; background: #E2E8F0; border: 3px solid #CBD5E1; }
+    #w-knob { position: absolute; left: 6px; top: 6px; width: 268px; height: 94px; border-radius: 47px; background: #FFFFFF; border: 4px solid #0F766E; box-shadow: 0 8px 18px rgba(11,18,32,0.16); }
+    .w-opt { position: absolute; top: 0; width: 280px; height: 106px; display: grid; place-items: center; font-family: "JetBrains Mono", monospace; font-size: 38px; font-weight: 700; }
+    #w-o1 { left: 0; }
+    #w-o2 { left: 274px; }
+    #w-tag1 { position: absolute; left: 1210px; top: 522px; width: 560px; font-size: 34px; font-weight: 700; color: #0F766E; }
+    #w-tag2 { position: absolute; left: 1210px; top: 578px; width: 560px; text-align: right; font-size: 34px; font-weight: 700; color: #0B1220; }
+  </style>
+  <div id="root" data-composition-id="swap" data-width="1920" data-height="1080">
+    <div id="w-card">
+      <div id="w-bar"><span>app.py</span><span id="w-same-l">teal lines: unchanged</span></div>
+      <div id="w-code">
+        <div class="w-ln"><span class="w-tick"></span>from openai import OpenAI</div>
+        <div class="w-ln"> </div>
+        <div class="w-ln"><span class="w-tick"></span>client = OpenAI(</div>
+        <div class="w-ln" id="w-l4"><span class="w-hl"></span>    base_url=<span class="w-swap" data-layout-allow-overlap><span class="w-h" data-layout-allow-overlap>"https://api.openai.com/v1"</span><span class="w-l" data-layout-allow-overlap>"http://localhost:11434/v1"</span></span>,</div>
+        <div class="w-ln"><span class="w-tick"></span>    api_key=KEY,</div>
+        <div class="w-ln"><span class="w-tick"></span>)</div>
+        <div class="w-ln"><span class="w-tick"></span>resp = client.chat.completions.create(</div>
+        <div class="w-ln" id="w-l8"><span class="w-hl"></span>    model=<span class="w-swap" data-layout-allow-overlap><span class="w-h" data-layout-allow-overlap>"gpt-4o-mini"</span><span class="w-l" data-layout-allow-overlap>"llama3.2:3b"</span></span>,</div>
+        <div class="w-ln"><span class="w-tick"></span>    messages=messages,</div>
+        <div class="w-ln"><span class="w-tick"></span>)</div>
+      </div>
+    </div>
+    <div id="w-a" class="w-ep"><div class="w-ep-t">OpenAI API</div><div class="w-ep-r">POST /v1/chat/completions</div></div>
+    <div id="w-eq">= same format</div>
+    <div id="w-b" class="w-ep"><div class="w-ep-t">Ollama</div><div class="w-ep-r">POST /v1/chat/completions</div></div>
+    <div id="w-env">LLM_PROVIDER</div>
+    <div id="w-sw"><div id="w-knob"></div><div id="w-o1" class="w-opt">local</div><div id="w-o2" class="w-opt">openai</div></div>
+    <div id="w-tag1">free: build and debug here</div>
+    <div id="w-tag2">hosted: switch for the demo</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L7 = 5.133, L8 = 11.706;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const swapTo = (line, local, t) => {
+      tl.to(`${line} .w-h`, { opacity: local ? 0 : 1, duration: 0.2, ease: "power2.inOut" }, t);
+      tl.to(`${line} .w-l`, { opacity: local ? 1 : 0, duration: 0.2, ease: "power2.inOut" }, t);
+    };
+
+    gsap.set(".w-hl, .w-tick, .w-l, #w-same-l, #w-a, #w-b, #w-eq, #w-env, #w-sw, #w-tag1, #w-tag2", { opacity: 0 });
+
+    // l06: Ollama speaks the same format as the OpenAI API
+    tl.fromTo("#w-card", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, 0);
+    tl.fromTo("#w-b", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 1.207);
+    blurIn("#w-eq", 2.067, 0.2);
+    tl.fromTo("#w-a", { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 3.1);
+
+    // l07: the base URL and the model name change; the rest stays
+    tl.to("#w-l4 .w-hl", { opacity: 1, duration: 0.2 }, L7 + 1.3);
+    swapTo("#w-l4", true, L7 + 1.45);
+    tl.to("#w-l8 .w-hl", { opacity: 1, duration: 0.2 }, L7 + 2.345);
+    swapTo("#w-l8", true, L7 + 2.5);
+    gsap.utils.toArray(".w-tick").forEach((el, i) => tl.fromTo(el, { opacity: 0, scaleY: 0.3 }, { opacity: 1, scaleY: 1, duration: 0.25, ease: "expo.out" }, L7 + 3.518 + i * 0.07));
+    blurIn("#w-same-l", L7 + 4.354, 0.2);
+
+    // l08: build on local, flip one setting for the demo
+    blurOut("#w-a, #w-b, #w-eq", L8 - 0.25, 0.2);
+    blurIn("#w-env", L8 + 0.05, 0.2);
+    tl.fromTo("#w-sw", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, L8 + 0.15);
+    blurIn("#w-tag1", L8 + 1.242, 0.2);
+    tl.fromTo("#w-knob", { x: 0 }, { x: 274, duration: 0.5, ease: "power2.inOut" }, L8 + 2.728);
+    swapTo("#w-l4", false, L8 + 2.95);
+    swapTo("#w-l8", false, L8 + 3.05);
+    tl.to("#w-tag1", { opacity: 0.35, duration: 0.3 }, L8 + 3.0);
+    blurIn("#w-tag2", L8 + 3.936, 0.2);
+
+    blurOut("#w-card, #w-env, #w-sw, #w-tag1, #w-tag2", 17.45, 0.25);
+
+    window.__timelines["swap"] = tl;
+  </script>
+</template>

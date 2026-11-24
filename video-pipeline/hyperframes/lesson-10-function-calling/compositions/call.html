@@ -1,0 +1,70 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .k-mono { font-family: "JetBrains Mono", monospace; font-weight: 700; }
+    #k-llm { position: absolute; left: 150px; top: 270px; width: 320px; height: 280px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 80px; font-weight: 900; letter-spacing: -0.02em; }
+    #k-arrow { position: absolute; left: 490px; top: 406px; width: 140px; height: 8px; background: #0F766E; border-radius: 4px; transform-origin: left center; }
+    #k-arrow::after { content: ""; position: absolute; right: -14px; top: -10px; border-left: 18px solid #0F766E; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+    #k-card { position: absolute; left: 680px; top: 170px; width: 1100px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.16); padding: 36px; }
+    #k-title { font-size: 34px; font-weight: 700; color: #0F766E; margin-bottom: 22px; }
+    #k-content { font-size: 40px; margin-bottom: 20px; }
+    #k-content .k-key, #k-tc .k-key { color: #475569; }
+    #k-tc-label { font-size: 40px; color: #0F766E; margin-bottom: 12px; }
+    #k-tc { border: 3px solid #5EEAD4; border-radius: 18px; background: #F0FDFA; padding: 10px 24px; }
+    .k-row { display: flex; align-items: center; height: 84px; font-size: 42px; }
+    .k-row + .k-row { border-top: 3px solid #CCFBF1; }
+    .k-key { width: 290px; flex: none; }
+    #k-json { padding: 4px 10px; margin-left: -10px; border-radius: 8px; }
+    #k-chips { position: absolute; left: 680px; top: 690px; display: flex; gap: 28px; }
+    .k-chip { background: #FFFFFF; border: 3px dashed #94A3B8; border-radius: 12px; padding: 14px 24px; font-size: 36px; font-weight: 700; color: #475569; }
+    .k-chip .k-mono { color: #0B1220; margin-right: 14px; }
+    #k-big { position: absolute; left: 680px; top: 830px; font-size: 84px; font-weight: 900; letter-spacing: -0.02em; }
+  </style>
+  <div id="root" data-composition-id="call" data-width="1920" data-height="1080">
+    <div id="k-llm">LLM</div>
+    <div id="k-arrow"></div>
+    <div id="k-card">
+      <div id="k-title">The model's reply</div>
+      <div id="k-content" class="k-mono"><span class="k-key">content:</span> None</div>
+      <div id="k-tc-label" class="k-mono">tool_calls</div>
+      <div id="k-tc" class="k-mono">
+        <div class="k-row" id="k-r1"><span class="k-key">name</span><span>"get_student"</span></div>
+        <div class="k-row" id="k-r2"><span class="k-key">arguments</span><span id="k-json">{"roll_no": "21CS045"}</span></div>
+      </div>
+    </div>
+    <div id="k-chips">
+      <div class="k-chip" id="k-c1"><span class="k-mono">get_student()</span>not run</div>
+      <div class="k-chip" id="k-c2"><span class="k-mono">database</span>untouched</div>
+    </div>
+    <div id="k-big">A <span id="k-req">request</span>, not an action</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L6 = 7.966;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#k-tc", { opacity: 0 });
+    gsap.set("#k-arrow", { scaleX: 0 });
+
+    tl.fromTo("#k-llm", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, 0);
+    tl.to("#k-arrow", { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, 0.2);
+    tl.fromTo("#k-card", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.45, ease: "expo.out" }, 0.3);
+    blurIn("#k-content", 0.6, 0.2);
+
+    blurIn("#k-tc-label", 2.392, 0.2);
+    tl.fromTo("#k-tc", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 2.6);
+    blurIn("#k-r1", 4.342, 0.2);
+    blurIn("#k-r2", 5.642, 0.2);
+    tl.fromTo("#k-json", { backgroundColor: "rgba(153,246,228,0)" }, { backgroundColor: "rgba(153,246,228,1)", duration: 0.25, ease: "power2.out" }, 6.339);
+
+    tl.fromTo("#k-c1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, L6 + 1.614);
+    tl.fromTo("#k-c2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, L6 + 1.962);
+    blurIn("#k-big", L6 + 2.45, 0.2);
+    tl.fromTo("#k-req", { color: "#0B1220" }, { color: "#EA580C", duration: 0.2 }, L6 + 3.762);
+
+    blurOut("#k-llm, #k-arrow, #k-card, #k-chips, #k-big", 12.5, 0.25);
+
+    window.__timelines["call"] = tl;
+  </script>
+</template>

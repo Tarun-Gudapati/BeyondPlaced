@@ -1,0 +1,1213 @@
+{
+  "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+  "modelId": "eleven_multilingual_v2",
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "arrows",
+      "text": "Arjun's placement FAQ bot has one question from a student, and fifty stored answers, each one a vector. Which answer is closest in meaning?",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 9.613,
+      "words": [
+        {
+          "word": "Arjun's",
+          "start": 0,
+          "end": 0.557
+        },
+        {
+          "word": "placement",
+          "start": 0.604,
+          "end": 1.091
+        },
+        {
+          "word": "FAQ",
+          "start": 1.138,
+          "end": 1.567
+        },
+        {
+          "word": "bot",
+          "start": 1.765,
+          "end": 2.055
+        },
+        {
+          "word": "has",
+          "start": 2.218,
+          "end": 2.392
+        },
+        {
+          "word": "one",
+          "start": 2.461,
+          "end": 2.647
+        },
+        {
+          "word": "question",
+          "start": 2.682,
+          "end": 3.053
+        },
+        {
+          "word": "from",
+          "start": 3.1,
+          "end": 3.228
+        },
+        {
+          "word": "a",
+          "start": 3.274,
+          "end": 3.297
+        },
+        {
+          "word": "student,",
+          "start": 3.355,
+          "end": 3.901
+        },
+        {
+          "word": "and",
+          "start": 4.098,
+          "end": 4.249
+        },
+        {
+          "word": "fifty",
+          "start": 4.319,
+          "end": 4.609
+        },
+        {
+          "word": "stored",
+          "start": 4.667,
+          "end": 5.004
+        },
+        {
+          "word": "answers,",
+          "start": 5.074,
+          "end": 5.654
+        },
+        {
+          "word": "each",
+          "start": 5.793,
+          "end": 5.991
+        },
+        {
+          "word": "one",
+          "start": 6.049,
+          "end": 6.188
+        },
+        {
+          "word": "a",
+          "start": 6.211,
+          "end": 6.235
+        },
+        {
+          "word": "vector.",
+          "start": 6.293,
+          "end": 6.861
+        },
+        {
+          "word": "Which",
+          "start": 7.349,
+          "end": 7.581
+        },
+        {
+          "word": "answer",
+          "start": 7.628,
+          "end": 7.918
+        },
+        {
+          "word": "is",
+          "start": 7.988,
+          "end": 8.057
+        },
+        {
+          "word": "closest",
+          "start": 8.104,
+          "end": 8.522
+        },
+        {
+          "word": "in",
+          "start": 8.568,
+          "end": 8.649
+        },
+        {
+          "word": "meaning?",
+          "start": 8.707,
+          "end": 9.613
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "arrows",
+      "text": "Picture two vectors as arrows. Cosine similarity measures the angle between them, and ignores how long they are.",
+      "src": "assets/vo/l02.mp3",
+      "start": 9.963,
+      "duration": 7.291,
+      "words": [
+        {
+          "word": "Picture",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "word": "two",
+          "start": 0.395,
+          "end": 0.58
+        },
+        {
+          "word": "vectors",
+          "start": 0.662,
+          "end": 1.057
+        },
+        {
+          "word": "as",
+          "start": 1.115,
+          "end": 1.207
+        },
+        {
+          "word": "arrows.",
+          "start": 1.277,
+          "end": 1.927
+        },
+        {
+          "word": "Cosine",
+          "start": 2.287,
+          "end": 2.763
+        },
+        {
+          "word": "similarity",
+          "start": 2.81,
+          "end": 3.379
+        },
+        {
+          "word": "measures",
+          "start": 3.448,
+          "end": 3.75
+        },
+        {
+          "word": "the",
+          "start": 3.785,
+          "end": 3.866
+        },
+        {
+          "word": "angle",
+          "start": 3.947,
+          "end": 4.238
+        },
+        {
+          "word": "between",
+          "start": 4.272,
+          "end": 4.621
+        },
+        {
+          "word": "them,",
+          "start": 4.656,
+          "end": 4.899
+        },
+        {
+          "word": "and",
+          "start": 5.039,
+          "end": 5.19
+        },
+        {
+          "word": "ignores",
+          "start": 5.259,
+          "end": 5.677
+        },
+        {
+          "word": "how",
+          "start": 5.712,
+          "end": 5.817
+        },
+        {
+          "word": "long",
+          "start": 5.863,
+          "end": 6.026
+        },
+        {
+          "word": "they",
+          "start": 6.072,
+          "end": 6.2
+        },
+        {
+          "word": "are.",
+          "start": 6.258,
+          "end": 7.291
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "angle",
+      "text": "Same direction scores one. A right angle scores zero: nothing in common. Opposite directions score minus one.",
+      "src": "assets/vo/l03.mp3",
+      "start": 17.604,
+      "duration": 7.663,
+      "words": [
+        {
+          "word": "Same",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "word": "direction",
+          "start": 0.348,
+          "end": 0.778
+        },
+        {
+          "word": "scores",
+          "start": 0.836,
+          "end": 1.184
+        },
+        {
+          "word": "one.",
+          "start": 1.265,
+          "end": 1.672
+        },
+        {
+          "word": "A",
+          "start": 1.904,
+          "end": 1.985
+        },
+        {
+          "word": "right",
+          "start": 2.078,
+          "end": 2.299
+        },
+        {
+          "word": "angle",
+          "start": 2.345,
+          "end": 2.635
+        },
+        {
+          "word": "scores",
+          "start": 2.67,
+          "end": 2.995
+        },
+        {
+          "word": "zero:",
+          "start": 3.042,
+          "end": 3.622
+        },
+        {
+          "word": "nothing",
+          "start": 3.936,
+          "end": 4.238
+        },
+        {
+          "word": "in",
+          "start": 4.284,
+          "end": 4.354
+        },
+        {
+          "word": "common.",
+          "start": 4.423,
+          "end": 4.865
+        },
+        {
+          "word": "Opposite",
+          "start": 5.178,
+          "end": 5.608
+        },
+        {
+          "word": "directions",
+          "start": 5.642,
+          "end": 6.142
+        },
+        {
+          "word": "score",
+          "start": 6.188,
+          "end": 6.467
+        },
+        {
+          "word": "minus",
+          "start": 6.513,
+          "end": 6.838
+        },
+        {
+          "word": "one.",
+          "start": 6.92,
+          "end": 7.663
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "angle",
+      "text": "Forty-five degrees lands in between, at about zero point seven one.",
+      "src": "assets/vo/l04.mp3",
+      "start": 25.617,
+      "duration": 4.551,
+      "words": [
+        {
+          "word": "Forty-five",
+          "start": 0,
+          "end": 0.627
+        },
+        {
+          "word": "degrees",
+          "start": 0.662,
+          "end": 1.045
+        },
+        {
+          "word": "lands",
+          "start": 1.115,
+          "end": 1.405
+        },
+        {
+          "word": "in",
+          "start": 1.44,
+          "end": 1.509
+        },
+        {
+          "word": "between,",
+          "start": 1.556,
+          "end": 2.113
+        },
+        {
+          "word": "at",
+          "start": 2.229,
+          "end": 2.357
+        },
+        {
+          "word": "about",
+          "start": 2.392,
+          "end": 2.612
+        },
+        {
+          "word": "zero",
+          "start": 2.659,
+          "end": 2.984
+        },
+        {
+          "word": "point",
+          "start": 3.065,
+          "end": 3.286
+        },
+        {
+          "word": "seven",
+          "start": 3.355,
+          "end": 3.622
+        },
+        {
+          "word": "one.",
+          "start": 3.704,
+          "end": 4.551
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "formula",
+      "text": "The formula is short: the dot product, divided by the two lengths multiplied together.",
+      "src": "assets/vo/l05.mp3",
+      "start": 30.518,
+      "duration": 5.851,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.151
+        },
+        {
+          "word": "formula",
+          "start": 0.209,
+          "end": 0.58
+        },
+        {
+          "word": "is",
+          "start": 0.639,
+          "end": 0.72
+        },
+        {
+          "word": "short:",
+          "start": 0.766,
+          "end": 1.289
+        },
+        {
+          "word": "the",
+          "start": 1.602,
+          "end": 1.707
+        },
+        {
+          "word": "dot",
+          "start": 1.765,
+          "end": 1.962
+        },
+        {
+          "word": "product,",
+          "start": 2.009,
+          "end": 2.531
+        },
+        {
+          "word": "divided",
+          "start": 2.647,
+          "end": 3.053
+        },
+        {
+          "word": "by",
+          "start": 3.1,
+          "end": 3.193
+        },
+        {
+          "word": "the",
+          "start": 3.251,
+          "end": 3.32
+        },
+        {
+          "word": "two",
+          "start": 3.367,
+          "end": 3.529
+        },
+        {
+          "word": "lengths",
+          "start": 3.611,
+          "end": 3.982
+        },
+        {
+          "word": "multiplied",
+          "start": 4.122,
+          "end": 4.632
+        },
+        {
+          "word": "together.",
+          "start": 4.667,
+          "end": 5.851
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "formula",
+      "text": "Take three, four and six, eight. They point the same way, so even with different lengths, the score is exactly one.",
+      "src": "assets/vo/l06.mp3",
+      "start": 36.719,
+      "duration": 7.198,
+      "words": [
+        {
+          "word": "Take",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "word": "three,",
+          "start": 0.325,
+          "end": 0.685
+        },
+        {
+          "word": "four",
+          "start": 0.755,
+          "end": 0.964
+        },
+        {
+          "word": "and",
+          "start": 0.998,
+          "end": 1.08
+        },
+        {
+          "word": "six,",
+          "start": 1.138,
+          "end": 1.556
+        },
+        {
+          "word": "eight.",
+          "start": 1.672,
+          "end": 2.078
+        },
+        {
+          "word": "They",
+          "start": 2.392,
+          "end": 2.554
+        },
+        {
+          "word": "point",
+          "start": 2.612,
+          "end": 2.798
+        },
+        {
+          "word": "the",
+          "start": 2.844,
+          "end": 2.914
+        },
+        {
+          "word": "same",
+          "start": 2.972,
+          "end": 3.204
+        },
+        {
+          "word": "way,",
+          "start": 3.251,
+          "end": 3.669
+        },
+        {
+          "word": "so",
+          "start": 3.738,
+          "end": 3.866
+        },
+        {
+          "word": "even",
+          "start": 3.947,
+          "end": 4.156
+        },
+        {
+          "word": "with",
+          "start": 4.191,
+          "end": 4.319
+        },
+        {
+          "word": "different",
+          "start": 4.365,
+          "end": 4.656
+        },
+        {
+          "word": "lengths,",
+          "start": 4.702,
+          "end": 5.155
+        },
+        {
+          "word": "the",
+          "start": 5.224,
+          "end": 5.329
+        },
+        {
+          "word": "score",
+          "start": 5.387,
+          "end": 5.7
+        },
+        {
+          "word": "is",
+          "start": 5.735,
+          "end": 5.817
+        },
+        {
+          "word": "exactly",
+          "start": 5.875,
+          "end": 6.269
+        },
+        {
+          "word": "one.",
+          "start": 6.351,
+          "end": 7.198
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "unit",
+      "text": "Now the trick. Scale every vector to length one, just once. After that, cosine similarity is simply the dot product.",
+      "src": "assets/vo/l07.mp3",
+      "start": 44.267,
+      "duration": 7.663,
+      "words": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "the",
+          "start": 0.209,
+          "end": 0.279
+        },
+        {
+          "word": "trick.",
+          "start": 0.337,
+          "end": 0.766
+        },
+        {
+          "word": "Scale",
+          "start": 0.964,
+          "end": 1.312
+        },
+        {
+          "word": "every",
+          "start": 1.358,
+          "end": 1.579
+        },
+        {
+          "word": "vector",
+          "start": 1.637,
+          "end": 1.939
+        },
+        {
+          "word": "to",
+          "start": 1.985,
+          "end": 2.043
+        },
+        {
+          "word": "length",
+          "start": 2.113,
+          "end": 2.334
+        },
+        {
+          "word": "one,",
+          "start": 2.415,
+          "end": 2.763
+        },
+        {
+          "word": "just",
+          "start": 2.844,
+          "end": 3.053
+        },
+        {
+          "word": "once.",
+          "start": 3.135,
+          "end": 3.576
+        },
+        {
+          "word": "After",
+          "start": 3.994,
+          "end": 4.284
+        },
+        {
+          "word": "that,",
+          "start": 4.331,
+          "end": 4.644
+        },
+        {
+          "word": "cosine",
+          "start": 4.714,
+          "end": 5.155
+        },
+        {
+          "word": "similarity",
+          "start": 5.19,
+          "end": 5.747
+        },
+        {
+          "word": "is",
+          "start": 5.805,
+          "end": 5.875
+        },
+        {
+          "word": "simply",
+          "start": 5.909,
+          "end": 6.211
+        },
+        {
+          "word": "the",
+          "start": 6.258,
+          "end": 6.327
+        },
+        {
+          "word": "dot",
+          "start": 6.374,
+          "end": 6.594
+        },
+        {
+          "word": "product.",
+          "start": 6.653,
+          "end": 7.663
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "rank",
+      "text": "So stack all fifty answers into one matrix, multiply by the question, and you get fifty scores at once.",
+      "src": "assets/vo/l08.mp3",
+      "start": 52.28,
+      "duration": 6.78,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "stack",
+          "start": 0.244,
+          "end": 0.534
+        },
+        {
+          "word": "all",
+          "start": 0.592,
+          "end": 0.778
+        },
+        {
+          "word": "fifty",
+          "start": 0.848,
+          "end": 1.138
+        },
+        {
+          "word": "answers",
+          "start": 1.207,
+          "end": 1.66
+        },
+        {
+          "word": "into",
+          "start": 1.718,
+          "end": 1.927
+        },
+        {
+          "word": "one",
+          "start": 2.02,
+          "end": 2.206
+        },
+        {
+          "word": "matrix,",
+          "start": 2.252,
+          "end": 2.926
+        },
+        {
+          "word": "multiply",
+          "start": 3.286,
+          "end": 3.75
+        },
+        {
+          "word": "by",
+          "start": 3.82,
+          "end": 3.924
+        },
+        {
+          "word": "the",
+          "start": 3.982,
+          "end": 4.052
+        },
+        {
+          "word": "question,",
+          "start": 4.098,
+          "end": 4.621
+        },
+        {
+          "word": "and",
+          "start": 4.737,
+          "end": 4.865
+        },
+        {
+          "word": "you",
+          "start": 4.911,
+          "end": 4.981
+        },
+        {
+          "word": "get",
+          "start": 5.039,
+          "end": 5.166
+        },
+        {
+          "word": "fifty",
+          "start": 5.213,
+          "end": 5.503
+        },
+        {
+          "word": "scores",
+          "start": 5.561,
+          "end": 5.886
+        },
+        {
+          "word": "at",
+          "start": 5.933,
+          "end": 6.002
+        },
+        {
+          "word": "once.",
+          "start": 6.072,
+          "end": 6.78
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "rank",
+      "text": "Sort them, keep the top three. That is vector search, in a few lines of NumPy.",
+      "src": "assets/vo/l09.mp3",
+      "start": 59.41,
+      "duration": 5.155,
+      "words": [
+        {
+          "word": "Sort",
+          "start": 0,
+          "end": 0.337
+        },
+        {
+          "word": "them,",
+          "start": 0.372,
+          "end": 0.627
+        },
+        {
+          "word": "keep",
+          "start": 0.743,
+          "end": 0.94
+        },
+        {
+          "word": "the",
+          "start": 0.987,
+          "end": 1.057
+        },
+        {
+          "word": "top",
+          "start": 1.103,
+          "end": 1.312
+        },
+        {
+          "word": "three.",
+          "start": 1.37,
+          "end": 1.846
+        },
+        {
+          "word": "That",
+          "start": 2.078,
+          "end": 2.31
+        },
+        {
+          "word": "is",
+          "start": 2.368,
+          "end": 2.45
+        },
+        {
+          "word": "vector",
+          "start": 2.519,
+          "end": 2.844
+        },
+        {
+          "word": "search,",
+          "start": 2.902,
+          "end": 3.262
+        },
+        {
+          "word": "in",
+          "start": 3.286,
+          "end": 3.39
+        },
+        {
+          "word": "a",
+          "start": 3.425,
+          "end": 3.448
+        },
+        {
+          "word": "few",
+          "start": 3.506,
+          "end": 3.692
+        },
+        {
+          "word": "lines",
+          "start": 3.75,
+          "end": 4.017
+        },
+        {
+          "word": "of",
+          "start": 4.052,
+          "end": 4.11
+        },
+        {
+          "word": "NumPy.",
+          "start": 4.168,
+          "end": 5.155
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "rank",
+      "text": "The answers are embedded once and saved. Only the question is new each time.",
+      "src": "assets/vo/l10.mp3",
+      "start": 64.915,
+      "duration": 5.062,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.163
+        },
+        {
+          "word": "answers",
+          "start": 0.244,
+          "end": 0.58
+        },
+        {
+          "word": "are",
+          "start": 0.615,
+          "end": 0.743
+        },
+        {
+          "word": "embedded",
+          "start": 0.778,
+          "end": 1.196
+        },
+        {
+          "word": "once",
+          "start": 1.277,
+          "end": 1.567
+        },
+        {
+          "word": "and",
+          "start": 1.614,
+          "end": 1.73
+        },
+        {
+          "word": "saved.",
+          "start": 1.8,
+          "end": 2.368
+        },
+        {
+          "word": "Only",
+          "start": 2.786,
+          "end": 3.03
+        },
+        {
+          "word": "the",
+          "start": 3.077,
+          "end": 3.146
+        },
+        {
+          "word": "question",
+          "start": 3.193,
+          "end": 3.529
+        },
+        {
+          "word": "is",
+          "start": 3.576,
+          "end": 3.657
+        },
+        {
+          "word": "new",
+          "start": 3.738,
+          "end": 3.924
+        },
+        {
+          "word": "each",
+          "start": 4.005,
+          "end": 4.203
+        },
+        {
+          "word": "time.",
+          "start": 4.261,
+          "end": 5.062
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "rank",
+      "text": "One warning: a score is for ranking. Zero point eight two does not mean eighty-two percent correct.",
+      "src": "assets/vo/l11.mp3",
+      "start": 70.327,
+      "duration": 6.502,
+      "words": [
+        {
+          "word": "One",
+          "start": 0,
+          "end": 0.244
+        },
+        {
+          "word": "warning:",
+          "start": 0.279,
+          "end": 0.789
+        },
+        {
+          "word": "a",
+          "start": 0.882,
+          "end": 0.94
+        },
+        {
+          "word": "score",
+          "start": 1.022,
+          "end": 1.382
+        },
+        {
+          "word": "is",
+          "start": 1.428,
+          "end": 1.521
+        },
+        {
+          "word": "for",
+          "start": 1.567,
+          "end": 1.672
+        },
+        {
+          "word": "ranking.",
+          "start": 1.73,
+          "end": 2.276
+        },
+        {
+          "word": "Zero",
+          "start": 2.589,
+          "end": 2.972
+        },
+        {
+          "word": "point",
+          "start": 3.065,
+          "end": 3.297
+        },
+        {
+          "word": "eight",
+          "start": 3.355,
+          "end": 3.541
+        },
+        {
+          "word": "two",
+          "start": 3.576,
+          "end": 3.82
+        },
+        {
+          "word": "does",
+          "start": 4.052,
+          "end": 4.238
+        },
+        {
+          "word": "not",
+          "start": 4.284,
+          "end": 4.4
+        },
+        {
+          "word": "mean",
+          "start": 4.447,
+          "end": 4.609
+        },
+        {
+          "word": "eighty-two",
+          "start": 4.679,
+          "end": 5.097
+        },
+        {
+          "word": "percent",
+          "start": 5.155,
+          "end": 5.48
+        },
+        {
+          "word": "correct.",
+          "start": 5.538,
+          "end": 6.502
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "scene": "claim",
+      "text": "So the line to remember: vector search is a dot product and a sort. Everything after that is about speed.",
+      "src": "assets/vo/l12.mp3",
+      "start": 77.179,
+      "duration": 6.92,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "the",
+          "start": 0.244,
+          "end": 0.313
+        },
+        {
+          "word": "line",
+          "start": 0.372,
+          "end": 0.58
+        },
+        {
+          "word": "to",
+          "start": 0.604,
+          "end": 0.662
+        },
+        {
+          "word": "remember:",
+          "start": 0.72,
+          "end": 1.242
+        },
+        {
+          "word": "vector",
+          "start": 1.382,
+          "end": 1.73
+        },
+        {
+          "word": "search",
+          "start": 1.788,
+          "end": 2.09
+        },
+        {
+          "word": "is",
+          "start": 2.148,
+          "end": 2.252
+        },
+        {
+          "word": "a",
+          "start": 2.299,
+          "end": 2.322
+        },
+        {
+          "word": "dot",
+          "start": 2.368,
+          "end": 2.577
+        },
+        {
+          "word": "product",
+          "start": 2.624,
+          "end": 3.03
+        },
+        {
+          "word": "and",
+          "start": 3.088,
+          "end": 3.216
+        },
+        {
+          "word": "a",
+          "start": 3.274,
+          "end": 3.297
+        },
+        {
+          "word": "sort.",
+          "start": 3.355,
+          "end": 3.855
+        },
+        {
+          "word": "Everything",
+          "start": 4.272,
+          "end": 4.656
+        },
+        {
+          "word": "after",
+          "start": 4.714,
+          "end": 4.946
+        },
+        {
+          "word": "that",
+          "start": 4.992,
+          "end": 5.201
+        },
+        {
+          "word": "is",
+          "start": 5.259,
+          "end": 5.364
+        },
+        {
+          "word": "about",
+          "start": 5.399,
+          "end": 5.642
+        },
+        {
+          "word": "speed.",
+          "start": 5.7,
+          "end": 6.92
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "scene": "claim",
+      "text": "Next lesson: vector databases.",
+      "src": "assets/vo/l13.mp3",
+      "start": 84.449,
+      "duration": 2.601,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.302
+        },
+        {
+          "word": "lesson:",
+          "start": 0.36,
+          "end": 0.859
+        },
+        {
+          "word": "vector",
+          "start": 1.219,
+          "end": 1.544
+        },
+        {
+          "word": "databases.",
+          "start": 1.591,
+          "end": 2.601
+        }
+      ]
+    }
+  ],
+  "total": 87.4
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "word": "Add",
+    "start": 0,
+    "end": 0.232
+  },
+  {
+    "word": "a",
+    "start": 0.267,
+    "end": 0.29
+  },
+  {
+    "word": "token",
+    "start": 0.337,
+    "end": 0.615
+  },
+  {
+    "word": "budget",
+    "start": 0.685,
+    "end": 0.987
+  },
+  {
+    "word": "as",
+    "start": 1.022,
+    "end": 1.103
+  },
+  {
+    "word": "well,",
+    "start": 1.173,
+    "end": 1.579
+  },
+  {
+    "word": "so",
+    "start": 1.672,
+    "end": 1.823
+  },
+  {
+    "word": "one",
+    "start": 1.904,
+    "end": 2.09
+  },
+  {
+    "word": "bad",
+    "start": 2.136,
+    "end": 2.345
+  },
+  {
+    "word": "run",
+    "start": 2.415,
+    "end": 2.635
+  },
+  {
+    "word": "can't",
+    "start": 2.705,
+    "end": 2.937
+  },
+  {
+    "word": "drain",
+    "start": 2.972,
+    "end": 3.204
+  },
+  {
+    "word": "your",
+    "start": 3.262,
+    "end": 3.367
+  },
+  {
+    "word": "credits.",
+    "start": 3.413,
+    "end": 4.087
+  }
+]

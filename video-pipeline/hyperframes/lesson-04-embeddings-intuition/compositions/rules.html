@@ -1,0 +1,105 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #r-g1, #r-g2 { position: absolute; inset: 0; }
+    .r-k { position: absolute; left: 180px; top: 130px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #r-h1 { position: absolute; left: 180px; top: 182px; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; }
+    .r-map { position: absolute; top: 340px; height: 540px; background-color: #FFFFFF; background-image: radial-gradient(#CBD5E1 2.5px, transparent 3px); background-size: 55px 55px; background-position: 27px 27px; border: 3px solid #CBD5E1; border-radius: 24px; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #r-ma { left: 180px; width: 580px; } #r-mb { left: 1160px; width: 580px; } #r-mc { left: 1060px; width: 680px; }
+    .r-t { position: absolute; top: 290px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 30px; white-space: nowrap; }
+    #r-ta { left: 180px; } #r-tb { left: 1160px; }
+    .r-dot { position: absolute; width: 32px; height: 32px; border-radius: 50%; background: #0F766E; }
+    .r-dot.r-qd { background: #0B1220; }
+    .r-lab { position: absolute; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 28px; line-height: 36px; white-space: nowrap; }
+    .r-tag { position: absolute; top: 900px; font-size: 32px; font-weight: 700; white-space: nowrap; }
+    #r-tag-a { left: 180px; color: #0F766E; } #r-tag-b { left: 1160px; color: #475569; }
+    #r-ne { position: absolute; left: 860px; top: 510px; width: 200px; text-align: center; font-size: 180px; font-weight: 900; line-height: 1; color: #EA580C; }
+    #r-h2 { position: absolute; left: 180px; top: 182px; font-size: 120px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; white-space: nowrap; }
+    #r-h2 .r-w { display: inline-block; }
+    #r-h2 .r-accent { color: #EA580C; }
+    .r-tile { position: absolute; left: 180px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 60px; padding: 12px 24px; border-radius: 8px; background: #CCFBF1; border: 3px solid #5EEAD4; line-height: 1.2; white-space: nowrap; }
+    #r-love { top: 420px; } #r-hate { top: 560px; }
+    #r-same { position: absolute; left: 180px; top: 722px; font-size: 40px; font-weight: 700; color: #475569; }
+    #r-ctag { position: absolute; left: 1094px; top: 816px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #r-cl1 { left: 1170px; top: 512px; } #r-cl2 { left: 1446px; top: 672px; }
+    #r-cl1, #r-cl2 { font-size: 32px; line-height: 40px; }
+  </style>
+  <div id="root" data-composition-id="rules" data-width="1920" data-height="1080">
+    <div id="r-g1">
+      <div id="r-k1" class="r-k">Rule 1</div>
+      <div id="r-h1">One model for documents and queries</div>
+      <div id="r-ta" class="r-t">all-MiniLM-L6-v2 → 384</div>
+      <div id="r-ma" class="r-map"></div>
+      <div class="r-dot r-doc" style="left: 304px; top: 484px"></div>
+      <div class="r-dot r-doc" style="left: 404px; top: 544px"></div>
+      <div class="r-dot r-doc" style="left: 594px; top: 734px"></div>
+      <div class="r-dot r-doc" style="left: 644px; top: 664px"></div>
+      <div id="r-ldoc" class="r-lab" style="left: 520px; top: 780px">documents</div>
+      <div id="r-qa" class="r-dot r-qd" style="left: 344px; top: 584px"></div>
+      <div id="r-lqa" class="r-lab" style="left: 318px; top: 624px">query</div>
+      <div id="r-tag-a" class="r-tag">documents and query on one map</div>
+      <div id="r-tb" class="r-t">text-embedding-3-small → 1536</div>
+      <div id="r-mb" class="r-map"></div>
+      <div id="r-qb" class="r-dot r-qd" style="left: 1544px; top: 454px"></div>
+      <div id="r-lqb" class="r-lab" style="left: 1518px; top: 494px">query</div>
+      <div id="r-tag-b" class="r-tag">same query, somewhere else</div>
+      <div id="r-ne">≠</div>
+    </div>
+    <div id="r-g2">
+      <div id="r-k2" class="r-k">Rule 2</div>
+      <div id="r-h2"><span class="r-w">Similar</span> <span class="r-w r-accent">≠</span> <span class="r-w">true</span></div>
+      <div id="r-love" class="r-tile">I love DSA</div>
+      <div id="r-hate" class="r-tile">I hate DSA</div>
+      <div id="r-same">same topic, opposite opinion</div>
+      <div id="r-mc" class="r-map"></div>
+      <div id="r-c1" class="r-dot" style="left: 1344px; top: 574px"></div>
+      <div id="r-c2" class="r-dot" style="left: 1414px; top: 624px"></div>
+      <div id="r-cl1" class="r-lab">I love DSA</div>
+      <div id="r-cl2" class="r-lab">I hate DSA</div>
+      <div id="r-ctag">they land close together</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l09":{"s":0,"w":[0,0.313,0.998,1.637,2.078,2.601,2.752,3.193,3.344,3.46,3.75,4.563,4.899,5.248,5.619,5.793,6.037]},"l10":{"s":7.177,"w":[7.177,7.804,8.199,8.326,8.477,8.593,8.837,8.965,9.894,10.079,10.323,10.834,11.008,11.101,11.31,11.798,12.123,12.448,12.727]}}; const END = 13.982; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const pop = (sel, t) => tl.fromTo(sel, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, t);
+    const g = T.l09.w, h = T.l10.w;
+
+    // rule 1: every model draws its own map
+    blurIn("#r-k1", 0.05, 0.2);
+    tl.fromTo("#r-ma", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.1);
+    blurIn("#r-ta", 0.4, 0.2);
+    blurIn("#r-h1", g[3], 0.2);
+    gsap.utils.toArray("#r-g1 .r-doc").forEach((el, i) => pop(el, g[4] + i * 0.07));
+    blurIn("#r-ldoc", g[4] + 0.25, 0.18);
+    pop("#r-qa", g[6]);
+    blurIn("#r-lqa", g[6] + 0.15, 0.18);
+    blurIn("#r-tag-a", g[9], 0.2);
+    tl.fromTo("#r-mb", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, g[11]);
+    blurIn("#r-tb", g[12], 0.2);
+    pop("#r-qb", g[13]);
+    blurIn("#r-lqb", g[13] + 0.15, 0.18);
+    tl.fromTo("#r-ne", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, g[15]);
+    blurIn("#r-tag-b", g[14], 0.2);
+    blurOut("#r-g1", T.l10.s - 0.1, 0.2);
+
+    // rule 2: similar is not the same as true
+    blurIn("#r-k2", h[0] + 0.15, 0.2);
+    gsap.utils.toArray("#r-h2 .r-w").forEach((el, i) => blurIn(el, [h[1], h[3], h[7]][i], 0.15));
+    tl.fromTo("#r-love", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, h[8]);
+    tl.fromTo("#r-hate", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "expo.out" }, h[12]);
+    blurIn("#r-same", h[14] + 0.3, 0.2);
+    tl.fromTo("#r-mc", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, h[15]);
+    pop("#r-c1", h[16]);
+    blurIn("#r-cl1", h[16] + 0.1, 0.18);
+    pop("#r-c2", h[16] + 0.15);
+    blurIn("#r-cl2", h[16] + 0.25, 0.18);
+    blurIn("#r-ctag", h[17], 0.2);
+
+    blurOut("#r-g2", END - 0.3, 0.2);
+
+    window.__timelines["rules"] = tl;
+  </script>
+</template>

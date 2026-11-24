@@ -1,0 +1,129 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.019
+Riya asks her college placement bot: how many
+
+2
+00:00:03.088 --> 00:00:06.072
+active backlogs are allowed? The answer is one
+
+3
+00:00:06.118 --> 00:00:09.567
+sentence, on page four of a forty-page policy.
+
+4
+00:00:09.917 --> 00:00:12.227
+But the model never reads the whole PDF.
+
+5
+00:00:12.460 --> 00:00:14.782
+It only sees the few chunks you retrieve.
+
+6
+00:00:15.269 --> 00:00:17.905
+So how you cut the document decides everything.
+
+7
+00:00:18.255 --> 00:00:20.484
+Cut the chunks too large, and each one
+
+8
+00:00:20.519 --> 00:00:23.863
+mixes many topics. Retrieval gets noisy, and you
+
+9
+00:00:23.921 --> 00:00:25.500
+pay to send filler.
+
+10
+00:00:25.850 --> 00:00:28.230
+Cut them too small, and they lose context.
+
+11
+00:00:28.427 --> 00:00:30.691
+It must be cleared before the drive. What
+
+12
+00:00:30.738 --> 00:00:31.841
+is it?
+
+13
+00:00:32.191 --> 00:00:34.292
+So start at around five hundred tokens per
+
+14
+00:00:34.350 --> 00:00:36.858
+chunk. But a fixed cut can slice Riya's
+
+15
+00:00:36.893 --> 00:00:39.285
+sentence in half, and neither chunk holds the
+
+16
+00:00:39.343 --> 00:00:40.318
+answer.
+
+17
+00:00:40.668 --> 00:00:43.849
+The fix is overlap. Repeat about fifty tokens
+
+18
+00:00:43.965 --> 00:00:45.416
+from the end of one chunk at the
+
+19
+00:00:45.451 --> 00:00:46.937
+start of the next.
+
+20
+00:00:47.287 --> 00:00:49.377
+Now the sentence survives whole in at least
+
+21
+00:00:49.435 --> 00:00:52.709
+one chunk. Better still, split on paragraphs and
+
+22
+00:00:52.779 --> 00:00:55.321
+sentences, not character counts.
+
+23
+00:00:55.671 --> 00:00:58.156
+Give every chunk an ID card: the file
+
+24
+00:00:58.190 --> 00:01:00.501
+name and the page number. That becomes your
+
+25
+00:01:00.559 --> 00:01:02.173
+citation later.
+
+26
+00:01:02.523 --> 00:01:05.739
+Then measure. Chunk the same PDF three ways,
+
+27
+00:01:05.902 --> 00:01:08.131
+ask the same questions, and keep the one
+
+28
+00:01:08.154 --> 00:01:10.418
+that retrieves the right passage.
+
+29
+00:01:10.768 --> 00:01:14.959
+Remember this: bad chunking ruins good models. Start
+
+30
+00:01:15.006 --> 00:01:17.362
+at five hundred tokens with fifty of overlap,
+
+31
+00:01:17.479 --> 00:01:18.663
+then measure.
+
+32
+00:01:19.013 --> 00:01:22.310
+Next lesson: the full RAG pipeline, with citations.

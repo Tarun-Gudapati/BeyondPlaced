@@ -1,0 +1,40 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #e-label { position: absolute; left: 180px; top: 220px; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #e-l1 { position: absolute; left: 180px; top: 284px; font-size: 100px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; white-space: nowrap; }
+    #e-l2 { position: absolute; left: 180px; top: 440px; font-size: 76px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; white-space: nowrap; }
+    .e-w { display: inline-block; }
+    .e-accent { color: #EA580C; }
+    #e-next { position: absolute; left: 180px; top: 690px; width: 1560px; height: 210px; background: #FFFFFF; border: 4px solid #0F766E; border-radius: 26px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #e-next-l { position: absolute; left: 48px; top: 38px; font-size: 32px; font-weight: 700; color: #0F766E; }
+    #e-next-t { position: absolute; left: 48px; top: 92px; font-size: 60px; font-weight: 900; letter-spacing: -0.02em; white-space: nowrap; }
+    #e-mark { position: absolute; right: 48px; top: 28px; font-size: 44px; font-weight: 900; letter-spacing: -0.02em; color: #0F766E; }
+  </style>
+  <div id="root" data-composition-id="claim" data-width="1920" data-height="1080">
+    <div id="e-label">The line to remember</div>
+    <div id="e-l1"><span class="e-w">Meaning</span> <span class="e-w">becomes</span> <span class="e-w">a</span> <span class="e-w e-accent">position.</span></div>
+    <div id="e-l2"><span class="e-w">Close</span> <span class="e-w">together</span> <span class="e-w">=</span> <span class="e-w">similar</span> <span class="e-w">meaning.</span></div>
+    <div id="e-next">
+      <div id="e-next-l">Next lesson</div>
+      <div id="e-next-t">Cosine similarity from scratch with NumPy</div>
+      <div id="e-mark">BeyondPlaced</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    /*T*/ const T = {"l11":{"s":0,"w":[0,0.244,0.499,0.627,0.894,1.01,1.765,1.939,2.473,2.868,3.228,3.46,3.529,4.423,4.748,5.201,5.503,5.886]},"l12":{"s":7.177,"w":[7.177,7.549,8.117,8.605,9.197,9.406,9.824,10.021]}}; const END = 13.196; /*T*/
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const a = T.l11.w, b = T.l12.w;
+
+    gsap.set("#e-mark", { opacity: 0 });
+    blurIn("#e-label", a[3], 0.2);
+    gsap.utils.toArray("#e-l1 .e-w").forEach((el, i) => blurIn(el, [a[9], a[10], a[11], a[12]][i], 0.15));
+    gsap.utils.toArray("#e-l2 .e-w").forEach((el, i) => blurIn(el, [a[13], a[14], a[15], a[16], a[17]][i], 0.15));
+
+    tl.fromTo("#e-next", { clipPath: "inset(0 100% 0 0 round 26px)" }, { clipPath: "inset(0 0% 0 0 round 26px)", duration: 0.6, ease: "power2.inOut" }, T.l12.s);
+    tl.fromTo("#e-mark", { opacity: 0, clipPath: "inset(0 100% 0 0)" }, { opacity: 1, clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, b[7] + 0.5);
+
+    window.__timelines["claim"] = tl;
+  </script>
+</template>

@@ -1,0 +1,74 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    .k-half { position: absolute; top: 200px; width: 810px; height: 600px; }
+    #k-L { left: 150px; } #k-R { left: 960px; }
+    .k-lab { position: absolute; left: 0; top: 0; width: 810px; text-align: center; font-size: 40px; font-weight: 700; color: #0F766E; }
+    .k-br { position: absolute; left: 12px; top: 70px; width: 786px; height: 26px; border: 5px solid #0F766E; border-bottom: none; border-radius: 8px 8px 0 0; }
+    .k-card { position: absolute; left: 0; top: 120px; width: 810px; height: 330px; background: #FFFFFF; border: 4px solid #94A3B8; box-shadow: 0 24px 48px rgba(11,18,32,0.10); }
+    #k-L .k-card { border-right: none; border-radius: 22px 0 0 22px; }
+    #k-R .k-card { border-left: none; border-radius: 0 22px 22px 0; }
+    .k-line { position: absolute; height: 20px; border-radius: 10px; background: #E2E8F0; }
+    .k-s { position: absolute; top: 128px; height: 74px; line-height: 74px; background: #FFEDD5; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 42px; white-space: nowrap; }
+    #k-s1 { right: 0; padding: 0 0 0 18px; border-radius: 10px 0 0 10px; }
+    #k-s2 { left: 0; padding: 0 18px 0 25px; border-radius: 0 10px 10px 0; }
+    .k-note { position: absolute; left: 0; top: 486px; width: 810px; text-align: center; font-size: 44px; font-weight: 900; letter-spacing: -0.01em; color: #C2410C; }
+    #k-cut { position: absolute; left: 955px; top: 250px; width: 10px; height: 470px; background: #EA580C; border-radius: 5px; transform-origin: center top; }
+  </style>
+  <div id="root" data-composition-id="cut" data-width="1920" data-height="1080">
+    <div id="k-L" class="k-half">
+      <div id="k-lab1" class="k-lab">chunk 1 · about 500 tokens</div>
+      <div id="k-br1" class="k-br"></div>
+      <div class="k-card">
+        <div class="k-line" style="left: 40px; top: 44px; width: 700px"></div>
+        <div class="k-line" style="left: 40px; top: 86px; width: 730px"></div>
+        <div id="k-s1" class="k-s">Students with active backlogs</div>
+        <div class="k-line" style="left: 40px; top: 232px; width: 730px"></div>
+        <div class="k-line" style="left: 40px; top: 274px; width: 640px"></div>
+      </div>
+      <div id="k-n1" class="k-note">half an answer</div>
+    </div>
+    <div id="k-R" class="k-half">
+      <div id="k-lab2" class="k-lab">chunk 2 · about 500 tokens</div>
+      <div id="k-br2" class="k-br"></div>
+      <div class="k-card">
+        <div class="k-line" style="left: 40px; top: 44px; width: 720px"></div>
+        <div class="k-line" style="left: 40px; top: 86px; width: 610px"></div>
+        <div id="k-s2" class="k-s">are not eligible.</div>
+        <div class="k-line" style="left: 40px; top: 232px; width: 700px"></div>
+        <div class="k-line" style="left: 40px; top: 274px; width: 520px"></div>
+      </div>
+      <div id="k-n2" class="k-note">half an answer</div>
+    </div>
+    <div id="k-cut"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set(".k-lab, .k-br, .k-note, #k-cut", { opacity: 0 });
+
+    // the document strip, with Riya's sentence across the middle
+    tl.fromTo("#k-L .k-card, #k-R .k-card", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 0);
+
+    // "five hundred tokens per chunk"
+    tl.fromTo("#k-br1", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.45, ease: "expo.out" }, 1.01);
+    tl.fromTo("#k-br2", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.45, ease: "expo.out" }, 1.2);
+    blurIn("#k-lab1", 1.265, 0.2);
+    blurIn("#k-lab2", 1.567, 0.2);
+
+    // "a fixed cut can slice Riya's sentence in half"
+    tl.fromTo("#k-cut", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.4, ease: "power4.out" }, 3.239);
+    tl.fromTo("#k-L", { x: 0 }, { x: -44, duration: 0.6, ease: "power2.inOut" }, 4.029);
+    tl.fromTo("#k-R", { x: 0 }, { x: 44, duration: 0.6, ease: "power2.inOut" }, 4.029);
+
+    // "neither chunk holds the answer"
+    blurIn("#k-n1", 6.095, 0.2);
+    blurIn("#k-n2", 6.397, 0.2);
+
+    blurOut("#k-L, #k-R, #k-cut", 8.05, 0.22);
+
+    window.__timelines["cut"] = tl;
+  </script>
+</template>

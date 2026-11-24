@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #F0FDFA; }
+      #root { position: relative; width: 100%; height: 100%; }
+      #ground { position: absolute; inset: 0; background: #F0FDFA; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="84.81" data-width="1920" data-height="1080">
+      <div id="ground"></div>
+
+      <div id="ask" data-composition-id="ask" data-composition-src="compositions/ask.html" data-start="0" data-duration="18.255" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="size" data-composition-id="size" data-composition-src="compositions/size.html" data-start="18.255" data-duration="13.936" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="cut" data-composition-id="cut" data-composition-src="compositions/cut.html" data-start="32.191" data-duration="8.477" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="overlap" data-composition-id="overlap" data-composition-src="compositions/overlap.html" data-start="40.668" data-duration="15.003" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="meta" data-composition-id="meta" data-composition-src="compositions/meta.html" data-start="55.671" data-duration="15.097" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+      <div id="claim" data-composition-id="claim" data-composition-src="compositions/claim.html" data-start="70.768" data-duration="14.042" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>
+
+      <audio id="vo-l01" class="clip" src="assets/vo/l01.mp3" data-start="0" data-duration="9.567" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l02" class="clip" src="assets/vo/l02.mp3" data-start="9.917" data-duration="7.988" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l03" class="clip" src="assets/vo/l03.mp3" data-start="18.255" data-duration="7.245" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l04" class="clip" src="assets/vo/l04.mp3" data-start="25.85" data-duration="5.991" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l05" class="clip" src="assets/vo/l05.mp3" data-start="32.191" data-duration="8.127" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l06" class="clip" src="assets/vo/l06.mp3" data-start="40.668" data-duration="6.269" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l07" class="clip" src="assets/vo/l07.mp3" data-start="47.287" data-duration="8.034" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l08" class="clip" src="assets/vo/l08.mp3" data-start="55.671" data-duration="6.502" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l09" class="clip" src="assets/vo/l09.mp3" data-start="62.523" data-duration="7.895" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l10" class="clip" src="assets/vo/l10.mp3" data-start="70.768" data-duration="7.895" data-track-index="5" data-volume="1"></audio>
+      <audio id="vo-l11" class="clip" src="assets/vo/l11.mp3" data-start="79.013" data-duration="3.297" data-track-index="5" data-volume="1"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

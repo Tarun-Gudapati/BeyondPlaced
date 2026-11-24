@@ -1,0 +1,77 @@
+[
+  {
+    "word": "What",
+    "start": 0,
+    "end": 0.209
+  },
+  {
+    "word": "do",
+    "start": 0.244,
+    "end": 0.29
+  },
+  {
+    "word": "you",
+    "start": 0.36,
+    "end": 0.43
+  },
+  {
+    "word": "get?",
+    "start": 0.488,
+    "end": 0.906
+  },
+  {
+    "word": "No",
+    "start": 1.486,
+    "end": 1.637
+  },
+  {
+    "word": "bill,",
+    "start": 1.707,
+    "end": 2.032
+  },
+  {
+    "word": "no",
+    "start": 2.113,
+    "end": 2.229
+  },
+  {
+    "word": "internet,",
+    "start": 2.31,
+    "end": 2.856
+  },
+  {
+    "word": "and",
+    "start": 2.926,
+    "end": 3.065
+  },
+  {
+    "word": "nothing",
+    "start": 3.123,
+    "end": 3.367
+  },
+  {
+    "word": "you",
+    "start": 3.413,
+    "end": 3.495
+  },
+  {
+    "word": "type",
+    "start": 3.553,
+    "end": 3.785
+  },
+  {
+    "word": "leaves",
+    "start": 3.82,
+    "end": 4.017
+  },
+  {
+    "word": "the",
+    "start": 4.052,
+    "end": 4.122
+  },
+  {
+    "word": "laptop.",
+    "start": 4.168,
+    "end": 5.387
+  }
+]

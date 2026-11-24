@@ -1,0 +1,92 @@
+[
+  {
+    "word": "It's",
+    "start": 0,
+    "end": 0.209
+  },
+  {
+    "word": "two",
+    "start": 0.255,
+    "end": 0.406
+  },
+  {
+    "word": "a.m.",
+    "start": 0.488,
+    "end": 0.848
+  },
+  {
+    "word": "at",
+    "start": 0.871,
+    "end": 0.987
+  },
+  {
+    "word": "a",
+    "start": 1.022,
+    "end": 1.045
+  },
+  {
+    "word": "hackathon.",
+    "start": 1.103,
+    "end": 1.788
+  },
+  {
+    "word": "Kabir's",
+    "start": 2.368,
+    "end": 2.821
+  },
+  {
+    "word": "chatbot",
+    "start": 2.868,
+    "end": 3.367
+  },
+  {
+    "word": "finally",
+    "start": 3.437,
+    "end": 3.808
+  },
+  {
+    "word": "works,",
+    "start": 3.866,
+    "end": 4.342
+  },
+  {
+    "word": "and",
+    "start": 4.481,
+    "end": 4.621
+  },
+  {
+    "word": "then",
+    "start": 4.656,
+    "end": 4.772
+  },
+  {
+    "word": "his",
+    "start": 4.807,
+    "end": 4.899
+  },
+  {
+    "word": "free",
+    "start": 4.957,
+    "end": 5.19
+  },
+  {
+    "word": "API",
+    "start": 5.248,
+    "end": 5.654
+  },
+  {
+    "word": "credits",
+    "start": 5.735,
+    "end": 6.072
+  },
+  {
+    "word": "run",
+    "start": 6.118,
+    "end": 6.269
+  },
+  {
+    "word": "out.",
+    "start": 6.327,
+    "end": 7.198
+  }
+]

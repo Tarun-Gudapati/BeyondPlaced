@@ -1,0 +1,67 @@
+[
+  {
+    "word": "Because",
+    "start": 0,
+    "end": 0.36
+  },
+  {
+    "word": "every",
+    "start": 0.406,
+    "end": 0.673
+  },
+  {
+    "word": "serious",
+    "start": 0.743,
+    "end": 1.184
+  },
+  {
+    "word": "AI",
+    "start": 1.254,
+    "end": 1.533
+  },
+  {
+    "word": "product",
+    "start": 1.602,
+    "end": 1.985
+  },
+  {
+    "word": "starts",
+    "start": 2.043,
+    "end": 2.38
+  },
+  {
+    "word": "the",
+    "start": 2.438,
+    "end": 2.508
+  },
+  {
+    "word": "same",
+    "start": 2.554,
+    "end": 2.798
+  },
+  {
+    "word": "way:",
+    "start": 2.844,
+    "end": 3.286
+  },
+  {
+    "word": "with",
+    "start": 3.599,
+    "end": 3.762
+  },
+  {
+    "word": "an",
+    "start": 3.796,
+    "end": 3.855
+  },
+  {
+    "word": "API",
+    "start": 3.901,
+    "end": 4.319
+  },
+  {
+    "word": "call.",
+    "start": 4.4,
+    "end": 5.341
+  }
+]

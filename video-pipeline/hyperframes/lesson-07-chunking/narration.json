@@ -1,0 +1,17 @@
+{
+  "lesson": "chunking",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "ask", "text": "Riya asks her college placement bot: how many active backlogs are allowed? The answer is one sentence, on page four of a forty-page policy." },
+    { "id": "l02", "scene": "ask", "text": "But the model never reads the whole PDF. It only sees the few chunks you retrieve. So how you cut the document decides everything." },
+    { "id": "l03", "scene": "size", "text": "Cut the chunks too large, and each one mixes many topics. Retrieval gets noisy, and you pay to send filler." },
+    { "id": "l04", "scene": "size", "text": "Cut them too small, and they lose context. It must be cleared before the drive. What is it?" },
+    { "id": "l05", "scene": "cut", "text": "So start at around five hundred tokens per chunk. But a fixed cut can slice Riya's sentence in half, and neither chunk holds the answer." },
+    { "id": "l06", "scene": "overlap", "text": "The fix is overlap. Repeat about fifty tokens from the end of one chunk at the start of the next." },
+    { "id": "l07", "scene": "overlap", "text": "Now the sentence survives whole in at least one chunk. Better still, split on paragraphs and sentences, not character counts." },
+    { "id": "l08", "scene": "meta", "text": "Give every chunk an ID card: the file name and the page number. That becomes your citation later." },
+    { "id": "l09", "scene": "meta", "text": "Then measure. Chunk the same PDF three ways, ask the same questions, and keep the one that retrieves the right passage." },
+    { "id": "l10", "scene": "claim", "text": "Remember this: bad chunking ruins good models. Start at five hundred tokens with fifty of overlap, then measure." },
+    { "id": "l11", "scene": "claim", "text": "Next lesson: the full RAG pipeline, with citations." }
+  ]
+}

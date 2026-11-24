@@ -1,0 +1,76 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #a-phone { position: absolute; left: 180px; top: 60px; width: 540px; height: 960px; border: 16px solid #0B1220; border-radius: 68px; background: #FFFFFF; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    .a-head { height: 104px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 16px; padding: 0 36px; font-weight: 700; font-size: 32px; }
+    .a-avatar { width: 48px; height: 48px; border-radius: 12px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    .a-msgs { padding: 36px 30px; display: flex; flex-direction: column; gap: 24px; }
+    .a-user { align-self: flex-end; max-width: 410px; background: #0F766E; color: #FFFFFF; border-radius: 30px 30px 8px 30px; padding: 22px 28px; font-size: 36px; line-height: 1.25; font-weight: 700; }
+    .a-bot { position: relative; align-self: flex-start; background: #F1F5F9; border-radius: 30px 30px 30px 8px; padding: 22px 28px; font-size: 36px; line-height: 1.3; }
+    .a-w { display: inline-block; }
+    #a-strike { position: absolute; left: 18px; right: 18px; top: 50%; height: 8px; background: #EA580C; border-radius: 4px; transform-origin: left center; }
+    #a-guess { align-self: flex-start; font-size: 32px; font-weight: 700; color: #C2410C; margin-top: -8px; padding-left: 8px; }
+    #a-name { position: absolute; left: 860px; top: 380px; }
+    #a-name-big { font-size: 96px; font-weight: 900; letter-spacing: -0.02em; }
+    #a-name-sub { font-size: 40px; font-weight: 700; color: #475569; margin-top: 8px; }
+    #a-llm { position: absolute; left: 860px; top: 330px; width: 320px; height: 280px; border-radius: 28px; background: #0B1220; color: #FFFFFF; display: grid; place-items: center; font-size: 80px; font-weight: 900; letter-spacing: -0.02em; }
+    #a-llm-sub { position: absolute; left: 860px; top: 636px; width: 320px; text-align: center; font-size: 36px; font-weight: 700; color: #0F766E; }
+    #a-db { position: absolute; left: 1500px; top: 320px; width: 260px; height: 300px; }
+    #a-db-sub { position: absolute; left: 1440px; top: 636px; width: 380px; text-align: center; font-size: 36px; font-weight: 700; color: #0B1220; }
+    #a-link { position: absolute; left: 1200px; top: 466px; width: 280px; height: 0; border-top: 8px dashed #94A3B8; transform-origin: left center; }
+    #a-x { position: absolute; left: 1290px; top: 410px; width: 100px; height: 120px; display: grid; place-items: center; font-size: 96px; font-weight: 900; color: #0B1220; background: #F0FDFA; line-height: 1; }
+  </style>
+  <div id="root" data-composition-id="ask" data-width="1920" data-height="1080">
+    <div id="a-phone">
+      <div class="a-head"><span class="a-avatar">PB</span>Placement Bot</div>
+      <div class="a-msgs">
+        <div id="a-q" class="a-user"><span class="a-w">What</span> <span class="a-w">is</span> <span class="a-w">my</span> <span class="a-w">CGPA?</span></div>
+        <div id="a-a" class="a-bot">Probably 8.9?<span id="a-strike"></span></div>
+        <div id="a-guess">just a guess</div>
+      </div>
+    </div>
+    <div id="a-name"><div id="a-name-big">Ananya</div><div id="a-name-sub">roll no. 21CS045</div></div>
+    <div id="a-llm">LLM</div>
+    <div id="a-llm-sub">writes text</div>
+    <svg id="a-db" viewBox="0 0 260 300">
+      <path d="M 14 50 L 14 250 A 116 36 0 0 0 246 250 L 246 50" fill="#FFFFFF" stroke="#0F766E" stroke-width="8" />
+      <ellipse cx="130" cy="50" rx="116" ry="36" fill="#CCFBF1" stroke="#0F766E" stroke-width="8" />
+      <path d="M 14 116 A 116 36 0 0 0 246 116" fill="none" stroke="#0F766E" stroke-width="6" />
+      <path d="M 14 183 A 116 36 0 0 0 246 183" fill="none" stroke="#0F766E" stroke-width="6" />
+    </svg>
+    <div id="a-db-sub">college database</div>
+    <div id="a-link"></div>
+    <div id="a-x">✕</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L2 = 5.923;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#a-q, #a-a, #a-guess, #a-db, #a-x", { opacity: 0 });
+    gsap.set("#a-strike, #a-link", { scaleX: 0 });
+    tl.fromTo("#a-phone", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#a-name-sub", 0.93);
+
+    tl.set("#a-q", { opacity: 1 }, 3.7);
+    [3.796, 4.063, 4.203, 4.377].forEach((t, i) => blurIn(`#a-q .a-w:nth-child(${i + 1})`, t, 0.12));
+
+    blurOut("#a-name", L2 - 0.1, 0.25);
+    tl.fromTo("#a-llm", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.4, ease: "expo.out" }, L2 + 0.302);
+    blurIn("#a-llm-sub", L2 + 1.3, 0.2);
+
+    tl.fromTo("#a-db", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, L2 + 2.531);
+    blurIn("#a-db-sub", L2 + 3.367, 0.2);
+    tl.to("#a-link", { scaleX: 1, duration: 0.3, ease: "power2.inOut" }, L2 + 2.717);
+    tl.fromTo("#a-x", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, L2 + 3.007);
+
+    tl.fromTo("#a-a", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, L2 + 4.621);
+    blurIn("#a-guess", L2 + 5.0, 0.2);
+    tl.to("#a-strike", { scaleX: 1, duration: 0.3, ease: "power3.out" }, L2 + 5.526);
+
+    blurOut("#a-phone, #a-llm, #a-llm-sub, #a-db, #a-db-sub, #a-link, #a-x", 12.5, 0.25);
+
+    window.__timelines["ask"] = tl;
+  </script>
+</template>

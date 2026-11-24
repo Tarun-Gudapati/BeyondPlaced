@@ -1,0 +1,1248 @@
+{
+  "voiceId": "JBFqnCBsd6RMkjVDRZzb",
+  "modelId": "eleven_multilingual_v2",
+  "gapAfter": 0.35,
+  "lines": [
+    {
+      "id": "l01",
+      "scene": "credits",
+      "text": "It's two a.m. at a hackathon. Kabir's chatbot finally works, and then his free API credits run out.",
+      "src": "assets/vo/l01.mp3",
+      "start": 0,
+      "duration": 7.198,
+      "words": [
+        {
+          "word": "It's",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "two",
+          "start": 0.255,
+          "end": 0.406
+        },
+        {
+          "word": "a.m.",
+          "start": 0.488,
+          "end": 0.848
+        },
+        {
+          "word": "at",
+          "start": 0.871,
+          "end": 0.987
+        },
+        {
+          "word": "a",
+          "start": 1.022,
+          "end": 1.045
+        },
+        {
+          "word": "hackathon.",
+          "start": 1.103,
+          "end": 1.788
+        },
+        {
+          "word": "Kabir's",
+          "start": 2.368,
+          "end": 2.821
+        },
+        {
+          "word": "chatbot",
+          "start": 2.868,
+          "end": 3.367
+        },
+        {
+          "word": "finally",
+          "start": 3.437,
+          "end": 3.808
+        },
+        {
+          "word": "works,",
+          "start": 3.866,
+          "end": 4.342
+        },
+        {
+          "word": "and",
+          "start": 4.481,
+          "end": 4.621
+        },
+        {
+          "word": "then",
+          "start": 4.656,
+          "end": 4.772
+        },
+        {
+          "word": "his",
+          "start": 4.807,
+          "end": 4.899
+        },
+        {
+          "word": "free",
+          "start": 4.957,
+          "end": 5.19
+        },
+        {
+          "word": "API",
+          "start": 5.248,
+          "end": 5.654
+        },
+        {
+          "word": "credits",
+          "start": 5.735,
+          "end": 6.072
+        },
+        {
+          "word": "run",
+          "start": 6.118,
+          "end": 6.269
+        },
+        {
+          "word": "out.",
+          "start": 6.327,
+          "end": 7.198
+        }
+      ]
+    },
+    {
+      "id": "l02",
+      "scene": "credits",
+      "text": "He doesn't need more credits. He needs a model that runs on his own laptop.",
+      "src": "assets/vo/l02.mp3",
+      "start": 7.548,
+      "duration": 4.319,
+      "words": [
+        {
+          "word": "He",
+          "start": 0,
+          "end": 0.128
+        },
+        {
+          "word": "doesn't",
+          "start": 0.174,
+          "end": 0.418
+        },
+        {
+          "word": "need",
+          "start": 0.453,
+          "end": 0.604
+        },
+        {
+          "word": "more",
+          "start": 0.65,
+          "end": 0.789
+        },
+        {
+          "word": "credits.",
+          "start": 0.836,
+          "end": 1.37
+        },
+        {
+          "word": "He",
+          "start": 1.509,
+          "end": 1.602
+        },
+        {
+          "word": "needs",
+          "start": 1.672,
+          "end": 1.881
+        },
+        {
+          "word": "a",
+          "start": 1.916,
+          "end": 1.939
+        },
+        {
+          "word": "model",
+          "start": 2.009,
+          "end": 2.276
+        },
+        {
+          "word": "that",
+          "start": 2.322,
+          "end": 2.438
+        },
+        {
+          "word": "runs",
+          "start": 2.496,
+          "end": 2.717
+        },
+        {
+          "word": "on",
+          "start": 2.763,
+          "end": 2.833
+        },
+        {
+          "word": "his",
+          "start": 2.879,
+          "end": 2.972
+        },
+        {
+          "word": "own",
+          "start": 3.03,
+          "end": 3.216
+        },
+        {
+          "word": "laptop.",
+          "start": 3.286,
+          "end": 4.319
+        }
+      ]
+    },
+    {
+      "id": "l03",
+      "scene": "server",
+      "text": "That's what Ollama does. It's a small server: it downloads open model weights, like Llama or Qwen, and loads them into memory.",
+      "src": "assets/vo/l03.mp3",
+      "start": 12.217,
+      "duration": 8.173,
+      "words": [
+        {
+          "word": "That's",
+          "start": 0,
+          "end": 0.29
+        },
+        {
+          "word": "what",
+          "start": 0.325,
+          "end": 0.453
+        },
+        {
+          "word": "Ollama",
+          "start": 0.511,
+          "end": 0.789
+        },
+        {
+          "word": "does.",
+          "start": 0.848,
+          "end": 1.277
+        },
+        {
+          "word": "It's",
+          "start": 1.591,
+          "end": 1.788
+        },
+        {
+          "word": "a",
+          "start": 1.823,
+          "end": 1.846
+        },
+        {
+          "word": "small",
+          "start": 1.904,
+          "end": 2.206
+        },
+        {
+          "word": "server:",
+          "start": 2.287,
+          "end": 2.821
+        },
+        {
+          "word": "it",
+          "start": 2.961,
+          "end": 3.088
+        },
+        {
+          "word": "downloads",
+          "start": 3.135,
+          "end": 3.634
+        },
+        {
+          "word": "open",
+          "start": 3.704,
+          "end": 3.994
+        },
+        {
+          "word": "model",
+          "start": 4.063,
+          "end": 4.307
+        },
+        {
+          "word": "weights,",
+          "start": 4.377,
+          "end": 4.783
+        },
+        {
+          "word": "like",
+          "start": 4.841,
+          "end": 5.039
+        },
+        {
+          "word": "Llama",
+          "start": 5.108,
+          "end": 5.422
+        },
+        {
+          "word": "or",
+          "start": 5.48,
+          "end": 5.573
+        },
+        {
+          "word": "Qwen,",
+          "start": 5.642,
+          "end": 6.13
+        },
+        {
+          "word": "and",
+          "start": 6.246,
+          "end": 6.397
+        },
+        {
+          "word": "loads",
+          "start": 6.467,
+          "end": 6.722
+        },
+        {
+          "word": "them",
+          "start": 6.757,
+          "end": 6.873
+        },
+        {
+          "word": "into",
+          "start": 6.908,
+          "end": 7.059
+        },
+        {
+          "word": "memory.",
+          "start": 7.14,
+          "end": 8.173
+        }
+      ]
+    },
+    {
+      "id": "l04",
+      "scene": "server",
+      "text": "Then it serves an API on localhost, right on his machine.",
+      "src": "assets/vo/l04.mp3",
+      "start": 20.74,
+      "duration": 4.18,
+      "words": [
+        {
+          "word": "Then",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "it",
+          "start": 0.267,
+          "end": 0.348
+        },
+        {
+          "word": "serves",
+          "start": 0.406,
+          "end": 0.731
+        },
+        {
+          "word": "an",
+          "start": 0.766,
+          "end": 0.836
+        },
+        {
+          "word": "API",
+          "start": 0.906,
+          "end": 1.405
+        },
+        {
+          "word": "on",
+          "start": 1.486,
+          "end": 1.579
+        },
+        {
+          "word": "localhost,",
+          "start": 1.66,
+          "end": 2.403
+        },
+        {
+          "word": "right",
+          "start": 2.566,
+          "end": 2.798
+        },
+        {
+          "word": "on",
+          "start": 2.833,
+          "end": 2.902
+        },
+        {
+          "word": "his",
+          "start": 2.949,
+          "end": 3.053
+        },
+        {
+          "word": "machine.",
+          "start": 3.111,
+          "end": 4.18
+        }
+      ]
+    },
+    {
+      "id": "l05",
+      "scene": "server",
+      "text": "One command pulls a model. One more, and he's chatting in the terminal.",
+      "src": "assets/vo/l05.mp3",
+      "start": 25.27,
+      "duration": 4.226,
+      "words": [
+        {
+          "word": "One",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "word": "command",
+          "start": 0.313,
+          "end": 0.685
+        },
+        {
+          "word": "pulls",
+          "start": 0.755,
+          "end": 0.998
+        },
+        {
+          "word": "a",
+          "start": 1.033,
+          "end": 1.057
+        },
+        {
+          "word": "model.",
+          "start": 1.115,
+          "end": 1.521
+        },
+        {
+          "word": "One",
+          "start": 1.66,
+          "end": 1.858
+        },
+        {
+          "word": "more,",
+          "start": 1.904,
+          "end": 2.252
+        },
+        {
+          "word": "and",
+          "start": 2.287,
+          "end": 2.438
+        },
+        {
+          "word": "he's",
+          "start": 2.485,
+          "end": 2.589
+        },
+        {
+          "word": "chatting",
+          "start": 2.624,
+          "end": 2.961
+        },
+        {
+          "word": "in",
+          "start": 2.995,
+          "end": 3.053
+        },
+        {
+          "word": "the",
+          "start": 3.088,
+          "end": 3.158
+        },
+        {
+          "word": "terminal.",
+          "start": 3.193,
+          "end": 4.226
+        }
+      ]
+    },
+    {
+      "id": "l06",
+      "scene": "swap",
+      "text": "And here's the trick. Ollama speaks the same format as the OpenAI API.",
+      "src": "assets/vo/l06.mp3",
+      "start": 29.846,
+      "duration": 4.783,
+      "words": [
+        {
+          "word": "And",
+          "start": 0,
+          "end": 0.186
+        },
+        {
+          "word": "here's",
+          "start": 0.244,
+          "end": 0.453
+        },
+        {
+          "word": "the",
+          "start": 0.499,
+          "end": 0.569
+        },
+        {
+          "word": "trick.",
+          "start": 0.627,
+          "end": 1.01
+        },
+        {
+          "word": "Ollama",
+          "start": 1.207,
+          "end": 1.556
+        },
+        {
+          "word": "speaks",
+          "start": 1.602,
+          "end": 1.892
+        },
+        {
+          "word": "the",
+          "start": 1.939,
+          "end": 2.02
+        },
+        {
+          "word": "same",
+          "start": 2.067,
+          "end": 2.287
+        },
+        {
+          "word": "format",
+          "start": 2.334,
+          "end": 2.74
+        },
+        {
+          "word": "as",
+          "start": 2.798,
+          "end": 2.891
+        },
+        {
+          "word": "the",
+          "start": 2.949,
+          "end": 3.019
+        },
+        {
+          "word": "OpenAI",
+          "start": 3.1,
+          "end": 3.669
+        },
+        {
+          "word": "API.",
+          "start": 3.738,
+          "end": 4.783
+        }
+      ]
+    },
+    {
+      "id": "l07",
+      "scene": "swap",
+      "text": "So Kabir changes the base URL and the model name, and the rest of his code stays exactly the same.",
+      "src": "assets/vo/l07.mp3",
+      "start": 34.979,
+      "duration": 6.223,
+      "words": [
+        {
+          "word": "So",
+          "start": 0,
+          "end": 0.232
+        },
+        {
+          "word": "Kabir",
+          "start": 0.313,
+          "end": 0.673
+        },
+        {
+          "word": "changes",
+          "start": 0.743,
+          "end": 1.126
+        },
+        {
+          "word": "the",
+          "start": 1.173,
+          "end": 1.242
+        },
+        {
+          "word": "base",
+          "start": 1.3,
+          "end": 1.556
+        },
+        {
+          "word": "URL",
+          "start": 1.614,
+          "end": 2.009
+        },
+        {
+          "word": "and",
+          "start": 2.078,
+          "end": 2.194
+        },
+        {
+          "word": "the",
+          "start": 2.241,
+          "end": 2.31
+        },
+        {
+          "word": "model",
+          "start": 2.345,
+          "end": 2.612
+        },
+        {
+          "word": "name,",
+          "start": 2.682,
+          "end": 3.042
+        },
+        {
+          "word": "and",
+          "start": 3.239,
+          "end": 3.367
+        },
+        {
+          "word": "the",
+          "start": 3.413,
+          "end": 3.483
+        },
+        {
+          "word": "rest",
+          "start": 3.518,
+          "end": 3.715
+        },
+        {
+          "word": "of",
+          "start": 3.75,
+          "end": 3.808
+        },
+        {
+          "word": "his",
+          "start": 3.843,
+          "end": 3.936
+        },
+        {
+          "word": "code",
+          "start": 4.005,
+          "end": 4.307
+        },
+        {
+          "word": "stays",
+          "start": 4.354,
+          "end": 4.656
+        },
+        {
+          "word": "exactly",
+          "start": 4.714,
+          "end": 5.085
+        },
+        {
+          "word": "the",
+          "start": 5.143,
+          "end": 5.224
+        },
+        {
+          "word": "same.",
+          "start": 5.271,
+          "end": 6.223
+        }
+      ]
+    },
+    {
+      "id": "l08",
+      "scene": "swap",
+      "text": "Build and debug on the free local model, then flip one setting to a hosted model for the demo.",
+      "src": "assets/vo/l08.mp3",
+      "start": 41.552,
+      "duration": 5.851,
+      "words": [
+        {
+          "word": "Build",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "and",
+          "start": 0.406,
+          "end": 0.488
+        },
+        {
+          "word": "debug",
+          "start": 0.557,
+          "end": 0.975
+        },
+        {
+          "word": "on",
+          "start": 1.022,
+          "end": 1.091
+        },
+        {
+          "word": "the",
+          "start": 1.126,
+          "end": 1.196
+        },
+        {
+          "word": "free",
+          "start": 1.242,
+          "end": 1.463
+        },
+        {
+          "word": "local",
+          "start": 1.521,
+          "end": 1.811
+        },
+        {
+          "word": "model,",
+          "start": 1.881,
+          "end": 2.299
+        },
+        {
+          "word": "then",
+          "start": 2.461,
+          "end": 2.659
+        },
+        {
+          "word": "flip",
+          "start": 2.728,
+          "end": 2.961
+        },
+        {
+          "word": "one",
+          "start": 3.042,
+          "end": 3.239
+        },
+        {
+          "word": "setting",
+          "start": 3.286,
+          "end": 3.622
+        },
+        {
+          "word": "to",
+          "start": 3.68,
+          "end": 3.75
+        },
+        {
+          "word": "a",
+          "start": 3.831,
+          "end": 3.866
+        },
+        {
+          "word": "hosted",
+          "start": 3.936,
+          "end": 4.284
+        },
+        {
+          "word": "model",
+          "start": 4.342,
+          "end": 4.574
+        },
+        {
+          "word": "for",
+          "start": 4.632,
+          "end": 4.714
+        },
+        {
+          "word": "the",
+          "start": 4.748,
+          "end": 4.818
+        },
+        {
+          "word": "demo.",
+          "start": 4.865,
+          "end": 5.851
+        }
+      ]
+    },
+    {
+      "id": "l09",
+      "scene": "fit",
+      "text": "The catch is memory. Every weight must fit in RAM, so local models are quantised: about four bits per weight instead of sixteen.",
+      "src": "assets/vo/l09.mp3",
+      "start": 47.753,
+      "duration": 8.684,
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.139
+        },
+        {
+          "word": "catch",
+          "start": 0.197,
+          "end": 0.534
+        },
+        {
+          "word": "is",
+          "start": 0.604,
+          "end": 0.755
+        },
+        {
+          "word": "memory.",
+          "start": 0.836,
+          "end": 1.382
+        },
+        {
+          "word": "Every",
+          "start": 1.544,
+          "end": 1.834
+        },
+        {
+          "word": "weight",
+          "start": 1.892,
+          "end": 2.125
+        },
+        {
+          "word": "must",
+          "start": 2.183,
+          "end": 2.368
+        },
+        {
+          "word": "fit",
+          "start": 2.438,
+          "end": 2.635
+        },
+        {
+          "word": "in",
+          "start": 2.694,
+          "end": 2.763
+        },
+        {
+          "word": "RAM,",
+          "start": 2.844,
+          "end": 3.286
+        },
+        {
+          "word": "so",
+          "start": 3.425,
+          "end": 3.576
+        },
+        {
+          "word": "local",
+          "start": 3.657,
+          "end": 3.947
+        },
+        {
+          "word": "models",
+          "start": 4.005,
+          "end": 4.296
+        },
+        {
+          "word": "are",
+          "start": 4.331,
+          "end": 4.412
+        },
+        {
+          "word": "quantised:",
+          "start": 4.435,
+          "end": 5.201
+        },
+        {
+          "word": "about",
+          "start": 5.619,
+          "end": 5.898
+        },
+        {
+          "word": "four",
+          "start": 5.968,
+          "end": 6.188
+        },
+        {
+          "word": "bits",
+          "start": 6.235,
+          "end": 6.455
+        },
+        {
+          "word": "per",
+          "start": 6.502,
+          "end": 6.629
+        },
+        {
+          "word": "weight",
+          "start": 6.676,
+          "end": 6.943
+        },
+        {
+          "word": "instead",
+          "start": 7.012,
+          "end": 7.349
+        },
+        {
+          "word": "of",
+          "start": 7.384,
+          "end": 7.442
+        },
+        {
+          "word": "sixteen.",
+          "start": 7.488,
+          "end": 8.684
+        }
+      ]
+    },
+    {
+      "id": "l10",
+      "scene": "fit",
+      "text": "On an eight gigabyte laptop, a three billion parameter model fits. Bigger models need more RAM.",
+      "src": "assets/vo/l10.mp3",
+      "start": 56.787,
+      "duration": 6.316,
+      "words": [
+        {
+          "word": "On",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "word": "an",
+          "start": 0.232,
+          "end": 0.302
+        },
+        {
+          "word": "eight",
+          "start": 0.372,
+          "end": 0.569
+        },
+        {
+          "word": "gigabyte",
+          "start": 0.627,
+          "end": 1.091
+        },
+        {
+          "word": "laptop,",
+          "start": 1.138,
+          "end": 1.707
+        },
+        {
+          "word": "a",
+          "start": 1.788,
+          "end": 1.858
+        },
+        {
+          "word": "three",
+          "start": 1.939,
+          "end": 2.183
+        },
+        {
+          "word": "billion",
+          "start": 2.241,
+          "end": 2.566
+        },
+        {
+          "word": "parameter",
+          "start": 2.624,
+          "end": 3.077
+        },
+        {
+          "word": "model",
+          "start": 3.111,
+          "end": 3.355
+        },
+        {
+          "word": "fits.",
+          "start": 3.425,
+          "end": 3.947
+        },
+        {
+          "word": "Bigger",
+          "start": 4.261,
+          "end": 4.551
+        },
+        {
+          "word": "models",
+          "start": 4.609,
+          "end": 4.946
+        },
+        {
+          "word": "need",
+          "start": 5.016,
+          "end": 5.213
+        },
+        {
+          "word": "more",
+          "start": 5.271,
+          "end": 5.445
+        },
+        {
+          "word": "RAM.",
+          "start": 5.492,
+          "end": 6.316
+        }
+      ]
+    },
+    {
+      "id": "l11",
+      "scene": "trade",
+      "text": "What do you get? No bill, no internet, and nothing you type leaves the laptop.",
+      "src": "assets/vo/l11.mp3",
+      "start": 63.453,
+      "duration": 5.387,
+      "words": [
+        {
+          "word": "What",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "do",
+          "start": 0.244,
+          "end": 0.29
+        },
+        {
+          "word": "you",
+          "start": 0.36,
+          "end": 0.43
+        },
+        {
+          "word": "get?",
+          "start": 0.488,
+          "end": 0.906
+        },
+        {
+          "word": "No",
+          "start": 1.486,
+          "end": 1.637
+        },
+        {
+          "word": "bill,",
+          "start": 1.707,
+          "end": 2.032
+        },
+        {
+          "word": "no",
+          "start": 2.113,
+          "end": 2.229
+        },
+        {
+          "word": "internet,",
+          "start": 2.31,
+          "end": 2.856
+        },
+        {
+          "word": "and",
+          "start": 2.926,
+          "end": 3.065
+        },
+        {
+          "word": "nothing",
+          "start": 3.123,
+          "end": 3.367
+        },
+        {
+          "word": "you",
+          "start": 3.413,
+          "end": 3.495
+        },
+        {
+          "word": "type",
+          "start": 3.553,
+          "end": 3.785
+        },
+        {
+          "word": "leaves",
+          "start": 3.82,
+          "end": 4.017
+        },
+        {
+          "word": "the",
+          "start": 4.052,
+          "end": 4.122
+        },
+        {
+          "word": "laptop.",
+          "start": 4.168,
+          "end": 5.387
+        }
+      ]
+    },
+    {
+      "id": "l12",
+      "scene": "trade",
+      "text": "What do you give up? It's smaller and slower than a hosted model, so test both on your own questions.",
+      "src": "assets/vo/l12.mp3",
+      "start": 69.19,
+      "duration": 6.455,
+      "words": [
+        {
+          "word": "What",
+          "start": 0,
+          "end": 0.209
+        },
+        {
+          "word": "do",
+          "start": 0.244,
+          "end": 0.29
+        },
+        {
+          "word": "you",
+          "start": 0.348,
+          "end": 0.418
+        },
+        {
+          "word": "give",
+          "start": 0.464,
+          "end": 0.627
+        },
+        {
+          "word": "up?",
+          "start": 0.673,
+          "end": 0.987
+        },
+        {
+          "word": "It's",
+          "start": 1.405,
+          "end": 1.614
+        },
+        {
+          "word": "smaller",
+          "start": 1.637,
+          "end": 2.02
+        },
+        {
+          "word": "and",
+          "start": 2.078,
+          "end": 2.171
+        },
+        {
+          "word": "slower",
+          "start": 2.241,
+          "end": 2.566
+        },
+        {
+          "word": "than",
+          "start": 2.601,
+          "end": 2.705
+        },
+        {
+          "word": "a",
+          "start": 2.74,
+          "end": 2.763
+        },
+        {
+          "word": "hosted",
+          "start": 2.833,
+          "end": 3.204
+        },
+        {
+          "word": "model,",
+          "start": 3.251,
+          "end": 3.657
+        },
+        {
+          "word": "so",
+          "start": 3.773,
+          "end": 3.913
+        },
+        {
+          "word": "test",
+          "start": 3.982,
+          "end": 4.272
+        },
+        {
+          "word": "both",
+          "start": 4.342,
+          "end": 4.598
+        },
+        {
+          "word": "on",
+          "start": 4.644,
+          "end": 4.714
+        },
+        {
+          "word": "your",
+          "start": 4.76,
+          "end": 4.876
+        },
+        {
+          "word": "own",
+          "start": 4.934,
+          "end": 5.085
+        },
+        {
+          "word": "questions.",
+          "start": 5.155,
+          "end": 6.455
+        }
+      ]
+    },
+    {
+      "id": "l13",
+      "scene": "claim",
+      "text": "Remember it like this: same SDK, different base URL.",
+      "src": "assets/vo/l13.mp3",
+      "start": 75.995,
+      "duration": 4.458,
+      "words": [
+        {
+          "word": "Remember",
+          "start": 0,
+          "end": 0.372
+        },
+        {
+          "word": "it",
+          "start": 0.418,
+          "end": 0.476
+        },
+        {
+          "word": "like",
+          "start": 0.522,
+          "end": 0.697
+        },
+        {
+          "word": "this:",
+          "start": 0.731,
+          "end": 1.231
+        },
+        {
+          "word": "same",
+          "start": 1.544,
+          "end": 1.858
+        },
+        {
+          "word": "SDK,",
+          "start": 1.892,
+          "end": 2.647
+        },
+        {
+          "word": "different",
+          "start": 2.74,
+          "end": 3.053
+        },
+        {
+          "word": "base",
+          "start": 3.1,
+          "end": 3.344
+        },
+        {
+          "word": "URL.",
+          "start": 3.39,
+          "end": 4.458
+        }
+      ]
+    },
+    {
+      "id": "l14",
+      "scene": "claim",
+      "text": "Next lesson: prompting, RAG, or fine-tuning?",
+      "src": "assets/vo/l14.mp3",
+      "start": 80.803,
+      "duration": 3.019,
+      "words": [
+        {
+          "word": "Next",
+          "start": 0,
+          "end": 0.313
+        },
+        {
+          "word": "lesson:",
+          "start": 0.372,
+          "end": 0.801
+        },
+        {
+          "word": "prompting,",
+          "start": 0.94,
+          "end": 1.474
+        },
+        {
+          "word": "RAG,",
+          "start": 1.567,
+          "end": 1.881
+        },
+        {
+          "word": "or",
+          "start": 1.927,
+          "end": 2.009
+        },
+        {
+          "word": "fine-tuning?",
+          "start": 2.067,
+          "end": 3.019
+        }
+      ]
+    }
+  ],
+  "total": 84.172
+}

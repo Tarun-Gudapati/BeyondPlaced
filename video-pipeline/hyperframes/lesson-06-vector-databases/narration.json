@@ -1,0 +1,19 @@
+{
+  "lesson": "vector-databases",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "scale", "text": "Meera built semantic search over five question papers. It compares her query with every stored vector, and it's instant." },
+    { "id": "l02", "scene": "scale", "text": "Now add every paper from every department, for ten years. Millions of vectors, and every single search checks them all." },
+    { "id": "l03", "scene": "scale", "text": "And it all lives in memory, gone when the script stops." },
+    { "id": "l04", "scene": "graph", "text": "A vector database fixes that with an index. Picture every vector as a point, linked to a handful of its nearest neighbours." },
+    { "id": "l05", "scene": "graph", "text": "A search starts at one point, hops to whichever neighbour is closer to the query, and repeats. Most points are never touched." },
+    { "id": "l06", "scene": "graph", "text": "The catch: it's approximate. You give up a tiny bit of accuracy for a very large gain in speed." },
+    { "id": "l07", "scene": "meta", "text": "Each vector is stored on disk with its text and metadata: subject, year, page." },
+    { "id": "l08", "scene": "meta", "text": "So Meera can filter to DSA papers since twenty twenty-two, and then search by meaning inside that filter." },
+    { "id": "l09", "scene": "meta", "text": "Every result comes back with its source, so she knows which paper and which page." },
+    { "id": "l10", "scene": "tools", "text": "To start, use Chroma: a few lines of Python, and your database is a folder on your laptop." },
+    { "id": "l11", "scene": "tools", "text": "In a real app, PG vector keeps the vectors inside Postgres, right next to your normal tables." },
+    { "id": "l12", "scene": "claim", "text": "So the line to remember: embed once, store with metadata, and let the index find the neighbours." },
+    { "id": "l13", "scene": "claim", "text": "Next module: retrieval-augmented generation." }
+  ]
+}

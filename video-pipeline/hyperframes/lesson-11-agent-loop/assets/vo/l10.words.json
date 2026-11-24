@@ -1,0 +1,112 @@
+[
+  {
+    "word": "That",
+    "start": 0,
+    "end": 0.279
+  },
+  {
+    "word": "message",
+    "start": 0.348,
+    "end": 0.685
+  },
+  {
+    "word": "list",
+    "start": 0.731,
+    "end": 0.975
+  },
+  {
+    "word": "is",
+    "start": 1.033,
+    "end": 1.126
+  },
+  {
+    "word": "the",
+    "start": 1.161,
+    "end": 1.242
+  },
+  {
+    "word": "agent's",
+    "start": 1.312,
+    "end": 1.707
+  },
+  {
+    "word": "only",
+    "start": 1.776,
+    "end": 2.043
+  },
+  {
+    "word": "memory.",
+    "start": 2.113,
+    "end": 2.659
+  },
+  {
+    "word": "Your",
+    "start": 3.146,
+    "end": 3.344
+  },
+  {
+    "word": "code",
+    "start": 3.413,
+    "end": 3.738
+  },
+  {
+    "word": "resends",
+    "start": 3.785,
+    "end": 4.226
+  },
+  {
+    "word": "all",
+    "start": 4.284,
+    "end": 4.47
+  },
+  {
+    "word": "of",
+    "start": 4.516,
+    "end": 4.563
+  },
+  {
+    "word": "it",
+    "start": 4.609,
+    "end": 4.69
+  },
+  {
+    "word": "on",
+    "start": 4.748,
+    "end": 4.83
+  },
+  {
+    "word": "every",
+    "start": 4.899,
+    "end": 5.143
+  },
+  {
+    "word": "turn,",
+    "start": 5.201,
+    "end": 5.654
+  },
+  {
+    "word": "so",
+    "start": 5.77,
+    "end": 5.898
+  },
+  {
+    "word": "keep",
+    "start": 5.968,
+    "end": 6.165
+  },
+  {
+    "word": "tool",
+    "start": 6.235,
+    "end": 6.432
+  },
+  {
+    "word": "results",
+    "start": 6.49,
+    "end": 6.885
+  },
+  {
+    "word": "short.",
+    "start": 6.931,
+    "end": 7.941
+  }
+]

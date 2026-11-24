@@ -1,0 +1,87 @@
+[
+  {
+    "word": "On",
+    "start": 0,
+    "end": 0.163
+  },
+  {
+    "word": "the",
+    "start": 0.209,
+    "end": 0.279
+  },
+  {
+    "word": "wire",
+    "start": 0.337,
+    "end": 0.639
+  },
+  {
+    "word": "it's",
+    "start": 0.685,
+    "end": 0.824
+  },
+  {
+    "word": "Server-Sent",
+    "start": 0.859,
+    "end": 1.405
+  },
+  {
+    "word": "Events:",
+    "start": 1.451,
+    "end": 1.985
+  },
+  {
+    "word": "a",
+    "start": 2.183,
+    "end": 2.241
+  },
+  {
+    "word": "line",
+    "start": 2.334,
+    "end": 2.612
+  },
+  {
+    "word": "starting",
+    "start": 2.647,
+    "end": 3.007
+  },
+  {
+    "word": "with",
+    "start": 3.042,
+    "end": 3.158
+  },
+  {
+    "word": "data,",
+    "start": 3.204,
+    "end": 3.704
+  },
+  {
+    "word": "then",
+    "start": 3.866,
+    "end": 4.029
+  },
+  {
+    "word": "a",
+    "start": 4.075,
+    "end": 4.098
+  },
+  {
+    "word": "blank",
+    "start": 4.145,
+    "end": 4.389
+  },
+  {
+    "word": "line.",
+    "start": 4.47,
+    "end": 4.923
+  },
+  {
+    "word": "Plain",
+    "start": 5.41,
+    "end": 5.724
+  },
+  {
+    "word": "HTTP.",
+    "start": 5.793,
+    "end": 6.873
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "word": "And",
+    "start": 0,
+    "end": 0.186
+  },
+  {
+    "word": "here's",
+    "start": 0.244,
+    "end": 0.453
+  },
+  {
+    "word": "the",
+    "start": 0.499,
+    "end": 0.569
+  },
+  {
+    "word": "trick.",
+    "start": 0.627,
+    "end": 1.01
+  },
+  {
+    "word": "Ollama",
+    "start": 1.207,
+    "end": 1.556
+  },
+  {
+    "word": "speaks",
+    "start": 1.602,
+    "end": 1.892
+  },
+  {
+    "word": "the",
+    "start": 1.939,
+    "end": 2.02
+  },
+  {
+    "word": "same",
+    "start": 2.067,
+    "end": 2.287
+  },
+  {
+    "word": "format",
+    "start": 2.334,
+    "end": 2.74
+  },
+  {
+    "word": "as",
+    "start": 2.798,
+    "end": 2.891
+  },
+  {
+    "word": "the",
+    "start": 2.949,
+    "end": 3.019
+  },
+  {
+    "word": "OpenAI",
+    "start": 3.1,
+    "end": 3.669
+  },
+  {
+    "word": "API.",
+    "start": 3.738,
+    "end": 4.783
+  }
+]
