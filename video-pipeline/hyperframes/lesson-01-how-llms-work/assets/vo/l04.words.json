@@ -1,0 +1,107 @@
+[
+  {
+    "word": "You",
+    "start": 0,
+    "end": 0.151
+  },
+  {
+    "word": "pay",
+    "start": 0.221,
+    "end": 0.372
+  },
+  {
+    "word": "for",
+    "start": 0.418,
+    "end": 0.522
+  },
+  {
+    "word": "every",
+    "start": 0.58,
+    "end": 0.824
+  },
+  {
+    "word": "token.",
+    "start": 0.882,
+    "end": 1.405
+  },
+  {
+    "word": "And",
+    "start": 1.602,
+    "end": 1.753
+  },
+  {
+    "word": "every",
+    "start": 1.823,
+    "end": 2.02
+  },
+  {
+    "word": "model",
+    "start": 2.078,
+    "end": 2.334
+  },
+  {
+    "word": "has",
+    "start": 2.392,
+    "end": 2.508
+  },
+  {
+    "word": "a",
+    "start": 2.543,
+    "end": 2.577
+  },
+  {
+    "word": "context",
+    "start": 2.635,
+    "end": 3.123
+  },
+  {
+    "word": "window:",
+    "start": 3.17,
+    "end": 3.738
+  },
+  {
+    "word": "a",
+    "start": 4.052,
+    "end": 4.11
+  },
+  {
+    "word": "limit",
+    "start": 4.191,
+    "end": 4.435
+  },
+  {
+    "word": "on",
+    "start": 4.481,
+    "end": 4.551
+  },
+  {
+    "word": "how",
+    "start": 4.609,
+    "end": 4.714
+  },
+  {
+    "word": "many",
+    "start": 4.76,
+    "end": 4.946
+  },
+  {
+    "word": "tokens",
+    "start": 5.004,
+    "end": 5.422
+  },
+  {
+    "word": "fit",
+    "start": 5.48,
+    "end": 5.712
+  },
+  {
+    "word": "at",
+    "start": 5.759,
+    "end": 5.84
+  },
+  {
+    "word": "once.",
+    "start": 5.909,
+    "end": 7.012
+  }
+]

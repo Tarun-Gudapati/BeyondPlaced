@@ -1,0 +1,41 @@
+﻿<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #h-bubble { position: absolute; left: 180px; top: 250px; width: 1300px; background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 40px 40px 40px 10px; padding: 48px 56px; box-shadow: 0 24px 48px rgba(11,18,32,0.12); }
+    #h-who { font-size: 30px; font-weight: 700; color: #64748B; margin-bottom: 16px; }
+    #h-text { font-size: 76px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+    .h-w { display: inline-block; }
+    #h-wrong { position: relative; display: inline-block; }
+    #h-strike { position: absolute; left: -6px; right: -6px; top: 52%; height: 10px; background: #EA580C; border-radius: 5px; transform-origin: left center; }
+    #h-tags { position: absolute; left: 180px; top: 620px; display: flex; gap: 28px; }
+    .h-tag { font-size: 40px; font-weight: 700; padding: 14px 24px; border-radius: 12px; }
+    #h-tag1 { background: #CCFBF1; color: #0F766E; }
+    #h-tag2 { background: #FFFFFF; border: 3px dashed #94A3B8; color: #475569; }
+    #h-fix { position: absolute; left: 180px; top: 790px; font-size: 52px; font-weight: 700; }
+  </style>
+  <div id="root" data-composition-id="plausible" data-width="1920" data-height="1080">
+    <div id="h-bubble">
+      <div id="h-who">Chatbot, sounding sure</div>
+      <div id="h-text"><span class="h-w">Bengaluru</span> <span class="h-w">is</span> <span id="h-wrong"><span class="h-w">the</span> <span class="h-w">capital</span> <span class="h-w">of</span> <span class="h-w">India.</span><span id="h-strike"></span></span></div>
+    </div>
+    <div id="h-tags"><span class="h-tag" id="h-tag1">sounds right</span><span class="h-tag" id="h-tag2">is it true?</span></div>
+    <div id="h-fix">It's the capital of Karnataka.</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+
+    gsap.set("#h-tag1, #h-tag2, #h-fix", { opacity: 0 });
+    gsap.set("#h-strike", { scaleX: 0 });
+    tl.fromTo("#h-bubble", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0);
+    gsap.utils.toArray("#h-text .h-w").forEach((el, i) => blurIn(el, 0.25 + i * 0.09, 0.13));
+
+    tl.fromTo("#h-tag1", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 1.207);
+    tl.fromTo("#h-tag2", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 2.45);
+    tl.fromTo("#h-bubble", { borderColor: "#CBD5E1" }, { borderColor: "#0B1220", duration: 0.2 }, 4.331);
+    tl.to("#h-strike", { scaleX: 1, duration: 0.3, ease: "power3.out" }, 4.992);
+    blurIn("#h-fix", 5.25, 0.2);
+
+    window.__timelines["plausible"] = tl;
+  </script>
+</template>

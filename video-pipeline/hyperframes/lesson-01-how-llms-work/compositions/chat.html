@@ -1,0 +1,62 @@
+﻿<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #c-phone { position: absolute; left: 180px; top: 60px; width: 540px; height: 960px; border: 16px solid #0B1220; border-radius: 68px; background: #FFFFFF; box-shadow: 0 24px 48px rgba(11,18,32,0.16); overflow: hidden; }
+    .c-head { height: 104px; border-bottom: 2px solid #E2E8F0; display: flex; align-items: center; gap: 16px; padding: 0 36px; font-weight: 700; font-size: 32px; }
+    .c-avatar { width: 48px; height: 48px; border-radius: 12px; background: #0F766E; color: #FFFFFF; display: grid; place-items: center; font-size: 28px; font-weight: 900; }
+    .c-msgs { padding: 36px 30px; display: flex; flex-direction: column; gap: 24px; }
+    .c-user { align-self: flex-end; max-width: 410px; background: #0F766E; color: #FFFFFF; border-radius: 30px 30px 8px 30px; padding: 22px 28px; font-size: 34px; line-height: 1.25; font-weight: 700; }
+    .c-bot { align-self: flex-start; max-width: 430px; background: #F1F5F9; border-radius: 30px 30px 30px 8px; padding: 22px 28px; font-size: 34px; line-height: 1.3; }
+    .c-w { display: inline-block; }
+    #c-name { position: absolute; left: 860px; top: 380px; }
+    #c-name-big { font-size: 96px; font-weight: 900; letter-spacing: -0.02em; }
+    #c-name-sub { font-size: 40px; font-weight: 700; color: #475569; margin-top: 8px; }
+    #c-job { position: absolute; left: 860px; top: 330px; }
+    #c-job-label { font-size: 36px; font-weight: 700; color: #0F766E; }
+    #c-job-line { font-size: 128px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.05; margin-top: 12px; }
+    #c-job-line .c-accent { color: #EA580C; }
+    #c-carry { position: absolute; left: 0; right: 0; top: 300px; display: flex; justify-content: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 68px; }
+  </style>
+  <div id="root" data-composition-id="chat" data-width="1920" data-height="1080">
+    <div id="c-phone">
+      <div class="c-head"><span class="c-avatar">AI</span>Chatbot</div>
+      <div class="c-msgs">
+        <div id="c-q" class="c-user"><span class="c-w">Is</span> <span class="c-w">Bengaluru</span> <span class="c-w">good</span> <span class="c-w">for</span> <span class="c-w">freshers?</span></div>
+        <div id="c-a" class="c-bot"><span class="c-w">Many</span> <span class="c-w">freshers</span> <span class="c-w">start</span> <span class="c-w">there.</span> <span class="c-w">It</span> <span class="c-w">depends</span> <span class="c-w">on</span> <span class="c-w">your</span> <span class="c-w">field.</span></div>
+      </div>
+    </div>
+    <div id="c-name"><div id="c-name-big">Ananya</div><div id="c-name-sub">final-year student</div></div>
+    <div id="c-job">
+      <div id="c-job-label">An LLM's only job</div>
+      <div id="c-job-line"><span class="c-jw">Predict</span> <span class="c-jw">the</span><br /><span class="c-jw c-accent">next</span> <span class="c-jw c-accent">token</span></div>
+    </div>
+    <div id="c-carry">Is Bengaluru good for freshers?</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L2 = 8.663;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+
+    gsap.set("#c-q, #c-a", { opacity: 0 });
+    tl.fromTo("#c-phone", { x: -24 }, { x: 0, duration: 0.6, ease: "expo.out" }, 0);
+    blurIn("#c-name-sub", 0.84);
+
+    tl.set("#c-q", { opacity: 1 }, 3.4);
+    [3.46, 3.68, 4.389, 4.621, 4.772].forEach((t, i) => blurIn(`#c-q .c-w:nth-child(${i + 1})`, t, 0.12));
+    tl.to("#c-name", { opacity: 0.35, duration: 0.4, ease: "power2.inOut" }, 5.5);
+
+    tl.set("#c-a", { opacity: 1 }, 5.6);
+    for (let i = 0; i < 9; i++) blurIn(`#c-a .c-w:nth-child(${i + 1})`, 5.677 + i * 0.27, 0.12);
+
+    blurOut("#c-name", L2 + 0.0, 0.25);
+    blurIn("#c-job-label", L2 + 1.718, 0.2);
+    [4.563, 4.992, 5.108, 5.364].forEach((t, i) => blurIn(`#c-job-line .c-jw:nth-of-type(${i + 1})`, L2 + t, 0.15));
+
+    blurOut("#c-phone", 14.45, 0.25);
+    blurOut("#c-job", 14.45, 0.25);
+    tl.fromTo("#c-carry", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 14.85);
+
+    window.__timelines["chat"] = tl;
+  </script>
+</template>

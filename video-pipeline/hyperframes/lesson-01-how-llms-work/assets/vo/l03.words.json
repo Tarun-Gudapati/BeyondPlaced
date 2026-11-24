@@ -1,0 +1,92 @@
+[
+  {
+    "word": "First,",
+    "start": 0,
+    "end": 0.43
+  },
+  {
+    "word": "her",
+    "start": 0.464,
+    "end": 0.569
+  },
+  {
+    "word": "question",
+    "start": 0.627,
+    "end": 0.975
+  },
+  {
+    "word": "is",
+    "start": 1.022,
+    "end": 1.091
+  },
+  {
+    "word": "cut",
+    "start": 1.149,
+    "end": 1.335
+  },
+  {
+    "word": "into",
+    "start": 1.382,
+    "end": 1.533
+  },
+  {
+    "word": "tokens:",
+    "start": 1.602,
+    "end": 2.252
+  },
+  {
+    "word": "chunks",
+    "start": 2.612,
+    "end": 2.949
+  },
+  {
+    "word": "of",
+    "start": 2.984,
+    "end": 3.042
+  },
+  {
+    "word": "about",
+    "start": 3.088,
+    "end": 3.32
+  },
+  {
+    "word": "three",
+    "start": 3.379,
+    "end": 3.622
+  },
+  {
+    "word": "or",
+    "start": 3.669,
+    "end": 3.727
+  },
+  {
+    "word": "four",
+    "start": 3.796,
+    "end": 4.005
+  },
+  {
+    "word": "characters.",
+    "start": 4.063,
+    "end": 4.748
+  },
+  {
+    "word": "Bengaluru",
+    "start": 5.166,
+    "end": 5.875
+  },
+  {
+    "word": "might",
+    "start": 5.944,
+    "end": 6.13
+  },
+  {
+    "word": "be",
+    "start": 6.165,
+    "end": 6.258
+  },
+  {
+    "word": "three.",
+    "start": 6.304,
+    "end": 7.012
+  }
+]

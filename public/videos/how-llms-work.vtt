@@ -1,0 +1,149 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.622
+Ananya, a final-year student, asks a chatbot: is
+
+2
+00:00:03.680 --> 00:00:06.850
+Bengaluru good for freshers? The answer appears one
+
+3
+00:00:06.885 --> 00:00:08.313
+word at a time.
+
+4
+00:00:08.663 --> 00:00:11.310
+That isn't a style choice. A large language
+
+5
+00:00:11.345 --> 00:00:13.725
+model can only do one thing: predict the
+
+6
+00:00:13.771 --> 00:00:15.025
+next token.
+
+7
+00:00:15.375 --> 00:00:18.324
+First, her question is cut into tokens: chunks
+
+8
+00:00:18.359 --> 00:00:21.505
+of about three or four characters. Bengaluru might
+
+9
+00:00:21.540 --> 00:00:22.387
+be three.
+
+10
+00:00:22.737 --> 00:00:25.071
+You pay for every token. And every model
+
+11
+00:00:25.129 --> 00:00:27.451
+has a context window: a limit on how
+
+12
+00:00:27.497 --> 00:00:29.749
+many tokens fit at once.
+
+13
+00:00:30.099 --> 00:00:32.653
+Now the model reads every token so far,
+
+14
+00:00:32.769 --> 00:00:36.183
+and gives each possible next token a probability.
+
+15
+00:00:36.533 --> 00:00:38.565
+It picks one, adds it to the end,
+
+16
+00:00:38.646 --> 00:00:41.131
+and the longer text goes straight back in.
+
+17
+00:00:41.481 --> 00:00:45.301
+Then again. And again. Repeated thousands of times,
+
+18
+00:00:45.417 --> 00:00:48.633
+that one trick is chat, coding and reasoning.
+
+19
+00:00:48.983 --> 00:00:51.885
+Temperature decides how it picks. At zero, it
+
+20
+00:00:51.920 --> 00:00:54.904
+takes the most likely token every time. Same
+
+21
+00:00:54.951 --> 00:00:56.646
+question, same answer.
+
+22
+00:00:56.996 --> 00:01:00.061
+Around zero point seven, less likely tokens sometimes
+
+23
+00:01:00.119 --> 00:01:02.615
+win. Ask twice, and you get two different
+
+24
+00:01:02.673 --> 00:01:03.683
+answers.
+
+25
+00:01:04.033 --> 00:01:07.249
+Now Ananya asks a follow-up: what about salaries
+
+26
+00:01:07.295 --> 00:01:11.835
+there? The chatbot knows what there means. How?
+
+27
+00:01:12.185 --> 00:01:14.751
+The model remembers nothing. The app sends the
+
+28
+00:01:14.797 --> 00:01:18.431
+whole conversation again, inside the context window, every
+
+29
+00:01:18.478 --> 00:01:19.801
+single time.
+
+30
+00:01:20.151 --> 00:01:22.845
+And because it predicts plausible text, not true
+
+31
+00:01:22.879 --> 00:01:25.608
+text, it can say something confident and completely
+
+32
+00:01:25.654 --> 00:01:26.653
+wrong.
+
+33
+00:01:27.003 --> 00:01:28.640
+So here's the line that makes you sound
+
+34
+00:01:28.686 --> 00:01:32.320
+like an engineer: an LLM is stateless. Memory
+
+35
+00:01:32.378 --> 00:01:33.969
+is the app's job.
+
+36
+00:01:34.319 --> 00:01:37.221
+Next lesson: your first LLM API call in
+
+37
+00:01:37.303 --> 00:01:38.081
+Python.

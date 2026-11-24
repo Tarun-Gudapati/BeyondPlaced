@@ -1,0 +1,102 @@
+[
+  {
+    "word": "So",
+    "start": 0,
+    "end": 0.163
+  },
+  {
+    "word": "here's",
+    "start": 0.232,
+    "end": 0.453
+  },
+  {
+    "word": "the",
+    "start": 0.499,
+    "end": 0.569
+  },
+  {
+    "word": "line",
+    "start": 0.627,
+    "end": 0.882
+  },
+  {
+    "word": "that",
+    "start": 0.917,
+    "end": 1.01
+  },
+  {
+    "word": "makes",
+    "start": 1.057,
+    "end": 1.242
+  },
+  {
+    "word": "you",
+    "start": 1.277,
+    "end": 1.347
+  },
+  {
+    "word": "sound",
+    "start": 1.416,
+    "end": 1.637
+  },
+  {
+    "word": "like",
+    "start": 1.683,
+    "end": 1.834
+  },
+  {
+    "word": "an",
+    "start": 1.858,
+    "end": 1.916
+  },
+  {
+    "word": "engineer:",
+    "start": 1.962,
+    "end": 2.67
+  },
+  {
+    "word": "an",
+    "start": 3.088,
+    "end": 3.239
+  },
+  {
+    "word": "LLM",
+    "start": 3.332,
+    "end": 3.878
+  },
+  {
+    "word": "is",
+    "start": 3.971,
+    "end": 4.063
+  },
+  {
+    "word": "stateless.",
+    "start": 4.11,
+    "end": 4.772
+  },
+  {
+    "word": "Memory",
+    "start": 4.969,
+    "end": 5.317
+  },
+  {
+    "word": "is",
+    "start": 5.375,
+    "end": 5.468
+  },
+  {
+    "word": "the",
+    "start": 5.515,
+    "end": 5.584
+  },
+  {
+    "word": "app's",
+    "start": 5.642,
+    "end": 5.863
+  },
+  {
+    "word": "job.",
+    "start": 5.921,
+    "end": 6.966
+  }
+]

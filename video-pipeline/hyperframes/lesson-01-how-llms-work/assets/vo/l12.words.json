@@ -1,0 +1,87 @@
+[
+  {
+    "word": "And",
+    "start": 0,
+    "end": 0.209
+  },
+  {
+    "word": "because",
+    "start": 0.279,
+    "end": 0.592
+  },
+  {
+    "word": "it",
+    "start": 0.627,
+    "end": 0.697
+  },
+  {
+    "word": "predicts",
+    "start": 0.743,
+    "end": 1.149
+  },
+  {
+    "word": "plausible",
+    "start": 1.207,
+    "end": 1.649
+  },
+  {
+    "word": "text,",
+    "start": 1.695,
+    "end": 2.159
+  },
+  {
+    "word": "not",
+    "start": 2.241,
+    "end": 2.403
+  },
+  {
+    "word": "true",
+    "start": 2.45,
+    "end": 2.694
+  },
+  {
+    "word": "text,",
+    "start": 2.728,
+    "end": 3.181
+  },
+  {
+    "word": "it",
+    "start": 3.413,
+    "end": 3.529
+  },
+  {
+    "word": "can",
+    "start": 3.576,
+    "end": 3.692
+  },
+  {
+    "word": "say",
+    "start": 3.75,
+    "end": 3.901
+  },
+  {
+    "word": "something",
+    "start": 3.971,
+    "end": 4.261
+  },
+  {
+    "word": "confident",
+    "start": 4.331,
+    "end": 4.807
+  },
+  {
+    "word": "and",
+    "start": 4.853,
+    "end": 4.934
+  },
+  {
+    "word": "completely",
+    "start": 4.992,
+    "end": 5.457
+  },
+  {
+    "word": "wrong.",
+    "start": 5.503,
+    "end": 6.502
+  }
+]

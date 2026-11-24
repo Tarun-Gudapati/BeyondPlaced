@@ -6,6 +6,7 @@
     "voices": "node src/list-voices.js",
     "tts": "node src/run.js --tts",
     "render": "node src/run.js --tts --render",
-    "one": "node src/run.js --tts --slug"
+    "one": "node src/run.js --tts --slug",
+    "scene-tts": "node src/scene-tts.js"
   }
 }

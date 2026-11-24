@@ -1,0 +1,92 @@
+[
+  {
+    "word": "The",
+    "start": 0,
+    "end": 0.139
+  },
+  {
+    "word": "model",
+    "start": 0.186,
+    "end": 0.406
+  },
+  {
+    "word": "remembers",
+    "start": 0.476,
+    "end": 0.859
+  },
+  {
+    "word": "nothing.",
+    "start": 0.929,
+    "end": 1.416
+  },
+  {
+    "word": "The",
+    "start": 1.776,
+    "end": 1.904
+  },
+  {
+    "word": "app",
+    "start": 1.962,
+    "end": 2.113
+  },
+  {
+    "word": "sends",
+    "start": 2.183,
+    "end": 2.45
+  },
+  {
+    "word": "the",
+    "start": 2.496,
+    "end": 2.566
+  },
+  {
+    "word": "whole",
+    "start": 2.612,
+    "end": 2.81
+  },
+  {
+    "word": "conversation",
+    "start": 2.844,
+    "end": 3.425
+  },
+  {
+    "word": "again,",
+    "start": 3.471,
+    "end": 3.971
+  },
+  {
+    "word": "inside",
+    "start": 4.11,
+    "end": 4.598
+  },
+  {
+    "word": "the",
+    "start": 4.632,
+    "end": 4.702
+  },
+  {
+    "word": "context",
+    "start": 4.748,
+    "end": 5.236
+  },
+  {
+    "word": "window,",
+    "start": 5.294,
+    "end": 5.793
+  },
+  {
+    "word": "every",
+    "start": 5.956,
+    "end": 6.246
+  },
+  {
+    "word": "single",
+    "start": 6.293,
+    "end": 6.629
+  },
+  {
+    "word": "time.",
+    "start": 6.664,
+    "end": 7.616
+  }
+]

@@ -6,7 +6,8 @@ export type Block =
   | { type: "list"; items: string[] }
   | { type: "code"; lang: string; code: string }
   | { type: "tip"; text: string }
-  | { type: "diagram"; id: string; caption?: string };
+  | { type: "diagram"; id: string; caption?: string }
+  | { type: "video"; src: string; poster?: string; captions?: string; title: string };
 
 export type Quiz = {
   question: string;
@@ -50,6 +51,13 @@ export const modules: Module[] = [
         free: true,
         summary: "Tokens, context windows, temperature and why models hallucinate.",
         blocks: [
+          {
+            type: "video",
+            src: "/videos/how-llms-work.mp4",
+            poster: "/videos/how-llms-work.jpg",
+            captions: "/videos/how-llms-work.vtt",
+            title: "How LLMs actually work, in 100 seconds",
+          },
           {
             type: "p",
             text: "A large language model is a next-token predictor. You give it a sequence of tokens and it returns a probability distribution over what token comes next. Everything else — chat, coding, reasoning — is built on top of that one trick repeated thousands of times.",

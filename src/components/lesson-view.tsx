@@ -120,6 +120,23 @@ function RenderBlock({ block }: { block: Block }) {
     case "diagram":
       if (!isDiagramId(block.id)) return null;
       return <CourseDiagram id={block.id} caption={block.caption} />;
+    case "video":
+      return (
+        <figure className="-mx-4 sm:mx-0">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster={block.poster}
+            aria-label={block.title}
+            className="aspect-video w-full bg-brand-mist sm:rounded-lg sm:border"
+          >
+            <source src={block.src} type="video/mp4" />
+            {block.captions && <track kind="captions" src={block.captions} srcLang="en" label="English" />}
+          </video>
+          <figcaption className="mt-2 px-4 text-sm text-muted-foreground sm:px-0">{block.title}</figcaption>
+        </figure>
+      );
   }
 }
 

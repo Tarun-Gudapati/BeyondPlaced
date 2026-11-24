@@ -1,5 +1,7 @@
 .env
 out/
+hyperframes/*/.hyperframes/
+hyperframes/*/renders/
 *.mp3
 *.mp4
 *.srt

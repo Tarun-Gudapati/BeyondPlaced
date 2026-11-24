@@ -1,0 +1,20 @@
+{
+  "lesson": "how-llms-work",
+  "gapAfter": 0.35,
+  "lines": [
+    { "id": "l01", "scene": "chat", "text": "Ananya, a final-year student, asks a chatbot: is Bengaluru good for freshers? The answer appears one word at a time." },
+    { "id": "l02", "scene": "chat", "text": "That isn't a style choice. A large language model can only do one thing: predict the next token." },
+    { "id": "l03", "scene": "tokens", "text": "First, her question is cut into tokens: chunks of about three or four characters. Bengaluru might be three." },
+    { "id": "l04", "scene": "tokens", "text": "You pay for every token. And every model has a context window: a limit on how many tokens fit at once." },
+    { "id": "l05", "scene": "predict", "text": "Now the model reads every token so far, and gives each possible next token a probability." },
+    { "id": "l06", "scene": "predict", "text": "It picks one, adds it to the end, and the longer text goes straight back in." },
+    { "id": "l07", "scene": "predict", "text": "Then again. And again. Repeated thousands of times, that one trick is chat, coding and reasoning." },
+    { "id": "l08", "scene": "temperature", "text": "Temperature decides how it picks. At zero, it takes the most likely token every time. Same question, same answer." },
+    { "id": "l09", "scene": "temperature", "text": "Around zero point seven, less likely tokens sometimes win. Ask twice, and you get two different answers." },
+    { "id": "l10", "scene": "memory", "text": "Now Ananya asks a follow-up: what about salaries there? The chatbot knows what there means. How?" },
+    { "id": "l11", "scene": "memory", "text": "The model remembers nothing. The app sends the whole conversation again, inside the context window, every single time." },
+    { "id": "l12", "scene": "plausible", "text": "And because it predicts plausible text, not true text, it can say something confident and completely wrong." },
+    { "id": "l13", "scene": "claim", "text": "So here's the line that makes you sound like an engineer: an LLM is stateless. Memory is the app's job." },
+    { "id": "l14", "scene": "claim", "text": "Next lesson: your first LLM API call in Python." }
+  ]
+}

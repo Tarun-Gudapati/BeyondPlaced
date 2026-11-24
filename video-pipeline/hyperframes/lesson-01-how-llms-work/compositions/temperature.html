@@ -1,0 +1,111 @@
+﻿<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #tm-slider { position: absolute; left: 160px; top: 100px; width: 1600px; height: 230px; }
+    #tm-label { position: absolute; left: 0; top: 0; font-size: 40px; font-weight: 900; letter-spacing: -0.01em; }
+    #tm-track { position: absolute; left: 0; top: 150px; width: 1600px; height: 14px; border-radius: 7px; background: #CBD5E1; }
+    .tm-tick { position: absolute; top: 182px; font-size: 30px; font-weight: 700; color: #475569; transform: translateX(-50%); }
+    #tm-handle { position: absolute; left: 0; top: 157px; width: 0; height: 0; }
+    #tm-knob { position: absolute; left: -26px; top: -26px; width: 52px; height: 52px; border-radius: 50%; background: #0F766E; border: 6px solid #FFFFFF; box-shadow: 0 6px 16px rgba(11,18,32,0.25); }
+    .tm-val { position: absolute; left: -60px; top: -86px; width: 120px; text-align: center; font-family: "JetBrains Mono", monospace; font-size: 38px; font-weight: 700; color: #0F766E; }
+    #tm-bars { position: absolute; left: 160px; top: 360px; width: 820px; }
+    #tm-bars-title { font-size: 34px; font-weight: 700; color: #475569; margin-bottom: 22px; }
+    #tm-bars-title small { font-size: 28px; font-weight: 400; color: #64748B; margin-left: 10px; }
+    #tm-rows { position: relative; }
+    .tm-row { display: flex; align-items: center; gap: 18px; height: 70px; margin-bottom: 10px; padding: 0 12px; }
+    .tm-lab { width: 230px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 38px; }
+    .tm-track { width: 380px; height: 38px; background: #E2E8F0; border-radius: 6px; overflow: hidden; }
+    .tm-fill { display: block; width: 100%; height: 100%; background: #0F766E; transform-origin: left center; }
+    .tm-pct { position: relative; width: 110px; height: 40px; font-size: 32px; font-weight: 700; }
+    .tm-pa, .tm-pb { position: absolute; right: 0; top: 0; }
+    #tm-pick { position: absolute; left: 0; top: 0; width: 820px; height: 70px; border: 4px solid #0F766E; border-radius: 10px; }
+    #tm-answers { position: absolute; left: 1080px; top: 400px; width: 700px; }
+    .tm-ask { background: #FFFFFF; border: 3px solid #CBD5E1; border-radius: 20px; padding: 22px 28px; margin-bottom: 28px; box-shadow: 0 12px 24px rgba(11,18,32,0.08); position: relative; height: 140px; }
+    .tm-ask-l { font-size: 28px; font-weight: 700; color: #64748B; }
+    .tm-ask-t { position: absolute; left: 28px; top: 66px; font-size: 40px; font-weight: 700; }
+    #tm-rel { position: absolute; left: 1080px; top: 760px; font-size: 44px; font-weight: 900; }
+    #tm-rel-same { color: #0F766E; }
+    #tm-rel-diff { position: absolute; left: 0; top: 0; color: #EA580C; white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="temperature" data-width="1920" data-height="1080">
+    <div id="tm-slider">
+      <div id="tm-label">Temperature</div>
+      <div id="tm-track"></div>
+      <div class="tm-tick" style="left: 0px">0</div>
+      <div class="tm-tick" style="left: 1120px">0.7</div>
+      <div class="tm-tick" style="left: 1600px">1</div>
+      <div id="tm-handle">
+        <div id="tm-knob"></div>
+        <div class="tm-val" id="tm-v05">0.5</div>
+        <div class="tm-val" id="tm-v0">0</div>
+        <div class="tm-val" id="tm-v07">0.7</div>
+      </div>
+    </div>
+    <div id="tm-bars">
+      <div id="tm-bars-title">Next token after the question<small>(illustrative)</small></div>
+      <div id="tm-rows">
+        <div id="tm-pick"></div>
+        <div class="tm-row"><span class="tm-lab">Many</span><span class="tm-track"><span class="tm-fill"></span></span><span class="tm-pct"><span class="tm-pa">42%</span><span class="tm-pb">30%</span></span></div>
+        <div class="tm-row"><span class="tm-lab">It</span><span class="tm-track"><span class="tm-fill"></span></span><span class="tm-pct"><span class="tm-pa">21%</span><span class="tm-pb">24%</span></span></div>
+        <div class="tm-row"><span class="tm-lab">Yes</span><span class="tm-track"><span class="tm-fill"></span></span><span class="tm-pct"><span class="tm-pa">17%</span><span class="tm-pb">20%</span></span></div>
+        <div class="tm-row"><span class="tm-lab">Bengaluru</span><span class="tm-track"><span class="tm-fill"></span></span><span class="tm-pct"><span class="tm-pa">8%</span><span class="tm-pb">14%</span></span></div>
+        <div class="tm-row"><span class="tm-lab">The</span><span class="tm-track"><span class="tm-fill"></span></span><span class="tm-pct"><span class="tm-pa">5%</span><span class="tm-pb">12%</span></span></div>
+      </div>
+    </div>
+    <div id="tm-answers">
+      <div class="tm-ask" id="tm-ask1"><div class="tm-ask-l">Ask once</div><div class="tm-ask-t">Many freshers start there.</div></div>
+      <div class="tm-ask" id="tm-ask2"><div class="tm-ask-l">Ask again</div><div class="tm-ask-t" id="tm-a2-same">Many freshers start there.</div><div class="tm-ask-t" id="tm-a2-diff">It depends on your field.</div></div>
+    </div>
+    <div id="tm-rel"><span id="tm-rel-same">= same answer</span><span id="tm-rel-diff">≠ two different answers</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L9 = 8.013;
+    const W = 1600;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const fills = gsap.utils.toArray("#tm-rows .tm-fill");
+    const p1 = [0.42, 0.21, 0.17, 0.08, 0.05];
+    const rowY = (i) => i * 80;
+
+    gsap.set("#tm-v0, #tm-v07, #tm-pick, #tm-answers, #tm-ask1, #tm-ask2, #tm-a2-same, #tm-a2-diff, #tm-rel-same, #tm-rel-diff", { opacity: 0 });
+    gsap.set(fills, { scaleX: 0 });
+    gsap.set("#tm-handle", { x: W * 0.5 });
+
+    tl.fromTo("#tm-slider", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.0);
+    blurIn("#tm-bars-title", 0.3, 0.2);
+    fills.forEach((el, i) => tl.to(el, { scaleX: p1[i] / 0.5, duration: 0.5, ease: "expo.out" }, 0.5 + i * 0.06));
+
+    tl.to("#tm-handle", { x: 0, duration: 0.5, ease: "power2.inOut" }, 2.067);
+    tl.to("#tm-v05", { opacity: 0, duration: 0.1 }, 2.1);
+    tl.to("#tm-v0", { opacity: 1, duration: 0.15 }, 2.45);
+    gsap.set("#tm-pick", { y: rowY(0) });
+    tl.fromTo("#tm-pick", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 2.937);
+    tl.fromTo("#tm-pick", { borderWidth: 4 }, { borderWidth: 8, duration: 0.1, yoyo: true, repeat: 1 }, 4.389);
+
+    tl.set("#tm-answers", { opacity: 1 }, 5.5);
+    tl.fromTo("#tm-ask1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 5.619);
+    tl.fromTo("#tm-ask2", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 6.571);
+    tl.to("#tm-a2-same", { opacity: 1, duration: 0.15 }, 6.6);
+    blurIn("#tm-rel-same", 6.861, 0.2);
+
+    blurOut("#tm-rel-same", L9 + 0.5, 0.15);
+    tl.to("#tm-handle", { x: W * 0.7, duration: 0.6, ease: "power2.inOut" }, L9 + 0.395);
+    tl.to("#tm-v0", { opacity: 0, duration: 0.1 }, L9 + 0.4);
+    tl.to("#tm-v07", { opacity: 1, duration: 0.15 }, L9 + 0.9);
+    const p2 = [0.3, 0.24, 0.2, 0.14, 0.12];
+    fills.forEach((el, i) => tl.to(el, { scaleX: p2[i] / 0.5, duration: 0.5, ease: "power2.inOut" }, L9 + 1.521));
+    gsap.set(".tm-pb", { opacity: 0 });
+    tl.to(".tm-pa", { opacity: 0, duration: 0.2 }, L9 + 1.6);
+    tl.to(".tm-pb", { opacity: 1, duration: 0.2 }, L9 + 1.7);
+    tl.to("#tm-pick", { y: rowY(1), borderColor: "#EA580C", backgroundColor: "rgba(234,88,12,0.08)", duration: 0.4, ease: "power2.inOut" }, L9 + 2.6);
+
+    tl.to("#tm-a2-same", { opacity: 0, filter: "blur(8px)", duration: 0.15, ease: "power3.in" }, L9 + 4.296);
+    tl.fromTo("#tm-a2-diff", { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, L9 + 4.45);
+    blurIn("#tm-rel-diff", L9 + 5.132, 0.2);
+
+    blurOut("#tm-slider, #tm-bars, #tm-answers, #tm-rel", 14.75, 0.2);
+
+    window.__timelines["temperature"] = tl;
+  </script>
+</template>

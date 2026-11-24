@@ -1,0 +1,89 @@
+﻿<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #F0FDFA; font-family: Inter, sans-serif; color: #0B1220; overflow: hidden; }
+    #t-row { position: absolute; left: 0; right: 0; top: 300px; display: flex; justify-content: center; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 68px; }
+    .t-tile { position: relative; display: inline-block; isolation: isolate; }
+    .t-tile.t-sp { margin-left: 0.6em; }
+    .t-bg { position: absolute; left: -8px; right: -8px; top: -6px; bottom: -6px; border-radius: 6px; background: #CCFBF1; border: 3px solid #5EEAD4; z-index: -1; }
+    .t-tile:nth-child(even) .t-bg { background: #99F6E4; }
+    .t-tile .t-hot { position: absolute; left: -8px; right: -8px; top: -6px; bottom: -6px; border-radius: 6px; background: #FFEDD5; border: 3px solid #EA580C; z-index: -1; opacity: 0; }
+    #t-note { position: absolute; left: 0; right: 0; top: 470px; text-align: center; font-size: 40px; font-weight: 700; color: #475569; }
+    #t-note2 { position: absolute; left: 0; right: 0; top: 470px; text-align: center; font-size: 40px; font-weight: 700; color: #0B1220; }
+    #t-note2 small { font-size: 30px; color: #64748B; font-weight: 400; margin-left: 12px; }
+    #t-count { position: absolute; left: 180px; top: 640px; display: flex; align-items: baseline; gap: 28px; }
+    #t-count-n { font-family: "JetBrains Mono", monospace; font-size: 180px; font-weight: 700; color: #0F766E; line-height: 1; }
+    #t-count-l { font-size: 44px; font-weight: 700; }
+    #t-count-l span { display: block; font-size: 34px; color: #475569; font-weight: 400; margin-top: 6px; }
+    #t-frame { position: absolute; left: 150px; top: 240px; width: 1620px; height: 190px; border: 4px solid #0F766E; border-radius: 18px; }
+    #t-frame-label { position: absolute; left: 150px; top: 190px; background: #0F766E; color: #FFFFFF; font-size: 30px; font-weight: 700; padding: 6px 16px; border-radius: 8px; }
+    #t-ghosts { position: absolute; left: 1795px; top: 300px; display: flex; gap: 20px; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 68px; color: #475569; }
+    .t-ghost { border: 3px dashed #64748B; border-radius: 6px; padding: 0 10px; }
+    #t-nofit { position: absolute; left: 1520px; top: 470px; font-size: 32px; font-weight: 700; color: #EA580C; }
+  </style>
+  <div id="root" data-composition-id="tokens" data-width="1920" data-height="1080">
+    <div id="t-frame"></div>
+    <div id="t-frame-label">context window <span id="t-frame-eg">· e.g. 128k tokens</span></div>
+    <div id="t-row">
+      <span class="t-tile"><span class="t-bg"></span><span class="t-hot"></span>Is</span>
+      <span class="t-tile t-sp"><span class="t-bg"></span><span class="t-hot"></span>Beng</span>
+      <span class="t-tile"><span class="t-bg"></span><span class="t-hot"></span>al</span>
+      <span class="t-tile"><span class="t-bg"></span><span class="t-hot"></span>uru</span>
+      <span class="t-tile t-sp"><span class="t-bg"></span><span class="t-hot"></span>good</span>
+      <span class="t-tile t-sp"><span class="t-bg"></span><span class="t-hot"></span>for</span>
+      <span class="t-tile t-sp"><span class="t-bg"></span><span class="t-hot"></span>fresh</span>
+      <span class="t-tile"><span class="t-bg"></span><span class="t-hot"></span>ers</span>
+      <span class="t-tile"><span class="t-bg"></span><span class="t-hot"></span>?</span>
+    </div>
+    <div id="t-ghosts" data-layout-allow-overflow><span class="t-ghost">…</span><span class="t-ghost">more</span></div>
+    <div id="t-nofit">doesn't fit</div>
+    <div id="t-note">1 token ≈ 3–4 characters</div>
+    <div id="t-note2">Bengaluru = 3 tokens<small>(illustrative split)</small></div>
+    <div id="t-count"><div id="t-count-n">0</div><div id="t-count-l">tokens in her question<span>you're billed for every one</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const L4 = 7.362;
+    const blurIn = (sel, t, d = 0.15) => tl.fromTo(sel, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: d, ease: "power4.out" }, t);
+    const blurOut = (sel, t, d = 0.2) => tl.to(sel, { opacity: 0, filter: "blur(8px)", duration: d, ease: "power3.in" }, t);
+    const tiles = gsap.utils.toArray("#t-row .t-tile");
+    const n = tiles.length;
+
+    gsap.set(".t-bg", { opacity: 0 });
+    gsap.set("#t-frame", { clipPath: "inset(0 100% 0 0)" });
+    gsap.set("#t-frame-label, #t-frame-eg, #t-ghosts, #t-nofit, #t-note, #t-note2, #t-count", { opacity: 0 });
+
+    tiles.forEach((el, i) => {
+      tl.fromTo(el, { x: 0 }, { x: (i - (n - 1) / 2) * 22, duration: 0.45, ease: "expo.out" }, 1.149 + i * 0.03);
+      tl.fromTo(el.querySelector(".t-bg"), { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power2.out" }, 1.602 + i * 0.05);
+    });
+
+    blurIn("#t-note", 3.379, 0.2);
+    blurOut("#t-note", 5.0, 0.15);
+    [1, 2, 3].forEach((i, k) => {
+      tl.fromTo(tiles[i], { y: 0 }, { y: -26, duration: 0.4, ease: "expo.out" }, 5.166 + k * 0.06);
+      tl.to(tiles[i].querySelector(".t-hot"), { opacity: 1, duration: 0.2, ease: "power2.out" }, 5.166 + k * 0.06);
+    });
+    blurIn("#t-note2", 5.5, 0.2);
+
+    blurOut("#t-note2", L4 + 0.15, 0.15);
+    [1, 2, 3].forEach((i) => {
+      tl.to(tiles[i], { y: 0, duration: 0.35, ease: "power2.inOut" }, L4);
+      tl.to(tiles[i].querySelector(".t-hot"), { opacity: 0, duration: 0.2 }, L4);
+    });
+    blurIn("#t-count", L4 + 0.221, 0.2);
+    const counter = { v: 0 };
+    tl.fromTo(counter, { v: 0 }, { v: n, duration: 0.63, ease: "none", onUpdate: () => { document.getElementById("t-count-n").textContent = String(Math.round(counter.v)); } }, L4 + 0.25);
+    tiles.forEach((el, i) => tl.fromTo(el, { scale: 1 }, { scale: 1.08, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, L4 + 0.25 + i * 0.07));
+
+    tl.to("#t-frame", { clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power2.inOut" }, L4 + 2.635);
+    blurIn("#t-frame-label", L4 + 3.0, 0.2);
+    gsap.set("#t-frame-eg", { opacity: 0 });
+    blurIn("#t-frame-eg", L4 + 4.191, 0.2);
+    tl.fromTo("#t-ghosts", { opacity: 0, x: 160 }, { opacity: 1, x: 0, duration: 0.5, ease: "expo.out" }, L4 + 4.76);
+    blurIn("#t-nofit", L4 + 5.48, 0.2);
+
+    blurOut("#t-row, #t-frame, #t-frame-label, #t-ghosts, #t-nofit, #t-count", 14.45, 0.2);
+
+    window.__timelines["tokens"] = tl;
+  </script>
+</template>

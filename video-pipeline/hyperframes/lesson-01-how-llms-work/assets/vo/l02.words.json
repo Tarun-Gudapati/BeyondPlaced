@@ -1,0 +1,92 @@
+[
+  {
+    "word": "That",
+    "start": 0,
+    "end": 0.255
+  },
+  {
+    "word": "isn't",
+    "start": 0.313,
+    "end": 0.534
+  },
+  {
+    "word": "a",
+    "start": 0.58,
+    "end": 0.604
+  },
+  {
+    "word": "style",
+    "start": 0.662,
+    "end": 0.998
+  },
+  {
+    "word": "choice.",
+    "start": 1.045,
+    "end": 1.521
+  },
+  {
+    "word": "A",
+    "start": 1.718,
+    "end": 1.811
+  },
+  {
+    "word": "large",
+    "start": 1.892,
+    "end": 2.218
+  },
+  {
+    "word": "language",
+    "start": 2.276,
+    "end": 2.647
+  },
+  {
+    "word": "model",
+    "start": 2.682,
+    "end": 2.926
+  },
+  {
+    "word": "can",
+    "start": 2.984,
+    "end": 3.111
+  },
+  {
+    "word": "only",
+    "start": 3.181,
+    "end": 3.39
+  },
+  {
+    "word": "do",
+    "start": 3.448,
+    "end": 3.564
+  },
+  {
+    "word": "one",
+    "start": 3.657,
+    "end": 3.843
+  },
+  {
+    "word": "thing:",
+    "start": 3.889,
+    "end": 4.331
+  },
+  {
+    "word": "predict",
+    "start": 4.563,
+    "end": 4.957
+  },
+  {
+    "word": "the",
+    "start": 4.992,
+    "end": 5.062
+  },
+  {
+    "word": "next",
+    "start": 5.108,
+    "end": 5.317
+  },
+  {
+    "word": "token.",
+    "start": 5.364,
+    "end": 6.362
+  }
+]
